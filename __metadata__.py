@@ -3,7 +3,8 @@ import collections
 
 
 metadata = collections.OrderedDict([
+    ('composer', 'Oberholtzer'),
     ('forces_tagline', 'for John Richards and Beth Weisser'),
     ('title', 'Invisible Cities: Armilla'),
-    ('year_of_completion', 2014),
+    ('year', 2014),
     ])

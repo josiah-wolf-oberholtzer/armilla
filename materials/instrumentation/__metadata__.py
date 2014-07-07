@@ -2,6 +2,4 @@
 import collections
 
 
-metadata = collections.OrderedDict([
-    ('output_material_class_name', 'InstrumentationSpecifier'),
-    ])
+metadata = collections.OrderedDict([])
