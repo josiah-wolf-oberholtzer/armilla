@@ -1,95 +1,105 @@
 # -*- encoding: utf-8 -*-
-from abjad import *
+import collections
+from abjad.tools import abctools
+from abjad.tools import indicatortools
+from abjad.tools import instrumenttools
+from abjad.tools import scoretools
 from consort import makers
 
 
-class ArmillaScoreTemplate(makers.ConsortObject):
+class ArmillaScoreTemplate(abctools.AbjadValueObject):
     r'''A score template.
 
     ::
 
-        >>> from armilla import makers
-        >>> template = makers.ArmillaScoreTemplate()
+        >>> import armilla
+        >>> template = armilla.makers.ArmillaScoreTemplate()
         >>> score = template()
+        >>> print(format(score))
+        \context Score = "Armilla Score" <<
+            \tag time
+            \context TimeSignatureContext = "TimeSignatureContext" {
+            }
+            \tag viola-1
+            \context StringPerformerGroup = "Viola 1 Performer Group" \with {
+                instrumentName = \markup { Viola 1 }
+                shortInstrumentName = \markup { Va. 1 }
+            } <<
+                \context BowingStaff = "Viola 1 Bowing Staff" {
+                    \context Voice = "Viola 1 Bowing Voice" {
+                    }
+                }
+                \context FingeringStaff = "Viola 1 Fingering Staff" {
+                    \context Voice = "Viola 1 Fingering Voice" {
+                        \clef "alto"
+                    }
+                }
+            >>
+            \tag viola-2
+            \context StringPerformerGroup = "Viola 2 Performer Group" \with {
+                instrumentName = \markup { Viola 2 }
+                shortInstrumentName = \markup { Va. 2 }
+            } <<
+                \context BowingStaff = "Viola 2 Bowing Staff" {
+                    \context Voice = "Viola 2 Bowing Voice" {
+                    }
+                }
+                \context FingeringStaff = "Viola 2 Fingering Staff" {
+                    \context Voice = "Viola 2 Fingering Voice" {
+                        \clef "alto"
+                    }
+                }
+            >>
+        >>
 
     '''
+
+    ### CLASS VARIABLES ###
+
+    __slots__ = (
+        '_voice_name_abbreviations',
+        )
+
+    ### INITIALIZER ###
+
+    def __init__(self):
+        self._voice_name_abbreviations = collections.OrderedDict()
 
     ### SPECIAL METHODS ###
 
     def __call__(self):
 
-        viola_one_staff_group = self._make_string_performer_staff_group(
-            name='One',
+        manager = makers.ScoreTemplateManager
+
+        time_signature_context = manager.make_time_signature_context()
+
+        viola_one = manager.make_single_string_performer(
+            clef=indicatortools.Clef('alto'),
+            instrument=instrumenttools.Viola(
+                instrument_name='viola 1',
+                short_instrument_name='va. 1',
+                ),
+            split=True,
+            score_template=self,
             )
 
-        viola_two_staff_group = self._make_string_performer_staff_group(
-            name='Two',
-            )
-
-        staff_group = scoretools.StaffGroup(
-            [
-                viola_one_staff_group,
-                viola_two_staff_group,
-                ],
-            name='Armilla Staff Group',
-            )
-
-        time_signature_context = scoretools.Context(
-            name='TimeSignatureContext',
-            context_name='TimeSignatureContext',
+        viola_two = manager.make_single_string_performer(
+            clef=indicatortools.Clef('alto'),
+            instrument=instrumenttools.Viola(
+                instrument_name='viola 2',
+                short_instrument_name='va. 2',
+                ),
+            split=True,
+            score_template=self,
             )
 
         score = scoretools.Score(
             [
                 time_signature_context,
-                staff_group,
+                viola_one,
+                viola_two
                 ],
             name='Armilla Score',
             )
 
-    ### PRIVATE METHODS ###
-
-    def _make_string_performer_staff_group(self, name=None):
-
-        viola_bowing_voice = scoretools.Voice(
-            context_name='BowingVoice',
-            name='Viola {} Bowing Voice'.format(name),
-            )
-
-        viola_bowing_staff = scoretools.Staff(
-            [
-                viola_bowing_voice,
-                ],
-            context_name='BowingStaff',
-            name='Viola {} Bowing Staff'.format(name),
-            )
-
-        viola_dynamics = scoretools.Voice(
-            context_name='Dynamics',
-            name='Viola {} Dynamics'.format(name),
-            )
-
-        viola_fingering_voice = scoretools.Voice(
-            context_name='FingeringVoice',
-            name='Viola {} Fingering Voice'.format(name),
-            )
-
-        viola_fingering_staff = scoretools.Staff(
-            [
-                viola_fingering_voice,
-                ],
-            context_name='FingeringStaff',
-            name='Viola {} Fingering Staff'.format(name),
-            )
-
-        viola_staff_group = scoretools.StaffGroup(
-            [
-                viola_bowing_staff,
-                viola_dynamics,
-                viola_fingering_staff,
-                ],
-            context_name='StringPerformerStaffGroup',
-            name='Viola {} Staff Group'.format(name),
-            )
-
-        return viola_staff_group
+        return score
