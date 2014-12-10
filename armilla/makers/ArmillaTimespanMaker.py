@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 from abjad.tools import durationtools
-from consort.makers import TimespanMaker
+from consort import TimespanMaker
 
 
 class ArmillaTimespanMaker(TimespanMaker):

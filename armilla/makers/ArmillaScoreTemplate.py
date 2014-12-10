@@ -4,7 +4,7 @@ from abjad.tools import abctools
 from abjad.tools import indicatortools
 from abjad.tools import instrumenttools
 from abjad.tools import scoretools
-from consort import makers
+import consort
 
 
 class ArmillaScoreTemplate(abctools.AbjadValueObject):
@@ -57,19 +57,19 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
     ### CLASS VARIABLES ###
 
     __slots__ = (
-        '_voice_name_abbreviations',
+        '_context_name_abbreviations',
         )
 
     ### INITIALIZER ###
 
     def __init__(self):
-        self._voice_name_abbreviations = collections.OrderedDict()
+        self._context_name_abbreviations = collections.OrderedDict()
 
     ### SPECIAL METHODS ###
 
     def __call__(self):
 
-        manager = makers.ScoreTemplateManager
+        manager = consort.ScoreTemplateManager
 
         time_signature_context = manager.make_time_signature_context()
 
