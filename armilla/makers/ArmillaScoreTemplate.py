@@ -103,3 +103,9 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
             )
 
         return score
+
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def context_name_abbreviations(self):
+        return self._context_name_abbreviations
