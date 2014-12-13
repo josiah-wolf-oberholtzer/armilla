@@ -16,10 +16,8 @@ afterGraceFraction = #(cons 127 128)
 
 \layout {
 
-    indent = 0
-    ragged-bottom = ##t
-    ragged-last = ##t
     ragged-right = ##t
+    ragged-last = ##t
 
     %%% COMMON %%%
 
@@ -206,7 +204,7 @@ afterGraceFraction = #(cons 127 128)
 
     %%% MARGINS %%%
 
-    % bottom-margin = 10\mm
+    bottom-margin = 10\mm
     left-margin = 30\mm
     right-margin = 10\mm
     top-margin = 10\mm
@@ -219,7 +217,6 @@ afterGraceFraction = #(cons 127 128)
             \bold \fontsize #3
             \on-the-fly #print-page-number-check-first
             \fromproperty #'page:page-number-string
-            %\hspace #18
         }
     }
     evenHeaderMarkup = \markup \fill-line { " " }
@@ -229,7 +226,6 @@ afterGraceFraction = #(cons 127 128)
             \bold \fontsize #3
             \on-the-fly #print-page-number-check-first
             \fromproperty #'page:page-number-string
-            %\hspace #18
         }
     }
     oddHeaderMarkup = \markup \fill-line { " " }
@@ -239,8 +235,8 @@ afterGraceFraction = #(cons 127 128)
     %%% PAGE BREAKING %%%
 
     page-breaking = #ly:optimal-breaking
-    ragged-bottom = ##f
-    ragged-last-bottom = ##f
+    ragged-bottom = ##t
+    ragged-last-bottom = ##t
 
     %%% SPACING DETAILS %%%%
 
@@ -268,9 +264,5 @@ afterGraceFraction = #(cons 127 128)
         (padding . 0)
         (stretchability . 0)
     )
-
-    %%% ETC %%%
-
-    % system-separator-markup = \slashSeparator
 
 }
