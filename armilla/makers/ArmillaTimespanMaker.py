@@ -298,6 +298,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
     @property
     def _viola_1_fingering_timespan_maker(self):
         timespan_maker = consort.DependentTimespanMaker(
+            can_split=True,
             include_inner_starts=True,
             include_inner_stops=False,
             minimum_duration=None,
@@ -309,6 +310,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
     @property
     def _viola_2_fingering_timespan_maker(self):
         timespan_maker = consort.DependentTimespanMaker(
+            can_split=True,
             include_inner_starts=True,
             include_inner_stops=False,
             minimum_duration=None,
