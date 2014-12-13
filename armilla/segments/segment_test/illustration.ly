@@ -10,7 +10,7 @@
 		\tag #'time
 		\context TimeSignatureContext = "TimeSignatureContext" {
 			{
-				\time 5/4
+				\time 3/8
 				\tempo 4=72
 				\mark \markup {
 					\concat
@@ -25,14 +25,63 @@
 								" "
 						}
 					}
-				s1 * 5/4
+				s1 * 3/8
 			}
 			{
-				s1 * 5/4
+				s1 * 3/8
+			}
+			{
+				\time 7/8
+				s1 * 7/8
+			}
+			{
+				\time 5/8
+				s1 * 5/8
+			}
+			{
+				\time 4/4
+				s1 * 1
+			}
+			{
+				\time 3/8
+				s1 * 3/8
+			}
+			{
+				s1 * 3/8
+			}
+			{
+				\time 4/4
+				s1 * 1
+			}
+			{
+				\time 3/8
+				s1 * 3/8
 			}
 			{
 				\time 2/4
 				s1 * 1/2
+			}
+			{
+				\time 5/4
+				s1 * 5/4
+			}
+			{
+				\time 3/8
+				s1 * 3/8
+			}
+			{
+				s1 * 3/8
+			}
+			{
+				\time 2/4
+				s1 * 1/2
+			}
+			{
+				\time 3/8
+				s1 * 3/8
+			}
+			{
+				s1 * 3/8
 			}
 		}
 		\tag #'viola-1
@@ -45,13 +94,172 @@
 					\clef "percussion"
 					{
 						{
-							R1 * 5/4
+							r8
+						}
+					}
+					{
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'4
 						}
 						{
-							R1 * 5/4
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
 						}
 						{
-							R1 * 1/2
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
+						}
+						{
+							c'2 ~
+							\set stemLeftBeamCount = 1
+							c'8
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~ [
+							\set stemLeftBeamCount = 1
+							c'8 ]
+						}
+					}
+					{
+						{
+							r8
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
+						}
+						{
+							c'4
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4.
+						}
+						{
+							c'4 ~
+							\set stemLeftBeamCount = 1
+							c'8
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'2
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
+						}
+						{
+							c'4
+						}
+						{
+							c'4 ~
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 [
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 ~ ]
+							c'2
+						}
+					}
+					{
+						{
+							r4
+						}
+					}
+					{
+						{
+							c'8 [
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 ]
+						}
+						{
+							c'4
+						}
+						{
+							c'4 ~
+							\set stemLeftBeamCount = 1
+							c'8
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'4.
+						}
+						{
+							\set stemLeftBeamCount = 1
+							c'8
+						}
+					}
+					{
+						{
+							r4
 							\bar "||"
 						}
 					}
@@ -62,13 +270,183 @@
 					\clef "alto"
 					{
 						{
-							R1 * 5/4
+							r8
+						}
+					}
+					{
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'4
 						}
 						{
-							R1 * 5/4
+							c'4.
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
 						}
 						{
-							R1 * 1/2
+							c'4
+						}
+						{
+							c'4.
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~ [
+							\set stemLeftBeamCount = 1
+							c'8 ]
+						}
+					}
+					{
+						{
+							r8
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4
+						}
+						{
+							c'4 ~
+							\set stemLeftBeamCount = 1
+							c'8
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'2
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
+						}
+						{
+							c'4
+						}
+						{
+							c'4 ~
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 [
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 ~
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 ~ ]
+							c'4
+						}
+					}
+					{
+						{
+							r4
+						}
+					}
+					{
+						{
+							c'8
+						}
+						{
+							c'4.
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 [
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 ~
+							\set stemLeftBeamCount = 1
+							c'8 ]
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'4.
+						}
+						{
+							\set stemLeftBeamCount = 1
+							c'8
+						}
+					}
+					{
+						{
+							r4
 							\bar "||"
 						}
 					}
@@ -85,13 +463,156 @@
 					\clef "percussion"
 					{
 						{
-							R1 * 5/4
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'4.
 						}
 						{
-							R1 * 5/4
+							c'4
+						}
+					}
+					{
+						{
+							r8
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
 						}
 						{
-							R1 * 1/2
+							c'2 ~
+							\set stemLeftBeamCount = 1
+							c'8
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~ [
+							\set stemLeftBeamCount = 1
+							c'8 ]
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'2
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4
+						}
+						{
+							c'4
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r4
+						}
+					}
+					{
+						{
+							c'2
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
+						}
+						{
+							c'4
+						}
+						{
+							c'4 ~
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 [
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 ~ ]
+							c'2
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'4
+						}
+						{
+							c'4.
+						}
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8
+						}
+						{
+							c'4.
+						}
+					}
+					{
+						{
+							R1 * 3/8
 							\bar "||"
 						}
 					}
@@ -102,13 +623,160 @@
 					\clef "alto"
 					{
 						{
-							R1 * 5/4
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'4
 						}
 						{
-							R1 * 5/4
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
 						}
 						{
-							R1 * 1/2
+							c'4
+						}
+					}
+					{
+						{
+							r8
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
+						}
+						{
+							c'4
+						}
+						{
+							c'4.
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~ [
+							\set stemLeftBeamCount = 1
+							c'8 ]
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'2
+						}
+						{
+							c'4.
+						}
+						{
+							c'4.
+						}
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r4
+						}
+					}
+					{
+						{
+							c'2
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8 ~
+							c'4
+						}
+						{
+							c'4
+						}
+						{
+							c'4 ~
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 [
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 ~
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8
+						}
+						{
+							\set stemLeftBeamCount = 1
+							\set stemRightBeamCount = 1
+							c'8 ~ ]
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'4
+						}
+						{
+							c'4.
+						}
+						{
+							c'4
+						}
+					}
+					{
+						{
+							r8
+						}
+					}
+					{
+						{
+							c'8
+						}
+						{
+							c'4.
+						}
+					}
+					{
+						{
+							R1 * 3/8
 							\bar "||"
 						}
 					}
