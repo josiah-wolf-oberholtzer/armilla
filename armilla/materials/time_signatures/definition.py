@@ -3,10 +3,7 @@ from abjad import *
 
 
 time_signatures = indicatortools.TimeSignatureInventory([
-    (1, 4),
-    (1, 8),
     (2, 4),
-    (2, 8),
     (3, 4),
     (3, 8),
     (4, 4),
@@ -14,4 +11,5 @@ time_signatures = indicatortools.TimeSignatureInventory([
     (5, 4),
     (5, 8),
     (6, 8),
+    (7, 8),
     ])
