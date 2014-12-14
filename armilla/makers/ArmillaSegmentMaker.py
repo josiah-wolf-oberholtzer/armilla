@@ -2,6 +2,7 @@
 from abjad import inspect_
 from abjad import iterate
 from abjad import mutate
+from abjad import scoretools
 from abjad import spannertools
 import consort
 
@@ -72,51 +73,37 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     ### PUBLIC METHODS ###
 
+    def configure_beaming_voice(self, staff):
+        staff.is_simultaneous = True
+        bowing_voice = staff[0]
+        beaming_voice = mutate(bowing_voice).copy()
+        bowing_voice.context_name = 'BowingPositionVoice'
+        beaming_voice.context_name = 'BowingBeamingVoice'
+        staff.append(beaming_voice)
+        # strip beam spanners from bowing_voice
+        for component in iterate(bowing_voice).depth_first():
+            spanners = inspect_(component).get_spanners()
+            for spanner in spanners:
+                if isinstance(spanner, spannertools.GeneralizedBeam):
+                    spanner._detach()
+        # strip non-beam spanners from beaming_voice
+        for component in iterate(beaming_voice).depth_first():
+            spanners = inspect_(component).get_spanners()
+            for spanner in spanners:
+                if not isinstance(spanner, spannertools.GeneralizedBeam):
+                    spanner._detach()
+        leaves = bowing_voice.select_leaves()
+        for leaf in leaves:
+            if isinstance(leaf, scoretools.Rest):
+                skip = scoretools.Skip(leaf)
+                mutate(leaf).replace(skip)
+
     def configure_score(self, score):
         score = consort.SegmentMaker.configure_score(self, score)
-
         viola_1_bowing_staff = score['Viola 1 Bowing Staff']
-        viola_1_bowing_staff.is_simultaneous = True
-
-        viola_1_bowing_voice = score['Viola 1 Bowing Voice']
-        viola_1_beaming_voice = mutate(viola_1_bowing_voice).copy()
-        viola_1_bowing_voice.context_name = 'BowingPositionVoice'
-        viola_1_beaming_voice.context_name = 'BowingBeamingVoice'
-        viola_1_bowing_staff.append(viola_1_beaming_voice)
-        # strip beam spanners from viola_1_bowing_voice
-        for component in iterate(viola_1_bowing_voice).depth_first():
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if isinstance(spanner, spannertools.GeneralizedBeam):
-                    spanner._detach()
-        # strip non-beam spanners from viola_1_beaming_voice
-        for component in iterate(viola_1_beaming_voice).depth_first():
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if not isinstance(spanner, spannertools.GeneralizedBeam):
-                    spanner._detach()
-
+        self.configure_beaming_voice(viola_1_bowing_staff)
         viola_2_bowing_staff = score['Viola 2 Bowing Staff']
-        viola_2_bowing_staff.is_simultaneous = True
-
-        viola_2_bowing_voice = score['Viola 2 Bowing Voice']
-        viola_2_beaming_voice = mutate(viola_2_bowing_voice).copy()
-        viola_2_bowing_voice.context_name = 'BowingPositionVoice'
-        viola_2_beaming_voice.context_name = 'BowingBeamingVoice'
-        viola_2_bowing_staff.append(viola_2_beaming_voice)
-        # strip beam spanners from viola_2_bowing_voice
-        for component in iterate(viola_2_bowing_voice).depth_first():
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if isinstance(spanner, spannertools.GeneralizedBeam):
-                    spanner._detach()
-        # strip non-beam spanners from viola_2_beaming_voice
-        for component in iterate(viola_2_beaming_voice).depth_first():
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if not isinstance(spanner, spannertools.GeneralizedBeam):
-                    spanner._detach()
-
+        self.configure_beaming_voice(viola_2_bowing_staff)
         return score
 
     ### PUBLIC PROPERTIES ###

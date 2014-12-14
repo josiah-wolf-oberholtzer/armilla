@@ -11,7 +11,7 @@ Create a box of the same height as the current font."
                      (ly:stencil-extent ref-mrkp Y))))
 
 afterGraceFraction = #(cons 127 128)
-#(set-default-paper-size "11x17" 'landscape)
+#(set-default-paper-size "17x11" 'landscape)
 #(set-global-staff-size 12)
 
 \layout {
@@ -91,18 +91,16 @@ afterGraceFraction = #(cons 127 128)
         \name BowingBeamingVoice
         \type Engraver_group
         \alias Voice
-        \override Beam.length-fraction = 0.1
+        \override Beam.direction = #down
         \override Beam.positions = #'(-9 . -9)
-        \override Dots.staff-position = -1
         \override Dots.X-offset = -8
+        \override Dots.staff-position = -1
         \override Flag.Y-offset = -8.5
-        \override NoteHead.stencil = ##f
         \override NoteHead.Y-offset = -5
-        \override Stem.details.beamed-lengths = #'(1)
-        \override Stem.details.lengths = #'(1)
+        \override NoteHead.stencil = ##f
         \override Stem.direction = #down
-        \override Stem.stem-begin-position = -9
         \override Stem.length = 9
+        \override Stem.stem-begin-position = -9
         \override TupletBracket.positions = #'(-11 . -11)
     }
 
@@ -111,14 +109,14 @@ afterGraceFraction = #(cons 127 128)
         \name BowingPositionVoice
         \type Engraver_group
         \alias Voice
-        \override Glissando.bound-details.left.padding = 1.5
-        \override Glissando.bound-details.right.padding = 1.5
-        \override Glissando.thickness = 2
-        \override Script.staff-padding = 3
         \override Beam.stencil = ##f
         \override Dots.stencil = ##f
         \override Flag.stencil = ##f
+        \override Glissando.bound-details.left.padding = 1.5
+        \override Glissando.bound-details.right.padding = 1.5
+        \override Glissando.thickness = 2
         \override Rest.stencil = ##f
+        \override Script.staff-padding = 3
         \override Stem.stencil = ##f
         \override TupletBracket.stencil = ##f
         \override TupletNumber.stencil = ##f
@@ -132,7 +130,6 @@ afterGraceFraction = #(cons 127 128)
         \accepts BowingBeamingVoice
         \accepts BowingPositionVoice
         \override StaffSymbol.transparent = ##t
-        \override TimeSignature.stencil = ##f
     }
 
     \context {
@@ -140,6 +137,8 @@ afterGraceFraction = #(cons 127 128)
         \name FingeringStaff
         \type Engraver_group
         \alias Staff
+        \override Beam.positions = #'(-9 . -9)
+        \override TupletBracket.positions = #'(-11 . -11)
     }
 
     \context {
@@ -211,6 +210,7 @@ afterGraceFraction = #(cons 127 128)
         \override TrillSpanner.outside-staff-padding = 1
         \override TrillSpanner.padding = 1
         \override TupletBracket.avoid-scripts = ##t
+        \override TupletBracket.direction = #down
         \override TupletBracket.full-length-to-extent = ##t
         \override TupletBracket.outside-staff-padding = 2
         \override TupletBracket.padding = 2
