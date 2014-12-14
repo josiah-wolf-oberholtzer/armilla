@@ -87,22 +87,52 @@ afterGraceFraction = #(cons 127 128)
     %%% STRINGS %%%
 
     \context {
+        \Voice
+        \name BowingBeamingVoice
+        \type Engraver_group
+        \alias Voice
+        \override Beam.length-fraction = 0.1
+        \override Beam.positions = #'(-9 . -9)
+        \override Dots.staff-position = -1
+        \override Dots.X-offset = -8
+        \override Flag.Y-offset = -8.5
+        \override NoteHead.stencil = ##f
+        \override NoteHead.Y-offset = -5
+        \override Stem.details.beamed-lengths = #'(1)
+        \override Stem.details.lengths = #'(1)
+        \override Stem.direction = #down
+        \override Stem.stem-begin-position = -9
+        \override Stem.length = 9
+        \override TupletBracket.positions = #'(-11 . -11)
+    }
+
+    \context {
+        \Voice
+        \name BowingPositionVoice
+        \type Engraver_group
+        \alias Voice
+        \override Glissando.bound-details.left.padding = 1.5
+        \override Glissando.bound-details.right.padding = 1.5
+        \override Glissando.thickness = 2
+        \override Script.staff-padding = 3
+        \override Beam.stencil = ##f
+        \override Dots.stencil = ##f
+        \override Flag.stencil = ##f
+        \override Rest.stencil = ##f
+        \override Stem.stencil = ##f
+        \override TupletBracket.stencil = ##f
+        \override TupletNumber.stencil = ##f
+    }
+
+    \context {
         \Staff
         \name BowingStaff
         \type Engraver_group
         \alias Staff
-        %\override BarLine #'transparent = ##t
-        \override Dots #'staff-position = #-8
-        \override Flag #'Y-offset = #-8.5
-        \override Glissando #'bound-details #'left #'padding = #1.5
-        \override Glissando #'bound-details #'right #'padding = #1.5
-        \override Glissando #'thickness = #2
-        \override Script #'staff-padding = #3
-        \override StaffSymbol #'transparent = ##t
-        \override Stem #'direction = #down
-        \override Stem #'length = #8
-        \override Stem #'stem-begin-position = #-9
-        \override TimeSignature #'stencil = ##f
+        \accepts BowingBeamingVoice
+        \accepts BowingPositionVoice
+        \override StaffSymbol.transparent = ##t
+        \override TimeSignature.stencil = ##f
     }
 
     \context {
