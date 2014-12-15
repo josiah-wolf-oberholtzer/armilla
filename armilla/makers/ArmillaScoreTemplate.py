@@ -3,6 +3,7 @@ import collections
 from abjad.tools import abctools
 from abjad.tools import indicatortools
 from abjad.tools import instrumenttools
+from abjad.tools import markuptools
 from abjad.tools import scoretools
 import consort
 
@@ -79,7 +80,11 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
             clef=indicatortools.Clef('alto'),
             instrument=instrumenttools.Viola(
                 instrument_name='viola 1',
+                instrument_name_markup=markuptools.Markup(
+                    'Viola 1').hcenter_in(10),
                 short_instrument_name='va. 1',
+                short_instrument_name_markup=markuptools.Markup(
+                    'Va. 1').hcenter_in(10)
                 ),
             split=True,
             score_template=self,
@@ -89,7 +94,11 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
             clef=indicatortools.Clef('alto'),
             instrument=instrumenttools.Viola(
                 instrument_name='viola 2',
+                instrument_name_markup=markuptools.Markup(
+                    'Viola 2').hcenter_in(10),
                 short_instrument_name='va. 2',
+                short_instrument_name_markup=markuptools.Markup(
+                    'Va. 2').hcenter_in(10)
                 ),
             split=True,
             score_template=self,
