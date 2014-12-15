@@ -151,6 +151,7 @@ afterGraceFraction = #(cons 127 128)
         \alias Staff
         \override Beam.positions = #'(-9 . -9)
         \override TupletBracket.positions = #'(-11 . -11)
+        \override StaffSymbol.color = #(x11-color 'grey50)
     }
 
     \context {
