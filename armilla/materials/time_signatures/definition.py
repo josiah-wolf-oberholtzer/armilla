@@ -11,5 +11,4 @@ time_signatures = indicatortools.TimeSignatureInventory([
     (5, 4),
     (5, 8),
     (6, 8),
-    (7, 8),
     ])
