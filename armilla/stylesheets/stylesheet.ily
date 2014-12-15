@@ -112,14 +112,26 @@ afterGraceFraction = #(cons 127 128)
         \override Beam.stencil = ##f
         \override Dots.stencil = ##f
         \override Flag.stencil = ##f
-        \override Glissando.bound-details.left.padding = 1.5
-        \override Glissando.bound-details.right.padding = 1.5
+        \override Glissando.bound-details.left.padding = 0.75
+        \override Glissando.bound-details.right.padding = 0.75
         \override Glissando.thickness = 2
+        \override NoteHead.extra-offset = #'(0.05 . 0)
         \override Rest.stencil = ##f
-        \override Script.staff-padding = 3
+        \override Script.staff-padding = 2.5
         \override Stem.stencil = ##f
         \override TupletBracket.stencil = ##f
         \override TupletNumber.stencil = ##f
+    }
+
+    \context {
+        \Dynamics
+        \override DynamicLineSpanner.staff-padding = 11.5
+        \override DynamicText.self-alignment-X = -1
+        \override Hairpin.bound-padding = 2
+        \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
+            (basic-distance . 5)
+            (padding . 2.5) 
+            )
     }
 
     \context {
