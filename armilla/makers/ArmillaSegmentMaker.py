@@ -1,7 +1,11 @@
 # -*- encoding: utf-8 -*-
+from abjad import attach
+from abjad import detach
 from abjad import inspect_
 from abjad import iterate
 from abjad import mutate
+from abjad import durationtools
+from abjad import indicatortools
 from abjad import scoretools
 from abjad import spannertools
 import consort
@@ -72,29 +76,96 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
     ### PUBLIC METHODS ###
 
     def configure_beaming_voice(self, staff):
+
+        bow_spanner_prototypes = (
+            spannertools.BowSpanner,
+            )
+        bow_indicator_prototypes = (
+            durationtools.Multiplier,
+            indicatortools.BowContactPoint,
+            indicatortools.BowMotionTechnique,
+            indicatortools.BowPressure,
+            indicatortools.BreathMark,
+            indicatortools.StringContactPoint,
+            )
+
+        dynamic_spanner_prototypes = (
+            spannertools.Crescendo,
+            spannertools.Decrescendo,
+            )
+        dynamic_indicator_prototypes = (
+            durationtools.Multiplier,
+            indicatortools.Dynamic,
+            )
+
+        beam_spanner_prototypes = (
+            spannertools.GeneralizedBeam,
+            )
+        beam_indicator_prototypes = (
+            durationtools.Multiplier,
+            indicatortools.Articulation,
+            indicatortools.Clef,
+            )
+
         staff.is_simultaneous = True
+
         bowing_voice = staff[0]
         beaming_voice = mutate(bowing_voice).copy()
+        dynamics_voice = mutate(bowing_voice).copy()
+
         bowing_voice.context_name = 'BowingPositionVoice'
+        rests = []
+        for component in iterate(bowing_voice).depth_first(capped=True):
+            spanners = inspect_(component).get_spanners()
+            for spanner in spanners:
+                if not isinstance(spanner, bow_spanner_prototypes):
+                    spanner._detach()
+            indicators = inspect_(component).get_indicators()
+            for indicator in indicators:
+                if not isinstance(indicator, bow_indicator_prototypes):
+                    detach(indicator, component)
+            if isinstance(component, scoretools.Rest):
+                rests.append(component)
+        for rest in rests:
+            indicators = inspect_(rest).get_indicators(
+                durationtools.Multiplier,
+                )
+            skip = scoretools.Skip(rest)
+            if indicators:
+                attach(indicators[0], skip)
+            mutate(rest).replace(skip)
+
+        beaming_voice.name = beaming_voice.name.replace(
+            'Bowing Voice',
+            'Beaming Voice',
+            )
         beaming_voice.context_name = 'BowingBeamingVoice'
+        for component in iterate(beaming_voice).depth_first(capped=True):
+            spanners = inspect_(component).get_spanners()
+            for spanner in spanners:
+                if not isinstance(spanner, beam_spanner_prototypes):
+                    spanner._detach()
+            indicators = inspect_(component).get_indicators()
+            for indicator in indicators:
+                if not isinstance(indicator, beam_indicator_prototypes):
+                    detach(indicator, component)
         staff.append(beaming_voice)
-        # strip beam spanners from bowing_voice
-        for component in iterate(bowing_voice).depth_first():
+
+        dynamics_voice.context_name = 'Dynamics'
+        dynamics_voice.name = dynamics_voice.name.replace(
+            'Bowing Voice',
+            'Dynamics',
+            )
+        for component in iterate(dynamics_voice).depth_first(capped=True):
             spanners = inspect_(component).get_spanners()
             for spanner in spanners:
-                if isinstance(spanner, spannertools.GeneralizedBeam):
+                if not isinstance(spanner, dynamic_spanner_prototypes):
                     spanner._detach()
-        # strip non-beam spanners from beaming_voice
-        for component in iterate(beaming_voice).depth_first():
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if not isinstance(spanner, spannertools.GeneralizedBeam):
-                    spanner._detach()
-        leaves = bowing_voice.select_leaves()
-        for leaf in leaves:
-            if isinstance(leaf, scoretools.Rest):
-                skip = scoretools.Skip(leaf)
-                mutate(leaf).replace(skip)
+            indicators = inspect_(component).get_indicators()
+            for indicator in indicators:
+                if not isinstance(indicator, dynamic_indicator_prototypes):
+                    detach(indicator, component)
+        staff.append(dynamics_voice)
 
     def configure_score(self, score):
         score = consort.SegmentMaker.configure_score(self, score)
