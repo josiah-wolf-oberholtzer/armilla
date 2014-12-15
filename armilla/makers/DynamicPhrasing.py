@@ -9,26 +9,135 @@ from abjad import spannertools
 
 
 class DynamicPhrasing(abctools.AbjadValueObject):
-    r'''A dynamic phrasing expression.
+    r"""A dynamic phrasing expression.
 
     ::
 
         >>> import armilla
         >>> dynamic_phrasing = armilla.DynamicPhrasing(
-        ...     dynamic_tokens='f p pp mf ppp',
+        ...     dynamic_tokens='f p pp pp',
         ...     transitions=('flared', None),
         ...     )
         >>> print(format(dynamic_phrasing))
         armilla.makers.DynamicPhrasing(
             dynamic_tokens=datastructuretools.CyclicTuple(
-                ['f', 'p', 'pp', 'mf', 'ppp']
+                ['f', 'p', 'pp', 'pp']
                 ),
             transitions=datastructuretools.CyclicTuple(
                 ['flared', None]
                 ),
             )
 
-    '''
+    ..  container:: example
+
+        ::
+
+            >>> music = Staff(r'''
+            ...     { c'4 d'4 e'4 f'4 }
+            ...     { g'4 a'4 b'4 }
+            ...     { c''4 }
+            ... ''')
+            >>> print(format(music))
+            \new Staff {
+                {
+                    c'4
+                    d'4
+                    e'4
+                    f'4
+                }
+                {
+                    g'4
+                    a'4
+                    b'4
+                }
+                {
+                    c''4
+                }
+            }
+
+        ::
+
+            >>> dynamic_phrasing(music)
+            >>> print(format(music))
+            \new Staff {
+                {
+                    \once \override Hairpin.stencil = #flared-hairpin
+                    c'4 \f \>
+                    d'4
+                    e'4
+                    f'4
+                }
+                {
+                    g'4 \p \>
+                    a'4
+                    b'4
+                }
+                {
+                    c''4 \pp
+                }
+            }
+
+    ..  container:: example
+
+        ::
+
+            >>> music = Staff(r'''
+            ...     { c'4 d'4 e'4 f'4 }
+            ...     { g'4 a'4 b'4 }
+            ...     { c''4 c'4 }
+            ... ''')
+
+        ::
+
+            >>> dynamic_phrasing(music, seed=2)
+            >>> print(format(music))
+            \new Staff {
+                {
+                    c'4 \pp
+                    d'4
+                    e'4
+                    f'4
+                }
+                {
+                    g'4 \<
+                    a'4
+                    b'4
+                }
+                {
+                    \once \override Hairpin.stencil = #flared-hairpin
+                    c''4 \f \>
+                    c'4 \p
+                }
+            }
+
+    ..  container:: example
+
+        ::
+
+            >>> music = Staff("{ c'4 }")
+            >>> dynamic_phrasing(music, seed=1)
+            >>> print(format(music))
+            \new Staff {
+                {
+                    c'4 \p
+                }
+            }
+
+    ..  container:: example
+
+        ::
+
+            >>> music = Staff("{ c'4 d'4 }")
+            >>> dynamic_phrasing(music, seed=1)
+            >>> print(format(music))
+            \new Staff {
+                {
+                    c'4 \p \>
+                    d'4 \pp
+                }
+            }
+
+    """
 
     ### CLASS VARIABLES ###
 
@@ -67,31 +176,37 @@ class DynamicPhrasing(abctools.AbjadValueObject):
     ### SPECIAL METHODS ###
 
     def __call__(self, music, seed=0):
-        i = seed
+        previous_dynamic = None
         if 1 < len(music):
-            for i, division in enumerate(music[:-1], i):
-                dynamic, hairpin, grob_override = self._get_attachments(i)
+            for i, division in enumerate(music[:-1]):
+                dynamic, hairpin, grob_override = \
+                    self._get_attachments(seed + i)
                 leaves = list(division.select_leaves())
                 leaves.append(music[i + 1].select_leaves()[0])
-                attach(dynamic, leaves[0])
-                if grob_override:
+                if dynamic != previous_dynamic:
+                    attach(dynamic, leaves[0])
+                if grob_override is not None:
                     attach(grob_override, leaves[0])
-                if hairpin:
+                if hairpin is not None:
                     attach(hairpin, leaves)
-            i += 1
+                previous_dynamic = dynamic
+            seed = seed + i + 1
         leaves = music[-1].select_leaves()
         if 1 < len(leaves):
-            this_dynamic, hairpin, grob_override = self._get_attachments(i)
-            next_dynamic, _, _ = self._get_attachments(i + 1)
-            attach(this_dynamic, leaves[0])
-            if grob_override:
+            dynamic, hairpin, grob_override = self._get_attachments(seed)
+            if previous_dynamic != dynamic:
+                attach(dynamic, leaves[0])
+            if grob_override is not None:
                 attach(grob_override, leaves[0])
-            if hairpin:
+            if hairpin is not None:
                 attach(hairpin, leaves)
-            attach(next_dynamic, leaves[-1])
+            next_dynamic, _, _ = self._get_attachments(seed + 1)
+            if next_dynamic != dynamic:
+                attach(next_dynamic, leaves[-1])
         else:
-            this_dynamic, _, _ = self._get_attachments(i)
-            attach(this_dynamic, leaves[0])
+            dynamic, _, _ = self._get_attachments(seed)
+            if dynamic != previous_dynamic:
+                attach(dynamic, leaves[0])
 
     ### PRIVATE METHODS ###
 
@@ -106,13 +221,14 @@ class DynamicPhrasing(abctools.AbjadValueObject):
             hairpin = None
         transition = self.transitions[i]
         grob_override = None
-        if hairpin and transition in ('flared', 'constante'):
+        if hairpin is not None and transition in ('flared', 'constante'):
             grob_override = lilypondnametools.LilyPondGrobOverride(
                 grob_name='Hairpin',
                 is_once=True,
                 property_path='stencil',
                 value=schemetools.Scheme('{}-hairpin'.format(transition)),
                 )
+
         return this_dynamic, hairpin, grob_override
 
     ### PUBLIC PROPERTIES ###
