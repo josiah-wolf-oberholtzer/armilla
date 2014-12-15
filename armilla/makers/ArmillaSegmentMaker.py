@@ -19,10 +19,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             score_template=armilla.makers.ArmillaScoreTemplate(),
             permitted_time_signatures=indicatortools.TimeSignatureInventory(
                 [
-                    indicatortools.TimeSignature((1, 4)),
-                    indicatortools.TimeSignature((1, 8)),
                     indicatortools.TimeSignature((2, 4)),
-                    indicatortools.TimeSignature((2, 8)),
                     indicatortools.TimeSignature((3, 4)),
                     indicatortools.TimeSignature((3, 8)),
                     indicatortools.TimeSignature((4, 4)),
@@ -30,6 +27,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
                     indicatortools.TimeSignature((5, 4)),
                     indicatortools.TimeSignature((5, 8)),
                     indicatortools.TimeSignature((6, 8)),
+                    indicatortools.TimeSignature((7, 8)),
                     ]
                 ),
             )

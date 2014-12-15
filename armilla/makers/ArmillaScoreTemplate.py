@@ -17,16 +17,17 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
         >>> score = template()
         >>> print(format(score))
         \context Score = "Armilla Score" <<
-            \tag time
+            \tag #'time
             \context TimeSignatureContext = "TimeSignatureContext" {
             }
-            \tag viola-1
+            \tag #'viola-1
             \context StringPerformerGroup = "Viola 1 Performer Group" \with {
                 instrumentName = \markup { Viola 1 }
                 shortInstrumentName = \markup { Va. 1 }
             } <<
                 \context BowingStaff = "Viola 1 Bowing Staff" {
                     \context Voice = "Viola 1 Bowing Voice" {
+                        \clef "percussion"
                     }
                 }
                 \context FingeringStaff = "Viola 1 Fingering Staff" {
@@ -35,13 +36,14 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
                     }
                 }
             >>
-            \tag viola-2
+            \tag #'viola-2
             \context StringPerformerGroup = "Viola 2 Performer Group" \with {
                 instrumentName = \markup { Viola 2 }
                 shortInstrumentName = \markup { Va. 2 }
             } <<
                 \context BowingStaff = "Viola 2 Bowing Staff" {
                     \context Voice = "Viola 2 Bowing Voice" {
+                        \clef "percussion"
                     }
                 }
                 \context FingeringStaff = "Viola 2 Fingering Staff" {
