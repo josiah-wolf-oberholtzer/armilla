@@ -68,6 +68,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                     voice_name='Viola 1 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
+                    can_split=True,
                     start_offset=durationtools.Offset(0, 1),
                     stop_offset=durationtools.Offset(1, 4),
                     voice_name='Viola 1 Fingering Voice',
@@ -79,6 +80,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                     voice_name='Viola 2 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
+                    can_split=True,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(1, 2),
                     voice_name='Viola 2 Fingering Voice',
@@ -90,6 +92,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                     voice_name='Viola 1 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
+                    can_split=True,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(3, 4),
                     voice_name='Viola 1 Fingering Voice',
@@ -101,6 +104,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                     voice_name='Viola 2 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
+                    can_split=True,
                     start_offset=durationtools.Offset(1, 2),
                     stop_offset=durationtools.Offset(1, 1),
                     voice_name='Viola 2 Fingering Voice',
@@ -139,6 +143,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                     voice_name='Viola 1 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
+                    can_split=True,
                     start_offset=durationtools.Offset(0, 1),
                     stop_offset=durationtools.Offset(1, 2),
                     voice_name='Viola 1 Fingering Voice',
@@ -156,11 +161,13 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                     voice_name='Viola 1 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
+                    can_split=True,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(3, 4),
                     voice_name='Viola 2 Fingering Voice',
                     ),
                 consort.tools.PerformedTimespan(
+                    can_split=True,
                     start_offset=durationtools.Offset(1, 2),
                     stop_offset=durationtools.Offset(3, 4),
                     voice_name='Viola 1 Fingering Voice',
@@ -172,6 +179,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                     voice_name='Viola 2 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
+                    can_split=True,
                     start_offset=durationtools.Offset(3, 4),
                     stop_offset=durationtools.Offset(1, 1),
                     voice_name='Viola 2 Fingering Voice',
