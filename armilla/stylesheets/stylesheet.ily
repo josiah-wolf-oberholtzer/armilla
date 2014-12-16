@@ -10,7 +10,7 @@ Create a box of the same height as the current font."
                      empty-interval
                      (ly:stencil-extent ref-mrkp Y))))
 
-afterGraceFraction = #(cons 127 128)
+afterGraceFraction = #(cons 1023 1024)
 #(set-default-paper-size "17x11" 'landscape)
 #(set-global-staff-size 12)
 
@@ -145,10 +145,33 @@ afterGraceFraction = #(cons 127 128)
     }
 
     \context {
+        \Voice
+        \name FingeringPitchesVoice
+        \type Engraver_group
+        \alias Voice
+    }
+
+    \context {
+        \Voice
+        \name FingeringSpannerVoice
+        \type Engraver_group
+        \alias Voice
+        \override Beam.stencil = ##f
+        \override Dots.stencil = ##f
+        \override Flag.stencil = ##f
+        \override Glissando.thickness = 2
+        \override Stem.stencil = ##f
+        \override TupletBracket.stencil = ##f
+        \override TupletNumber.stencil = ##f
+    }
+
+    \context {
         \Staff
         \name FingeringStaff
         \type Engraver_group
         \alias Staff
+        \accepts FingeringPitchesVoice
+        \accepts FingeringSpannerVoice
         \override Beam.positions = #'(-9 . -9)
         \override TupletBracket.positions = #'(-11 . -11)
         \override StaffSymbol.color = #(x11-color 'grey50)
@@ -197,7 +220,7 @@ afterGraceFraction = #(cons 127 128)
         \override OttavaBracket.add-stem-support = ##t
         \override OttavaBracket.padding = 2
         \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1 64)
-        \override SpacingSpanner.strict-grace-spacing = ##f
+        \override SpacingSpanner.strict-grace-spacing = ##t
         \override SpacingSpanner.strict-note-spacing = ##f
         \override SpacingSpanner.uniform-stretching = ##t
         \override Stem.details.beamed-lengths = #'(6)
