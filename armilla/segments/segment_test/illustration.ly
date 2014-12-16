@@ -754,6 +754,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -801,6 +802,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -839,6 +841,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -856,6 +859,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -894,6 +898,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -919,6 +924,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -936,6 +942,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -994,7 +1001,7 @@
                     }
                     {
                         {
-                            c'2 \glissando
+                            c'2 ~
                             c'8 \glissando
                         }
                         \times 2/3 {
@@ -1790,6 +1797,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1902,6 +1910,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1961,6 +1970,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1978,6 +1988,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -2062,6 +2073,7 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -2167,7 +2179,7 @@
                             c'4 \glissando
                         }
                         {
-                            a2 \glissando
+                            a2 ~
                             a8
                         }
                     }

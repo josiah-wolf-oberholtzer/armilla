@@ -75,6 +75,7 @@ lh_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         glissando=spannertools.Glissando(
             allow_repeated_pitches=True,
+            allow_ties=False,
             ),
         ),
     grace_handler=consort.GraceHandler(
