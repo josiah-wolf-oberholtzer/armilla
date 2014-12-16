@@ -39,7 +39,9 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     ### CLASS VARIABLES ###
 
-    __slots__ = ()
+    __slots__ = (
+        '_repeat',
+        )
 
     ### INITIALIZER ###
 
@@ -54,6 +56,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         settings=None,
         tempo=None,
         permitted_time_signatures=None,
+        repeat=None,
         ):
         import armilla
         permitted_time_signatures = permitted_time_signatures or \
@@ -71,6 +74,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             tempo=tempo,
             permitted_time_signatures=permitted_time_signatures,
             )
+        self.repeat = repeat
 
     ### PUBLIC METHODS ###
 
@@ -214,9 +218,22 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         self.configure_beaming_voice(score['Viola 2 Bowing Staff'])
         self.configure_glissando_voice(score['Viola 1 Fingering Staff'])
         self.configure_glissando_voice(score['Viola 2 Fingering Staff'])
+        if self.repeat:
+            repeat = indicatortools.Repeat()
+            attach(repeat, score)
         return score
 
     ### PUBLIC PROPERTIES ###
+
+    @property
+    def repeat(self):
+        return self._repeat
+
+    @repeat.setter
+    def repeat(self, repeat):
+        if repeat is not None:
+            repeat = bool(repeat)
+        self._repeat = repeat
 
     @property
     def score_package_name(self):
