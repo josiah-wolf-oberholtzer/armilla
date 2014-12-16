@@ -149,7 +149,6 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             for indicator in indicators:
                 if not isinstance(indicator, beam_indicator_prototypes):
                     detach(indicator, component)
-        staff.append(beaming_voice)
 
         dynamics_voice.context_name = 'Dynamics'
         dynamics_voice.name = dynamics_voice.name.replace(
@@ -165,14 +164,53 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             for indicator in indicators:
                 if not isinstance(indicator, dynamic_indicator_prototypes):
                     detach(indicator, component)
+
+        staff.append(beaming_voice)
         staff.append(dynamics_voice)
+
+    def configure_glissando_voice(self, staff):
+        spanner_prototypes = (
+            spannertools.Glissando,
+            )
+        staff.is_simultaneous = True
+        pitches_voice = staff[0]
+        spanner_voice = mutate(pitches_voice).copy()
+        pitches_voice.context_name = 'FingeringPitchesVoice'
+        spanner_voice.context_name = 'FingeringSpannerVoice'
+        # clean up pitches voice
+        for component in iterate(pitches_voice).depth_first(capped=True):
+            spanners = inspect_(component).get_spanners()
+            for spanner in spanners:
+                if isinstance(spanner, spanner_prototypes):
+                    spanner._detach()
+        # clean up spanner voice
+        rests = []
+        for component in iterate(spanner_voice).depth_first(capped=True):
+            spanners = inspect_(component).get_spanners()
+            for spanner in spanners:
+                if not isinstance(spanner, spanner_prototypes):
+                    spanner._detach()
+            grace_containers = inspect_(component).get_grace_containers()
+            for grace_container in grace_containers:
+                grace_container._detach()
+            if isinstance(component, scoretools.Rest):
+                rests.append(component)
+        for rest in rests:
+            indicators = inspect_(rest).get_indicators(
+                durationtools.Multiplier,
+                )
+            skip = scoretools.Skip(rest)
+            if indicators:
+                attach(indicators[0], skip)
+            mutate(rest).replace(skip)
+        staff.append(spanner_voice)
 
     def configure_score(self, score):
         score = consort.SegmentMaker.configure_score(self, score)
-        viola_1_bowing_staff = score['Viola 1 Bowing Staff']
-        self.configure_beaming_voice(viola_1_bowing_staff)
-        viola_2_bowing_staff = score['Viola 2 Bowing Staff']
-        self.configure_beaming_voice(viola_2_bowing_staff)
+        self.configure_beaming_voice(score['Viola 1 Bowing Staff'])
+        self.configure_beaming_voice(score['Viola 2 Bowing Staff'])
+        self.configure_glissando_voice(score['Viola 1 Fingering Staff'])
+        self.configure_glissando_voice(score['Viola 2 Fingering Staff'])
         return score
 
     ### PUBLIC PROPERTIES ###
