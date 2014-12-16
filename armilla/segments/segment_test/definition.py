@@ -18,7 +18,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
 
 
 timespan_maker = armilla.ArmillaTimespanMaker(
-    can_split=True,
     initial_silence_talea=rhythmmakertools.Talea(
         counts=(1, 0),
         denominator=8,

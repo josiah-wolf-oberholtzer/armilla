@@ -24,7 +24,6 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         ...     )
         >>> print(format(timespan_maker))
         armilla.makers.ArmillaTimespanMaker(
-            can_split=False,
             initial_silence_talea=rhythmmakertools.Talea(
                 counts=(0, 1),
                 denominator=4,
@@ -62,49 +61,41 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         timespantools.TimespanInventory(
             [
                 consort.tools.PerformedTimespan(
-                    can_split=False,
                     start_offset=durationtools.Offset(0, 1),
                     stop_offset=durationtools.Offset(1, 4),
                     voice_name='Viola 1 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=True,
                     start_offset=durationtools.Offset(0, 1),
                     stop_offset=durationtools.Offset(1, 4),
                     voice_name='Viola 1 Fingering Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=False,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(1, 2),
                     voice_name='Viola 2 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=True,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(1, 2),
                     voice_name='Viola 2 Fingering Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=False,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(3, 4),
                     voice_name='Viola 1 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=True,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(3, 4),
                     voice_name='Viola 1 Fingering Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=False,
                     start_offset=durationtools.Offset(1, 2),
                     stop_offset=durationtools.Offset(1, 1),
                     voice_name='Viola 2 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=True,
                     start_offset=durationtools.Offset(1, 2),
                     stop_offset=durationtools.Offset(1, 1),
                     voice_name='Viola 2 Fingering Voice',
@@ -137,49 +128,41 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         timespantools.TimespanInventory(
             [
                 consort.tools.PerformedTimespan(
-                    can_split=False,
                     start_offset=durationtools.Offset(0, 1),
                     stop_offset=durationtools.Offset(1, 4),
                     voice_name='Viola 1 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=True,
                     start_offset=durationtools.Offset(0, 1),
                     stop_offset=durationtools.Offset(1, 2),
                     voice_name='Viola 1 Fingering Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=False,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(1, 2),
                     voice_name='Viola 2 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=False,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(3, 4),
                     voice_name='Viola 1 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=True,
                     start_offset=durationtools.Offset(1, 4),
                     stop_offset=durationtools.Offset(3, 4),
                     voice_name='Viola 2 Fingering Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=True,
                     start_offset=durationtools.Offset(1, 2),
                     stop_offset=durationtools.Offset(3, 4),
                     voice_name='Viola 1 Fingering Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=False,
                     start_offset=durationtools.Offset(1, 2),
                     stop_offset=durationtools.Offset(1, 1),
                     voice_name='Viola 2 Bowing Voice',
                     ),
                 consort.tools.PerformedTimespan(
-                    can_split=True,
                     start_offset=durationtools.Offset(3, 4),
                     stop_offset=durationtools.Offset(1, 1),
                     voice_name='Viola 2 Fingering Voice',
@@ -200,7 +183,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
 
     def __init__(
         self,
-        can_split=False,
+        forbid_splitting=None,
         fuse_groups=None,
         initial_silence_talea=None,
         minimum_duration=None,
@@ -224,7 +207,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         ):
         consort.TaleaTimespanMaker.__init__(
             self,
-            can_split=can_split,
+            forbid_splitting=forbid_splitting,
             fuse_groups=fuse_groups,
             initial_silence_talea=initial_silence_talea,
             minimum_duration=minimum_duration,
@@ -302,7 +285,6 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
     @property
     def _viola_1_fingering_timespan_maker(self):
         timespan_maker = consort.DependentTimespanMaker(
-            can_split=True,
             include_inner_starts=True,
             include_inner_stops=False,
             minimum_duration=None,
@@ -314,7 +296,6 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
     @property
     def _viola_2_fingering_timespan_maker(self):
         timespan_maker = consort.DependentTimespanMaker(
-            can_split=True,
             include_inner_starts=True,
             include_inner_stops=False,
             minimum_duration=None,
