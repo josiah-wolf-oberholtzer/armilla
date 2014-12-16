@@ -10,7 +10,7 @@
         \tag #'time
         \context TimeSignatureContext = "TimeSignatureContext" {
             {
-                \time 3/8
+                \time 2/4
                 \tempo 4=72
                 \mark \markup {
                     \concat
@@ -21,34 +21,39 @@
                                     \concat
                                         {
                                             \vstrut
-                                            "Silent City Boat Club"
+                                            F10D
                                         }
                             " "
                             \fontsize
                                 #-3
-                                " "
+                                "Island Vacation, Tropical Breeze"
                         }
                     }
-                s1 * 3/8
-            }
-            {
-                s1 * 3/8
-            }
-            {
-                \time 5/4
-                s1 * 5/4
+                s1 * 1/2
             }
             {
                 \time 3/8
                 s1 * 3/8
             }
             {
-                \time 4/4
-                s1 * 1
+                \time 6/8
+                s1 * 3/4
             }
             {
-                \time 5/8
-                s1 * 5/8
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 6/8
+                s1 * 3/4
+            }
+            {
+                \time 3/4
+                s1 * 3/4
             }
             {
                 \time 3/8
@@ -119,7 +124,7 @@
                                             4
                                             5
                                 }
-                            c'4 ^\downbow \glissando
+                            c'4. ^\downbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = -2.0
@@ -132,8 +137,6 @@
                                             1
                                 }
                             c'8 ^\upbow \glissando
-                        }
-                        {
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -142,16 +145,6 @@
                                         \fraction
                                             1
                                             1
-                                }
-                            c'8 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
                                 }
                             c'8
                         }
@@ -195,6 +188,7 @@
                                             1
                                 }
                             c'8 ^\upbow \glissando
+                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -203,69 +197,6 @@
                                         \fraction
                                             1
                                             1
-                                }
-                            c'8 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'8 ^\upbow \glissando
-                        }
-                        {
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'4. ^\downbow \glissando
-                        }
-                        {
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'8 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'8
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
-                        \times 2/3 {
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
                                 }
                             c'8 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
@@ -279,6 +210,8 @@
                                             5
                                 }
                             c'8 ^\upbow \glissando
+                        }
+                        \times 2/3 {
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -286,6 +219,69 @@
                                     \vcenter
                                         \fraction
                                             4
+                                            5
+                                }
+                            c'4 ^\downbow \glissando
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'4 ^\upbow \glissando
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4 ^\downbow \glissando
+                        }
+                        {
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'8
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'8 ^\downbow \glissando
+                        }
+                        {
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
                                             5
                                 }
                             c'8
@@ -331,7 +327,6 @@
                                             5
                                 }
                             c'16 ^\upbow \glissando
-                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -342,7 +337,6 @@
                                             5
                                 }
                             c'16 ^\downbow \glissando
-                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -364,6 +358,8 @@
                                             1
                                 }
                             c'16 ^\downbow \glissando
+                        }
+                        \times 2/3 {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -374,8 +370,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
-                            \once \override Glissando.style = #'zigzag
+                            c'8 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -385,10 +380,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
-                        }
-                        {
-                            \once \override Glissando.style = #'zigzag
+                            c'8 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -401,7 +393,6 @@
                             c'8 ^\upbow \glissando
                         }
                         \times 4/6 {
-                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -456,7 +447,6 @@
                                             1
                                 }
                             c'8 ^\downbow \glissando
-                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = -0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -508,15 +498,10 @@
                     }
                     {
                         {
-                            c'4
+                            c'4.
                         }
                         {
                             c'8 [
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
                             \set stemLeftBeamCount = 1
                             c'8 ]
                         }
@@ -541,13 +526,13 @@
                             c'8
                             c'8 ]
                         }
-                        {
-                            c'4.
+                        \times 2/3 {
+                            c'4
+                            c'4
+                            c'4
                         }
                         {
-                            c'8 [
-                            \set stemLeftBeamCount = 1
-                            c'8 ]
+                            c'8
                         }
                     }
                     {
@@ -556,11 +541,10 @@
                         }
                     }
                     {
-                        \times 2/3 {
+                        {
                             c'8 [
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
+                        }
+                        {
                             \set stemLeftBeamCount = 1
                             c'8 ]
                         }
@@ -586,16 +570,16 @@
                             \set stemRightBeamCount = 2
                             c'16
                             \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
                             c'16
                         }
-                        {
+                        \times 2/3 {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             c'8
@@ -647,14 +631,11 @@
                     }
                     {
                         {
-                            c'4 \p \<
+                            c'4. \p \<
                         }
                         {
                             c'8 \f \>
-                        }
-                        {
-                            c'8 \p \<
-                            c'8 \mp
+                            c'8 \p
                         }
                     }
                     {
@@ -671,12 +652,13 @@
                             c'8
                             c'8
                         }
-                        {
-                            c'4. \p \<
+                        \times 2/3 {
+                            c'4 \p \<
+                            c'4
+                            c'4
                         }
                         {
-                            c'8 \f \>
-                            c'8 \p
+                            c'8 \f
                         }
                     }
                     {
@@ -685,9 +667,10 @@
                         }
                     }
                     {
-                        \times 2/3 {
+                        {
                             c'8 \mp \>
-                            c'8
+                        }
+                        {
                             c'8 \pp
                         }
                     }
@@ -704,11 +687,11 @@
                             c'16
                             c'16
                             c'16
-                            c'16
-                            c'16
                         }
-                        {
+                        \times 2/3 {
                             c'8 \mp \>
+                            c'8
+                            c'8
                         }
                         \times 2/3 {
                             c'8 \pp \<
@@ -749,32 +732,14 @@
                     }
                     {
                         \times 4/5 {
-                            \afterGrace
                             a16 [
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    b
-                                    \tweak #'style #'harmonic
-                                    ds'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            b16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             af16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
-                            bqs16
+                            gf16
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -796,9 +761,9 @@
                                 \revert Script #'font-size
                             }
                             \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
+                            \set stemRightBeamCount = 2
                             \afterGrace
-                            c'16 ]
+                            c'16
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -813,9 +778,38 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            \afterGrace
+                            a16
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    g'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                         }
                         {
-                            a4.
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8 ]
+                        }
+                        {
+                            a4
                         }
                     }
                     {
@@ -825,37 +819,8 @@
                     }
                     {
                         {
-                            c'2 ~
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8 [
-                        }
-                        \times 2/3 {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            a16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
                             \afterGrace
-                            af16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    gf
-                                    \tweak #'style #'harmonic
-                                    bf
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            gf16 ]
+                            gf4.
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -871,8 +836,65 @@
                                 \revert Script #'font-size
                             }
                         }
+                        \times 4/5 {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            bqs!16 [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            a16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            \afterGrace
+                            c'16
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    d'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            \afterGrace
+                            a16 ]
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                        }
                         {
-                            bqs4
+                            c'4
+                        }
+                        {
+                            \set stemLeftBeamCount = 1
+                            b8
                         }
                     }
                     {
@@ -882,7 +904,11 @@
                     }
                     {
                         {
-                            b4
+                            a8 [
+                        }
+                        {
+                            \set stemLeftBeamCount = 1
+                            c'8 ]
                         }
                     }
                     {
@@ -892,53 +918,13 @@
                     }
                     {
                         {
-                            bqs4
-                            \afterGrace
-                            a4
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    af
-                                    \tweak #'style #'harmonic
-                                    df'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            b4.
                         }
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            af8 [
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            bqs8
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
                             \afterGrace
-                            c'8 ]
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    cs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                        }
-                        {
-                            \afterGrace
-                            a4
+                            c'8
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -955,7 +941,99 @@
                             }
                         }
                         {
+                            \afterGrace
                             c'4.
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    eqs'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    dtqs'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                        }
+                        \times 4/5 {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            \afterGrace
+                            bqs!16 [
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    cs'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            a16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            a16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            \afterGrace
+                            a16
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    af
+                                    \tweak #'style #'harmonic
+                                    c'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            \afterGrace
+                            af!16 ]
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    gf
+                                    \tweak #'style #'harmonic
+                                    cf'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                        }
+                        {
+                            gf!4.
                         }
                     }
                     {
@@ -985,32 +1063,16 @@
                     {
                         \times 4/5 {
                             a16 \glissando
-                            b16 \glissando
                             af16 \glissando
-                            bqs16 \glissando
-                            c'16 \glissando
+                            gf16
+                            c'16
+                            a16
                         }
                         {
-                            a4.
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
-                        {
-                            c'2 ~
                             c'8 \glissando
                         }
-                        \times 2/3 {
-                            a16 \glissando
-                            af16 \glissando
-                            gf16 \glissando
-                        }
                         {
-                            bqs4
+                            a4
                         }
                     }
                     {
@@ -1020,7 +1082,33 @@
                     }
                     {
                         {
-                            b4
+                            gf4.
+                        }
+                        \times 4/5 {
+                            bqs16 \glissando
+                            c'16 \glissando
+                            a16 \glissando
+                            c'16
+                            a16
+                        }
+                        {
+                            c'4 \glissando
+                        }
+                        {
+                            b8
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            a8 \glissando
+                        }
+                        {
+                            c'8
                         }
                     }
                     {
@@ -1030,19 +1118,23 @@
                     }
                     {
                         {
-                            bqs4 \glissando
-                            a4 \glissando
+                            b4. \glissando
                         }
                         {
-                            af8 \glissando
-                            bqs8 \glissando
-                            c'8 \glissando
-                        }
-                        {
-                            a4 \glissando
+                            c'8
                         }
                         {
                             c'4.
+                        }
+                        \times 4/5 {
+                            bqs16
+                            a16 \glissando
+                            a16 \glissando
+                            a16
+                            af16
+                        }
+                        {
+                            gf4.
                         }
                     }
                     {
@@ -1105,6 +1197,8 @@
                                             5
                                 }
                             c'16 ^\downbow \glissando
+                        }
+                        {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1115,8 +1209,9 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
-                            \once \override Glissando.style = #'zigzag
+                            c'8 ^\upbow \glissando
+                        }
+                        {
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1126,10 +1221,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
-                        }
-                        {
-                            \once \override Glissando.style = #'zigzag
+                            c'8 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1153,6 +1245,8 @@
                                             1
                                 }
                             c'8 ^\downbow \glissando
+                        }
+                        {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1164,10 +1258,6 @@
                                             5
                                 }
                             c'8 ^\upbow \glissando
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/6 {
-                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1177,8 +1267,7 @@
                                             4
                                             5
                                 }
-                            c'4 ^\downbow \glissando
-                            \once \override Glissando.style = #'zigzag
+                            c'8 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1188,7 +1277,7 @@
                                             3
                                             5
                                 }
-                            c'4 ^\upbow \glissando
+                            c'8 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1198,17 +1287,26 @@
                                             4
                                             5
                                 }
-                            c'4
+                            c'8 ^\downbow \glissando
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'8
                         }
                     }
                     {
                         {
-                            s8
-                            s8
+                            s4
                         }
                     }
                     {
-                        \times 2/3 {
+                        \times 4/5 {
                             \once \override Glissando.style = #'dotted-line
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1242,8 +1340,6 @@
                                             5
                                 }
                             c'16 ^\upbow \glissando
-                        }
-                        {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1254,10 +1350,95 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'16 ^\downbow \glissando
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'16 ^\upbow \glissando
                         }
                         {
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4. ^\downbow \glissando
+                        }
+                        {
+                            \once \override NoteHead.Y-offset = -2.0
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            0
+                                            1
+                                }
+                            c'16 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 2.0
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            1
+                                            1
+                                }
+                            c'16 ^\downbow \glissando
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'16 ^\upbow \glissando
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4. ^\downbow \glissando
+                        }
+                        \times 2/3 {
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1280,6 +1461,52 @@
                                 }
                             c'16 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'16 ^\upbow \glissando
+                        }
+                        {
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4. ^\downbow \glissando
+                        }
+                        {
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'16 ^\upbow \glissando
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1314,7 +1541,6 @@
                                             5
                                 }
                             c'8 ^\upbow \glissando
-                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1335,182 +1561,6 @@
                                             5
                                 }
                             c'8
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
-                        {
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'4 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'4 ^\upbow \glissando
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 6/7 {
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = -2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            0
-                                            1
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            1
-                                            1
-                                }
-                            c'16 ^\downbow \glissando
-                        }
-                        {
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'4 ^\upbow \glissando
-                        }
-                        {
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = -2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            0
-                                            1
-                                }
-                            c'16
                         }
                     }
                     {
@@ -1553,12 +1603,6 @@
                         {
                             c'16 [
                             \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
                             c'16
                         }
@@ -1571,40 +1615,87 @@
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             c'8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                        }
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                        }
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                            \set stemLeftBeamCount = 1
                             c'8 ]
                         }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/6 {
-                            c'4
-                            c'4
-                            c'4
+                    }
+                    {
+                        {
+                            r4
+                        }
+                    }
+                    {
+                        \times 4/5 {
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            c'16 ]
+                        }
+                        {
+                            c'4.
+                        }
+                        {
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
                         {
                             r8
-                            r8
                         }
                     }
                     {
+                        {
+                            c'4.
+                        }
                         \times 2/3 {
                             c'16 [
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            c'16
+                            c'16 ]
                         }
                         {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
+                            c'4.
                         }
                         {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            c'16
+                            c'16 [
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
@@ -1624,57 +1715,6 @@
                             c'8
                             \set stemLeftBeamCount = 1
                             c'8 ]
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            c'4
-                            c'4
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 6/7 {
-                            c'16 [
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            c'16 ]
-                        }
-                        {
-                            c'4
-                        }
-                        {
-                            c'16 [
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
                         }
                     }
                     {
@@ -1698,8 +1738,6 @@
                         {
                             c'16 \p \<
                             c'16
-                            c'16
-                            c'16
                         }
                         {
                             c'8 \mp \>
@@ -1708,27 +1746,56 @@
                             c'8 \pp \<
                             c'8
                         }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/6 {
-                            c'4 \p \<
-                            c'4
-                            c'4 \f
+                        {
+                            c'8 \p \<
+                        }
+                        {
+                            c'8 \f \>
+                            c'8
+                            c'8
+                            c'8
+                            c'8 \p
+                        }
+                    }
+                    {
+                        {
+                            r4
+                        }
+                    }
+                    {
+                        \times 4/5 {
+                            c'16 \p \<
+                            c'16
+                            c'16
+                            c'16
+                            c'16
+                        }
+                        {
+                            c'4. \f \>
+                        }
+                        {
+                            c'16 \p \<
+                            c'16
+                            c'16
+                            c'16 \mp
                         }
                     }
                     {
                         {
                             r8
-                            r8
                         }
                     }
                     {
+                        {
+                            c'4. \pp \<
+                        }
                         \times 2/3 {
                             c'16 \p \<
                             c'16
                             c'16
                         }
                         {
-                            c'8 \f \>
+                            c'4. \f \>
                         }
                         {
                             c'16 \p \<
@@ -1740,38 +1807,6 @@
                             c'8 \mp \>
                             c'8
                             c'8 \pp
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            c'4 \pp \<
-                            c'4
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 6/7 {
-                            c'16 \p \<
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                        }
-                        {
-                            c'4 \f \>
-                        }
-                        {
-                            c'16 \p \<
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16 \mp
                         }
                     }
                     {
@@ -1810,13 +1845,102 @@
                             }
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            gf16
+                            gf!16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             a16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            a16
+                        }
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            \afterGrace
+                            c'8
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    b
+                                    \tweak #'style #'harmonic
+                                    ds'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                        }
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            b8 ]
+                        }
+                        {
+                            bqs4
+                        }
+                        \times 2/3 {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            a16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            b16 ]
+                        }
+                        {
+                            af2 ~
+                            \set stemLeftBeamCount = 1
+                            af8
+                        }
+                    }
+                    {
+                        {
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            a4
+                        }
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            af16 [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            gf16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            bqs16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            \afterGrace
+                            c'16
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    g'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
@@ -1825,137 +1949,7 @@
                             a16 ]
                         }
                         {
-                            c'4
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            gf8
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    g'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                        }
-                        {
-                            c'4
-                        }
-                        {
-                            a2 ~
-                            \set stemLeftBeamCount = 1
-                            a8
-                        }
-                    }
-                    {
-                        {
-                            r8
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            b8 [
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            a16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            c'16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            a16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            c'16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    cs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            a16
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            af8 ]
-                        }
-                        {
-                            gf4
+                            a4
                         }
                     }
                     {
@@ -1964,75 +1958,10 @@
                         }
                     }
                     {
-                        \times 4/6 {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/5 {
                             \afterGrace
-                            c'8 [
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            a8
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    g'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            a8
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    b
-                                    \tweak #'style #'harmonic
-                                    ds'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    b
-                                    \tweak #'style #'harmonic
-                                    fs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            b8
+                            af8 [
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -2053,23 +1982,51 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                        }
-                        {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            gf8
+                            gf!8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            bqs8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            a8 ]
+                        }
+                        {
+                            \afterGrace
+                            a4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    cs'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                         }
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
-                            c'16
+                            a16 [
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            a16
+                            b16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            af16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
-                            a16
+                            gf16
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -2089,61 +2046,16 @@
                             c'16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            b16
+                            c'16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            af16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            gf16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    eqs'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    dtqs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            c'16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
-                            \afterGrace
-                            bqs16 ]
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    cs'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            b16 ]
                         }
                         {
-                            a4.
+                            bqs4.
                         }
                     }
                     {
@@ -2162,7 +2074,7 @@
                     \clef "alto"
                     {
                         {
-                            af16 \glissando
+                            af16
                             gf16 \glissando
                             c'16 \glissando
                             a16 \glissando
@@ -2170,73 +2082,74 @@
                             a16 \glissando
                         }
                         {
-                            c'4 \glissando
+                            c'8
                         }
-                        {
-                            gf8 \glissando
-                        }
-                        {
-                            c'4 \glissando
-                        }
-                        {
-                            a2 ~
-                            a8
-                        }
-                    }
-                    {
-                        {
-                            s8
-                            s8
-                        }
-                    }
-                    {
                         {
                             b8 \glissando
                         }
                         {
-                            c'16 \glissando
-                            a16 \glissando
-                            c'16 \glissando
-                            a16 \glissando
-                            c'16 \glissando
-                            a16 \glissando
+                            bqs4 \glissando
                         }
-                        {
-                            af8 \glissando
-                        }
-                        {
-                            gf4
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
                         \times 2/3 {
-                            c'8 \glissando
-                            a8 \glissando
-                            c'8 \glissando
-                            c'8 \glissando
-                            a8 \glissando
-                            b8 \glissando
-                        }
-                        {
-                            gf8 \glissando
-                        }
-                        {
                             c'16 \glissando
                             a16 \glissando
-                            a16 \glissando
-                            c'16 \glissando
                             b16 \glissando
+                        }
+                        {
+                            af2 ~
+                            af8
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            a4 \glissando
+                        }
+                        {
                             af16 \glissando
                             gf16 \glissando
                             bqs16 \glissando
+                            c'16
+                            c'16 \glissando
+                            a16 \glissando
                         }
                         {
-                            a4.
+                            a4
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/5 {
+                            af8
+                            gf8 \glissando
+                            bqs8 \glissando
+                            c'8 \glissando
+                            a8 \glissando
+                        }
+                        {
+                            a4
+                        }
+                        {
+                            a16 \glissando
+                            b16 \glissando
+                            af16 \glissando
+                            gf16
+                            c'16 \glissando
+                            c'16 \glissando
+                            c'16 \glissando
+                            b16 \glissando
+                        }
+                        {
+                            bqs4.
                         }
                     }
                     {
