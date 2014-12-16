@@ -169,21 +169,25 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         staff.append(dynamics_voice)
 
     def configure_glissando_voice(self, staff):
-        spanner_prototypes = (
-            spannertools.Glissando,
-            )
         staff.is_simultaneous = True
         pitches_voice = staff[0]
         spanner_voice = mutate(pitches_voice).copy()
         pitches_voice.context_name = 'FingeringPitchesVoice'
         spanner_voice.context_name = 'FingeringSpannerVoice'
         # clean up pitches voice
+        spanner_prototypes = (
+            spannertools.Glissando,
+            )
         for component in iterate(pitches_voice).depth_first(capped=True):
             spanners = inspect_(component).get_spanners()
             for spanner in spanners:
                 if isinstance(spanner, spanner_prototypes):
                     spanner._detach()
         # clean up spanner voice
+        spanner_prototypes = (
+            spannertools.Glissando,
+            spannertools.Tie,
+            )
         rests = []
         for component in iterate(spanner_voice).depth_first(capped=True):
             spanners = inspect_(component).get_spanners()
