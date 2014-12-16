@@ -149,6 +149,10 @@ afterGraceFraction = #(cons 1023 1024)
         \name FingeringPitchesVoice
         \type Engraver_group
         \alias Voice
+        \override Beam.direction = #down
+        \override Beam.positions = #'(-9 . -9)
+        \override Stem.direction = #down
+        \override TupletBracket.positions = #'(-11 . -11)
     }
 
     \context {
@@ -172,8 +176,6 @@ afterGraceFraction = #(cons 1023 1024)
         \alias Staff
         \accepts FingeringPitchesVoice
         \accepts FingeringSpannerVoice
-        \override Beam.positions = #'(-9 . -9)
-        \override TupletBracket.positions = #'(-11 . -11)
         \override StaffSymbol.color = #(x11-color 'grey50)
     }
 
