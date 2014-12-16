@@ -11,7 +11,7 @@ Create a box of the same height as the current font."
                      (ly:stencil-extent ref-mrkp Y))))
 
 afterGraceFraction = #(cons 1023 1024)
-#(set-default-paper-size "17x11" 'landscape)
+#(set-default-paper-size "11x17" 'landscape)
 #(set-global-staff-size 12)
 
 \layout {
@@ -304,7 +304,7 @@ afterGraceFraction = #(cons 1023 1024)
     %%% PAGE BREAKING %%%
 
     page-breaking = #ly:optimal-breaking
-    ragged-bottom = ##t
+    ragged-bottom = ##f
     ragged-last-bottom = ##t
 
     %%% SPACING DETAILS %%%%
@@ -316,9 +316,9 @@ afterGraceFraction = #(cons 1023 1024)
         (stretchability . 0)
     )
     system-system-spacing = #'(
-        (basic-distance . 8)
-        (minimum-distance . 12)
-        (padding . 4)
+        (basic-distance . 12)
+        (minimum-distance . 18)
+        (padding . 12)
         (stretchability . 0)
     )
     top-markup-spacing = #'(
