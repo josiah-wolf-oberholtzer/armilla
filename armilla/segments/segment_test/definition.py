@@ -11,7 +11,8 @@ from abjad import spannertools
 segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=17,
     discard_final_silence=True,
-    rehearsal_mark='Silent City Boat Club',
+    name='Island Vacation, Tropical Breeze',
+    rehearsal_mark='F10D',
     tempo=indicatortools.Tempo((1, 4), 72),
     )
 
@@ -59,7 +60,7 @@ rh_music_specifier = consort.MusicSpecifier(
                 [indicatortools.BowMotionTechnique('circular')] * 4 +
                 [None] * 2
                 ),
-            selector=selectortools.Selector().by_leaves()[1:],
+            selector=selectortools.Selector().by_leaves()[1:].flatten(),
             ),
         bow_spanner=spannertools.BowSpanner(),
         dynamic_phrasings=armilla.DynamicPhrasing(
@@ -73,9 +74,13 @@ rh_music_specifier = consort.MusicSpecifier(
 
 lh_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
-        glissando=spannertools.Glissando(
-            allow_repeated_pitches=True,
-            allow_ties=False,
+        glissando=consort.AttachmentExpression(
+            attachments=spannertools.Glissando(
+                allow_repeated_pitches=True,
+                allow_ties=False,
+                ),
+            selector=selectortools.Selector().by_leaves(
+                ).with_callback(armilla.AfterGraceSelectorCallback())
             ),
         ),
     grace_handler=consort.GraceHandler(
