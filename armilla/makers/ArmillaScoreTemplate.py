@@ -23,8 +23,16 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
             }
             \tag #'viola-1
             \context StringPerformerGroup = "Viola 1 Performer Group" \with {
-                instrumentName = \markup { Viola 1 }
-                shortInstrumentName = \markup { Va. 1 }
+                instrumentName = \markup {
+                    \hcenter-in
+                        #10
+                        "Viola 1"
+                    }
+                shortInstrumentName = \markup {
+                    \hcenter-in
+                        #10
+                        "Va. 1"
+                    }
             } <<
                 \context BowingStaff = "Viola 1 Bowing Staff" {
                     \context Voice = "Viola 1 Bowing Voice" {
@@ -39,8 +47,16 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
             >>
             \tag #'viola-2
             \context StringPerformerGroup = "Viola 2 Performer Group" \with {
-                instrumentName = \markup { Viola 2 }
-                shortInstrumentName = \markup { Va. 2 }
+                instrumentName = \markup {
+                    \hcenter-in
+                        #10
+                        "Viola 2"
+                    }
+                shortInstrumentName = \markup {
+                    \hcenter-in
+                        #10
+                        "Va. 2"
+                    }
             } <<
                 \context BowingStaff = "Viola 2 Bowing Staff" {
                     \context Voice = "Viola 2 Bowing Voice" {
