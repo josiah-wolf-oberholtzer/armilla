@@ -250,7 +250,6 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
 
     def __call__(
         self,
-        color=None,
         layer=None,
         music_specifiers=None,
         target_timespan=None,
@@ -274,14 +273,12 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                 raise ValueError
         result = consort.TimespanMaker.__call__(
             self,
-            color=color,
             layer=layer,
             music_specifiers=bowing_specifiers,
             target_timespan=target_timespan,
             )
         if viola_1_fingering_specifiers:
             result = self._viola_1_fingering_timespan_maker(
-                color=color,
                 layer=layer,
                 music_specifiers=viola_1_fingering_specifiers,
                 target_timespan=target_timespan,
@@ -289,7 +286,6 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                 )
         if viola_2_fingering_specifiers:
             result = self._viola_2_fingering_timespan_maker(
-                color=color,
                 layer=layer,
                 music_specifiers=viola_2_fingering_specifiers,
                 target_timespan=target_timespan,
