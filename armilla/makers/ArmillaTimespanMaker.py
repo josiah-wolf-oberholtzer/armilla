@@ -204,6 +204,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         step_anchor=Right,
         synchronize_groupings=False,
         synchronize_step=False,
+        timespan_specifier=None,
         ):
         consort.TaleaTimespanMaker.__init__(
             self,
@@ -221,6 +222,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
             step_anchor=step_anchor,
             synchronize_groupings=synchronize_groupings,
             synchronize_step=synchronize_step,
+            timespan_specifier=timespan_specifier,
             )
         if rotation_indices is not None:
             if not isinstance(rotation_indices, collections.Sequence):
