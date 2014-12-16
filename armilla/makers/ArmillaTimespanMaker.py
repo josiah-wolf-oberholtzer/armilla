@@ -183,10 +183,8 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
 
     def __init__(
         self,
-        forbid_splitting=None,
         fuse_groups=None,
         initial_silence_talea=None,
-        minimum_duration=None,
         padding=None,
         playing_talea=rhythmmakertools.Talea(
             counts=[4],
@@ -208,10 +206,8 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         ):
         consort.TaleaTimespanMaker.__init__(
             self,
-            forbid_splitting=forbid_splitting,
             fuse_groups=fuse_groups,
             initial_silence_talea=initial_silence_talea,
-            minimum_duration=minimum_duration,
             padding=padding,
             playing_talea=playing_talea,
             playing_groupings=playing_groupings,
@@ -289,8 +285,10 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         timespan_maker = consort.DependentTimespanMaker(
             include_inner_starts=True,
             include_inner_stops=False,
-            minimum_duration=None,
             rotation_indices=self.rotation_indices,
+            timespan_specifier=consort.TimespanSpecifier(
+                minimum_duration=None,
+                ),
             voice_names=('Viola 1 Bowing Voice',),
             )
         return timespan_maker
@@ -300,8 +298,10 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         timespan_maker = consort.DependentTimespanMaker(
             include_inner_starts=True,
             include_inner_stops=False,
-            minimum_duration=None,
             rotation_indices=self.rotation_indices,
+            timespan_specifier=consort.TimespanSpecifier(
+                minimum_duration=None,
+                ),
             voice_names=('Viola 2 Bowing Voice',),
             )
         return timespan_maker
