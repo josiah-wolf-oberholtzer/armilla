@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
-from abjad import *
+from abjad.tools import datastructuretools
+from abjad.tools import durationtools
+from abjad.tools import indicatortools
 
 
 bow_contact_points_b = datastructuretools.TypedList(
