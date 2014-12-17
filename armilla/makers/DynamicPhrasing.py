@@ -2,6 +2,7 @@
 from abjad import attach
 from abjad import abctools
 from abjad import datastructuretools
+from abjad import durationtools
 from abjad import indicatortools
 from abjad import lilypondnametools
 from abjad import schemetools
@@ -194,15 +195,19 @@ class DynamicPhrasing(abctools.AbjadValueObject):
         leaves = music[-1].select_leaves()
         if 1 < len(leaves):
             dynamic, hairpin, grob_override = self._get_attachments(seed)
-            if previous_dynamic != dynamic:
-                attach(dynamic, leaves[0])
-            if grob_override is not None:
-                attach(grob_override, leaves[0])
-            if hairpin is not None:
-                attach(hairpin, leaves)
-            next_dynamic, _, _ = self._get_attachments(seed + 1)
-            if next_dynamic != dynamic:
-                attach(next_dynamic, leaves[-1])
+            if leaves.get_duration() <= durationtools.Duration(1, 8):
+                if previous_dynamic != dynamic:
+                    attach(dynamic, leaves[-1])
+            else:
+                if previous_dynamic != dynamic:
+                    attach(dynamic, leaves[0])
+                if grob_override is not None:
+                    attach(grob_override, leaves[0])
+                if hairpin is not None:
+                    attach(hairpin, leaves)
+                next_dynamic, _, _ = self._get_attachments(seed + 1)
+                if next_dynamic != dynamic:
+                    attach(next_dynamic, leaves[-1])
         else:
             dynamic, _, _ = self._get_attachments(seed)
             if dynamic != previous_dynamic:
