@@ -8,6 +8,7 @@
 \score {
     \context Score = "Armilla Score" <<
         \tag #'time
+        \repeat volta 2
         \context TimeSignatureContext = "TimeSignatureContext" {
             {
                 \time 2/4
@@ -21,12 +22,12 @@
                                     \concat
                                         {
                                             \vstrut
-                                            F10D
+                                            Q
                                         }
                             " "
                             \fontsize
                                 #-3
-                                "Island Vacation, Tropical Breeze"
+                                "Notation Test"
                         }
                     }
                 s1 * 1/2
@@ -76,6 +77,7 @@
                     "Va. 1"
                 }
         } <<
+            \repeat volta 2
             \context BowingStaff = "Viola 1 Bowing Staff" <<
                 \context BowingPositionVoice = "Viola 1 Bowing Voice" {
                     {
@@ -712,6 +714,7 @@
                     }
                 }
             >>
+            \repeat volta 2
             \context FingeringStaff = "Viola 1 Fingering Staff" <<
                 \context FingeringPitchesVoice = "Viola 1 Fingering Voice" {
                     \clef "alto"
@@ -732,10 +735,10 @@
                     }
                     {
                         \times 4/5 {
-                            a16 [
+                            a16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            af16
+                            af16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
@@ -806,7 +809,7 @@
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8 ]
+                            c'8 ] \glissando
                         }
                         {
                             a4
@@ -839,13 +842,13 @@
                         \times 4/5 {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
-                            bqs!16 [
+                            bqs!16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            c'16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            a16
+                            a16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
@@ -890,7 +893,7 @@
                             }
                         }
                         {
-                            c'4
+                            c'4 \glissando
                         }
                         {
                             \set stemLeftBeamCount = 1
@@ -904,7 +907,7 @@
                     }
                     {
                         {
-                            a8 [
+                            a8 [ \glissando
                         }
                         {
                             \set stemLeftBeamCount = 1
@@ -918,7 +921,7 @@
                     }
                     {
                         {
-                            b4.
+                            b4. \glissando
                         }
                         {
                             \set stemLeftBeamCount = 1
@@ -994,10 +997,12 @@
                             a16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
+                            \parenthesize
                             a16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
+                            \parenthesize
                             a16
                             {
                                 \override Flag #'stroke-style = #"grace"
@@ -1039,7 +1044,6 @@
                     {
                         {
                             R1 * 3/8
-                            \bar "||"
                         }
                     }
                 }
@@ -1128,8 +1132,10 @@
                         }
                         \times 4/5 {
                             bqs16
-                            a16 \glissando
-                            a16 \glissando
+                            a16
+                            \parenthesize
+                            a16
+                            \parenthesize
                             a16
                             af16
                         }
@@ -1140,7 +1146,6 @@
                     {
                         {
                             R1 * 3/8
-                            \bar "||"
                         }
                     }
                 }
@@ -1159,6 +1164,7 @@
                     "Va. 2"
                 }
         } <<
+            \repeat volta 2
             \context BowingStaff = "Viola 2 Bowing Staff" <<
                 \context BowingPositionVoice = "Viola 2 Bowing Voice" {
                     {
@@ -1822,6 +1828,7 @@
                     }
                 }
             >>
+            \repeat volta 2
             \context FingeringStaff = "Viola 2 Fingering Staff" <<
                 \context FingeringPitchesVoice = "Viola 2 Fingering Voice" {
                     \clef "alto"
@@ -1845,19 +1852,19 @@
                             }
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            gf!16
+                            gf!16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            c'16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            a16
+                            a16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            c'16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
-                            a16
+                            a16 \glissando
                         }
                         {
                             \set stemLeftBeamCount = 1
@@ -1882,25 +1889,26 @@
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            b8 ]
+                            b8 ] \glissando
                         }
                         {
-                            bqs4
+                            bqs4 \glissando
                         }
                         \times 2/3 {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
-                            c'16 [
+                            c'16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            a16
+                            a16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
-                            b16 ]
+                            b16 ] \glissando
                         }
                         {
                             af2 ~
                             \set stemLeftBeamCount = 1
+                            \parenthesize
                             af8
                         }
                     }
@@ -1911,18 +1919,18 @@
                     }
                     {
                         {
-                            a4
+                            a4 \glissando
                         }
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
-                            af16 [
+                            af16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            gf16
+                            gf16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            bqs16
+                            bqs16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
@@ -1943,12 +1951,13 @@
                             }
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            c'16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
                             a16 ]
                         }
                         {
+                            \parenthesize
                             a4
                         }
                     }
@@ -1984,19 +1993,20 @@
                             }
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            gf!8
+                            gf!8 \glissando
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            bqs8
+                            bqs8 \glissando
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 \glissando
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             a8 ]
                         }
                         {
                             \afterGrace
+                            \parenthesize
                             a4
                             {
                                 \override Flag #'stroke-style = #"grace"
@@ -2016,13 +2026,13 @@
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
-                            a16 [
+                            a16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            b16
+                            b16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            af16
+                            af16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
@@ -2046,13 +2056,15 @@
                             c'16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
+                            \parenthesize
                             c'16
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            \parenthesize
+                            c'16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
-                            b16 ]
+                            b16 ] \glissando
                         }
                         {
                             bqs4.
@@ -2066,7 +2078,6 @@
                     {
                         {
                             c'4
-                            \bar "||"
                         }
                     }
                 }
@@ -2097,6 +2108,7 @@
                         }
                         {
                             af2 ~
+                            \parenthesize
                             af8
                         }
                     }
@@ -2115,9 +2127,10 @@
                             bqs16 \glissando
                             c'16
                             c'16 \glissando
-                            a16 \glissando
+                            a16
                         }
                         {
+                            \parenthesize
                             a4
                         }
                     }
@@ -2133,9 +2146,10 @@
                             gf8 \glissando
                             bqs8 \glissando
                             c'8 \glissando
-                            a8 \glissando
+                            a8
                         }
                         {
+                            \parenthesize
                             a4
                         }
                         {
@@ -2143,8 +2157,10 @@
                             b16 \glissando
                             af16 \glissando
                             gf16
-                            c'16 \glissando
-                            c'16 \glissando
+                            c'16
+                            \parenthesize
+                            c'16
+                            \parenthesize
                             c'16 \glissando
                             b16 \glissando
                         }
@@ -2160,7 +2176,6 @@
                     {
                         {
                             c'4
-                            \bar "||"
                         }
                     }
                 }

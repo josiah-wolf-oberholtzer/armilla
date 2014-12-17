@@ -11,8 +11,9 @@ from abjad import spannertools
 segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=17,
     discard_final_silence=True,
-    name='Island Vacation, Tropical Breeze',
-    rehearsal_mark='F10D',
+    name='Notation Test',
+    rehearsal_mark='Q',
+    repeat=True,
     tempo=indicatortools.Tempo((1, 4), 72),
     )
 
@@ -75,8 +76,9 @@ lh_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         glissando=consort.AttachmentExpression(
             attachments=spannertools.Glissando(
-                allow_repeated_pitches=True,
+                allow_repeated_pitches=False,
                 allow_ties=False,
+                parenthesize_repeated_pitches=True,
                 ),
             selector=selectortools.Selector().by_leaves(
                 ).with_callback(armilla.AfterGraceSelectorCallback())
