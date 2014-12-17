@@ -6,6 +6,7 @@ from abjad import iterate
 from abjad import mutate
 from abjad import durationtools
 from abjad import indicatortools
+from abjad import markuptools
 from abjad import scoretools
 from abjad import spannertools
 import consort
@@ -176,14 +177,14 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         pitches_voice.context_name = 'FingeringPitchesVoice'
         spanner_voice.context_name = 'FingeringSpannerVoice'
         # clean up pitches voice
-        spanner_prototypes = (
-            spannertools.Glissando,
-            )
-        for component in iterate(pitches_voice).depth_first(capped=True):
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if isinstance(spanner, spanner_prototypes):
-                    spanner._detach()
+#        spanner_prototypes = (
+#            spannertools.Glissando,
+#            )
+#        for component in iterate(pitches_voice).depth_first(capped=True):
+#            spanners = inspect_(component).get_spanners()
+#            for spanner in spanners:
+#                if isinstance(spanner, spanner_prototypes):
+#                    spanner._detach()
         # clean up spanner voice
         spanner_prototypes = (
             spannertools.Glissando,
@@ -211,14 +212,35 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         staff.append(spanner_voice)
 
     def configure_score(self, score):
-        score = consort.SegmentMaker.configure_score(self, score)
+        first_leaf = score['TimeSignatureContext'].select_leaves()[0]
+        if self.rehearsal_mark is not None:
+            markup_a = markuptools.Markup(
+                r'\concat {{ \vstrut "{}" }}'.format(str(self.rehearsal_mark)),
+                )
+            markup_a = markup_a.box()
+            markup_a = markup_a.override(('box-padding', 0.5))
+            markup_b = markuptools.Markup('"{}"'.format(self.name or ' '))
+            markup_b = markup_b.fontsize(-3)
+            markup = markuptools.Markup.concat([markup_a, ' ', markup_b])
+            rehearsal_mark = indicatortools.RehearsalMark(markup=markup)
+            attach(rehearsal_mark, first_leaf)
+        if self.tempo is not None:
+            attach(self.tempo, first_leaf)
         self.configure_beaming_voice(score['Viola 1 Bowing Staff'])
         self.configure_beaming_voice(score['Viola 2 Bowing Staff'])
         self.configure_glissando_voice(score['Viola 1 Fingering Staff'])
         self.configure_glissando_voice(score['Viola 2 Fingering Staff'])
         if self.repeat:
             repeat = indicatortools.Repeat()
-            attach(repeat, score)
+            for staff in iterate(score).by_class(scoretools.Staff):
+                attach(repeat, staff)
+            attach(repeat, score['TimeSignatureContext'])
+        elif self.is_final_segment:
+            score.add_final_markup(self.final_markup)
+            score.add_final_bar_line(abbreviation='|.', to_each_voice=True)
+        else:
+            score.add_final_bar_line(abbreviation='||', to_each_voice=True)
+        assert inspect_(score).is_well_formed()
         return score
 
     ### PUBLIC PROPERTIES ###
