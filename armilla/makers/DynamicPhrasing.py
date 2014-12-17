@@ -197,7 +197,10 @@ class DynamicPhrasing(abctools.AbjadValueObject):
             dynamic, hairpin, grob_override = self._get_attachments(seed)
             if leaves.get_duration() <= durationtools.Duration(1, 8):
                 if previous_dynamic != dynamic:
-                    attach(dynamic, leaves[-1])
+                    if 1 < len(music):
+                        attach(dynamic, leaves[-1])
+                    else:
+                        attach(dynamic, leaves[0])
             else:
                 if previous_dynamic != dynamic:
                     attach(dynamic, leaves[0])
