@@ -127,7 +127,7 @@ afterGraceFraction = #(cons 1023 1024)
         \Dynamics
         \override DynamicLineSpanner.staff-padding = 11.5
         \override DynamicText.self-alignment-X = -1
-        \override Hairpin.bound-padding = 2
+        \override Hairpin.bound-padding = 3
         \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
             (basic-distance . 5)
             (padding . 2.5) 
@@ -250,6 +250,7 @@ afterGraceFraction = #(cons 1023 1024)
         \override TrillPitchHead.whiteout = ##t
         \override TrillSpanner.outside-staff-padding = 1
         \override TrillSpanner.padding = 1
+        \override TrillSpanner.bound-details.right.padding = 2
         \override TupletBracket.avoid-scripts = ##t
         \override TupletBracket.direction = #down
         \override TupletBracket.full-length-to-extent = ##t
