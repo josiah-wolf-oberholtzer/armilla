@@ -28,14 +28,14 @@ timespan_maker = armilla.ArmillaTimespanMaker(
         counts=(2, 2, 2, 3, 2, 4),
         denominator=16,
         ),
-    playing_groupings=(1),
+    playing_groupings=(1, 1, 2),
     silence_talea=rhythmmakertools.Talea(
         counts=(2, 2, 3, 7, 1, 2, 2, 5),
         denominator=8,
         ),
     synchronize_step=True,
     timespan_specifier=consort.TimespanSpecifier(
-        forbid_fusing=True,
+        #forbid_fusing=True,
         minimum_duration=durationtools.Duration(1, 8),
         ),
     )
@@ -47,9 +47,14 @@ rh_music_specifier = consort.MusicSpecifier(
             attachments=armilla.materials.bow_contact_points_a,
             selector=selectortools.Selector().by_leaves().flatten(),
             ),
-        bow_spanner=spannertools.BowSpanner(),
+        bow_spanner=consort.AttachmentExpression(
+            attachments=spannertools.BowSpanner(),
+            selector=selectortools.Selector().by_leaves().by_counts(
+                [2], cyclic=True, fuse_overhang=True, overhang=True),
+            ),
         dynamic_phrasings=armilla.DynamicPhrasing(
-            dynamic_tokens='f f f mf',
+            dynamic_tokens='f',
+            transitions=('constante',),
             ),
         ),
     rhythm_maker=rhythmmakertools.EvenDivisionRhythmMaker(
@@ -61,6 +66,17 @@ rh_music_specifier = consort.MusicSpecifier(
 
 lh_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
+        bend_after=consort.AttachmentExpression(
+            attachments=(
+                None,
+                consort.IndicatorExpression(
+                    indicator=indicatortools.BendAfter(4),
+                    is_annotation=True,
+                    ),
+                None,
+                ),
+            selector=selectortools.Selector().by_leaves().flatten(),
+            ),
         glissando=consort.AttachmentExpression(
             attachments=spannertools.Glissando(
                 allow_repeated_pitches=False,
