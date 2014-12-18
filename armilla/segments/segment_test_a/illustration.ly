@@ -622,6 +622,7 @@
                     }
                     {
                         {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'8 \f \>
                             c'8 \p
                         }
@@ -636,6 +637,7 @@
                             c'4. \p \<
                         }
                         {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'8 \f \>
                             c'8 \p
                         }
@@ -670,6 +672,7 @@
                     }
                     {
                         {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'8 \mp \>
                         }
                         {
@@ -691,6 +694,7 @@
                             c'16
                         }
                         \times 2/3 {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'8 \mp \>
                             c'8
                             c'8
@@ -1746,6 +1750,7 @@
                             c'16
                         }
                         {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'8 \mp \>
                         }
                         {
@@ -1756,6 +1761,7 @@
                             c'8 \p \<
                         }
                         {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'8 \f \>
                             c'8
                             c'8
@@ -1770,6 +1776,7 @@
                     }
                     {
                         \times 4/5 {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'16 \p \<
                             c'16
                             c'16
@@ -1796,6 +1803,7 @@
                             c'4. \pp \<
                         }
                         \times 2/3 {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'16 \p \<
                             c'16
                             c'16
@@ -1810,6 +1818,7 @@
                             c'16
                         }
                         {
+                            \once \override Hairpin.stencil = #flared-hairpin
                             c'8 \mp \>
                             c'8
                             c'8 \pp
