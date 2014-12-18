@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+from __future__ import print_function
 from abjad import attach
 from abjad import abctools
 from abjad import datastructuretools
@@ -6,7 +7,6 @@ from abjad import durationtools
 from abjad import indicatortools
 from abjad import lilypondnametools
 from abjad import schemetools
-from abjad import selectiontools
 from abjad import spannertools
 
 
@@ -217,12 +217,12 @@ class DynamicPhrasing(abctools.AbjadValueObject):
     def _make_attachments(self, music, seed):
         current_dynamic = None
         current_hairpin = None
-
         selections = self._get_selections(music)
         if 1 < len(selections):
-            for i, selection in enumerate(selections[:-1]):
-                print(selection)
-                dynamic, hairpin, transition = self._get_attachments(seed + 1)
+            for selection in selections[:-1]:
+                dynamic, hairpin, transition = self._get_attachments(seed)
+                #print('A', seed, selection, dynamic, hairpin, transition)
+                #print('?', self.dynamic_tokens[seed], self.dynamic_tokens)
                 if dynamic != current_dynamic:
                     if current_hairpin:
                         current_hairpin._extend([selection[0]])
@@ -235,10 +235,11 @@ class DynamicPhrasing(abctools.AbjadValueObject):
                         attach(hairpin_override, selection[0])
                 elif current_hairpin is not None:
                     current_hairpin._extend(selection)
-            seed = seed + i + 1
-
+                seed += 1
         dynamic, hairpin, transition = self._get_attachments(seed)
         selection = selections[-1]
+        #print('B', seed, selection, dynamic, hairpin, transition)
+        #print('?', self.dynamic_tokens[seed], self.dynamic_tokens)
         if selection.get_duration() <= durationtools.Duration(1, 8):
             if current_hairpin is not None:
                 current_hairpin._extend(selection)
@@ -258,15 +259,20 @@ class DynamicPhrasing(abctools.AbjadValueObject):
                 current_dynamic = dynamic
                 current_hairpin = hairpin
                 attach(dynamic, selection[0])
-                attach(hairpin, selection)
-                hairpin_override = self._get_hairpin_override(transition)
-                if hairpin_override is not None:
-                    attach(hairpin_override, selection[0])
+                if 1 < len(selection):
+                    attach(hairpin, selection)
+                    hairpin_override = self._get_hairpin_override(transition)
+                    if hairpin_override is not None:
+                        attach(hairpin_override, selection[0])
             elif current_hairpin is not None:
                 current_hairpin._extend(selection)
-            dynamic, _, _ = self._get_attachments(seed + 1)
-            if dynamic != current_dynamic:
+            seed += 1
+            dynamic, _, _ = self._get_attachments(seed)
+            #print('C', seed, selection, dynamic, hairpin, transition)
+            #print('?', self.dynamic_tokens[seed], self.dynamic_tokens)
+            if dynamic != current_dynamic and 1 < len(selection):
                 attach(dynamic, selection[-1])
+        #print()
 
     ### PUBLIC PROPERTIES ###
 
