@@ -6,6 +6,7 @@ from abjad import iterate
 from abjad import mutate
 from abjad import durationtools
 from abjad import indicatortools
+from abjad import lilypondnametools
 from abjad import markuptools
 from abjad import scoretools
 from abjad import spannertools
@@ -79,6 +80,12 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     def configure_beaming_voice(self, staff):
 
+        staff.is_simultaneous = True
+
+        bowing_voice = staff[0]
+        beaming_voice = mutate(bowing_voice).copy()
+        dynamics_voice = mutate(bowing_voice).copy()
+
         bow_spanner_prototypes = (
             spannertools.BowSpanner,
             )
@@ -90,31 +97,6 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             indicatortools.BreathMark,
             indicatortools.StringContactPoint,
             )
-
-        dynamic_spanner_prototypes = (
-            spannertools.Crescendo,
-            spannertools.Decrescendo,
-            )
-        dynamic_indicator_prototypes = (
-            durationtools.Multiplier,
-            indicatortools.Dynamic,
-            )
-
-        beam_spanner_prototypes = (
-            spannertools.GeneralizedBeam,
-            )
-        beam_indicator_prototypes = (
-            durationtools.Multiplier,
-            indicatortools.Articulation,
-            indicatortools.Clef,
-            )
-
-        staff.is_simultaneous = True
-
-        bowing_voice = staff[0]
-        beaming_voice = mutate(bowing_voice).copy()
-        dynamics_voice = mutate(bowing_voice).copy()
-
         bowing_voice.context_name = 'BowingPositionVoice'
         rests = []
         for component in iterate(bowing_voice).depth_first(capped=True):
@@ -137,6 +119,15 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
                 attach(indicators[0], skip)
             mutate(rest).replace(skip)
 
+        beam_spanner_prototypes = (
+            spannertools.GeneralizedBeam,
+            )
+        beam_indicator_prototypes = (
+            durationtools.Multiplier,
+            indicatortools.Articulation,
+            indicatortools.Clef,
+            )
+
         beaming_voice.name = beaming_voice.name.replace(
             'Bowing Voice',
             'Beaming Voice',
@@ -152,6 +143,15 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
                 if not isinstance(indicator, beam_indicator_prototypes):
                     detach(indicator, component)
 
+        dynamic_spanner_prototypes = (
+            spannertools.Crescendo,
+            spannertools.Decrescendo,
+            )
+        dynamic_indicator_prototypes = (
+            durationtools.Multiplier,
+            indicatortools.Dynamic,
+            lilypondnametools.LilyPondGrobOverride,
+            )
         dynamics_voice.context_name = 'Dynamics'
         dynamics_voice.name = dynamics_voice.name.replace(
             'Bowing Voice',
