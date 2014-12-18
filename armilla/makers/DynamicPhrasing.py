@@ -6,6 +6,7 @@ from abjad import durationtools
 from abjad import indicatortools
 from abjad import lilypondnametools
 from abjad import schemetools
+from abjad import selectiontools
 from abjad import spannertools
 
 
@@ -177,44 +178,7 @@ class DynamicPhrasing(abctools.AbjadValueObject):
     ### SPECIAL METHODS ###
 
     def __call__(self, music, seed=0):
-        previous_dynamic = None
-        if 1 < len(music):
-            for i, division in enumerate(music[:-1]):
-                dynamic, hairpin, grob_override = \
-                    self._get_attachments(seed + i)
-                leaves = list(division.select_leaves())
-                leaves.append(music[i + 1].select_leaves()[0])
-                if dynamic != previous_dynamic:
-                    attach(dynamic, leaves[0])
-                if grob_override is not None:
-                    attach(grob_override, leaves[0])
-                if hairpin is not None:
-                    attach(hairpin, leaves)
-                previous_dynamic = dynamic
-            seed = seed + i + 1
-        leaves = music[-1].select_leaves()
-        if 1 < len(leaves):
-            dynamic, hairpin, grob_override = self._get_attachments(seed)
-            if leaves.get_duration() <= durationtools.Duration(1, 8):
-                if previous_dynamic != dynamic:
-                    if 1 < len(music):
-                        attach(dynamic, leaves[-1])
-                    else:
-                        attach(dynamic, leaves[0])
-            else:
-                if previous_dynamic != dynamic:
-                    attach(dynamic, leaves[0])
-                if grob_override is not None:
-                    attach(grob_override, leaves[0])
-                if hairpin is not None:
-                    attach(hairpin, leaves)
-                next_dynamic, _, _ = self._get_attachments(seed + 1)
-                if next_dynamic != dynamic:
-                    attach(next_dynamic, leaves[-1])
-        else:
-            dynamic, _, _ = self._get_attachments(seed)
-            if dynamic != previous_dynamic:
-                attach(dynamic, leaves[0])
+        self._make_attachments(music, seed)
 
     ### PRIVATE METHODS ###
 
@@ -222,22 +186,87 @@ class DynamicPhrasing(abctools.AbjadValueObject):
         this_dynamic = indicatortools.Dynamic(self.dynamic_tokens[i])
         next_dynamic = indicatortools.Dynamic(self.dynamic_tokens[i + 1])
         if this_dynamic.ordinal < next_dynamic.ordinal:
-            hairpin = spannertools.Crescendo()
+            hairpin = spannertools.Crescendo(include_rests=True)
         elif next_dynamic.ordinal < this_dynamic.ordinal:
-            hairpin = spannertools.Decrescendo()
+            hairpin = spannertools.Decrescendo(include_rests=True)
         else:
             hairpin = None
         transition = self.transitions[i]
+        if transition == 'constante':
+            hairpin = spannertools.Crescendo(include_rests=True)
+        return this_dynamic, hairpin, transition
+
+    def _get_hairpin_override(self, transition):
         grob_override = None
-        if hairpin is not None and transition in ('flared', 'constante'):
+        if transition in ('flared', 'constante'):
             grob_override = lilypondnametools.LilyPondGrobOverride(
                 grob_name='Hairpin',
                 is_once=True,
                 property_path='stencil',
                 value=schemetools.Scheme('{}-hairpin'.format(transition)),
                 )
+        return grob_override
 
-        return this_dynamic, hairpin, grob_override
+    def _get_selections(self, music):
+        selections = []
+        for division in music:
+            selection = division.select_leaves()
+            selections.append(selection)
+        return selections
+
+    def _make_attachments(self, music, seed):
+        current_dynamic = None
+        current_hairpin = None
+
+        selections = self._get_selections(music)
+        if 1 < len(selections):
+            for i, selection in enumerate(selections[:-1]):
+                print(selection)
+                dynamic, hairpin, transition = self._get_attachments(seed + 1)
+                if dynamic != current_dynamic:
+                    if current_hairpin:
+                        current_hairpin._extend([selection[0]])
+                    current_dynamic = dynamic
+                    current_hairpin = hairpin
+                    attach(dynamic, selection[0])
+                    attach(hairpin, selection)
+                    hairpin_override = self._get_hairpin_override(transition)
+                    if hairpin_override is not None:
+                        attach(hairpin_override, selection[0])
+                elif current_hairpin is not None:
+                    current_hairpin._extend(selection)
+            seed = seed + i + 1
+
+        dynamic, hairpin, transition = self._get_attachments(seed)
+        selection = selections[-1]
+        if selection.get_duration() <= durationtools.Duration(1, 8):
+            if current_hairpin is not None:
+                current_hairpin._extend(selection)
+                if dynamic != current_dynamic:
+                    attach(dynamic, selection[-1])
+            else:
+                attach(dynamic, selection[0])
+                if 1 < len(selection) and transition == 'constante':
+                    attach(hairpin, selection)
+                    hairpin_override = self._get_hairpin_override(transition)
+                    if hairpin_override is not None:
+                        attach(hairpin_override, selection[0])
+        else:
+            if dynamic != current_dynamic:
+                if current_hairpin:
+                    current_hairpin._extend([selection[0]])
+                current_dynamic = dynamic
+                current_hairpin = hairpin
+                attach(dynamic, selection[0])
+                attach(hairpin, selection)
+                hairpin_override = self._get_hairpin_override(transition)
+                if hairpin_override is not None:
+                    attach(hairpin_override, selection[0])
+            elif current_hairpin is not None:
+                current_hairpin._extend(selection)
+            dynamic, _, _ = self._get_attachments(seed + 1)
+            if dynamic != current_dynamic:
+                attach(dynamic, selection[-1])
 
     ### PUBLIC PROPERTIES ###
 
