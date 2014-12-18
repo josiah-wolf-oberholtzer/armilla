@@ -7,7 +7,6 @@ from abjad import mutate
 from abjad import durationtools
 from abjad import indicatortools
 from abjad import lilypondnametools
-from abjad import markuptools
 from abjad import scoretools
 from abjad import spannertools
 import consort
@@ -212,20 +211,8 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         staff.append(spanner_voice)
 
     def configure_score(self, score):
-        first_leaf = score['TimeSignatureContext'].select_leaves()[0]
-        if self.rehearsal_mark is not None:
-            markup_a = markuptools.Markup(
-                r'\concat {{ \vstrut "{}" }}'.format(str(self.rehearsal_mark)),
-                )
-            markup_a = markup_a.box()
-            markup_a = markup_a.override(('box-padding', 0.5))
-            markup_b = markuptools.Markup('"{}"'.format(self.name or ' '))
-            markup_b = markup_b.fontsize(-3)
-            markup = markuptools.Markup.concat([markup_a, ' ', markup_b])
-            rehearsal_mark = indicatortools.RehearsalMark(markup=markup)
-            attach(rehearsal_mark, first_leaf)
-        if self.tempo is not None:
-            attach(self.tempo, first_leaf)
+        self.attach_tempo(score)
+        self.attach_rehearsal_mark(score)
         self.configure_beaming_voice(score['Viola 1 Bowing Staff'])
         self.configure_beaming_voice(score['Viola 2 Bowing Staff'])
         self.configure_glissando_voice(score['Viola 1 Fingering Staff'])
@@ -240,7 +227,6 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             score.add_final_bar_line(abbreviation='|.', to_each_voice=True)
         else:
             score.add_final_bar_line(abbreviation='||', to_each_voice=True)
-        assert inspect_(score).is_well_formed()
         return score
 
     ### PUBLIC PROPERTIES ###
