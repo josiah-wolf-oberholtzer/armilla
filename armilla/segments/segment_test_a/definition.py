@@ -83,12 +83,19 @@ lh_music_specifier = consort.MusicSpecifier(
             selector=selectortools.Selector().by_leaves(
                 ).with_callback(armilla.AfterGraceSelectorCallback())
             ),
+        trills=consort.AttachmentExpression(
+            attachments=spannertools.ComplexTrillSpanner(),
+            selector=selectortools.Selector().by_leaves(
+                ).by_logical_tie(pitched=True
+                ).by_duration('>=', (1, 8)),
+            ),
         ),
     grace_handler=consort.GraceHandler(
         counts=(1, 2, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 2),
         only_if_preceded_by_nonsilence=True,
         ),
     pitch_handler=consort.AbsolutePitchHandler(
+        forbid_repetitions=True,
         grace_expressions=(
             consort.HarmonicExpression('P4'),
             consort.HarmonicExpression('M3'),
