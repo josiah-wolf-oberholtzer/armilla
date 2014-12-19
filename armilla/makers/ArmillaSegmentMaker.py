@@ -120,13 +120,13 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
         beam_spanner_prototypes = (
             spannertools.GeneralizedBeam,
+            spannertools.StemTremoloSpanner,
             )
         beam_indicator_prototypes = (
             durationtools.Multiplier,
             indicatortools.Articulation,
             indicatortools.Clef,
             )
-
         beaming_voice.name = beaming_voice.name.replace(
             'Bowing Voice',
             'Beaming Voice',
