@@ -114,9 +114,7 @@
                                             3
                                             5
                                 }
-                            c'2 ^\upbow \glissando
-                        }
-                        {
+                            c'4 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -140,7 +138,7 @@
                                             3
                                             5
                                 }
-                            c'2 ^\upbow \glissando
+                            c'4 ^\upbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -163,16 +161,40 @@
                                         \fraction
                                             3
                                             5
+                                }
+                            c'4 ^\upbow \glissando
+                        }
+                        {
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4 ^\downbow \glissando
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = -2.0
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            0
+                                            1
                                 }
                             c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
                                 \center-align
                                     \vcenter
                                         \fraction
-                                            4
-                                            5
+                                            1
+                                            1
                                 }
                             c'16
                         }
@@ -266,13 +288,15 @@
                             c'4
                         }
                         {
-                            c'2
+                            c'4
+                            c'4
                         }
                         {
                             c'4
                         }
                         {
-                            c'2
+                            c'4
+                            c'4
                         }
                         {
                             c'4
@@ -321,13 +345,15 @@
                             c'4
                         }
                         {
-                            c'2 \ppp \<
+                            c'4 \ppp \<
+                            c'4
                         }
                         {
                             c'4 \p \>
                         }
                         {
-                            c'2 \ppp \<
+                            c'4 \ppp \<
+                            c'4
                         }
                         {
                             c'4 \p \>
@@ -597,7 +623,8 @@
                         }
                     }
                     {
-                        {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -608,7 +635,7 @@
                                             4
                                             5
                                 }
-                            c'2 ^\downbow \glissando
+                            c'4 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -619,9 +646,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
-                        }
-                        {
+                            c'4 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -632,7 +657,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'4 ^\downbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -645,7 +670,7 @@
                                             0
                                             1
                                 }
-                            c'4 ^\upbow \glissando
+                            c'8 ^\upbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -658,7 +683,7 @@
                                             1
                                             1
                                 }
-                            c'4. ^\downbow \glissando
+                            c'4 ^\downbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -671,21 +696,23 @@
                                             3
                                             5
                                 }
-                            c'4 ^\upbow \glissando
+                            c'4. ^\upbow \glissando
+                        }
+                        {
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4 ^\downbow \glissando
                         }
                         \times 2/3 {
                             \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'4 ^\downbow \glissando
-                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -707,8 +734,6 @@
                                             5
                                 }
                             c'4 ^\downbow \glissando
-                        }
-                        {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -719,7 +744,10 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'4 ^\upbow \glissando
+                        }
+                        {
+                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -728,6 +756,16 @@
                                         \fraction
                                             4
                                             5
+                                }
+                            c'16 ^\downbow \glissando
+                            \once \override NoteHead.Y-offset = -2.0
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            0
+                                            1
                                 }
                             c'16
                         }
@@ -761,12 +799,14 @@
                         }
                     }
                     {
-                        {
-                            c'2
-                            c'8 [
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            c'4
+                            c'4
+                            c'4
                         }
                         {
-                            c'8 ]
+                            c'8
                         }
                         {
                             c'4
@@ -816,9 +856,11 @@
                         }
                     }
                     {
-                        {
-                            c'2 \ppp \<
-                            c'8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            c'4 \ppp \<
+                            c'4
+                            c'4
                         }
                         {
                             c'8 \mf \>

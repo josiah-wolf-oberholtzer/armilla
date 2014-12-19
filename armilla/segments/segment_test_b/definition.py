@@ -62,7 +62,7 @@ rh_music_specifier = consort.MusicSpecifier(
             ),
         rest=new(
             armilla.materials.bow_rhythm_maker_a,
-            denominators=(4, 2),
+            denominators=(4,),
             ),
         ),
     )
