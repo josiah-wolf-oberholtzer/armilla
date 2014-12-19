@@ -14,31 +14,65 @@ afterGraceFraction = #(cons 1023 1024)
 #(set-default-paper-size "11x17" 'landscape)
 #(set-global-staff-size 12)
 
-\layout {
+\paper {
+    bottom-margin = 10\mm
+    left-margin = 30\mm
+    right-margin = 10\mm
+    top-margin = 10\mm
+    evenFooterMarkup = \markup \fill-line {
+        " "
+        \concat {
+            \bold \fontsize #3
+            \on-the-fly #print-page-number-check-first
+            \fromproperty #'page:page-number-string
+        }
+    }
+    evenHeaderMarkup = \markup \fill-line { " " }
+    oddFooterMarkup = \markup \fill-line {
+        " "
+        \concat {
+            \bold \fontsize #3
+            \on-the-fly #print-page-number-check-first
+            \fromproperty #'page:page-number-string
+        }
+    }
+    oddHeaderMarkup = \markup \fill-line { " " }
+    print-first-page-number = ##f
+    print-page-number = ##t
+    page-breaking = #ly:optimal-breaking
+    ragged-bottom = ##f
+    ragged-last-bottom = ##t
+    markup-system-spacing = #'(
+        (basic-distance . 0)
+        (minimum-distance . 12)
+        (padding . 0)
+        (stretchability . 0)
+    )
+    system-system-spacing = #'(
+        (basic-distance . 12)
+        (minimum-distance . 18)
+        (padding . 12)
+        (stretchability . 0)
+    )
+    top-markup-spacing = #'(
+        (basic-distance . 0)
+        (minimum-distance . 0)
+        (padding . 8)
+        (stretchability . 0)
+    )
+    top-system-spacing = #'(
+        (basic-distance . 0)
+        (minimum-distance . 10)
+        (padding . 0)
+        (stretchability . 0)
+    )
+}
 
+\layout {
+    \accidentalStyle forget
+    ragged-bottom = ##t
     ragged-right = ##t
     ragged-last = ##t
-
-    %%% COMMON %%%
-
-    \context {
-        \Voice
-        \consists Horizontal_bracket_engraver
-        \remove Forbid_line_break_engraver
-    }
-
-    \context {
-        \Staff
-        \remove Time_signature_engraver
-    }
-
-    \context {
-        \Dynamics
-        \remove Bar_engraver
-    }
-
-    %%% TIME SIGNATURE CONTEXT %%%
-
     \context {
         \name TimeSignatureContext
         \type Engraver_group
@@ -46,64 +80,58 @@ afterGraceFraction = #(cons 1023 1024)
         \consists Bar_number_engraver
         \consists Mark_engraver
         \consists Metronome_mark_engraver
+        \consists Script_engraver
+        \consists Text_engraver
+        \consists Text_spanner_engraver
         \consists Time_signature_engraver
-
-        \override BarNumber.X-extent = #'(0 . 0)
-        \override BarNumber.Y-extent = #'(0 . 0)
-        \override BarNumber.extra-offset = #'(-8 . -4)
+        \override BarNumber.extra-offset = #'(-6 . -4)
         \override BarNumber.font-name = "Didot Italic"
-        \override BarNumber.font-size = 2
+        \override BarNumber.font-size = 1
+        \override BarNumber.padding = 4
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.7 ly:text-interface::print)
-
         \override MetronomeMark.X-extent = #'(0 . 0)
-        \override MetronomeMark.X-offset = 5
-        \override MetronomeMark.Y-offset = -2.5
-        \override MetronomeMark.break-align-symbols = #'(time-signature)
+        \override MetronomeMark.Y-extent = #'(0 . 0)
+        \override MetronomeMark.break-align-symbols = #'(left-edge)
+        \override MetronomeMark.extra-offset = #'(0 . 4)
         \override MetronomeMark.font-size = 3
-
         \override RehearsalMark.X-extent = #'(0 . 0)
-        \override RehearsalMark.Y-offset = 8
+        \override RehearsalMark.X-offset = 6
+        \override RehearsalMark.Y-offset = -2.25
         \override RehearsalMark.break-align-symbols = #'(time-signature)
         \override RehearsalMark.break-visibility = #end-of-line-invisible
         \override RehearsalMark.font-name = "Didot"
         \override RehearsalMark.font-size = 10
         \override RehearsalMark.outside-staff-priority = 500
-        \override RehearsalMark.self-alignment-X = #CENTER
-
+        \override RehearsalMark.self-alignment-X = #center
+        \override Script.extra-offset = #'(4 . -9)
+        \override Script.font-size = 6
+        \override TextScript.font-size = 3
+        \override TextScript.outside-staff-priority = 600
+        \override TextScript.padding = 6
+        \override TextSpanner.bound-details.right.attach-dir = #LEFT
+        \override TextSpanner.padding = 6.75
         \override TimeSignature.X-extent = #'(0 . 0)
-        \override TimeSignature.break-align-symbols = #'(staff-bar)
+        \override TimeSignature.break-align-symbol = #'left-edge
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 3
+        \override TimeSignature.space-alist.clef = #'(extra-space . 0.5)
         \override TimeSignature.style = #'numbered
-
-        \override VerticalAxisGroup.staff-staff-spacing = #'(
-            (basic-distance . 8)
-            (minimum-distance . 8)
-            (padding . 8)
+        \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 14)
+            (padding . 0)
             (stretchability . 0)
-            )
+        )
+        \override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)
     }
-
-    %%% STRINGS %%%
-
     \context {
         \Voice
-        \name BowingBeamingVoice
-        \type Engraver_group
-        \alias Voice
-        \override Beam.direction = #down
-        \override Beam.positions = #'(-9 . -9)
-        \override Dots.X-offset = -8
-        \override Dots.staff-position = -1
-        \override Flag.Y-offset = -8.5
-        \override NoteHead.Y-offset = -5
-        \override NoteHead.stencil = ##f
-        \override Stem.direction = #down
-        \override Stem.length = 9
-        \override Stem.stem-begin-position = -9
-        \override TupletBracket.positions = #'(-11 . -11)
+        \remove Forbid_line_break_engraver
     }
-
+    \context {
+        \Staff
+        \remove Time_signature_engraver
+    }
     \context {
         \Voice
         \name BowingPositionVoice
@@ -122,9 +150,26 @@ afterGraceFraction = #(cons 1023 1024)
         \override TupletBracket.stencil = ##f
         \override TupletNumber.stencil = ##f
     }
-
+    \context {
+        \Voice
+        \name BowingBeamingVoice
+        \type Engraver_group
+        \alias Voice
+        \override Beam.direction = #down
+        \override Beam.positions = #'(-11 . -11)
+        \override Dots.X-offset = -8
+        \override Dots.staff-position = -1
+        \override Flag.Y-offset = -10.5
+        \override NoteHead.Y-offset = -5
+        \override NoteHead.stencil = ##f
+        \override Stem.direction = #down
+        \override Stem.length = 9
+        \override Stem.stem-begin-position = -11
+        \override TupletBracket.positions = #'(-13 . -13)
+    }
     \context {
         \Dynamics
+        \remove Bar_engraver
         \override DynamicLineSpanner.staff-padding = 11.5
         \override DynamicText.self-alignment-X = -1
         \override Hairpin.bound-padding = 3
@@ -133,7 +178,6 @@ afterGraceFraction = #(cons 1023 1024)
             (padding . 2.5) 
             )
     }
-
     \context {
         \Staff
         \name BowingStaff
@@ -143,7 +187,6 @@ afterGraceFraction = #(cons 1023 1024)
         \accepts BowingPositionVoice
         \override StaffSymbol.transparent = ##t
     }
-
     \context {
         \Voice
         \name FingeringPitchesVoice
@@ -156,7 +199,6 @@ afterGraceFraction = #(cons 1023 1024)
         \override Glissando.stencil = ##f
         \override TupletBracket.positions = #'(-11 . -11)
     }
-
     \context {
         \Voice
         \name FingeringSpannerVoice
@@ -171,7 +213,6 @@ afterGraceFraction = #(cons 1023 1024)
         \override TupletBracket.stencil = ##f
         \override TupletNumber.stencil = ##f
     }
-
     \context {
         \Staff
         \name FingeringStaff
@@ -181,7 +222,6 @@ afterGraceFraction = #(cons 1023 1024)
         \accepts FingeringSpannerVoice
         \override StaffSymbol.color = #(x11-color 'grey50)
     }
-
     \context {
         \StaffGroup
         \name StringPerformerGroup
@@ -190,16 +230,13 @@ afterGraceFraction = #(cons 1023 1024)
         \accepts BowingStaff
         \accepts FingeringStaff
     }
-
-    %%% SCORE %%%
-
     \context {
         \Score
         \accepts TimeSignatureContext
         \accepts StringPerformerGroup
-        \remove Metronome_mark_engraver
-        \remove Mark_engraver
         \remove Bar_number_engraver
+        \remove Mark_engraver
+        \remove Metronome_mark_engraver
         \override BarLine.bar-extent = #'(-2 . 2)
         \override BarLine.hair-thickness = 0.5
         \override BarLine.space-alist = #'(
@@ -270,72 +307,4 @@ afterGraceFraction = #(cons 1023 1024)
         proportionalNotationDuration = #(ly:make-moment 1 32)
         tupletFullLength = ##t
     }
-
-}
-
-\paper {
-
-    %%% MARGINS %%%
-
-    bottom-margin = 10\mm
-    left-margin = 30\mm
-    right-margin = 10\mm
-    top-margin = 10\mm
-
-    %%% HEADERS AND FOOTERS %%%
-
-    evenFooterMarkup = \markup \fill-line {
-        " "
-        \concat {
-            \bold \fontsize #3
-            \on-the-fly #print-page-number-check-first
-            \fromproperty #'page:page-number-string
-        }
-    }
-    evenHeaderMarkup = \markup \fill-line { " " }
-    oddFooterMarkup = \markup \fill-line {
-        " "
-        \concat {
-            \bold \fontsize #3
-            \on-the-fly #print-page-number-check-first
-            \fromproperty #'page:page-number-string
-        }
-    }
-    oddHeaderMarkup = \markup \fill-line { " " }
-    print-first-page-number = ##f
-    print-page-number = ##t
-
-    %%% PAGE BREAKING %%%
-
-    page-breaking = #ly:optimal-breaking
-    ragged-bottom = ##f
-    ragged-last-bottom = ##t
-
-    %%% SPACING DETAILS %%%%
-
-    markup-system-spacing = #'(
-        (basic-distance . 0)
-        (minimum-distance . 12)
-        (padding . 0)
-        (stretchability . 0)
-    )
-    system-system-spacing = #'(
-        (basic-distance . 12)
-        (minimum-distance . 18)
-        (padding . 12)
-        (stretchability . 0)
-    )
-    top-markup-spacing = #'(
-        (basic-distance . 0)
-        (minimum-distance . 0)
-        (padding . 8)
-        (stretchability . 0)
-    )
-    top-system-spacing = #'(
-        (basic-distance . 0)
-        (minimum-distance . 10)
-        (padding . 0)
-        (stretchability . 0)
-    )
-
 }
