@@ -67,8 +67,26 @@ rh_music_specifier = consort.MusicSpecifier(
             dynamic_tokens='f p mp pp p',
             transitions=('flared', None, None),
             ),
+        stem_tremolo_spanner=consort.AttachmentExpression(
+            attachments=(
+                spannertools.StemTremoloSpanner(),
+                None,
+                ),
+            selector=selectortools.Selector().by_leaves()[1:].by_counts(
+                [2, 3, 4, 1], cyclic=True),
+            ),
         ),
-    rhythm_maker=armilla.materials.bow_rhythm_maker_a,
+    rhythm_maker=consort.CompositeRhythmMaker(
+        last=rhythmmakertools.IncisedRhythmMaker(
+            incise_specifier=rhythmmakertools.InciseSpecifier(
+                prefix_counts=[0],
+                suffix_talea=[1],
+                suffix_counts=[1],
+                talea_denominator=16,
+                ),
+            ),
+        rest=armilla.materials.bow_rhythm_maker_a,
+        ),
     )
 
 
