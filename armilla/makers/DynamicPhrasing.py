@@ -227,10 +227,12 @@ class DynamicPhrasing(abctools.AbjadValueObject):
                     if current_hairpin:
                         current_hairpin._extend([selection[0]])
                     current_dynamic = dynamic
-                    current_hairpin = hairpin
                     attach(dynamic, selection[0])
+                if hairpin is not None:
+                    current_hairpin = hairpin
                     attach(hairpin, selection)
-                    hairpin_override = self._get_hairpin_override(transition)
+                    hairpin_override = self._get_hairpin_override(
+                        transition)
                     if hairpin_override is not None:
                         attach(hairpin_override, selection[0])
                 elif current_hairpin is not None:
@@ -257,13 +259,14 @@ class DynamicPhrasing(abctools.AbjadValueObject):
                 if current_hairpin:
                     current_hairpin._extend([selection[0]])
                 current_dynamic = dynamic
-                current_hairpin = hairpin
                 attach(dynamic, selection[0])
-                if 1 < len(selection):
-                    attach(hairpin, selection)
-                    hairpin_override = self._get_hairpin_override(transition)
-                    if hairpin_override is not None:
-                        attach(hairpin_override, selection[0])
+                if hairpin is not None:
+                    current_hairpin = hairpin
+                    if 1 < len(selection):
+                        attach(hairpin, selection)
+                        hairpin_override = self._get_hairpin_override(transition)
+                        if hairpin_override is not None:
+                            attach(hairpin_override, selection[0])
             elif current_hairpin is not None:
                 current_hairpin._extend(selection)
             seed += 1
