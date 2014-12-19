@@ -97,7 +97,7 @@
                                             0
                                             1
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8. ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -107,7 +107,7 @@
                                             1
                                             1
                                 }
-                            c'8
+                            c'16
                         }
                     }
                     {
@@ -138,7 +138,7 @@
                                             0
                                             1
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8. ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -148,7 +148,7 @@
                                             1
                                             1
                                 }
-                            c'8
+                            c'16
                         }
                     }
                     {
@@ -246,6 +246,7 @@
                             c'4 ^\downbow \glissando
                         }
                         {
+                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -255,7 +256,17 @@
                                             3
                                             5
                                 }
-                            c'8
+                            c'16 ^\upbow \glissando
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'16
                         }
                     }
                     {
@@ -277,6 +288,7 @@
                             c'8 ^\downbow \glissando
                         }
                         {
+                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -286,7 +298,17 @@
                                             3
                                             5
                                 }
-                            c'8
+                            c'16 ^\upbow \glissando
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'16
                         }
                     }
                     {
@@ -470,7 +492,27 @@
                                             1
                                             5
                                 }
-                            c'4.
+                            c'4 ^\upbow \glissando
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'16 \glissando
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'16
                         }
                     }
                     {
@@ -488,9 +530,9 @@
                     }
                     {
                         {
-                            c'8 [
-                            \set stemLeftBeamCount = 1
-                            c'8 ]
+                            c'8. [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -503,9 +545,9 @@
                             c'4.
                         }
                         {
-                            c'8 [
-                            \set stemLeftBeamCount = 1
-                            c'8 ]
+                            c'8. [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -519,10 +561,10 @@
                             c'8 [
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             c'8
@@ -530,11 +572,13 @@
                         }
                         \times 2/3 {
                             c'4
-                            c'4
-                            c'4
+                            c'4 :32
+                            c'4 :32
                         }
                         {
-                            c'8
+                            c'16 :128 [
+                            \set stemLeftBeamCount = 2
+                            c'16 :128 ]
                         }
                     }
                     {
@@ -548,7 +592,10 @@
                         }
                         {
                             \set stemLeftBeamCount = 1
-                            c'8 ]
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -561,10 +608,10 @@
                             c'16 [
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            c'16 :128
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            c'16 :128
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
@@ -578,34 +625,37 @@
                         \times 2/3 {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                         }
                         \times 2/3 {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             c'8
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             c'8
                             c'8 ]
                         }
                         {
-                            c'4.
+                            c'4
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -623,8 +673,8 @@
                     {
                         {
                             \once \override Hairpin.stencil = #flared-hairpin
-                            c'8 \f \>
-                            c'8 \p
+                            c'8. \f \>
+                            c'16 \p
                         }
                     }
                     {
@@ -638,8 +688,8 @@
                         }
                         {
                             \once \override Hairpin.stencil = #flared-hairpin
-                            c'8 \f \>
-                            c'8 \p
+                            c'8. \f \>
+                            c'16 \p
                         }
                     }
                     {
@@ -662,7 +712,8 @@
                             c'4
                         }
                         {
-                            c'8 \f
+                            c'16
+                            c'16 \f
                         }
                     }
                     {
@@ -676,7 +727,8 @@
                             c'8 \mp \>
                         }
                         {
-                            c'8 \pp
+                            c'16
+                            c'16 \pp
                         }
                     }
                     {
@@ -708,7 +760,9 @@
                             c'8
                         }
                         {
-                            c'4. \p
+                            c'4 \p \<
+                            c'16
+                            c'16 \f
                         }
                     }
                     {
@@ -1294,7 +1348,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
+                            c'2 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1304,7 +1358,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1314,27 +1368,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'8 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'8
+                            c'16
                         }
                     }
                     {
@@ -1422,8 +1456,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\upbow \glissando
-                            \once \override Glissando.style = #'zigzag
+                            c'8. ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1432,27 +1465,6 @@
                                         \fraction
                                             1
                                             1
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
                                 }
                             c'16
                         }
@@ -1577,7 +1589,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
+                            c'4 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1587,7 +1599,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1597,7 +1609,7 @@
                                             3
                                             5
                                 }
-                            c'8
+                            c'16
                         }
                     }
                     {
@@ -1617,7 +1629,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8. ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1627,7 +1639,7 @@
                                             4
                                             5
                                 }
-                            c'8
+                            c'16
                         }
                     }
                 }
@@ -1646,36 +1658,24 @@
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                         }
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8
+                            c'8 :64
                         }
                         {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            \set stemLeftBeamCount = 1
                             c'8 ]
+                        }
+                        {
+                            c'2
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -1688,10 +1688,10 @@
                             c'16 [
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            c'16 :128
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16
+                            c'16 :128
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
@@ -1701,13 +1701,7 @@
                             c'4.
                         }
                         {
-                            c'16 [
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
+                            c'8. [
                             \set stemLeftBeamCount = 2
                             c'16 ]
                         }
@@ -1726,32 +1720,26 @@
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
+                            c'16 :128 ]
+                        }
+                        {
+                            c'4. :32
+                        }
+                        {
+                            c'16 :128 [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
                             c'16 ]
                         }
                         {
-                            c'4.
-                        }
-                        {
-                            c'16 [
+                            c'4
+                            c'16 :128 [
                             \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            c'16
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            \set stemLeftBeamCount = 1
-                            c'8 ]
+                            c'16 ]
                         }
                     }
                     {
@@ -1761,9 +1749,9 @@
                     }
                     {
                         {
-                            c'8 [
-                            \set stemLeftBeamCount = 1
-                            c'8 ]
+                            c'8. [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                 }
@@ -1789,11 +1777,9 @@
                         }
                         {
                             \once \override Hairpin.stencil = #flared-hairpin
-                            c'8 \f \>
-                            c'8
-                            c'8
-                            c'8
-                            c'8 \p
+                            c'2 \f \>
+                            c'16
+                            c'16 \p
                         }
                     }
                     {
@@ -1814,9 +1800,7 @@
                             c'4. \f \>
                         }
                         {
-                            c'16 \p \<
-                            c'16
-                            c'16
+                            c'8. \p \<
                             c'16 \mp
                         }
                     }
@@ -1846,9 +1830,9 @@
                         }
                         {
                             \once \override Hairpin.stencil = #flared-hairpin
-                            c'8 \mp \>
-                            c'8
-                            c'8 \pp
+                            c'4 \mp \>
+                            c'16
+                            c'16 \pp
                         }
                     }
                     {
@@ -1858,8 +1842,8 @@
                     }
                     {
                         {
-                            c'8 \mp \>
-                            c'8 \pp
+                            c'8. \mp \>
+                            c'16 \pp
                         }
                     }
                 }
