@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 import collections
-from abjad.tools import abctools
-from abjad.tools import indicatortools
-from abjad.tools import instrumenttools
-from abjad.tools import markuptools
-from abjad.tools import scoretools
+from abjad import attach
+from abjad import abctools
+from abjad import indicatortools
+from abjad import instrumenttools
+from abjad import markuptools
+from abjad import scoretools
 import consort
 
 
@@ -127,6 +128,17 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
                 viola_two
                 ],
             name='Armilla Score',
+            )
+
+        attach(
+            indicatortools.Tuning(pitches=('C3', 'G3', 'D4', 'A4')),
+            score['Viola 1 Fingering Staff'],
+            scope=scoretools.Voice,
+            )
+        attach(
+            indicatortools.Tuning(pitches=('C3', 'G3', 'D4', 'A4')),
+            score['Viola 2 Fingering Staff'],
+            scope=scoretools.Voice,
             )
 
         return score
