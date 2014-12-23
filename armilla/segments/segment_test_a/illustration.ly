@@ -157,8 +157,7 @@
                         }
                     }
                     {
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 3/5 {
+                        {
                             \once \override Glissando.style = #'dotted-line
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -190,6 +189,8 @@
                                             1
                                 }
                             c'8 ^\upbow \glissando
+                        }
+                        \times 2/3 {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -200,30 +201,8 @@
                                             1
                                             1
                                 }
-                            c'8 ^\downbow \glissando
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'8 ^\upbow \glissando
-                        }
-                        \times 2/3 {
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
                             c'4 ^\downbow \glissando
+                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -246,7 +225,6 @@
                             c'4 ^\downbow \glissando
                         }
                         {
-                            \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -416,7 +394,7 @@
                                 }
                             c'8 ^\upbow \glissando
                         }
-                        \times 4/6 {
+                        {
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -460,6 +438,8 @@
                                             1
                                 }
                             c'8 ^\upbow \glissando
+                        }
+                        {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -470,7 +450,7 @@
                                             1
                                             1
                                 }
-                            c'8 ^\downbow \glissando
+                            c'4 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = -0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -480,9 +460,7 @@
                                             2
                                             5
                                 }
-                            c'8 \glissando
-                        }
-                        {
+                            c'16 \glissando
                             \once \override NoteHead.Y-offset = -1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -490,26 +468,6 @@
                                     \vcenter
                                         \fraction
                                             1
-                                            5
-                                }
-                            c'4 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'16 \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
                                             5
                                 }
                             c'16
@@ -556,29 +514,22 @@
                         }
                     }
                     {
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 3/5 {
+                        {
                             c'8 [
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             c'8 :64
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8 :64
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            c'8 ]
+                            c'8 :64 ]
                         }
                         \times 2/3 {
                             c'4
-                            c'4 :32
-                            c'4 :32
+                            c'4
+                            c'4
                         }
                         {
-                            c'16 :128 [
+                            c'16 [
                             \set stemLeftBeamCount = 2
-                            c'16 :128 ]
+                            c'16 ]
                         }
                     }
                     {
@@ -633,7 +584,7 @@
                             \set stemRightBeamCount = 1
                             c'8 :64
                         }
-                        \times 2/3 {
+                        {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             c'8 :64
@@ -643,13 +594,7 @@
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             c'8 :64
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8 :64
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                            c'8 ]
+                            c'8 :64 ]
                         }
                         {
                             c'4
@@ -698,11 +643,8 @@
                         }
                     }
                     {
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 3/5 {
+                        {
                             c'8 \pp \<
-                            c'8
-                            c'8
                             c'8
                             c'8
                         }
@@ -751,10 +693,8 @@
                             c'8
                             c'8
                         }
-                        \times 2/3 {
+                        {
                             c'8 \pp \<
-                            c'8
-                            c'8
                             c'8
                             c'8
                             c'8
@@ -783,7 +723,7 @@
                     }
                     {
                         {
-                            bqs4 \startTrillSpan
+                            a4 \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -794,34 +734,10 @@
                     }
                     {
                         \times 4/5 {
-                            a16 [ \glissando
+                            af16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            af16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            gf16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    f'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            a16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
@@ -829,7 +745,13 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    cs'
+                                >16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -841,19 +763,13 @@
                                 \revert Script #'font-size
                             }
                             \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
+                            \set stemRightBeamCount = 2
                             \afterGrace
                             a16
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -864,18 +780,42 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            \afterGrace
+                            c'16
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    eqs'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    dtqs'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                         }
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            c'8 ] \glissando \startTrillSpan
+                            bqs!8 ] \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            a4 \startTrillSpan
+                            gf4 \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -887,7 +827,7 @@
                     {
                         {
                             \afterGrace
-                            gf4. \startTrillSpan
+                            c'4. \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -895,9 +835,9 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    bqs
+                                    a
                                     \tweak #'style #'harmonic
-                                    eqs'
+                                    cs'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
@@ -907,7 +847,7 @@
                         \times 4/5 {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
-                            bqs!16 [ \glissando
+                            a16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16 \glissando
@@ -924,16 +864,16 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    a
+                                    bqs
                                     \tweak #'style #'harmonic
-                                    e'
+                                    ftqs'
                                 >16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    a
+                                    bqs
                                     \tweak #'style #'harmonic
-                                    d'
+                                    eqs'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
@@ -941,7 +881,7 @@
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
                             \afterGrace
-                            a16 ]
+                            bqs!16 ]
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -949,16 +889,16 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    c'
+                                    gf
                                     \tweak #'style #'harmonic
-                                    e'
+                                    cf'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
                         }
                         {
-                            c'4 \glissando \startTrillSpan
+                            gf!4 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
@@ -985,7 +925,7 @@
                                 \null
                                 }
                             \set stemLeftBeamCount = 1
-                            c'8 ] \startTrillSpan
+                            gf8 ] \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -1005,67 +945,25 @@
                                 }
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            \afterGrace
-                            c'8 \startTrillSpan
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    g'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            a8 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            \afterGrace
-                            c'4. \startTrillSpan
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    eqs'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    dtqs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            bqs4. \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         \times 4/5 {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
                             \afterGrace
-                            bqs!16 [
+                            c'16 [
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    cs'
-                                >16
+                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1078,34 +976,17 @@
                             }
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            a16
+                            a16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            \parenthesize
-                            a16
+                            c'16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            \afterGrace
-                            \parenthesize
-                            a16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    af
-                                    \tweak #'style #'harmonic
-                                    c'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            gf16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
                             \afterGrace
-                            af!16 ]
+                            b16 ]
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1113,16 +994,16 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    gf
+                                    a
                                     \tweak #'style #'harmonic
-                                    cf'
+                                    d'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
                         }
                         {
-                            gf!4. \startTrillSpan
+                            a4. \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -1141,26 +1022,6 @@
                     }
                     {
                         {
-                            bqs4
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
-                        \times 4/5 {
-                            a16 \glissando
-                            af16 \glissando
-                            gf16
-                            c'16
-                            a16
-                        }
-                        {
-                            c'8 \glissando
-                        }
-                        {
                             a4
                         }
                     }
@@ -1170,18 +1031,38 @@
                         }
                     }
                     {
-                        {
-                            gf4.
-                        }
                         \times 4/5 {
-                            bqs16 \glissando
-                            c'16 \glissando
+                            af16 \glissando
                             a16 \glissando
                             c'16
                             a16
+                            c'16
                         }
                         {
-                            c'4 \glissando
+                            bqs8 \glissando
+                        }
+                        {
+                            gf4
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'4.
+                        }
+                        \times 4/5 {
+                            a16 \glissando
+                            c'16 \glissando
+                            a16 \glissando
+                            c'16
+                            bqs16
+                        }
+                        {
+                            gf4 \glissando
                         }
                         {
                             b8
@@ -1197,7 +1078,7 @@
                             a8 \glissando
                         }
                         {
-                            c'8
+                            gf8
                         }
                     }
                     {
@@ -1210,22 +1091,20 @@
                             b4. \glissando
                         }
                         {
-                            c'8
+                            a8 \glissando
                         }
                         {
-                            c'4.
+                            bqs4. \glissando
                         }
                         \times 4/5 {
-                            bqs16
-                            a16
-                            \parenthesize
-                            a16
-                            \parenthesize
-                            a16
-                            af16
+                            c'16
+                            a16 \glissando
+                            c'16 \glissando
+                            gf16 \glissando
+                            b16
                         }
                         {
-                            gf4.
+                            a4.
                         }
                     }
                     {
@@ -1855,7 +1734,7 @@
                     {
                         {
                             \afterGrace
-                            af16 [
+                            a16 [
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1863,18 +1742,15 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    gf
+                                    c'
                                     \tweak #'style #'harmonic
-                                    cf'
+                                    e'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            gf!16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
                             c'16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
@@ -1882,15 +1758,18 @@
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16 \glissando
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            bqs16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
-                            a16 \glissando
+                            gf16 \glissando
                         }
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             \afterGrace
-                            c'8 \startTrillSpan
+                            af8 \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1900,7 +1779,7 @@
                                     \tweak #'font-size #-4
                                     b
                                     \tweak #'style #'harmonic
-                                    ds'
+                                    e'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
@@ -1920,25 +1799,25 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            bqs4 \glissando \startTrillSpan
+                            a4 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         \times 2/3 {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
-                            c'16 [ \glissando
+                            gf16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            a16 \glissando
+                            af16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
                             b16 ] \glissando
                         }
                         {
-                            af2 ~ \startTrillSpan
+                            a2 ~ \startTrillSpan
                             \set stemLeftBeamCount = 1
                             \parenthesize
-                            af8
+                            a8
                             <> \stopTrillSpan
                         }
                     }
@@ -1949,19 +1828,19 @@
                     }
                     {
                         {
-                            a4 \glissando \startTrillSpan
+                            af4 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 2
-                            af16 [ \glissando
+                            a16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            gf16 \glissando
+                            c'16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            bqs16 \glissando
+                            a16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             \afterGrace
@@ -1970,6 +1849,126 @@
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
                                 s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    ftqs'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            bqs!16 \glissando
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            gf16 ] \glissando
+                        }
+                        {
+                            af4 \startTrillSpan
+                            <> \stopTrillSpan
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \afterGrace
+                            a8 [
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    g'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    f'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8 \glissando
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            a8 \glissando
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8 ] \glissando
+                        }
+                        {
+                            \afterGrace
+                            bqs4 \startTrillSpan
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    gf
+                                    \tweak #'style #'harmonic
+                                    df'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            \afterGrace
+                            gf!16 [
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    af
+                                    \tweak #'style #'harmonic
+                                    df'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            af!16 \glissando
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            b16 \glissando
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            \afterGrace
+                            a16
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1982,68 +1981,18 @@
                             }
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            c'16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            a16 ]
-                        }
-                        {
-                            \parenthesize
-                            a4 \startTrillSpan
-                            <> \stopTrillSpan
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 3/5 {
                             \afterGrace
-                            af8 [
+                            c'16
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    gf
+                                    a
                                     \tweak #'style #'harmonic
-                                    df'
+                                    d'
                                 >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    gf
-                                    \tweak #'style #'harmonic
-                                    cf'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            gf!8 \glissando
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            bqs8 \glissando
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8 \glissando
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            a8 ]
-                        }
-                        {
-                            \afterGrace
-                            \parenthesize
-                            a4 \startTrillSpan
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -2054,22 +2003,16 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            <> \stopTrillSpan
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            a16 [ \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            b16 \glissando
+                            a16 \glissando
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
-                            af16 \glissando
+                            bqs16 \glissando
                             \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
+                            \set stemRightBeamCount = 1
                             \afterGrace
-                            gf16
+                            af16 ]
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -2079,28 +2022,14 @@
                                     \tweak #'font-size #-4
                                     c'
                                     \tweak #'style #'harmonic
-                                    g'
+                                    e'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \parenthesize
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \parenthesize
-                            c'16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            b16 ] \glissando
                         }
                         {
-                            bqs4. \startTrillSpan
+                            c'4. \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -2111,7 +2040,7 @@
                     }
                     {
                         {
-                            c'4 \stopTrillSpan \startTrillSpan
+                            a4 \stopTrillSpan \startTrillSpan
                         }
                     }
                 }
@@ -2119,31 +2048,31 @@
                     \clef "alto"
                     {
                         {
-                            af16
+                            a16
+                            c'16 \glissando
+                            a16 \glissando
+                            c'16 \glissando
+                            bqs16 \glissando
                             gf16 \glissando
-                            c'16 \glissando
-                            a16 \glissando
-                            c'16 \glissando
-                            a16 \glissando
                         }
                         {
-                            c'8
+                            af8
                         }
                         {
                             b8 \glissando
                         }
                         {
-                            bqs4 \glissando
+                            a4 \glissando
                         }
                         \times 2/3 {
-                            c'16 \glissando
-                            a16 \glissando
+                            gf16 \glissando
+                            af16 \glissando
                             b16 \glissando
                         }
                         {
-                            af2 ~
+                            a2 ~
                             \parenthesize
-                            af8
+                            a8
                         }
                     }
                     {
@@ -2153,19 +2082,18 @@
                     }
                     {
                         {
-                            a4 \glissando
+                            af4 \glissando
                         }
                         {
-                            af16 \glissando
-                            gf16 \glissando
-                            bqs16 \glissando
-                            c'16
+                            a16 \glissando
                             c'16 \glissando
-                            a16
+                            a16 \glissando
+                            c'16
+                            bqs16 \glissando
+                            gf16 \glissando
                         }
                         {
-                            \parenthesize
-                            a4
+                            af4
                         }
                     }
                     {
@@ -2175,31 +2103,27 @@
                     }
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 3/5 {
-                            af8
-                            gf8 \glissando
-                            bqs8 \glissando
-                            c'8 \glissando
+                        \times 3/4 {
                             a8
+                            c'8 \glissando
+                            a8 \glissando
+                            c'8 \glissando
                         }
                         {
-                            \parenthesize
-                            a4
+                            bqs4
                         }
                         {
-                            a16 \glissando
-                            b16 \glissando
-                            af16 \glissando
                             gf16
-                            c'16
-                            \parenthesize
-                            c'16
-                            \parenthesize
-                            c'16 \glissando
+                            af16 \glissando
                             b16 \glissando
+                            a16
+                            c'16
+                            a16 \glissando
+                            bqs16 \glissando
+                            af16
                         }
                         {
-                            bqs4.
+                            c'4.
                         }
                     }
                     {
@@ -2209,7 +2133,7 @@
                     }
                     {
                         {
-                            c'4
+                            a4
                         }
                     }
                 }

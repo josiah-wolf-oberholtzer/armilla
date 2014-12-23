@@ -400,8 +400,9 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            gf4 \glissando
+                            c'4
                             \afterGrace
+                            \parenthesize
                             c'4
                             {
                                 \override Flag #'stroke-style = #"grace"
@@ -425,17 +426,16 @@
                             }
                         }
                         {
-                            c'2
+                            c'2 \glissando
                         }
                         {
-                            \parenthesize
-                            c'4 \glissando
+                            gf4 \glissando
                         }
                         {
                             b2 \glissando
                         }
                         {
-                            af4.
+                            a4.
                         }
                     }
                     {
@@ -456,23 +456,23 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    c'
+                                    gf
                                     \tweak #'style #'harmonic
-                                    g'
+                                    df'
                                 >16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    c'
+                                    gf
                                     \tweak #'style #'harmonic
-                                    f'
+                                    cf'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
                         }
                         {
-                            c'4. \glissando
+                            gf!4. \glissando
                         }
                         {
                             b4
@@ -494,21 +494,21 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            gf4 \glissando
+                            c'4
+                            \parenthesize
                             c'4
                         }
                         {
-                            c'2
+                            c'2 \glissando
                         }
                         {
-                            \parenthesize
-                            c'4 \glissando
+                            gf4 \glissando
                         }
                         {
                             b2 \glissando
                         }
                         {
-                            af4.
+                            a4.
                         }
                     }
                     {
@@ -524,7 +524,7 @@
                             a4.
                         }
                         {
-                            c'4. \glissando
+                            gf4. \glissando
                         }
                         {
                             b4
@@ -899,70 +899,16 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            af4 \glissando
-                            bqs4 \glissando
+                            a4
+                            \parenthesize
+                            a4
                         }
                         {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            a8
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    cs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                        }
-                        {
-                            a2
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            a2 ~
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             \afterGrace
                             \parenthesize
                             a8
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    gf
-                                    \tweak #'style #'harmonic
-                                    df'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    gf
-                                    \tweak #'style #'harmonic
-                                    cf'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                        }
-                        {
-                            \afterGrace
-                            gf!4.
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -972,19 +918,53 @@
                                     \tweak #'font-size #-4
                                     bqs
                                     \tweak #'style #'harmonic
-                                    dtqs'
+                                    eqs'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
                         }
                         {
-                            bqs!4. \glissando
+                            bqs!2
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            af2 ~
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            \afterGrace
+                            \parenthesize
+                            af8
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    g'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    f'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                         }
                         {
-                            c'4 \glissando
                             \afterGrace
-                            a4
+                            c'4.
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -994,16 +974,38 @@
                                     \tweak #'font-size #-4
                                     a
                                     \tweak #'style #'harmonic
-                                    cs'
+                                    d'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            a4 \glissando
+                        }
+                        {
+                            a4. \glissando
+                        }
+                        {
+                            c'4 \glissando
+                            \afterGrace
+                            bqs4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    af
+                                    \tweak #'style #'harmonic
+                                    df'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            af!4 \glissando
                         }
                         {
                             \set stemLeftBeamCount = 1
-                            af8
+                            a8
                         }
                     }
                     {
@@ -1018,14 +1020,16 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            af4 \glissando
-                            bqs4 \glissando
+                            a4
+                            \parenthesize
+                            a4
                         }
                         {
+                            \parenthesize
                             a8
                         }
                         {
-                            a2
+                            bqs2
                         }
                     }
                     {
@@ -1035,23 +1039,23 @@
                     }
                     {
                         {
-                            a2 ~
+                            af2 ~
                             \parenthesize
-                            a8
+                            af8
                         }
                         {
-                            gf4.
+                            c'4.
                         }
                         {
-                            bqs4. \glissando
+                            a4. \glissando
                         }
                         {
                             c'4 \glissando
-                            a4
-                            a4 \glissando
+                            bqs4
+                            af4 \glissando
                         }
                         {
-                            af8
+                            a8
                         }
                     }
                     {

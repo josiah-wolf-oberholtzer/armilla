@@ -90,7 +90,7 @@ lh_music_specifier = consort.MusicSpecifier(
             consort.HarmonicExpression('M3'),
             consort.HarmonicExpression('P5'),
             ),
-        pitches="a c' a c' a c' bqs gf af b",
+        pitch_specifier="a c' a c' a c' bqs gf af b",
         ),
     rhythm_maker=consort.CompositeRhythmMaker(
         last=rhythmmakertools.NoteRhythmMaker(),

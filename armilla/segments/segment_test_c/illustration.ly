@@ -616,7 +616,7 @@
                     \clef "alto"
                     {
                         {
-                            af8
+                            a8
                         }
                     }
                     {
@@ -626,10 +626,11 @@
                     }
                     {
                         {
-                            bqs8 [ \glissando
+                            a8 [
                         }
                         {
                             \set stemLeftBeamCount = 1
+                            \parenthesize
                             a8. ]
                         }
                     }
@@ -658,7 +659,7 @@
                     }
                     {
                         {
-                            a8
+                            af8
                         }
                     }
                     {
@@ -675,10 +676,10 @@
                     }
                     {
                         {
-                            gf8 \glissando
+                            c'8 \glissando
                         }
                         {
-                            bqs4
+                            a4
                         }
                     }
                     {
@@ -705,7 +706,7 @@
                     \clef "alto"
                     {
                         {
-                            af8
+                            a8
                         }
                     }
                     {
@@ -715,9 +716,10 @@
                     }
                     {
                         {
-                            bqs8 \glissando
+                            a8
                         }
                         {
+                            \parenthesize
                             a8.
                         }
                     }
@@ -746,7 +748,7 @@
                     }
                     {
                         {
-                            a8
+                            af8
                         }
                     }
                     {
@@ -763,10 +765,10 @@
                     }
                     {
                         {
-                            gf8 \glissando
+                            c'8 \glissando
                         }
                         {
-                            bqs4
+                            a4
                         }
                     }
                     {
@@ -1291,7 +1293,7 @@
                     \clef "alto"
                     {
                         {
-                            gf8
+                            c'8
                         }
                     }
                     {
@@ -1318,11 +1320,11 @@
                     }
                     {
                         {
-                            a8 - \bendAfter #'4.0 [
+                            bqs8 - \bendAfter #'4.0 [
                         }
                         {
                             \set stemLeftBeamCount = 1
-                            c'8 ]
+                            gf8 ]
                         }
                     }
                     {
@@ -1349,7 +1351,7 @@
                     }
                     {
                         {
-                            af8
+                            a8
                         }
                     }
                     {
@@ -1378,37 +1380,37 @@
                     \clef "alto"
                     {
                         {
+                            c'8
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'8
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            bqs8 - \bendAfter #'4.0
+                        }
+                        {
                             gf8
-                        }
-                    }
-                    {
-                        {
-                            s4
-                        }
-                        {
-                            s16
-                        }
-                    }
-                    {
-                        {
-                            c'8
-                        }
-                    }
-                    {
-                        {
-                            s16
-                            s4
-                        }
-                        {
-                            s16
-                        }
-                    }
-                    {
-                        {
-                            a8 - \bendAfter #'4.0
-                        }
-                        {
-                            c'8
                         }
                     }
                     {
@@ -1435,7 +1437,7 @@
                     }
                     {
                         {
-                            af8
+                            a8
                         }
                     }
                     {
