@@ -224,7 +224,7 @@ class DynamicPhrasing(abctools.AbjadValueObject):
                 #print('A', seed, selection, dynamic, hairpin, transition)
                 #print('?', self.dynamic_tokens[seed], self.dynamic_tokens)
                 if dynamic != current_dynamic:
-                    if current_hairpin:
+                    if current_hairpin is not None:
                         current_hairpin._extend([selection[0]])
                     current_dynamic = dynamic
                     attach(dynamic, selection[0])
@@ -236,7 +236,12 @@ class DynamicPhrasing(abctools.AbjadValueObject):
                     if hairpin_override is not None:
                         attach(hairpin_override, selection[0])
                 elif current_hairpin is not None:
-                    current_hairpin._extend(selection)
+                    #print('SELECTION', selection)
+                    #print('LEAVES', current_hairpin._get_leaves())
+                    if current_hairpin._is_my_last_leaf(selection[0]):
+                        current_hairpin._extend(selection[1:])
+                    else:
+                        current_hairpin._extend(selection)
                 seed += 1
         dynamic, hairpin, transition = self._get_attachments(seed)
         selection = selections[-1]
