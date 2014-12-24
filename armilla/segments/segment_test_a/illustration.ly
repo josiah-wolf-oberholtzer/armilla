@@ -723,7 +723,7 @@
                     }
                     {
                         {
-                            a4 \startTrillSpan
+                            c'4 \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -733,82 +733,17 @@
                         }
                     }
                     {
-                        \times 4/5 {
-                            af16 [ \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            a16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            c'16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    cs'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            a16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    g'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            c'16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    eqs'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    dtqs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                        {
+                            a4 \glissando \startTrillSpan
+                            <> \stopTrillSpan
                         }
                         {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            bqs!8 ] \glissando \startTrillSpan
+                            bqs8 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
@@ -826,62 +761,22 @@
                     }
                     {
                         {
-                            \afterGrace
-                            c'4. \startTrillSpan
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    cs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            a4. \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
-                        \times 4/5 {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            a16 [ \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            a16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            c'4 \glissando \startTrillSpan
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
                             \afterGrace
-                            c'16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    ftqs'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    eqs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            bqs!16 ]
+                            a4 \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -889,16 +784,13 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    gf
+                                    c'
                                     \tweak #'style #'harmonic
-                                    cf'
+                                    g'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                        }
-                        {
-                            gf!4 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
@@ -906,7 +798,7 @@
                                 \null
                                 }
                             \set stemLeftBeamCount = 1
-                            b8 \startTrillSpan
+                            c'8 \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -917,7 +809,7 @@
                     }
                     {
                         {
-                            a8 [ \glissando \startTrillSpan
+                            bqs8 [ \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
@@ -936,7 +828,22 @@
                     }
                     {
                         {
-                            b4. \glissando \startTrillSpan
+                            \afterGrace
+                            b4. \startTrillSpan
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    f'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                             <> \stopTrillSpan
                         }
                         {
@@ -945,21 +852,22 @@
                                 }
                             \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
-                            a8 \glissando \startTrillSpan
+                            c'8 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            bqs4. \glissando \startTrillSpan
+                            a4. \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
-                        \times 4/5 {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
                             \afterGrace
-                            c'16 [
+                            c'4 \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -967,43 +875,20 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    a
+                                    gf
                                     \tweak #'style #'harmonic
-                                    e'
+                                    cf'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            a16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            gf16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            b16 ]
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
+                            <> \stopTrillSpan
                         }
                         {
-                            a4. \startTrillSpan
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            gf!4. \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -1022,7 +907,7 @@
                     }
                     {
                         {
-                            a4
+                            c'4
                         }
                     }
                     {
@@ -1031,12 +916,8 @@
                         }
                     }
                     {
-                        \times 4/5 {
-                            af16 \glissando
-                            a16 \glissando
-                            c'16
-                            a16
-                            c'16
+                        {
+                            a4 \glissando
                         }
                         {
                             bqs8 \glissando
@@ -1052,20 +933,16 @@
                     }
                     {
                         {
-                            c'4.
-                        }
-                        \times 4/5 {
-                            a16 \glissando
-                            c'16 \glissando
-                            a16 \glissando
-                            c'16
-                            bqs16
+                            a4. \glissando
                         }
                         {
-                            gf4 \glissando
+                            c'4 \glissando
                         }
                         {
-                            b8
+                            a4
+                        }
+                        {
+                            c'8
                         }
                     }
                     {
@@ -1075,7 +952,7 @@
                     }
                     {
                         {
-                            a8 \glissando
+                            bqs8 \glissando
                         }
                         {
                             gf8
@@ -1088,23 +965,19 @@
                     }
                     {
                         {
-                            b4. \glissando
+                            b4.
                         }
                         {
-                            a8 \glissando
+                            c'8 \glissando
                         }
                         {
-                            bqs4. \glissando
-                        }
-                        \times 4/5 {
-                            c'16
-                            a16 \glissando
-                            c'16 \glissando
-                            gf16 \glissando
-                            b16
+                            a4. \glissando
                         }
                         {
-                            a4.
+                            c'4
+                        }
+                        {
+                            gf4.
                         }
                     }
                     {
@@ -1734,153 +1607,7 @@
                     {
                         {
                             \afterGrace
-                            a16 [
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            a16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            bqs16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            gf16 \glissando
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            \afterGrace
-                            af8 \startTrillSpan
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    b
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            <> \stopTrillSpan
-                        }
-                        {
-                            \once \override TrillSpanner.bound-details.left.text = \markup {
-                                \null
-                                }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            b8 ] \glissando \startTrillSpan
-                            <> \stopTrillSpan
-                        }
-                        {
-                            \once \override TrillSpanner.bound-details.left.text = \markup {
-                                \null
-                                }
-                            a4 \glissando \startTrillSpan
-                            <> \stopTrillSpan
-                        }
-                        \times 2/3 {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            gf16 [ \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            af16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            b16 ] \glissando
-                        }
-                        {
-                            a2 ~ \startTrillSpan
-                            \set stemLeftBeamCount = 1
-                            \parenthesize
-                            a8
-                            <> \stopTrillSpan
-                        }
-                    }
-                    {
-                        {
-                            r4
-                        }
-                    }
-                    {
-                        {
-                            af4 \glissando \startTrillSpan
-                            <> \stopTrillSpan
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            a16 [ \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            a16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            c'16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    bqs
-                                    \tweak #'style #'harmonic
-                                    ftqs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            bqs!16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            gf16 ] \glissando
-                        }
-                        {
-                            af4 \startTrillSpan
-                            <> \stopTrillSpan
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 3/4 {
-                            \afterGrace
-                            a8 [
+                            a4. \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1901,40 +1628,32 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8 \glissando
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            a8 \glissando
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8 ] \glissando
-                        }
-                        {
-                            \afterGrace
-                            bqs4 \startTrillSpan
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    gf
-                                    \tweak #'style #'harmonic
-                                    df'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
                             <> \stopTrillSpan
                         }
                         {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
                             \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            c'8 [ \glissando \startTrillSpan
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            a8 ] \glissando \startTrillSpan
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
                             \afterGrace
-                            gf!16 [
+                            c'4 \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1944,75 +1663,21 @@
                                     \tweak #'font-size #-4
                                     af
                                     \tweak #'style #'harmonic
-                                    df'
+                                    ef'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            af!16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            b16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            a16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    g'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            \afterGrace
-                            c'16
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    cs'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            a16 \glissando
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            bqs16 \glissando
-                            \set stemLeftBeamCount = 2
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            \set stemLeftBeamCount = 1
                             \set stemRightBeamCount = 1
                             \afterGrace
-                            af16 ]
+                            af!8 \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -2020,16 +1685,69 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    c'
+                                    b
                                     \tweak #'style #'harmonic
                                     e'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                            <> \stopTrillSpan
                         }
                         {
-                            c'4. \startTrillSpan
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            b2 ~ \startTrillSpan
+                            \set stemLeftBeamCount = 1
+                            \parenthesize
+                            b8
+                            <> \stopTrillSpan
+                        }
+                    }
+                    {
+                        {
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            \afterGrace
+                            c'4 \startTrillSpan
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    eqs'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    dtqs'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            bqs!4. \glissando \startTrillSpan
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            af4 \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -2040,7 +1758,101 @@
                     }
                     {
                         {
-                            a4 \stopTrillSpan \startTrillSpan
+                            \afterGrace
+                            a4. \startTrillSpan
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            c'4 \glissando \startTrillSpan
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            \afterGrace
+                            a4 \startTrillSpan
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    ftqs'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    bqs
+                                    \tweak #'style #'harmonic
+                                    eqs'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            <> \stopTrillSpan
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            \afterGrace
+                            bqs!4 \startTrillSpan
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    af
+                                    \tweak #'style #'harmonic
+                                    c'
+                                >16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    af
+                                    \tweak #'style #'harmonic
+                                    ef'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \once \override TrillSpanner.bound-details.left.text = \markup {
+                                \null
+                                }
+                            af!4. \startTrillSpan
+                            <> \stopTrillSpan
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            b4 \stopTrillSpan \startTrillSpan
                         }
                     }
                 }
@@ -2048,31 +1860,24 @@
                     \clef "alto"
                     {
                         {
-                            a16
-                            c'16 \glissando
-                            a16 \glissando
-                            c'16 \glissando
-                            bqs16 \glissando
-                            gf16 \glissando
+                            a4.
+                        }
+                        {
+                            c'8 \glissando
+                        }
+                        {
+                            a8 \glissando
+                        }
+                        {
+                            c'4
                         }
                         {
                             af8
                         }
                         {
-                            b8 \glissando
-                        }
-                        {
-                            a4 \glissando
-                        }
-                        \times 2/3 {
-                            gf16 \glissando
-                            af16 \glissando
-                            b16 \glissando
-                        }
-                        {
-                            a2 ~
+                            b2 ~
                             \parenthesize
-                            a8
+                            b8
                         }
                     }
                     {
@@ -2082,15 +1887,10 @@
                     }
                     {
                         {
-                            af4 \glissando
+                            c'4
                         }
                         {
-                            a16 \glissando
-                            c'16 \glissando
-                            a16 \glissando
-                            c'16
-                            bqs16 \glissando
-                            gf16 \glissando
+                            bqs4. \glissando
                         }
                         {
                             af4
@@ -2102,28 +1902,18 @@
                         }
                     }
                     {
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 3/4 {
-                            a8
-                            c'8 \glissando
-                            a8 \glissando
-                            c'8 \glissando
+                        {
+                            a4.
                         }
                         {
+                            c'4 \glissando
+                        }
+                        {
+                            a4
                             bqs4
                         }
                         {
-                            gf16
-                            af16 \glissando
-                            b16 \glissando
-                            a16
-                            c'16
-                            a16 \glissando
-                            bqs16 \glissando
-                            af16
-                        }
-                        {
-                            c'4.
+                            af4.
                         }
                     }
                     {
@@ -2133,7 +1923,7 @@
                     }
                     {
                         {
-                            a4
+                            b4
                         }
                     }
                 }

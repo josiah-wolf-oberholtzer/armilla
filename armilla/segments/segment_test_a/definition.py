@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
 import armilla
 import consort
-from abjad import new
 from abjad import indicatortools
 from abjad import rhythmmakertools
 from abjad import selectortools
@@ -76,17 +75,7 @@ rh_music_specifier = consort.MusicSpecifier(
                 [2, 3, 4, 1], cyclic=True),
             ),
         ),
-    rhythm_maker=consort.CompositeRhythmMaker(
-        last=rhythmmakertools.IncisedRhythmMaker(
-            incise_specifier=rhythmmakertools.InciseSpecifier(
-                prefix_counts=[0],
-                suffix_talea=[1],
-                suffix_counts=[1],
-                talea_denominator=16,
-                ),
-            ),
-        rest=armilla.materials.bow_rhythm_maker_a,
-        ),
+    rhythm_maker=armilla.materials.rh_rhythm_maker_a,
     )
 
 
@@ -121,13 +110,7 @@ lh_music_specifier = consort.MusicSpecifier(
             ),
         pitch_specifier="a c' a c' a c' bqs gf af b",
         ),
-    rhythm_maker=consort.CompositeRhythmMaker(
-        last=rhythmmakertools.NoteRhythmMaker(),
-        rest=new(
-            armilla.materials.bow_rhythm_maker_a,
-            denominators=(4, 8, 2, 16),
-            ),
-        ),
+    rhythm_maker=armilla.materials.lh_rhythm_maker_a,
     )
 
 

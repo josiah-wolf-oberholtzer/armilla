@@ -35,7 +35,6 @@ timespan_maker = armilla.ArmillaTimespanMaker(
         ),
     synchronize_step=True,
     timespan_specifier=consort.TimespanSpecifier(
-        #forbid_fusing=True,
         minimum_duration=durationtools.Duration(1, 8),
         ),
     )
@@ -90,12 +89,9 @@ lh_music_specifier = consort.MusicSpecifier(
     pitch_handler=consort.AbsolutePitchHandler(
         pitch_specifier="a c' a c' a c' bqs gf af b",
         ),
-    rhythm_maker=consort.CompositeRhythmMaker(
-        last=rhythmmakertools.NoteRhythmMaker(),
-        rest=new(
-            armilla.materials.bow_rhythm_maker_a,
-            denominators=(8,),
-            ),
+    rhythm_maker=new(
+        armilla.materials.lh_rhythm_maker_a,
+        rest__denominators=(8,),
         ),
     )
 
