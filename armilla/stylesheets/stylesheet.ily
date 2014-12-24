@@ -69,7 +69,7 @@ afterGraceFraction = #(cons 1023 1024)
 }
 
 \layout {
-    \accidentalStyle forget
+    \accidentalStyle modern-cautionary
     ragged-bottom = ##t
     ragged-right = ##t
     ragged-last = ##t
