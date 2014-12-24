@@ -11,7 +11,7 @@ Create a box of the same height as the current font."
                      (ly:stencil-extent ref-mrkp Y))))
 
 afterGraceFraction = #(cons 1023 1024)
-#(set-default-paper-size "11x17" 'landscape)
+#(set-default-paper-size "17x11" 'landscape)
 #(set-global-staff-size 12)
 
 \paper {
@@ -185,6 +185,8 @@ afterGraceFraction = #(cons 1023 1024)
         \alias Staff
         \accepts BowingBeamingVoice
         \accepts BowingPositionVoice
+        \override ParenthesesItem.font-size = 1
+        \override ParenthesesItem.padding = 0.1
         \override StaffSymbol.transparent = ##t
     }
     \context {
