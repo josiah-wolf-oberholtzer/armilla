@@ -4,7 +4,7 @@ from abjad.tools import rhythmmakertools
 import consort
 
 
-bow_rhythm_maker_a = consort.tools.CompositeRhythmMaker(
+rh_rhythm_maker_a = consort.tools.CompositeRhythmMaker(
     last=rhythmmakertools.IncisedRhythmMaker(
         incise_specifier=rhythmmakertools.InciseSpecifier(
             prefix_counts=(0,),

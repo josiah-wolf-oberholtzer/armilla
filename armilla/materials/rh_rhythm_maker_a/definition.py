@@ -3,7 +3,7 @@ from abjad import *
 import consort
 
 
-bow_rhythm_maker_a = consort.CompositeRhythmMaker(
+rh_rhythm_maker_a = consort.CompositeRhythmMaker(
     last=rhythmmakertools.IncisedRhythmMaker(
         incise_specifier=rhythmmakertools.InciseSpecifier(
             prefix_counts=[0],
