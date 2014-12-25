@@ -75,6 +75,48 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             )
         self.repeat = repeat
 
+    ### PRIVATE METHODS ###
+
+    def _copy_voice(
+        self,
+        voice,
+        attachment_names=None,
+        new_voice_name=None,
+        new_context_name=None,
+        remove_grace_containers=True,
+        replace_rests_with_skips=True,
+        ):
+        new_voice = mutate(voice).copy()
+        new_voice.name = new_voice.name or new_voice_name
+        new_voice.context_name = new_voice.context_name or new_context_name
+        rests = []
+        for component in iterate(voice).depth_first(capped=True):
+            agent = inspect_(component)
+            indicators = agent.get_indicators(unwrap=False)
+            spanners = agent.get_spanners()
+            for indicator in indicators:
+                if indicator.name and indicator.name not in attachment_names:
+                    indicator._detach()
+            for spanner in spanners:
+                if spanner.name and spanner.name not in attachment_names:
+                    spanner._detach()
+            grace_containers = agent.get_grace_containers()
+            if replace_rests_with_skips and \
+                isinstance(component, scoretools.Rest):
+                rests.append(component)
+            if grace_containers and remove_grace_containers:
+                for grace_container in grace_containers:
+                    grace_container._detach()
+        if replace_rests_with_skips:
+            for rest in rests:
+                indicators = inspect_(rest).get_indicators(
+                    durationtools.Multiplier,
+                    )
+                skip = scoretools.Skip(rest)
+                if indicators:
+                    attach(indicators[0], skip)
+                mutate(rest).replace(skip)
+
     ### PUBLIC METHODS ###
 
     def configure_beaming_voice(self, staff):
@@ -175,16 +217,6 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         spanner_voice = mutate(pitches_voice).copy()
         pitches_voice.context_name = 'FingeringPitchesVoice'
         spanner_voice.context_name = 'FingeringSpannerVoice'
-        # clean up pitches voice
-#        spanner_prototypes = (
-#            spannertools.Glissando,
-#            )
-#        for component in iterate(pitches_voice).depth_first(capped=True):
-#            spanners = inspect_(component).get_spanners()
-#            for spanner in spanners:
-#                if isinstance(spanner, spanner_prototypes):
-#                    spanner._detach()
-        # clean up spanner voice
         spanner_prototypes = (
             spannertools.Glissando,
             spannertools.Tie,
