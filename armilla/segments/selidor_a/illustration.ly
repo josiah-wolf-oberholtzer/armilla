@@ -56,7 +56,8 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 1 Bowing Staff" <<
-                \context BowingPositionVoice = "Viola 1 Bowing Voice" {
+                \context BowPositionVoice = "Viola 1 RH Position Voice" {
+                    \clef "percussion"
                     {
                         {
                             s8
@@ -149,7 +150,7 @@
                         }
                     }
                 }
-                \context BowingBeamingVoice = "Viola 1 Beaming Voice" {
+                \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
                     \clef "percussion"
                     {
                         {
@@ -175,10 +176,11 @@
                         }
                     }
                 }
-                \context Dynamics = "Viola 1 Dynamics" {
+                \context Dynamics = "Viola 1 RH Dynamics Voice" {
+                    \clef "percussion"
                     {
                         {
-                            r8
+                            s8
                         }
                     }
                     {
@@ -202,7 +204,7 @@
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 1 Fingering Staff" <<
-                \context FingeringPitchesVoice = "Viola 1 Fingering Voice" {
+                \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
                     \clef "alto"
                     {
                         {
@@ -240,13 +242,12 @@
                         }
                         {
                             c'2 ~
-                            \set stemLeftBeamCount = 1
                             \parenthesize
                             c'8
                         }
                     }
                 }
-                \context FingeringSpannerVoice = "Viola 1 Fingering Voice" {
+                \context FingeringSpannerVoice = "Viola 1 LH Spanner Voice" {
                     \clef "alto"
                     {
                         {
@@ -262,7 +263,7 @@
                             a4. \glissando
                         }
                         {
-                            c'2 ~
+                            c'2
                             \parenthesize
                             c'8
                         }
@@ -285,7 +286,8 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 2 Bowing Staff" <<
-                \context BowingPositionVoice = "Viola 2 Bowing Voice" {
+                \context BowPositionVoice = "Viola 2 RH Position Voice" {
+                    \clef "percussion"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
@@ -366,7 +368,7 @@
                         }
                     }
                 }
-                \context BowingBeamingVoice = "Viola 2 Beaming Voice" {
+                \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
                     \clef "percussion"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
@@ -390,7 +392,8 @@
                         }
                     }
                 }
-                \context Dynamics = "Viola 2 Dynamics" {
+                \context Dynamics = "Viola 2 RH Dynamics Voice" {
+                    \clef "percussion"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
@@ -408,14 +411,14 @@
                     }
                     {
                         {
-                            r4.
+                            s4.
                         }
                     }
                 }
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 2 Fingering Staff" <<
-                \context FingeringPitchesVoice = "Viola 2 Fingering Voice" {
+                \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
                     \clef "alto"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
@@ -453,7 +456,7 @@
                         }
                     }
                 }
-                \context FingeringSpannerVoice = "Viola 2 Fingering Voice" {
+                \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
                     \clef "alto"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text

@@ -79,7 +79,8 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 1 Bowing Staff" <<
-                \context BowingPositionVoice = "Viola 1 Bowing Voice" {
+                \context BowPositionVoice = "Viola 1 RH Position Voice" {
+                    \clef "percussion"
                     {
                         {
                             s8
@@ -479,7 +480,7 @@
                         }
                     }
                 }
-                \context BowingBeamingVoice = "Viola 1 Beaming Voice" {
+                \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
                     \clef "percussion"
                     {
                         {
@@ -609,10 +610,11 @@
                         }
                     }
                 }
-                \context Dynamics = "Viola 1 Dynamics" {
+                \context Dynamics = "Viola 1 RH Dynamics Voice" {
+                    \clef "percussion"
                     {
                         {
-                            r8
+                            s8
                         }
                     }
                     {
@@ -624,7 +626,7 @@
                     }
                     {
                         {
-                            r8
+                            s8
                         }
                     }
                     {
@@ -639,7 +641,7 @@
                     }
                     {
                         {
-                            r8
+                            s8
                         }
                     }
                     {
@@ -660,7 +662,7 @@
                     }
                     {
                         {
-                            r8
+                            s8
                         }
                     }
                     {
@@ -675,7 +677,7 @@
                     }
                     {
                         {
-                            r4
+                            s4
                         }
                     }
                     {
@@ -714,7 +716,7 @@
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 1 Fingering Staff" <<
-                \context FingeringPitchesVoice = "Viola 1 Fingering Voice" {
+                \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
                     \clef "alto"
                     {
                         {
@@ -741,8 +743,6 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
                             bqs8 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
@@ -797,7 +797,6 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            \set stemLeftBeamCount = 1
                             c'8 \startTrillSpan
                             <> \stopTrillSpan
                         }
@@ -850,8 +849,6 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
                             c'8 \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
@@ -888,7 +885,7 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            gf!4. \startTrillSpan
+                            gf4. \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -898,7 +895,7 @@
                         }
                     }
                 }
-                \context FingeringSpannerVoice = "Viola 1 Fingering Voice" {
+                \context FingeringSpannerVoice = "Viola 1 LH Spanner Voice" {
                     \clef "alto"
                     {
                         {
@@ -1003,7 +1000,8 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 2 Bowing Staff" <<
-                \context BowingPositionVoice = "Viola 2 Bowing Voice" {
+                \context BowPositionVoice = "Viola 2 RH Position Voice" {
+                    \clef "percussion"
                     {
                         {
                             \once \override NoteHead.Y-offset = 1.2
@@ -1395,7 +1393,7 @@
                         }
                     }
                 }
-                \context BowingBeamingVoice = "Viola 2 Beaming Voice" {
+                \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
                     \clef "percussion"
                     {
                         {
@@ -1507,7 +1505,8 @@
                         }
                     }
                 }
-                \context Dynamics = "Viola 2 Dynamics" {
+                \context Dynamics = "Viola 2 RH Dynamics Voice" {
+                    \clef "percussion"
                     {
                         {
                             c'4. \f \>
@@ -1536,7 +1535,7 @@
                     }
                     {
                         {
-                            r4
+                            s4
                         }
                     }
                     {
@@ -1558,7 +1557,7 @@
                     }
                     {
                         {
-                            r8
+                            s8
                         }
                     }
                     {
@@ -1589,7 +1588,7 @@
                     }
                     {
                         {
-                            r8
+                            s8
                         }
                     }
                     {
@@ -1602,7 +1601,7 @@
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 2 Fingering Staff" <<
-                \context FingeringPitchesVoice = "Viola 2 Fingering Voice" {
+                \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
                     \clef "alto"
                     {
                         {
@@ -1634,8 +1633,6 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
                             c'8 [ \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
@@ -1643,8 +1640,6 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
                             a8 ] \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
@@ -1674,10 +1669,8 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
                             \afterGrace
-                            af!8 \startTrillSpan
+                            af8 \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1699,7 +1692,6 @@
                                 \null
                                 }
                             b2 ~ \startTrillSpan
-                            \set stemLeftBeamCount = 1
                             \parenthesize
                             b8
                             <> \stopTrillSpan
@@ -1740,7 +1732,7 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            bqs!4. \glissando \startTrillSpan
+                            bqs4. \glissando \startTrillSpan
                             <> \stopTrillSpan
                         }
                         {
@@ -1814,7 +1806,7 @@
                                 \null
                                 }
                             \afterGrace
-                            bqs!4 \startTrillSpan
+                            bqs4 \startTrillSpan
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1841,7 +1833,7 @@
                             \once \override TrillSpanner.bound-details.left.text = \markup {
                                 \null
                                 }
-                            af!4. \startTrillSpan
+                            af4. \startTrillSpan
                             <> \stopTrillSpan
                         }
                     }
@@ -1856,7 +1848,7 @@
                         }
                     }
                 }
-                \context FingeringSpannerVoice = "Viola 2 Fingering Voice" {
+                \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
                     \clef "alto"
                     {
                         {
@@ -1875,7 +1867,7 @@
                             af8
                         }
                         {
-                            b2 ~
+                            b2
                             \parenthesize
                             b8
                         }

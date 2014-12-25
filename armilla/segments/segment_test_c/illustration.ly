@@ -75,7 +75,8 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 1 Bowing Staff" <<
-                \context BowingPositionVoice = "Viola 1 Bowing Voice" {
+                \context BowPositionVoice = "Viola 1 RH Position Voice" {
+                    \clef "percussion"
                     {
                         {
                             \once \override NoteHead.Y-offset = -2.0
@@ -374,7 +375,7 @@
                         }
                     }
                 }
-                \context BowingBeamingVoice = "Viola 1 Beaming Voice" {
+                \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
                     \clef "percussion"
                     {
                         {
@@ -502,7 +503,8 @@
                         }
                     }
                 }
-                \context Dynamics = "Viola 1 Dynamics" {
+                \context Dynamics = "Viola 1 RH Dynamics Voice" {
+                    \clef "percussion"
                     {
                         {
                             \once \override Hairpin.stencil = #constante-hairpin
@@ -512,7 +514,7 @@
                     }
                     {
                         {
-                            r4
+                            s4
                         }
                     }
                     {
@@ -530,11 +532,11 @@
                     }
                     {
                         {
-                            r16
-                            r8
+                            s16
+                            s8
                         }
                         {
-                            r16
+                            s16
                         }
                     }
                     {
@@ -548,11 +550,11 @@
                     }
                     {
                         {
-                            r16
-                            r8
+                            s16
+                            s8
                         }
                         {
-                            r8.
+                            s8.
                         }
                     }
                     {
@@ -564,14 +566,14 @@
                     }
                     {
                         {
-                            r16
-                            r4.
+                            s16
+                            s4.
                         }
                         {
                             R1 * 1/2
                         }
                         {
-                            r16
+                            s16
                         }
                     }
                     {
@@ -589,8 +591,8 @@
                     }
                     {
                         {
-                            r16
-                            r8
+                            s16
+                            s8
                         }
                         {
                             R1 * 1/2
@@ -605,14 +607,14 @@
                     }
                     {
                         {
-                            r4
+                            s4
                         }
                     }
                 }
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 1 Fingering Staff" <<
-                \context FingeringPitchesVoice = "Viola 1 Fingering Voice" {
+                \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
                     \clef "alto"
                     {
                         {
@@ -702,7 +704,7 @@
                         }
                     }
                 }
-                \context FingeringSpannerVoice = "Viola 1 Fingering Voice" {
+                \context FingeringSpannerVoice = "Viola 1 LH Spanner Voice" {
                     \clef "alto"
                     {
                         {
@@ -734,7 +736,7 @@
                     }
                     {
                         {
-                            c'4 - \bendAfter #'4.0
+                            c'4
                         }
                     }
                     {
@@ -782,7 +784,7 @@
                     }
                     {
                         {
-                            a8 - \bendAfter #'4.0
+                            a8
                         }
                     }
                     {
@@ -808,7 +810,8 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 2 Bowing Staff" <<
-                \context BowingPositionVoice = "Viola 2 Bowing Voice" {
+                \context BowPositionVoice = "Viola 2 RH Position Voice" {
+                    \clef "percussion"
                     {
                         \times 2/3 {
                             \once \override NoteHead.Y-offset = 0.4
@@ -1067,7 +1070,7 @@
                         }
                     }
                 }
-                \context BowingBeamingVoice = "Viola 2 Beaming Voice" {
+                \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
                     \clef "percussion"
                     {
                         \times 2/3 {
@@ -1183,7 +1186,8 @@
                         }
                     }
                 }
-                \context Dynamics = "Viola 2 Dynamics" {
+                \context Dynamics = "Viola 2 RH Dynamics Voice" {
+                    \clef "percussion"
                     {
                         \times 2/3 {
                             \once \override Hairpin.stencil = #constante-hairpin
@@ -1194,10 +1198,10 @@
                     }
                     {
                         {
-                            r4
+                            s4
                         }
                         {
-                            r16
+                            s16
                         }
                     }
                     {
@@ -1209,11 +1213,11 @@
                     }
                     {
                         {
-                            r16
-                            r4
+                            s16
+                            s4
                         }
                         {
-                            r16
+                            s16
                         }
                     }
                     {
@@ -1229,11 +1233,11 @@
                     }
                     {
                         {
-                            r16
-                            r8
+                            s16
+                            s8
                         }
                         {
-                            r8.
+                            s8.
                         }
                     }
                     {
@@ -1248,7 +1252,7 @@
                     }
                     {
                         {
-                            r4.
+                            s4.
                         }
                         {
                             R1 * 1/2
@@ -1263,10 +1267,10 @@
                     }
                     {
                         {
-                            r2
+                            s2
                         }
                         {
-                            r16
+                            s16
                         }
                     }
                     {
@@ -1279,7 +1283,7 @@
                     }
                     {
                         {
-                            r4
+                            s4
                         }
                         {
                             R1 * 3/8
@@ -1289,7 +1293,7 @@
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 2 Fingering Staff" <<
-                \context FingeringPitchesVoice = "Viola 2 Fingering Voice" {
+                \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
                     \clef "alto"
                     {
                         {
@@ -1376,7 +1380,7 @@
                         }
                     }
                 }
-                \context FingeringSpannerVoice = "Viola 2 Fingering Voice" {
+                \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
                     \clef "alto"
                     {
                         {
@@ -1407,7 +1411,7 @@
                     }
                     {
                         {
-                            bqs8 - \bendAfter #'4.0
+                            bqs8 \glissando
                         }
                         {
                             gf8
@@ -1450,7 +1454,7 @@
                     }
                     {
                         {
-                            c'8. - \bendAfter #'4.0
+                            c'8.
                         }
                     }
                     {

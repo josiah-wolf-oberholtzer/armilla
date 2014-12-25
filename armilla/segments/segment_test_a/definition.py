@@ -62,7 +62,7 @@ rh_music_specifier = consort.MusicSpecifier(
             selector=selectortools.Selector().by_leaves()[1:].flatten(),
             ),
         bow_spanner=spannertools.BowSpanner(),
-        dynamic_phrasings=armilla.DynamicPhrasing(
+        dynamic_phrasing=armilla.DynamicPhrasing(
             dynamic_tokens='f p mp pp p',
             transitions=('flared', None, None),
             ),
