@@ -177,8 +177,8 @@ class DynamicPhrasing(abctools.AbjadValueObject):
 
     ### SPECIAL METHODS ###
 
-    def __call__(self, music, seed=0):
-        self._make_attachments(music, seed)
+    def __call__(self, music, name=None, seed=0):
+        self._make_attachments(music, name=name, seed=seed)
 
     ### PRIVATE METHODS ###
 
@@ -214,7 +214,7 @@ class DynamicPhrasing(abctools.AbjadValueObject):
             selections.append(selection)
         return selections
 
-    def _make_attachments(self, music, seed):
+    def _make_attachments(self, music, name=None, seed=0):
         current_dynamic = None
         current_hairpin = None
         selections = self._get_selections(music)
@@ -227,14 +227,14 @@ class DynamicPhrasing(abctools.AbjadValueObject):
                     if current_hairpin is not None:
                         current_hairpin._extend([selection[0]])
                     current_dynamic = dynamic
-                    attach(dynamic, selection[0])
+                    attach(dynamic, selection[0], name=name)
                 if hairpin is not None:
                     current_hairpin = hairpin
-                    attach(hairpin, selection)
+                    attach(hairpin, selection, name=name)
                     hairpin_override = self._get_hairpin_override(
                         transition)
                     if hairpin_override is not None:
-                        attach(hairpin_override, selection[0])
+                        attach(hairpin_override, selection[0], name=name)
                 elif current_hairpin is not None:
                     #print('SELECTION', selection)
                     #print('LEAVES', current_hairpin._get_leaves())
@@ -251,27 +251,27 @@ class DynamicPhrasing(abctools.AbjadValueObject):
             if current_hairpin is not None:
                 current_hairpin._extend(selection)
                 if dynamic != current_dynamic:
-                    attach(dynamic, selection[-1])
+                    attach(dynamic, selection[-1], name=name)
             else:
-                attach(dynamic, selection[0])
+                attach(dynamic, selection[0], name=name)
                 if 1 < len(selection) and transition == 'constante':
-                    attach(hairpin, selection)
+                    attach(hairpin, selection, name=name)
                     hairpin_override = self._get_hairpin_override(transition)
                     if hairpin_override is not None:
-                        attach(hairpin_override, selection[0])
+                        attach(hairpin_override, selection[0], name=name)
         else:
             if dynamic != current_dynamic:
                 if current_hairpin:
                     current_hairpin._extend([selection[0]])
                 current_dynamic = dynamic
-                attach(dynamic, selection[0])
+                attach(dynamic, selection[0], name=name)
                 if hairpin is not None:
                     current_hairpin = hairpin
                     if 1 < len(selection):
-                        attach(hairpin, selection)
+                        attach(hairpin, selection, name=name)
                         hairpin_override = self._get_hairpin_override(transition)
                         if hairpin_override is not None:
-                            attach(hairpin_override, selection[0])
+                            attach(hairpin_override, selection[0], name=name)
             elif current_hairpin is not None:
                 current_hairpin._extend(selection)
             seed += 1
@@ -279,7 +279,7 @@ class DynamicPhrasing(abctools.AbjadValueObject):
             #print('C', seed, selection, dynamic, hairpin, transition)
             #print('?', self.dynamic_tokens[seed], self.dynamic_tokens)
             if dynamic != current_dynamic and 1 < len(selection):
-                attach(dynamic, selection[-1])
+                attach(dynamic, selection[-1], name=name)
         #print()
 
     ### PUBLIC PROPERTIES ###
