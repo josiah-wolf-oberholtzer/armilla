@@ -87,7 +87,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -116,7 +116,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -136,7 +136,7 @@
                                             1
                                             1
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = 0.4
@@ -158,7 +158,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -191,7 +191,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -211,7 +211,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -244,7 +244,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -280,7 +280,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -302,7 +302,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -322,7 +322,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -355,7 +355,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -820,7 +820,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -830,7 +830,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -862,7 +862,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -895,7 +895,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -917,7 +917,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -951,7 +951,7 @@
                                             1
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -971,7 +971,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1003,7 +1003,7 @@
                                             2
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1035,7 +1035,7 @@
                                             1
                                             1
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {

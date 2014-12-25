@@ -73,6 +73,9 @@ afterGraceFraction = #(cons 1023 1024)
     ragged-bottom = ##t
     ragged-right = ##t
     ragged-last = ##t
+
+    %%% TIME SIGNATURE CONTEXT %%%
+
     \context {
         \name TimeSignatureContext
         \type Engraver_group
@@ -124,6 +127,9 @@ afterGraceFraction = #(cons 1023 1024)
         )
         \override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)
     }
+
+    %%% DEFAULTS %%%
+
     \context {
         \Voice
         \remove Forbid_line_break_engraver
@@ -132,6 +138,9 @@ afterGraceFraction = #(cons 1023 1024)
         \Staff
         \remove Time_signature_engraver
     }
+
+    %%% BOWING %%%
+
     \context {
         \Voice
         \name BowingPositionVoice
@@ -140,9 +149,6 @@ afterGraceFraction = #(cons 1023 1024)
         \override Beam.stencil = ##f
         \override Dots.stencil = ##f
         \override Flag.stencil = ##f
-        \override Glissando.bound-details.left.padding = 0.75
-        \override Glissando.bound-details.right.padding = 0.75
-        \override Glissando.thickness = 2
         \override NoteHead.extra-offset = #'(0.05 . 0)
         \override Rest.stencil = ##f
         \override Script.staff-padding = 2.5
@@ -185,10 +191,18 @@ afterGraceFraction = #(cons 1023 1024)
         \alias Staff
         \accepts BowingBeamingVoice
         \accepts BowingPositionVoice
+        \override Glissando.bound-details.left.padding = 0.75
+        \override Glissando.bound-details.right.padding = 0.75
+        \override Glissando.thickness = 2
+        \override Glissando.zigzag-length = 1.5
+        \override Glissando.zigzag-width = 0.75
         \override ParenthesesItem.font-size = 1
         \override ParenthesesItem.padding = 0.1
         \override StaffSymbol.transparent = ##t
     }
+
+    %%% FINGERING %%%
+
     \context {
         \Voice
         \name FingeringPitchesVoice
@@ -209,7 +223,6 @@ afterGraceFraction = #(cons 1023 1024)
         \override Beam.stencil = ##f
         \override Dots.stencil = ##f
         \override Flag.stencil = ##f
-        \override Glissando.thickness = 2
         \override Stem.stencil = ##f
         \override Tie.stencil = ##f
         \override TupletBracket.stencil = ##f
@@ -222,8 +235,14 @@ afterGraceFraction = #(cons 1023 1024)
         \alias Staff
         \accepts FingeringPitchesVoice
         \accepts FingeringSpannerVoice
+        \override Glissando.bound-details.left.padding = 1.5
+        \override Glissando.bound-details.right.padding = 1.5
+        \override Glissando.thickness = 2
         \override StaffSymbol.color = #(x11-color 'grey50)
     }
+
+    %%% STRING PERFORMER GROUP %%%%
+
     \context {
         \StaffGroup
         \name StringPerformerGroup
@@ -232,6 +251,9 @@ afterGraceFraction = #(cons 1023 1024)
         \accepts BowingStaff
         \accepts FingeringStaff
     }
+
+    %%% SCORE %%%
+
     \context {
         \Score
         \accepts TimeSignatureContext

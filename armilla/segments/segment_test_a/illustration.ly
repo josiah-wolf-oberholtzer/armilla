@@ -97,7 +97,7 @@
                                             0
                                             1
                                 }
-                            c'8. ^\upbow \glissando
+                            c'8. ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -126,7 +126,7 @@
                                             4
                                             5
                                 }
-                            c'4. ^\downbow \glissando
+                            c'4. ^\upbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = -2.0
@@ -138,7 +138,7 @@
                                             0
                                             1
                                 }
-                            c'8. ^\upbow \glissando
+                            c'8. ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -168,7 +168,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -178,7 +178,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'8 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -188,7 +188,7 @@
                                             0
                                             1
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8 ^\downbow \glissando
                         }
                         \times 2/3 {
                             \once \override Glissando.style = #'zigzag
@@ -201,7 +201,7 @@
                                             1
                                             1
                                 }
-                            c'4 ^\downbow \glissando
+                            c'4 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -212,7 +212,7 @@
                                             3
                                             5
                                 }
-                            c'4 ^\upbow \glissando
+                            c'4 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -222,7 +222,7 @@
                                             4
                                             5
                                 }
-                            c'4 ^\downbow \glissando
+                            c'4 ^\upbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = 0.4
@@ -234,7 +234,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -263,7 +263,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'8 ^\upbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -276,7 +276,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -306,7 +306,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -317,7 +317,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -328,7 +328,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -338,7 +338,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -348,7 +348,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -359,7 +359,7 @@
                                             1
                                             1
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                         }
                         \times 2/3 {
                             \once \override Glissando.style = #'zigzag
@@ -372,7 +372,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -382,7 +382,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'8 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -392,7 +392,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8 ^\downbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = 1.2
@@ -404,7 +404,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'8 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -415,7 +415,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -426,7 +426,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'8 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -437,7 +437,7 @@
                                             0
                                             1
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8 ^\downbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -450,7 +450,7 @@
                                             1
                                             1
                                 }
-                            c'4 ^\downbow \glissando
+                            c'4 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1015,7 +1015,7 @@
                                             4
                                             5
                                 }
-                            c'4. ^\downbow \glissando
+                            c'4. ^\upbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -1026,20 +1026,20 @@
                                     \vcenter
                                         \fraction
                                             3
-                                            5
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
                                             5
                                 }
                             c'16 ^\downbow \glissando
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'16 ^\upbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -1052,7 +1052,7 @@
                                             3
                                             5
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8 ^\downbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = 1.2
@@ -1064,7 +1064,7 @@
                                             4
                                             5
                                 }
-                            c'8 ^\downbow \glissando
+                            c'8 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1074,7 +1074,7 @@
                                             0
                                             1
                                 }
-                            c'8 ^\upbow \glissando
+                            c'8 ^\downbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -1087,7 +1087,7 @@
                                             1
                                             1
                                 }
-                            c'8 ^\downbow \glissando
+                            c'8 ^\upbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -1100,7 +1100,7 @@
                                             3
                                             5
                                 }
-                            c'2 ^\upbow \glissando
+                            c'2 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1110,7 +1110,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1140,7 +1140,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1151,7 +1151,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1162,7 +1162,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1173,7 +1173,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1184,7 +1184,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = 1.2
@@ -1196,7 +1196,7 @@
                                             4
                                             5
                                 }
-                            c'4. ^\downbow \glissando
+                            c'4. ^\upbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = -2.0
@@ -1208,7 +1208,7 @@
                                             0
                                             1
                                 }
-                            c'8. ^\upbow \glissando
+                            c'8. ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1237,7 +1237,7 @@
                                             4
                                             5
                                 }
-                            c'4. ^\downbow \glissando
+                            c'4. ^\upbow \glissando
                         }
                         \times 2/3 {
                             \once \override NoteHead.Y-offset = 0.4
@@ -1249,7 +1249,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1260,7 +1260,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1271,7 +1271,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -1284,7 +1284,7 @@
                                             4
                                             5
                                 }
-                            c'4. ^\downbow \glissando
+                            c'4. ^\upbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -1297,7 +1297,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1307,7 +1307,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1317,7 +1317,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1328,7 +1328,7 @@
                                             1
                                             1
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -1341,7 +1341,7 @@
                                             3
                                             5
                                 }
-                            c'4 ^\upbow \glissando
+                            c'4 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1351,7 +1351,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1381,7 +1381,7 @@
                                             3
                                             5
                                 }
-                            c'8. ^\upbow \glissando
+                            c'8. ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
