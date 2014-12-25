@@ -143,7 +143,7 @@ afterGraceFraction = #(cons 1023 1024)
 
     \context {
         \Voice
-        \name BowingPositionVoice
+        \name BowPositionVoice
         \type Engraver_group
         \alias Voice
         \override Beam.stencil = ##f
@@ -158,7 +158,7 @@ afterGraceFraction = #(cons 1023 1024)
     }
     \context {
         \Voice
-        \name BowingBeamingVoice
+        \name BowBeamingVoice
         \type Engraver_group
         \alias Voice
         \override Beam.direction = #down
@@ -189,8 +189,8 @@ afterGraceFraction = #(cons 1023 1024)
         \name BowingStaff
         \type Engraver_group
         \alias Staff
-        \accepts BowingBeamingVoice
-        \accepts BowingPositionVoice
+        \accepts BowBeamingVoice
+        \accepts BowPositionVoice
         \override Glissando.bound-details.left.padding = 0.75
         \override Glissando.bound-details.right.padding = 0.75
         \override Glissando.thickness = 2

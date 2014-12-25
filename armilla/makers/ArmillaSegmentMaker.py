@@ -1,12 +1,10 @@
 # -*- encoding: utf-8 -*-
 from abjad import attach
-from abjad import detach
 from abjad import inspect_
 from abjad import iterate
 from abjad import mutate
 from abjad import durationtools
 from abjad import indicatortools
-from abjad import lilypondnametools
 from abjad import scoretools
 from abjad import spannertools
 import consort
@@ -83,27 +81,38 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         attachment_names=None,
         new_voice_name=None,
         new_context_name=None,
-        remove_grace_containers=True,
-        replace_rests_with_skips=True,
+        remove_grace_containers=False,
+        remove_ties=False,
+        replace_rests_with_skips=False,
         ):
         new_voice = mutate(voice).copy()
-        new_voice.name = new_voice.name or new_voice_name
-        new_voice.context_name = new_voice.context_name or new_context_name
+        if new_voice_name:
+            new_voice.name = new_voice_name
+        if new_context_name:
+            new_voice.context_name = new_context_name
         rests = []
-        for component in iterate(voice).depth_first(capped=True):
+        for component in iterate(new_voice).depth_first(capped=True):
             agent = inspect_(component)
             indicators = agent.get_indicators(unwrap=False)
             spanners = agent.get_spanners()
-            for indicator in indicators:
-                if indicator.name and indicator.name not in attachment_names:
-                    indicator._detach()
-            for spanner in spanners:
-                if spanner.name and spanner.name not in attachment_names:
-                    spanner._detach()
-            grace_containers = agent.get_grace_containers()
+            for x in indicators:
+                if not x.name:
+                    continue
+                if attachment_names and \
+                    not any(x.name.startswith(_) for _ in attachment_names):
+                    x._detach()
+            for x in spanners:
+                if remove_ties and isinstance(x, spannertools.Tie):
+                    x._detach()
+                if not x.name:
+                    continue
+                elif attachment_names and \
+                    not any(x.name.startswith(_) for _ in attachment_names):
+                    x._detach()
             if replace_rests_with_skips and \
                 isinstance(component, scoretools.Rest):
                 rests.append(component)
+            grace_containers = agent.get_grace_containers()
             if grace_containers and remove_grace_containers:
                 for grace_container in grace_containers:
                     grace_container._detach()
@@ -116,131 +125,76 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
                 if indicators:
                     attach(indicators[0], skip)
                 mutate(rest).replace(skip)
+        return new_voice
 
     ### PUBLIC METHODS ###
 
     def configure_beaming_voice(self, staff):
-
+        voice = staff[0]
+        bow_position_voice = self._copy_voice(
+            voice,
+            attachment_names=(
+                'bow_spanner',
+                'bow_contact_point',
+                'bow_motion_technique',
+                ),
+            new_voice_name=voice.name.replace('Bowing', 'RH Position'),
+            new_context_name='BowPositionVoice',
+            remove_ties=True,
+            replace_rests_with_skips=True,
+            )
+        bow_beaming_voice = self._copy_voice(
+            voice,
+            attachment_names=(
+                'beam',
+                'stem_tremolo_spanner',
+                ),
+            new_voice_name=voice.name.replace('Bowing', 'RH Beaming'),
+            new_context_name='BowBeamingVoice',
+            remove_ties=True,
+            )
+        bow_dynamics_voice = self._copy_voice(
+            voice,
+            attachment_names=(
+                'dynamic_phrasing',
+                ),
+            new_voice_name=voice.name.replace('Bowing', 'RH Dynamics'),
+            new_context_name='Dynamics',
+            remove_ties=True,
+            replace_rests_with_skips=True,
+            )
+        voice_index = staff.index(voice)
+        staff[voice_index:voice_index + 1] = [
+            bow_position_voice,
+            bow_beaming_voice,
+            bow_dynamics_voice,
+            ]
         staff.is_simultaneous = True
-
-        bowing_voice = staff[0]
-        beaming_voice = mutate(bowing_voice).copy()
-        dynamics_voice = mutate(bowing_voice).copy()
-
-        bow_spanner_prototypes = (
-            spannertools.BowSpanner,
-            )
-        bow_indicator_prototypes = (
-            durationtools.Multiplier,
-            indicatortools.BowContactPoint,
-            indicatortools.BowMotionTechnique,
-            indicatortools.BowPressure,
-            indicatortools.BreathMark,
-            indicatortools.StringContactPoint,
-            )
-        bowing_voice.context_name = 'BowingPositionVoice'
-        rests = []
-        for component in iterate(bowing_voice).depth_first(capped=True):
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if not isinstance(spanner, bow_spanner_prototypes):
-                    spanner._detach()
-            indicators = inspect_(component).get_indicators()
-            for indicator in indicators:
-                if not isinstance(indicator, bow_indicator_prototypes):
-                    detach(indicator, component)
-            if isinstance(component, scoretools.Rest):
-                rests.append(component)
-        for rest in rests:
-            indicators = inspect_(rest).get_indicators(
-                durationtools.Multiplier,
-                )
-            skip = scoretools.Skip(rest)
-            if indicators:
-                attach(indicators[0], skip)
-            mutate(rest).replace(skip)
-
-        beam_spanner_prototypes = (
-            spannertools.GeneralizedBeam,
-            spannertools.StemTremoloSpanner,
-            )
-        beam_indicator_prototypes = (
-            durationtools.Multiplier,
-            indicatortools.Articulation,
-            indicatortools.Clef,
-            )
-        beaming_voice.name = beaming_voice.name.replace(
-            'Bowing Voice',
-            'Beaming Voice',
-            )
-        beaming_voice.context_name = 'BowingBeamingVoice'
-        for component in iterate(beaming_voice).depth_first(capped=True):
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if not isinstance(spanner, beam_spanner_prototypes):
-                    spanner._detach()
-            indicators = inspect_(component).get_indicators()
-            for indicator in indicators:
-                if not isinstance(indicator, beam_indicator_prototypes):
-                    detach(indicator, component)
-
-        dynamic_spanner_prototypes = (
-            spannertools.Crescendo,
-            spannertools.Decrescendo,
-            )
-        dynamic_indicator_prototypes = (
-            durationtools.Multiplier,
-            indicatortools.Dynamic,
-            lilypondnametools.LilyPondGrobOverride,
-            )
-        dynamics_voice.context_name = 'Dynamics'
-        dynamics_voice.name = dynamics_voice.name.replace(
-            'Bowing Voice',
-            'Dynamics',
-            )
-        for component in iterate(dynamics_voice).depth_first(capped=True):
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if not isinstance(spanner, dynamic_spanner_prototypes):
-                    spanner._detach()
-            indicators = inspect_(component).get_indicators()
-            for indicator in indicators:
-                if not isinstance(indicator, dynamic_indicator_prototypes):
-                    detach(indicator, component)
-
-        staff.append(beaming_voice)
-        staff.append(dynamics_voice)
 
     def configure_glissando_voice(self, staff):
-        staff.is_simultaneous = True
-        pitches_voice = staff[0]
-        spanner_voice = mutate(pitches_voice).copy()
-        pitches_voice.context_name = 'FingeringPitchesVoice'
-        spanner_voice.context_name = 'FingeringSpannerVoice'
-        spanner_prototypes = (
-            spannertools.Glissando,
-            spannertools.Tie,
+        voice = staff[0]
+        finger_pitches_voice = self._copy_voice(
+            voice,
+            new_voice_name=voice.name.replace('Fingering', 'LH Pitches'),
+            new_context_name='FingeringPitchesVoice',
             )
-        rests = []
-        for component in iterate(spanner_voice).depth_first(capped=True):
-            spanners = inspect_(component).get_spanners()
-            for spanner in spanners:
-                if not isinstance(spanner, spanner_prototypes):
-                    spanner._detach()
-            grace_containers = inspect_(component).get_grace_containers()
-            for grace_container in grace_containers:
-                grace_container._detach()
-            if isinstance(component, scoretools.Rest):
-                rests.append(component)
-        for rest in rests:
-            indicators = inspect_(rest).get_indicators(
-                durationtools.Multiplier,
-                )
-            skip = scoretools.Skip(rest)
-            if indicators:
-                attach(indicators[0], skip)
-            mutate(rest).replace(skip)
-        staff.append(spanner_voice)
+        finger_spanner_voice = self._copy_voice(
+            voice,
+            attachment_names=(
+                'glissando',
+                ),
+            new_voice_name=voice.name.replace('Fingering', 'LH Spanner'),
+            new_context_name='FingeringSpannerVoice',
+            remove_grace_containers=True,
+            remove_ties=True,
+            replace_rests_with_skips=True,
+            )
+        voice_index = staff.index(voice)
+        staff[voice_index:voice_index + 1] = [
+            finger_pitches_voice,
+            finger_spanner_voice
+            ]
+        staff.is_simultaneous = True
 
     def configure_score(self, score):
         self.attach_tempo(score)
