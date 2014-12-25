@@ -181,6 +181,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         finger_spanner_voice = self._copy_voice(
             voice,
             attachment_names=(
+                'bend_after',
                 'glissando',
                 ),
             new_voice_name=voice.name.replace('Fingering', 'LH Spanner'),
