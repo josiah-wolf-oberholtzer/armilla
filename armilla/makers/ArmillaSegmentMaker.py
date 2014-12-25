@@ -1,12 +1,8 @@
 # -*- encoding: utf-8 -*-
 from abjad import attach
-from abjad import inspect_
 from abjad import iterate
-from abjad import mutate
-from abjad import durationtools
 from abjad import indicatortools
 from abjad import scoretools
-from abjad import spannertools
 import consort
 
 
@@ -73,65 +69,11 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             )
         self.repeat = repeat
 
-    ### PRIVATE METHODS ###
-
-    def _copy_voice(
-        self,
-        voice,
-        attachment_names=None,
-        new_voice_name=None,
-        new_context_name=None,
-        remove_grace_containers=False,
-        remove_ties=False,
-        replace_rests_with_skips=False,
-        ):
-        new_voice = mutate(voice).copy()
-        if new_voice_name:
-            new_voice.name = new_voice_name
-        if new_context_name:
-            new_voice.context_name = new_context_name
-        rests = []
-        for component in iterate(new_voice).depth_first(capped=True):
-            agent = inspect_(component)
-            indicators = agent.get_indicators(unwrap=False)
-            spanners = agent.get_spanners()
-            for x in indicators:
-                if not x.name:
-                    continue
-                if attachment_names and \
-                    not any(x.name.startswith(_) for _ in attachment_names):
-                    x._detach()
-            for x in spanners:
-                if remove_ties and isinstance(x, spannertools.Tie):
-                    x._detach()
-                if not x.name:
-                    continue
-                elif attachment_names and \
-                    not any(x.name.startswith(_) for _ in attachment_names):
-                    x._detach()
-            if replace_rests_with_skips and \
-                isinstance(component, scoretools.Rest):
-                rests.append(component)
-            grace_containers = agent.get_grace_containers()
-            if grace_containers and remove_grace_containers:
-                for grace_container in grace_containers:
-                    grace_container._detach()
-        if replace_rests_with_skips:
-            for rest in rests:
-                indicators = inspect_(rest).get_indicators(
-                    durationtools.Multiplier,
-                    )
-                skip = scoretools.Skip(rest)
-                if indicators:
-                    attach(indicators[0], skip)
-                mutate(rest).replace(skip)
-        return new_voice
-
     ### PUBLIC METHODS ###
 
     def configure_beaming_voice(self, staff):
         voice = staff[0]
-        bow_position_voice = self._copy_voice(
+        bow_position_voice = self.copy_voice(
             voice,
             attachment_names=(
                 'bow_spanner',
@@ -143,7 +85,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             remove_ties=True,
             replace_rests_with_skips=True,
             )
-        bow_beaming_voice = self._copy_voice(
+        bow_beaming_voice = self.copy_voice(
             voice,
             attachment_names=(
                 'beam',
@@ -153,7 +95,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             new_context_name='BowBeamingVoice',
             remove_ties=True,
             )
-        bow_dynamics_voice = self._copy_voice(
+        bow_dynamics_voice = self.copy_voice(
             voice,
             attachment_names=(
                 'dynamic_phrasing',
@@ -173,12 +115,12 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     def configure_glissando_voice(self, staff):
         voice = staff[0]
-        finger_pitches_voice = self._copy_voice(
+        finger_pitches_voice = self.copy_voice(
             voice,
             new_voice_name=voice.name.replace('Fingering', 'LH Pitches'),
             new_context_name='FingeringPitchesVoice',
             )
-        finger_spanner_voice = self._copy_voice(
+        finger_spanner_voice = self.copy_voice(
             voice,
             attachment_names=(
                 'bend_after',
