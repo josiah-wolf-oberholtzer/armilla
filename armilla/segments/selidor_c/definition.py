@@ -15,23 +15,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 36),
     )
 
-waves_timespan_maker = armilla.ArmillaTimespanMaker(
-    initial_silence_talea=rhythmmakertools.Talea(
-        counts=(1, 0),
-        denominator=4,
-        ),
-    playing_talea=rhythmmakertools.Talea(
-        counts=(5, 4, 3),
-        denominator=8,
-        ),
-    playing_groupings=(3, 3, 2, 2),
-    silence_talea=rhythmmakertools.Talea(
-        counts=(1, 1, 2),
-        denominator=8,
-        ),
-    rotation_indices=(1, 1, 0),
-    )
-
 rh_waves_music_specifier = armilla.materials.rh_waves_music_specifier,
 
 lh_waves_music_specifier = new(
@@ -47,7 +30,22 @@ lh_waves_music_specifier = new(
     )
 
 segment_maker.add_setting(
-    timespan_maker=waves_timespan_maker,
+    timespan_maker=armilla.ArmillaTimespanMaker(
+        initial_silence_talea=rhythmmakertools.Talea(
+            counts=(1, 0),
+            denominator=4,
+            ),
+        playing_talea=rhythmmakertools.Talea(
+            counts=(5, 4, 3),
+            denominator=8,
+            ),
+        playing_groupings=(3, 3, 2, 2),
+        silence_talea=rhythmmakertools.Talea(
+            counts=(1, 1, 2),
+            denominator=8,
+            ),
+        rotation_indices=(1, 1, 0),
+        ),
     viola_1_rh=rh_waves_music_specifier,
     viola_2_rh=rh_waves_music_specifier,
     viola_1_lh=lh_waves_music_specifier,
