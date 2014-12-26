@@ -98,7 +98,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         bow_dynamics_voice = self.copy_voice(
             voice,
             attachment_names=(
-                'dynamic_phrasing',
+                'dynamic_expression',
                 ),
             new_voice_name=voice.name.replace('Bowing', 'RH Dynamics'),
             new_context_name='Dynamics',

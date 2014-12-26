@@ -98,10 +98,10 @@ rh_waves_music_specifier = consort.tools.MusicSpecifier(
                     ]
                 ),
             ),
-        dynamic_phrasings=consort.tools.AttachmentExpression(
+        dynamic_expressions=consort.tools.AttachmentExpression(
             attachments=datastructuretools.TypedList(
                 [
-                    consort.tools.DynamicPhrasing(
+                    consort.tools.DynamicExpression(
                         dynamic_tokens=datastructuretools.CyclicTuple(
                             ['p', 'ppp', 'p', 'ppp', 'p', 'ppp']
                             ),

@@ -34,7 +34,7 @@ rh_waves_music_specifier = consort.MusicSpecifier(
             selector=selectortools.Selector().by_leaves().flatten(),
             ),
         bow_spanner=spannertools.BowSpanner(),
-        dynamic_phrasings=consort.DynamicPhrasing(
+        dynamic_expressions=consort.DynamicExpression(
             dynamic_tokens='p ppp p ppp p ppp',
             ),
         ),
