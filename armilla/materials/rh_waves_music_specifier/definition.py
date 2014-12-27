@@ -33,7 +33,7 @@ rh_waves_music_specifier = consort.MusicSpecifier(
             attachments=indicatortools.BowMotionTechnique('circular'),
             selector=selectortools.Selector().by_leaves().flatten(),
             ),
-        bow_spanner=spannertools.BowSpanner(),
+        bow_contact_spanner=spannertools.BowContactSpanner(),
         dynamic_expressions=consort.DynamicExpression(
             dynamic_tokens='p ppp p ppp p ppp',
             ),

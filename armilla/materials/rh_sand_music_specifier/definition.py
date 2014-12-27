@@ -32,7 +32,7 @@ rh_sand_music_specifier = consort.MusicSpecifier(
                 ),
             selector=selectortools.Selector().by_leaves().flatten(),
             ),
-        bow_spanner=spannertools.BowSpanner(),
+        bow_contact_spanner=spannertools.BowContactSpanner(),
         ),
     rhythm_maker=consort.CompositeRhythmMaker(
         last=rhythmmakertools.IncisedRhythmMaker(

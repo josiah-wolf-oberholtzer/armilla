@@ -57,10 +57,10 @@ rh_wind_music_specifier = consort.tools.MusicSpecifier(
                     ),
                 ),
             ),
-        bow_spanner=consort.tools.AttachmentExpression(
+        bow_contact_spanner=consort.tools.AttachmentExpression(
             attachments=datastructuretools.TypedList(
                 [
-                    spannertools.BowSpanner(),
+                    spannertools.BowContactSpanner(),
                     ]
                 ),
             ),
