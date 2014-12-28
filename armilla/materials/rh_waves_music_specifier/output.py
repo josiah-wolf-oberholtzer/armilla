@@ -72,6 +72,13 @@ rh_waves_music_specifier = consort.tools.MusicSpecifier(
                     ),
                 ),
             ),
+        bow_contact_spanner=consort.tools.AttachmentExpression(
+            attachments=datastructuretools.TypedList(
+                [
+                    spannertools.BowContactSpanner(),
+                    ]
+                ),
+            ),
         bow_motion_techniques=consort.tools.AttachmentExpression(
             attachments=datastructuretools.TypedList(
                 [
@@ -91,13 +98,6 @@ rh_waves_music_specifier = consort.tools.MusicSpecifier(
                     ),
                 ),
             ),
-        bow_contact_spanner=consort.tools.AttachmentExpression(
-            attachments=datastructuretools.TypedList(
-                [
-                    spannertools.BowContactSpanner(),
-                    ]
-                ),
-            ),
         dynamic_expressions=consort.tools.AttachmentExpression(
             attachments=datastructuretools.TypedList(
                 [
@@ -109,6 +109,55 @@ rh_waves_music_specifier = consort.tools.MusicSpecifier(
                             [None]
                             ),
                         ),
+                    ]
+                ),
+            ),
+        string_contact_points=consort.tools.AttachmentExpression(
+            attachments=datastructuretools.TypedList(
+                [
+                    None,
+                    indicatortools.IndicatorExpression(
+                        indicator=indicatortools.StringContactPoint(
+                            contact_point='ordinario',
+                            ),
+                        scope=scoretools.Voice,
+                        ),
+                    indicatortools.IndicatorExpression(
+                        indicator=indicatortools.StringContactPoint(
+                            contact_point='sul ponticello',
+                            ),
+                        scope=scoretools.Voice,
+                        ),
+                    indicatortools.IndicatorExpression(
+                        indicator=indicatortools.StringContactPoint(
+                            contact_point='ordinario',
+                            ),
+                        scope=scoretools.Voice,
+                        ),
+                    indicatortools.IndicatorExpression(
+                        indicator=indicatortools.StringContactPoint(
+                            contact_point='ordinario',
+                            ),
+                        scope=scoretools.Voice,
+                        ),
+                    indicatortools.IndicatorExpression(
+                        indicator=indicatortools.StringContactPoint(
+                            contact_point='molto sul ponticello',
+                            ),
+                        scope=scoretools.Voice,
+                        ),
+                    ]
+                ),
+            selector=selectortools.Selector(
+                callbacks=(
+                    consort.tools.PhrasedSelectorCallback(),
+                    ),
+                ),
+            ),
+        string_contact_spanner=consort.tools.AttachmentExpression(
+            attachments=datastructuretools.TypedList(
+                [
+                    consort.tools.StringContactSpanner(),
                     ]
                 ),
             ),

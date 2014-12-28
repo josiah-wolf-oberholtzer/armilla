@@ -4,6 +4,7 @@ from abjad import durationtools
 from abjad import indicatortools
 from abjad import rhythmmakertools
 from abjad import selectortools
+from abjad import scoretools
 from abjad import spannertools
 
 
@@ -37,6 +38,34 @@ rh_waves_music_specifier = consort.MusicSpecifier(
         dynamic_expressions=consort.DynamicExpression(
             dynamic_tokens='p ppp p ppp p ppp',
             ),
+        string_contact_points=consort.AttachmentExpression(
+            attachments=(
+                None,
+                indicatortools.IndicatorExpression(
+                    indicator=indicatortools.StringContactPoint('ordinario'),
+                    scope=scoretools.Voice,
+                    ),
+                indicatortools.IndicatorExpression(
+                    indicator=indicatortools.StringContactPoint('sul ponticello'),
+                    scope=scoretools.Voice,
+                    ),
+                indicatortools.IndicatorExpression(
+                    indicator=indicatortools.StringContactPoint('ordinario'),
+                    scope=scoretools.Voice,
+                    ),
+                indicatortools.IndicatorExpression(
+                    indicator=indicatortools.StringContactPoint('ordinario'),
+                    scope=scoretools.Voice,
+                    ),
+                indicatortools.IndicatorExpression(
+                    indicator=indicatortools.StringContactPoint('molto sul ponticello'),
+                    scope=scoretools.Voice,
+                    ),
+                ),
+            selector=selectortools.Selector().with_callback(
+                consort.PhrasedSelectorCallback())
+            ),
+        string_contact_spanner=consort.StringContactSpanner(),
         ),
     rhythm_maker=consort.CompositeRhythmMaker(
         last=rhythmmakertools.IncisedRhythmMaker(
