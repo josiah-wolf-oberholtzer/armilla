@@ -152,6 +152,9 @@ afterGraceFraction = #(cons 1023 1024)
         \override NoteHead.stencil = ##f
         \override Rest.stencil = ##f
         \override Stem.stencil = ##f
+        \override TextScript.staff-padding = 7
+        \override TextScript.self-alignment-X = #center
+        \override TextSpanner.staff-padding = 7
         \override TupletBracket.stencil = ##f
         \override TupletNumber.stencil = ##f
     }
