@@ -19,11 +19,8 @@
                             \override
                                 #'(box-padding . 0.5)
                                 \box
-                                    \concat
-                                        {
-                                            \vstrut
-                                            Selidor
-                                        }
+                                    \caps
+                                        Selidor
                             " "
                             \fontsize
                                 #-3
@@ -78,8 +75,223 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 1 Bowing Staff" <<
-                \context BowPositionVoice = "Viola 1 RH Position Voice" {
-                    \clef "percussion"
+                \clef "percussion"
+                \context StringContactVoice = "Viola 1 RH String Contact Voice" {
+                    {
+                        {
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'4. ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'8 \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.P.
+                                }
+                        }
+                        {
+                            c'4. \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    Ord.
+                                }
+                            c'16 \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            M.S.P
+                                }
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    M.S.P
+                                }
+                            c'4
+                            c'4
+                        }
+                        {
+                            c'4.
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'8 \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.P.
+                                }
+                        }
+                        {
+                            c'16
+                            c'16 \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    Ord.
+                                }
+                            c'4
+                        }
+                        {
+                            c'16
+                            c'16 \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            M.S.P
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8
+                            s4
+                        }
+                    }
+                }
+                \context BowContactVoice = "Viola 1 RH Bow Contact Voice" {
                     {
                         {
                             s4
@@ -340,7 +552,6 @@
                     }
                 }
                 \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
-                    \clef "percussion"
                     {
                         {
                             r4
@@ -361,7 +572,7 @@
                         }
                         {
                             c'4
-                            c'16 [
+                            c'16 :128 [
                             \set stemLeftBeamCount = 2
                             c'16 ]
                         }
@@ -374,15 +585,15 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
-                            c'4
-                            c'4
-                            c'4
+                            c'4 :32
+                            c'4 :32
+                            c'4 :32
                         }
                         {
-                            c'4.
+                            c'4. :32
                         }
                         {
-                            c'8
+                            c'8 :64
                         }
                         {
                             c'4
@@ -417,7 +628,6 @@
                     }
                 }
                 \context Dynamics = "Viola 1 RH Dynamics Voice" {
-                    \clef "percussion"
                     {
                         {
                             s4
@@ -493,8 +703,8 @@
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 1 Fingering Staff" <<
+                \clef "alto"
                 \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
-                    \clef "alto"
                     {
                         {
                             r4
@@ -577,7 +787,6 @@
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 1 LH Spanner Voice" {
-                    \clef "alto"
                     {
                         {
                             s4
@@ -661,8 +870,225 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 2 Bowing Staff" <<
-                \context BowPositionVoice = "Viola 2 RH Position Voice" {
-                    \clef "percussion"
+                \clef "percussion"
+                \context StringContactVoice = "Viola 2 RH String Contact Voice" {
+                    {
+                        {
+                            c'4. ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    Ord.
+                                }
+                        }
+                        {
+                            c'4 \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            M.S.P
+                                }
+                            c'16
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.P.
+                                }
+                        }
+                        {
+                            c'4 \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'8 \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            M.S.P
+                                }
+                        }
+                        {
+                            c'4
+                            c'4
+                        }
+                        {
+                            c'16
+                            c'16 \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'8 \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4. \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.P.
+                                }
+                        }
+                        {
+                            c'4. \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4. \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    Ord.
+                                }
+                        }
+                        {
+                            c'8. \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            M.S.P
+                                }
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                    }
+                }
+                \context BowContactVoice = "Viola 2 RH Bow Contact Voice" {
                     {
                         {
                             \once \override Glissando.style = #'zigzag
@@ -920,19 +1346,18 @@
                     }
                 }
                 \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
-                    \clef "percussion"
                     {
                         {
-                            c'4.
+                            c'4. :32
                         }
                         {
-                            c'4
+                            c'4 :32
                         }
                         {
-                            c'4
-                            c'16 [
+                            c'4 :32
+                            c'16 :128 [
                             \set stemLeftBeamCount = 2
-                            c'16 ]
+                            c'16 :128 ]
                         }
                     }
                     {
@@ -955,7 +1380,7 @@
                         }
                         {
                             c'4
-                            c'4
+                            c'4 :32
                         }
                         {
                             c'16 [
@@ -970,19 +1395,19 @@
                     }
                     {
                         {
-                            c'8
+                            c'8 :64
                         }
                         {
-                            c'4.
+                            c'4. :32
                         }
                         {
-                            c'4.
+                            c'4. :32
                         }
                         {
-                            c'4.
+                            c'4. :32
                         }
                         {
-                            c'8. [
+                            c'8. :64 [
                             \set stemLeftBeamCount = 2
                             c'16 ]
                         }
@@ -994,7 +1419,6 @@
                     }
                 }
                 \context Dynamics = "Viola 2 RH Dynamics Voice" {
-                    \clef "percussion"
                     {
                         {
                             c'4. \ppp \<
@@ -1067,8 +1491,8 @@
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 2 Fingering Staff" <<
+                \clef "alto"
                 \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
-                    \clef "alto"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
@@ -1213,7 +1637,6 @@
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
-                    \clef "alto"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {

@@ -2,8 +2,10 @@
 import armilla
 import consort
 from abjad import new
-from abjad import indicatortools
-from abjad import rhythmmakertools
+from abjad.tools import indicatortools
+from abjad.tools import rhythmmakertools
+from abjad.tools import spannertools
+from abjad.tools import selectortools
 
 
 segment_maker = armilla.ArmillaSegmentMaker(
@@ -15,7 +17,18 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 36),
     )
 
-rh_waves_music_specifier = armilla.materials.rh_waves_music_specifier,
+rh_waves_music_specifier = new(
+    armilla.materials.rh_waves_music_specifier,
+    attachment_handler__stem_tremolo_spanner=consort.AttachmentExpression(
+        attachments=(
+            None,
+            spannertools.StemTremoloSpanner(),
+            ),
+        selector=selectortools.Selector().by_leaves().by_counts(
+            [5, 1, 4, 2, 6, 3], cyclic=True,
+            )
+        ),
+    )
 
 lh_waves_music_specifier = new(
     armilla.materials.lh_waves_music_specifier,

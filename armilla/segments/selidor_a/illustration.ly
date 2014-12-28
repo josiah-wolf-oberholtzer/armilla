@@ -19,11 +19,8 @@
                             \override
                                 #'(box-padding . 0.5)
                                 \box
-                                    \concat
-                                        {
-                                            \vstrut
-                                            Selidor
-                                        }
+                                    \caps
+                                        Selidor
                             " "
                             \fontsize
                                 #-3
@@ -56,8 +53,75 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 1 Bowing Staff" <<
-                \context BowPositionVoice = "Viola 1 RH Position Voice" {
-                    \clef "percussion"
+                \clef "percussion"
+                \context StringContactVoice = "Viola 1 RH String Contact Voice" {
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'4 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                            c'4
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'8 \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \override
+                                            #'(padding . 0.1)
+                                            \parenthesize
+                                                \caps
+                                                    Ord.
+                                }
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.P.
+                                }
+                        }
+                        {
+                            c'2 \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                            c'16
+                            c'16
+                        }
+                    }
+                }
+                \context BowContactVoice = "Viola 1 RH Bow Contact Voice" {
                     {
                         {
                             s8
@@ -151,7 +215,6 @@
                     }
                 }
                 \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
-                    \clef "percussion"
                     {
                         {
                             r8
@@ -177,7 +240,6 @@
                     }
                 }
                 \context Dynamics = "Viola 1 RH Dynamics Voice" {
-                    \clef "percussion"
                     {
                         {
                             s8
@@ -204,8 +266,8 @@
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 1 Fingering Staff" <<
+                \clef "alto"
                 \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
-                    \clef "alto"
                     {
                         {
                             r8
@@ -248,7 +310,6 @@
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 1 LH Spanner Voice" {
-                    \clef "alto"
                     {
                         {
                             s8
@@ -286,8 +347,65 @@
         } <<
             \repeat volta 2
             \context BowingStaff = "Viola 2 Bowing Staff" <<
-                \context BowPositionVoice = "Viola 2 RH Position Voice" {
-                    \clef "percussion"
+                \clef "percussion"
+                \context StringContactVoice = "Viola 2 RH String Contact Voice" {
+                    {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            M.S.P
+                                }
+                            c'4
+                            c'4
+                        }
+                        {
+                            c'4.
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.padding = 4
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'8. \stopTextSpan \startTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Ord.
+                                }
+                            c'16 \stopTextSpan ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.P.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s4.
+                        }
+                    }
+                }
+                \context BowContactVoice = "Viola 2 RH Bow Contact Voice" {
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
@@ -369,7 +487,6 @@
                     }
                 }
                 \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
-                    \clef "percussion"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
@@ -393,7 +510,6 @@
                     }
                 }
                 \context Dynamics = "Viola 2 RH Dynamics Voice" {
-                    \clef "percussion"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
@@ -418,8 +534,8 @@
             >>
             \repeat volta 2
             \context FingeringStaff = "Viola 2 Fingering Staff" <<
+                \clef "alto"
                 \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
-                    \clef "alto"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
@@ -457,7 +573,6 @@
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
-                    \clef "alto"
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
