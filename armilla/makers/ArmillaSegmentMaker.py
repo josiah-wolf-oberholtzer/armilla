@@ -73,15 +73,25 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     def configure_beaming_voice(self, staff):
         voice = staff[0]
-        bow_position_voice = self.copy_voice(
+        string_contact_voice = self.copy_voice(
+            voice,
+            attachment_names=(
+                'string_contact',
+                ),
+            new_voice_name=voice.name.replace('Bowing', 'RH String Contact'),
+            new_context_name='StringContactVoice',
+            remove_ties=True,
+            replace_rests_with_skips=True,
+            )
+        bow_contact_voice = self.copy_voice(
             voice,
             attachment_names=(
                 'bow_contact_spanner',
                 'bow_contact_point',
                 'bow_motion_technique',
                 ),
-            new_voice_name=voice.name.replace('Bowing', 'RH Position'),
-            new_context_name='BowPositionVoice',
+            new_voice_name=voice.name.replace('Bowing', 'RH Bow Contact'),
+            new_context_name='BowContactVoice',
             remove_ties=True,
             replace_rests_with_skips=True,
             )
@@ -107,7 +117,8 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             )
         voice_index = staff.index(voice)
         staff[voice_index:voice_index + 1] = [
-            bow_position_voice,
+            string_contact_voice,
+            bow_contact_voice,
             bow_beaming_voice,
             bow_dynamics_voice,
             ]

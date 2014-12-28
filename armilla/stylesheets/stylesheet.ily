@@ -143,7 +143,21 @@ afterGraceFraction = #(cons 1023 1024)
 
     \context {
         \Voice
-        \name BowPositionVoice
+        \name StringContactVoice
+        \type Engraver_group
+        \alias Voice
+        \override Beam.stencil = ##f
+        \override Dots.stencil = ##f
+        \override Flag.stencil = ##f
+        \override NoteHead.stencil = ##f
+        \override Rest.stencil = ##f
+        \override Stem.stencil = ##f
+        \override TupletBracket.stencil = ##f
+        \override TupletNumber.stencil = ##f
+    }
+    \context {
+        \Voice
+        \name BowContactVoice
         \type Engraver_group
         \alias Voice
         \override Beam.stencil = ##f
@@ -190,7 +204,8 @@ afterGraceFraction = #(cons 1023 1024)
         \type Engraver_group
         \alias Staff
         \accepts BowBeamingVoice
-        \accepts BowPositionVoice
+        \accepts BowContactVoice
+        \accepts StringContactVoice
         \override Glissando.bound-details.left.padding = 0.75
         \override Glissando.bound-details.right.padding = 0.75
         \override Glissando.thickness = 2
