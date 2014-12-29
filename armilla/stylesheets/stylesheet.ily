@@ -69,7 +69,7 @@ afterGraceFraction = #(cons 1023 1024)
 }
 
 \layout {
-    \accidentalStyle modern-cautionary
+    \accidentalStyle forget
     ragged-bottom = ##t
     ragged-right = ##t
     ragged-last = ##t
@@ -103,7 +103,7 @@ afterGraceFraction = #(cons 1023 1024)
         \override RehearsalMark.break-align-symbols = #'(time-signature)
         \override RehearsalMark.break-visibility = #end-of-line-invisible
         \override RehearsalMark.font-name = "Didot"
-        \override RehearsalMark.font-size = 10
+        \override RehearsalMark.font-size = 8
         \override RehearsalMark.outside-staff-priority = 500
         \override RehearsalMark.self-alignment-X = #center
         \override Script.extra-offset = #'(4 . -9)
