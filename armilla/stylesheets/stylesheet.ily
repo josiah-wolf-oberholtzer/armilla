@@ -155,6 +155,8 @@ afterGraceFraction = #(cons 1023 1024)
         \override TextScript.staff-padding = 7
         \override TextScript.self-alignment-X = #center
         \override TextSpanner.staff-padding = 7
+        \override TextSpanner #'bound-details #'left #'attach-dir = -1
+        \override TextSpanner #'bound-details #'right #'attach-dir = -1
         \override TupletBracket.stencil = ##f
         \override TupletNumber.stencil = ##f
     }
