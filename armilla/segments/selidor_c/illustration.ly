@@ -94,41 +94,57 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \parenthesize
+                                                    \caps
+                                                        Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 3.5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \override
-                                            #'(padding . 0.1)
-                                            \parenthesize
-                                                \caps
-                                                    Ord.
-                                }
+                            c'4 \startTextSpan
                         }
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    S.P.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 3.5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'8 \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            S.P.
-                                }
+                            c'8 \stopTextSpan \startTextSpan
                         }
                         {
                             c'4. \stopTextSpan ^ \markup {
@@ -141,29 +157,46 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \parenthesize
+                                                    \caps
+                                                        Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 0
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    M.S.P
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \override
-                                            #'(padding . 0.1)
-                                            \parenthesize
-                                                \caps
-                                                    Ord.
-                                }
-                            c'16 \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            M.S.P
-                                }
+                            c'4 \stopTextSpan \startTextSpan
+                            c'16 \stopTextSpan
                             c'16
                         }
                     }
@@ -177,23 +210,29 @@
                         \times 5/6 {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    M.S.P
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 3.5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \override
-                                            #'(padding . 0.1)
-                                            \parenthesize
-                                                \caps
-                                                    M.S.P
-                                }
+                            c'4 \startTextSpan
                             c'4
                             c'4
                         }
@@ -203,47 +242,75 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 3.5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'8 \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
+                            c'8 \stopTextSpan \startTextSpan
                         }
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    S.P.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 0
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            S.P.
-                                }
+                            c'4 \stopTextSpan \startTextSpan
                         }
                         {
                             c'16
-                            c'16 \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
+                            c'16 \stopTextSpan
                         }
                     }
                     {
@@ -255,33 +322,49 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
-                            \once \override TextSpanner.bound-details.right-broken.padding = 0
-                            \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
-                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
-                            \once \override TextSpanner.dash-fraction = 0.25
-                            \once \override TextSpanner.dash-period = 1
-                            c'4 \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \override
-                                            #'(padding . 0.1)
-                                            \parenthesize
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
                                                 \caps
                                                     Ord.
+                                                \hspace
+                                                    #1
+                                            }
                                 }
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 0
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    M.S.P
+                                                \hspace
+                                                    #1
+                                            }
+                                }
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \startTextSpan
                             c'4
                         }
                         {
                             c'16
-                            c'16 \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            M.S.P
-                                }
+                            c'16 \stopTextSpan
                         }
                     }
                     {
@@ -884,31 +967,48 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \parenthesize
+                                                    \caps
+                                                        Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 0
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    M.S.P
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \override
-                                            #'(padding . 0.1)
-                                            \parenthesize
-                                                \caps
-                                                    Ord.
-                                }
+                            c'4 \startTextSpan
                         }
                         {
-                            c'4 \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            M.S.P
-                                }
+                            c'4 \stopTextSpan
                             c'16
                             c'16
                         }
@@ -922,20 +1022,29 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    S.P.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 3.5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            S.P.
-                                }
+                            c'4 \startTextSpan
                         }
                         {
                             c'4 \stopTextSpan ^ \markup {
@@ -948,41 +1057,72 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \parenthesize
+                                                    \caps
+                                                        Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 3.5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \override
-                                            #'(padding . 0.1)
-                                            \parenthesize
-                                                \caps
-                                                    Ord.
-                                }
+                            c'4 \stopTextSpan \startTextSpan
                         }
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    M.S.P
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 0
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'8 \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            M.S.P
-                                }
+                            c'8 \stopTextSpan \startTextSpan
                         }
                         {
                             c'4
@@ -990,12 +1130,7 @@
                         }
                         {
                             c'16
-                            c'16 \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
+                            c'16 \stopTextSpan
                         }
                     }
                     {
@@ -1007,41 +1142,56 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 3.5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'8 \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \override
-                                            #'(padding . 0.1)
-                                            \parenthesize
-                                                \caps
-                                                    Ord.
-                                }
+                            c'8 \startTextSpan
                         }
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    S.P.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 3.5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4. \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            S.P.
-                                }
+                            c'4. \stopTextSpan \startTextSpan
                         }
                         {
                             c'4. \stopTextSpan ^ \markup {
@@ -1054,31 +1204,48 @@
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.padding = 4
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \parenthesize
+                                                    \caps
+                                                        Ord.
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 4
+                            \once \override TextSpanner.bound-details.right.padding = 0
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.right.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1
+                                                \caps
+                                                    M.S.P
+                                                \hspace
+                                                    #1
+                                            }
+                                }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4. \stopTextSpan \startTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \override
-                                            #'(padding . 0.1)
-                                            \parenthesize
-                                                \caps
-                                                    Ord.
-                                }
+                            c'4. \stopTextSpan \startTextSpan
                         }
                         {
-                            c'8. \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            M.S.P
-                                }
+                            c'8. \stopTextSpan
                             c'16
                         }
                     }
