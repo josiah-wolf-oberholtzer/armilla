@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 import consort
-from abjad import durationtools
-from abjad import rhythmmakertools
-from abjad import selectortools
-from abjad import spannertools
+from abjad.tools import durationtools
+from abjad.tools import rhythmmakertools
+from abjad.tools import selectortools
+from abjad.tools import spannertools
 
 
 lh_waves_music_specifier = consort.MusicSpecifier(
