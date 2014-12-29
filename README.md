@@ -1,4 +1,6 @@
 armilla
 =======
 
-Invisible Cities (ii): Armilla [for viola duet] (to Elizabeth Weiser and John Pickford Richards)
+Invisible Cities (ii): Armilla for viola duet.
+
+Written for Elizabeth Weisser and John Pickford Richards.
