@@ -41,27 +41,13 @@ rh_waves_music_specifier = consort.MusicSpecifier(
         string_contact_points=consort.AttachmentExpression(
             attachments=(
                 None,
-                indicatortools.IndicatorExpression(
-                    indicator=indicatortools.StringContactPoint('ordinario'),
-                    scope=scoretools.Voice,
-                    ),
-                indicatortools.IndicatorExpression(
-                    indicator=indicatortools.StringContactPoint('sul ponticello'),
-                    scope=scoretools.Voice,
-                    ),
-                indicatortools.IndicatorExpression(
-                    indicator=indicatortools.StringContactPoint('ordinario'),
-                    scope=scoretools.Voice,
-                    ),
-                indicatortools.IndicatorExpression(
-                    indicator=indicatortools.StringContactPoint('ordinario'),
-                    scope=scoretools.Voice,
-                    ),
-                indicatortools.IndicatorExpression(
-                    indicator=indicatortools.StringContactPoint('molto sul ponticello'),
-                    scope=scoretools.Voice,
-                    ),
+                indicatortools.StringContactPoint('ordinario'),
+                indicatortools.StringContactPoint('sul ponticello'),
+                indicatortools.StringContactPoint('ordinario'),
+                indicatortools.StringContactPoint('ordinario'),
+                indicatortools.StringContactPoint('molto sul ponticello'),
                 ),
+            scope=scoretools.Voice,
             selector=selectortools.Selector().with_callback(
                 consort.PhrasedSelectorCallback())
             ),

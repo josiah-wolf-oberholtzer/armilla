@@ -116,35 +116,20 @@ rh_waves_music_specifier = consort.tools.MusicSpecifier(
             attachments=datastructuretools.TypedList(
                 [
                     None,
-                    indicatortools.IndicatorExpression(
-                        indicator=indicatortools.StringContactPoint(
-                            contact_point='ordinario',
-                            ),
-                        scope=scoretools.Voice,
+                    indicatortools.StringContactPoint(
+                        contact_point='ordinario',
                         ),
-                    indicatortools.IndicatorExpression(
-                        indicator=indicatortools.StringContactPoint(
-                            contact_point='sul ponticello',
-                            ),
-                        scope=scoretools.Voice,
+                    indicatortools.StringContactPoint(
+                        contact_point='sul ponticello',
                         ),
-                    indicatortools.IndicatorExpression(
-                        indicator=indicatortools.StringContactPoint(
-                            contact_point='ordinario',
-                            ),
-                        scope=scoretools.Voice,
+                    indicatortools.StringContactPoint(
+                        contact_point='ordinario',
                         ),
-                    indicatortools.IndicatorExpression(
-                        indicator=indicatortools.StringContactPoint(
-                            contact_point='ordinario',
-                            ),
-                        scope=scoretools.Voice,
+                    indicatortools.StringContactPoint(
+                        contact_point='ordinario',
                         ),
-                    indicatortools.IndicatorExpression(
-                        indicator=indicatortools.StringContactPoint(
-                            contact_point='molto sul ponticello',
-                            ),
-                        scope=scoretools.Voice,
+                    indicatortools.StringContactPoint(
+                        contact_point='molto sul ponticello',
                         ),
                     ]
                 ),
@@ -153,6 +138,7 @@ rh_waves_music_specifier = consort.tools.MusicSpecifier(
                     consort.tools.PhrasedSelectorCallback(),
                     ),
                 ),
+            scope=scoretools.Voice,
             ),
         string_contact_spanner=consort.tools.AttachmentExpression(
             attachments=datastructuretools.TypedList(
