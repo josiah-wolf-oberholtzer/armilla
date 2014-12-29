@@ -1,0 +1,1315 @@
+\version "2.19.15"
+\language "english"
+
+#(ly:set-option 'relative-includes #t)
+
+\include "/Users/josiah/Documents/Scores/armilla/armilla/stylesheets/stylesheet.ily"
+
+\score {
+    \context Score = "Armilla Score" <<
+        \tag #'time
+        \repeat volta 2
+        \context TimeSignatureContext = "TimeSignatureContext" {
+            {
+                \time 2/4
+                \tempo 4=72
+                \mark \markup {
+                    \concat
+                        {
+                            \override
+                                #'(box-padding . 0.5)
+                                \box
+                                    \caps
+                                        "The Long Dune"
+                            " "
+                            \fontsize
+                                #-3
+                                A
+                        }
+                    }
+                s1 * 1/2
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                s1 * 3/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+        }
+        \tag #'viola-1
+        \context StringPerformerGroup = "Viola 1 Performer Group" \with {
+            instrumentName = \markup {
+                \hcenter-in
+                    #10
+                    "Viola 1"
+                }
+            shortInstrumentName = \markup {
+                \hcenter-in
+                    #10
+                    "Va. 1"
+                }
+        } <<
+            \repeat volta 2
+            \context BowingStaff = "Viola 1 Bowing Staff" <<
+                \clef "percussion"
+                \context StringContactVoice = "Viola 1 RH String Contact Voice" {
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4.
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \parenthesize
+                                            \caps
+                                                Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                        {
+                            R1 * 1/2
+                        }
+                    }
+                }
+                \context BowContactVoice = "Viola 1 RH Bow Contact Voice" {
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                        {
+                            R1 * 1/2
+                        }
+                    }
+                }
+                \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4
+                        }
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
+                        }
+                    }
+                    {
+                        {
+                            r4
+                        }
+                        {
+                            R1 * 1/2
+                        }
+                    }
+                }
+                \context Dynamics = "Viola 1 RH Dynamics Voice" {
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                        {
+                            R1 * 1/2
+                        }
+                    }
+                }
+            >>
+            \repeat volta 2
+            \context FingeringStaff = "Viola 1 Fingering Staff" <<
+                \clef "alto"
+                \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <f ef' b' g''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4
+                        }
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <cs' b' g'' ef'''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4.
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <cs' b' g'' ef'''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            <c' bf' fs'' d'''>16 \arpeggio [
+                            \set stemLeftBeamCount = 2
+                            <f ef' b' g''>16 \arpeggio ]
+                        }
+                    }
+                    {
+                        {
+                            r4
+                        }
+                        {
+                            R1 * 1/2
+                        }
+                    }
+                }
+                \context FingeringSpannerVoice = "Viola 1 LH Spanner Voice" {
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <f ef' b' g''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <cs' b' g'' ef'''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4.
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <cs' b' g'' ef'''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            <c' bf' fs'' d'''>16
+                            <f ef' b' g''>16
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                        {
+                            R1 * 1/2
+                        }
+                    }
+                }
+            >>
+        >>
+        \tag #'viola-2
+        \context StringPerformerGroup = "Viola 2 Performer Group" \with {
+            instrumentName = \markup {
+                \hcenter-in
+                    #10
+                    "Viola 2"
+                }
+            shortInstrumentName = \markup {
+                \hcenter-in
+                    #10
+                    "Va. 2"
+                }
+        } <<
+            \repeat volta 2
+            \context BowingStaff = "Viola 2 Bowing Staff" <<
+                \clef "percussion"
+                \context StringContactVoice = "Viola 2 RH String Contact Voice" {
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \parenthesize
+                                            \caps
+                                                Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4.
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s2
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s4
+                        }
+                    }
+                }
+                \context BowContactVoice = "Viola 2 RH Bow Contact Voice" {
+                    {
+                        {
+                            c'16
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s2
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s4
+                        }
+                    }
+                }
+                \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
+                    {
+                        {
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                            r2
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                            r4
+                        }
+                    }
+                }
+                \context Dynamics = "Viola 2 RH Dynamics Voice" {
+                    {
+                        {
+                            c'16
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4.
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s2
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s4
+                        }
+                    }
+                }
+            >>
+            \repeat volta 2
+            \context FingeringStaff = "Viola 2 Fingering Staff" <<
+                \clef "alto"
+                \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
+                    {
+                        {
+                            <cs' b' g'' ef'''>16 \arpeggio [
+                            \set stemLeftBeamCount = 2
+                            <fs e' c'' gs''>16 \arpeggio ]
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                        }
+                    }
+                    {
+                        {
+                            <c' bf' fs'' d'''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                    }
+                    {
+                        {
+                            <f ef' b' g''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r4.
+                        }
+                    }
+                    {
+                        {
+                            <d' c'' gs'' e'''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                            r2
+                        }
+                    }
+                    {
+                        {
+                            <f ef' b' g''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                    }
+                    {
+                        {
+                            <cs' b' g'' ef'''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                    }
+                    {
+                        {
+                            <d' c'' gs'' e'''>16 \arpeggio
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                            r4
+                        }
+                    }
+                }
+                \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
+                    {
+                        {
+                            <cs' b' g'' ef'''>16
+                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                        }
+                    }
+                    {
+                        {
+                            <c' bf' fs'' d'''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            <f ef' b' g''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s4.
+                        }
+                    }
+                    {
+                        {
+                            <d' c'' gs'' e'''>16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s2
+                        }
+                    }
+                    {
+                        {
+                            <f ef' b' g''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            <cs' b' g'' ef'''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
+                            <d' c'' gs'' e'''>16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s4
+                        }
+                    }
+                }
+            >>
+        >>
+    >>
+}
