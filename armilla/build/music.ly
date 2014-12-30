@@ -8,12 +8,13 @@
 
 \score {
     {
-        \include "volta-a.ly"
-        \include "volta-b.ly"
-        \include "volta-c.ly"
-        \include "volta-d.ly"
-        \include "volta-e.ly"
-        \include "volta-f.ly"
-        \include "volta-g.ly"
+    \include "segment-a-far-sorr.ly"
+    \include "segment-b-selidor-a.ly"
+    \include "segment-c-wellogy.ly"
+    \include "segment-d-the-long-dune-a.ly"
+    \include "segment-e-selidor-b.ly"
+    \include "segment-f-the-isle-of-the-ear.ly"
+    \include "segment-g-selidor-c.ly"
+    \include "segment-h-the-long-dune-b.ly"
     }
 }
