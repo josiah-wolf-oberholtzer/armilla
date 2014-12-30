@@ -7,6 +7,7 @@ from abjad.tools import rhythmmakertools
 lh_bark_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         arpeggio=indicatortools.Arpeggio(),
+        clef_spanner=consort.ClefSpanner('treble'),
         ),
     pitch_handler=consort.AbsolutePitchHandler(
         logical_tie_expressions=(

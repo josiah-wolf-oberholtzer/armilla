@@ -15,6 +15,17 @@ lh_bark_music_specifier = consort.tools.MusicSpecifier(
                     ]
                 ),
             ),
+        clef_spanner=consort.tools.AttachmentExpression(
+            attachments=datastructuretools.TypedList(
+                [
+                    consort.tools.ClefSpanner(
+                        clef=indicatortools.Clef(
+                            name='treble',
+                            ),
+                        ),
+                    ]
+                ),
+            ),
         ),
     pitch_handler=consort.tools.AbsolutePitchHandler(
         logical_tie_expressions=datastructuretools.CyclicTuple(
