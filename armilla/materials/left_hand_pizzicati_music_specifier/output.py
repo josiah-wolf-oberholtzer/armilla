@@ -6,7 +6,7 @@ from abjad.tools import rhythmmakertools
 import consort
 
 
-lh_bark_music_specifier = consort.tools.MusicSpecifier(
+left_hand_pizzicati_music_specifier = consort.tools.MusicSpecifier(
     attachment_handler=consort.tools.AttachmentHandler(
         arpeggio=consort.tools.AttachmentExpression(
             attachments=datastructuretools.TypedList(

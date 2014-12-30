@@ -7,20 +7,28 @@ from abjad import selectortools
 from abjad import spannertools
 
 
-rh_wind_music_specifier = consort.MusicSpecifier(
+right_hand_jete_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         bow_contact_points=consort.AttachmentExpression(
             attachments=(
                 indicatortools.BowContactPoint(0),
-                indicatortools.BowContactPoint((1, 5)),
-                indicatortools.BowContactPoint((2, 5)),
-                indicatortools.BowContactPoint((3, 5)),
-                indicatortools.BowContactPoint((4, 5)),
                 indicatortools.BowContactPoint(1),
-                indicatortools.BowContactPoint((4, 5)),
-                indicatortools.BowContactPoint((3, 5)),
-                indicatortools.BowContactPoint((2, 5)),
-                indicatortools.BowContactPoint((1, 5)),
+                indicatortools.BowContactPoint(0),
+                indicatortools.BowContactPoint((1, 4)),
+                indicatortools.BowContactPoint(0),
+                indicatortools.BowContactPoint(1),
+                indicatortools.BowContactPoint(0),
+                indicatortools.BowContactPoint((1, 4)),
+                indicatortools.BowContactPoint(0),
+                indicatortools.BowContactPoint((1, 4)),
+                indicatortools.BowContactPoint(0),
+                indicatortools.BowContactPoint(1),
+                indicatortools.BowContactPoint(0),
+                indicatortools.BowContactPoint((1, 4)),
+                indicatortools.BowContactPoint(0),
+                indicatortools.BowContactPoint((1, 4)),
+                indicatortools.BowContactPoint(0),
+                indicatortools.BowContactPoint((1, 4)),
                 ),
             selector=selectortools.Selector().by_leaves().flatten(),
             ),
@@ -36,9 +44,10 @@ rh_wind_music_specifier = consort.MusicSpecifier(
                 ),
             ),
         rest=rhythmmakertools.EvenDivisionRhythmMaker(
-            denominators=(4,),
+            denominators=(8, 8, 16, 8, 8, 8, 16),
             extra_counts_per_division=(0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1),
             duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
+                decrease_durations_monotonically=True,
                 forbidden_written_duration=durationtools.Duration(1, 4),
                 permit_meter_rewriting=False,
                 ),

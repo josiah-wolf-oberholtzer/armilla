@@ -2,4 +2,4 @@
 from abjad import *
 
 
-lh_wind_music_specifier = None
+left_hand_diads_music_specifier = None

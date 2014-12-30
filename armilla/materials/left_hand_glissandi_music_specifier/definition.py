@@ -6,7 +6,7 @@ from abjad.tools import selectortools
 from abjad.tools import spannertools
 
 
-lh_waves_music_specifier = consort.MusicSpecifier(
+left_hand_glissandi_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         glissando=consort.AttachmentExpression(
             attachments=spannertools.Glissando(

@@ -9,7 +9,7 @@ from abjad.tools import spannertools
 import consort
 
 
-rh_sand_music_specifier = consort.tools.MusicSpecifier(
+right_hand_jete_music_specifier = consort.tools.MusicSpecifier(
     attachment_handler=consort.tools.AttachmentHandler(
         bow_contact_points=consort.tools.AttachmentExpression(
             attachments=datastructuretools.TypedList(

@@ -10,7 +10,7 @@ from abjad.tools import spannertools
 import consort
 
 
-lh_waves_music_specifier = consort.tools.MusicSpecifier(
+left_hand_glissandi_music_specifier = consort.tools.MusicSpecifier(
     attachment_handler=consort.tools.AttachmentHandler(
         glissando=consort.tools.AttachmentExpression(
             attachments=datastructuretools.TypedList(

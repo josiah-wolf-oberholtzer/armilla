@@ -4,7 +4,7 @@ from abjad.tools import indicatortools
 from abjad.tools import rhythmmakertools
 
 
-lh_bark_music_specifier = consort.MusicSpecifier(
+left_hand_pizzicati_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         arpeggio=indicatortools.Arpeggio(),
         clef_spanner=consort.ClefSpanner('treble'),

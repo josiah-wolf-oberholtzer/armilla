@@ -8,7 +8,7 @@ from abjad import scoretools
 from abjad import spannertools
 
 
-rh_waves_music_specifier = consort.MusicSpecifier(
+right_hand_circular_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         bow_contact_points=consort.AttachmentExpression(
             attachments=(

@@ -7,7 +7,7 @@ from abjad.tools import selectortools
 import consort
 
 
-rh_bark_music_specifier = (
+right_hand_pizzicati_music_specifier = (
     consort.tools.MusicSpecifier(
         attachment_handler=consort.tools.AttachmentHandler(
             string_contact_points=consort.tools.AttachmentExpression(

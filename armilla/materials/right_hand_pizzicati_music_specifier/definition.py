@@ -6,7 +6,7 @@ from abjad.tools import scoretools
 from abjad.tools import selectortools
 
 
-rh_bark_music_specifier = consort.MusicSpecifier(
+right_hand_pizzicati_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         string_contact_points=consort.AttachmentExpression(
             attachments=(

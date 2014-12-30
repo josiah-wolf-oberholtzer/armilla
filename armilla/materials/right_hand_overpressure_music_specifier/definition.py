@@ -2,4 +2,4 @@
 from abjad import *
 
 
-lh_bone_music_specifier = None
+right_hand_overpressure_music_specifier = None
