@@ -10,12 +10,12 @@ segment_maker = armilla.ArmillaSegmentMaker(
     name='Selidor (ii)',
     rehearsal_mark='E',
     repeat=True,
-    tempo=indicatortools.Tempo((1, 4), 48),
+    tempo=indicatortools.Tempo((1, 4), 72),
     )
 
-rh_waves_music_specifier = armilla.materials.rh_waves_music_specifier
+rh_circular = armilla.materials.right_hand_circular_music_specifier
 
-lh_waves_music_specifier = armilla.materials.lh_waves_music_specifier
+lh_glissandi = armilla.materials.left_hand_glissandi_music_specifier
 
 segment_maker.add_setting(
     timespan_maker=armilla.ArmillaTimespanMaker(
@@ -34,8 +34,8 @@ segment_maker.add_setting(
             ),
         rotation_indices=(1, 0, 1, 0, -1),
         ),
-    viola_1_rh=rh_waves_music_specifier,
-    viola_2_rh=rh_waves_music_specifier,
-    viola_1_lh=lh_waves_music_specifier,
-    viola_2_lh=lh_waves_music_specifier,
+    viola_1_rh=rh_circular,
+    viola_2_rh=rh_circular,
+    viola_1_lh=lh_glissandi,
+    viola_2_lh=lh_glissandi,
     )

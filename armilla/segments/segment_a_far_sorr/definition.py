@@ -5,10 +5,10 @@ from abjad import rhythmmakertools
 
 
 segment_maker = armilla.ArmillaSegmentMaker(
-    desired_duration_in_seconds=10,
+    desired_duration_in_seconds=90,
     discard_final_silence=True,
     name='Far Sorr',
     rehearsal_mark='A',
-    repeat=True,
-    tempo=indicatortools.Tempo((1, 4), 48),
+    repeat=False,
+    tempo=indicatortools.Tempo((1, 4), 36),
     )
