@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
 import armilla
+import consort
+from abjad import durationtools
 from abjad import indicatortools
 from abjad import rhythmmakertools
 
@@ -23,14 +25,18 @@ segment_maker.add_setting(
             counts=(1, 0),
             denominator=8,
             ),
+        padding=durationtools.Duration(1, 8),
         playing_talea=rhythmmakertools.Talea(
-            counts=(3, 4, 2, 2, 3),
+            counts=(1, 1, 2),
             denominator=8,
             ),
         playing_groupings=(1, 2, 1, 2, 2, 3),
         silence_talea=rhythmmakertools.Talea(
             counts=(1, 1, 1, 2, 1, 1, 2),
             denominator=8,
+            ),
+        timespan_specifier=consort.TimespanSpecifier(
+            minimum_duration=0,
             ),
         ),
     viola_1_rh=rh_bark_music_specifier,
