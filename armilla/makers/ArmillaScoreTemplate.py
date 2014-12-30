@@ -36,13 +36,13 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
                     }
             } <<
                 \context BowingStaff = "Viola 1 Bowing Staff" {
+                    \clef "percussion"
                     \context Voice = "Viola 1 Bowing Voice" {
-                        \clef "percussion"
                     }
                 }
                 \context FingeringStaff = "Viola 1 Fingering Staff" {
+                    \clef "alto"
                     \context Voice = "Viola 1 Fingering Voice" {
-                        \clef "alto"
                     }
                 }
             >>
@@ -60,13 +60,13 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
                     }
             } <<
                 \context BowingStaff = "Viola 2 Bowing Staff" {
+                    \clef "percussion"
                     \context Voice = "Viola 2 Bowing Voice" {
-                        \clef "percussion"
                     }
                 }
                 \context FingeringStaff = "Viola 2 Fingering Staff" {
+                    \clef "alto"
                     \context Voice = "Viola 2 Fingering Voice" {
-                        \clef "alto"
                     }
                 }
             >>
