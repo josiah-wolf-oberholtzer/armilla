@@ -237,10 +237,22 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         target_timespan=None,
         timespan_inventory=None,
         ):
-        assert ('Viola 1 Bowing Voice' in music_specifiers and
-            'Viola 1 Fingering Voice' in music_specifiers) or \
-            ('Viola 2 Bowing Voice' in music_specifiers and
-            'Viola 2 Fingering Voice' in music_specifiers)
+        if 'Viola 1 Bowing Voice' in music_specifiers:
+            if 'Viola 1 Fingering Voice' not in music_specifiers:
+                music_specifiers['Viola 1 Fingering Voice'] = \
+                    (consort.MusicSpecifier(),)
+        if 'Viola 1 Fingering Voice' in music_specifiers:
+            if 'Viola 1 Bowing Voice' not in music_specifiers:
+                music_specifiers['Viola 1 Bowing Voice'] = \
+                    (consort.MusicSpecifier(),)
+        if 'Viola 2 Bowing Voice' in music_specifiers:
+            if 'Viola 2 Fingering Voice' not in music_specifiers:
+                music_specifiers['Viola 2 Fingering Voice'] = \
+                    (consort.MusicSpecifier(),)
+        if 'Viola 2 Fingering Voice' in music_specifiers:
+            if 'Viola 2 Bowing Voice' not in music_specifiers:
+                music_specifiers['Viola 2 Bowing Voice'] = \
+                    (consort.MusicSpecifier(),)
         bowing_specifiers = collections.OrderedDict()
         viola_1_fingering_specifiers = collections.OrderedDict()
         viola_2_fingering_specifiers = collections.OrderedDict()
@@ -248,9 +260,11 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
             if 'Bowing' in voice_name:
                 bowing_specifiers[voice_name] = music_specifier_tuple
             elif 'Viola 1 Fingering' in voice_name:
-                viola_1_fingering_specifiers[voice_name] = music_specifier_tuple
+                viola_1_fingering_specifiers[voice_name] = \
+                    music_specifier_tuple
             elif 'Viola 2 Fingering' in voice_name:
-                viola_2_fingering_specifiers[voice_name] = music_specifier_tuple
+                viola_2_fingering_specifiers[voice_name] = \
+                    music_specifier_tuple
             else:
                 raise ValueError
         result = consort.TimespanMaker.__call__(
