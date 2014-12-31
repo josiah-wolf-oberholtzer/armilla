@@ -3,7 +3,6 @@ import armilla
 import consort
 from abjad import new
 from abjad.tools import indicatortools
-from abjad.tools import rhythmmakertools
 from abjad.tools import spannertools
 from abjad.tools import selectortools
 
@@ -43,22 +42,7 @@ lh_glissandi = new(
     )
 
 segment_maker.add_setting(
-    timespan_maker=armilla.ArmillaTimespanMaker(
-        initial_silence_talea=rhythmmakertools.Talea(
-            counts=(1, 0),
-            denominator=4,
-            ),
-        playing_talea=rhythmmakertools.Talea(
-            counts=(5, 4, 3),
-            denominator=8,
-            ),
-        playing_groupings=(3, 3, 2, 2),
-        silence_talea=rhythmmakertools.Talea(
-            counts=(1, 1, 2),
-            denominator=8,
-            ),
-        rotation_indices=(1, 1, 0),
-        ),
+    timespan_maker=armilla.materials.dense_timespan_maker,
     viola_1_rh=rh_circular,
     viola_2_rh=rh_circular,
     viola_1_lh=lh_glissandi,
