@@ -90,14 +90,6 @@ right_hand_jete_music_specifier = consort.tools.MusicSpecifier(
             ),
         ),
     rhythm_maker=consort.tools.CompositeRhythmMaker(
-        last=rhythmmakertools.IncisedRhythmMaker(
-            incise_specifier=rhythmmakertools.InciseSpecifier(
-                prefix_counts=(0,),
-                suffix_talea=(1,),
-                suffix_counts=(1,),
-                talea_denominator=16,
-                ),
-            ),
         default=rhythmmakertools.EvenDivisionRhythmMaker(
             denominators=(8, 8, 16, 8, 8, 8, 16),
             extra_counts_per_division=(0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1),
@@ -105,6 +97,14 @@ right_hand_jete_music_specifier = consort.tools.MusicSpecifier(
                 decrease_durations_monotonically=True,
                 forbidden_written_duration=durationtools.Duration(1, 4),
                 permit_meter_rewriting=False,
+                ),
+            ),
+        last=rhythmmakertools.IncisedRhythmMaker(
+            incise_specifier=rhythmmakertools.InciseSpecifier(
+                prefix_counts=(0,),
+                suffix_talea=(1,),
+                suffix_counts=(1,),
+                talea_denominator=16,
                 ),
             ),
         ),
