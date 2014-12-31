@@ -243,6 +243,7 @@ afterGraceFraction = #(cons 1023 1024)
         \override Beam.stencil = ##f
         \override Dots.stencil = ##f
         \override Flag.stencil = ##f
+        \override NoteHead.transparent = ##t
         \override Stem.stencil = ##f
         \override Tie.stencil = ##f
         \override TupletBracket.stencil = ##f
