@@ -174,12 +174,7 @@
                             c'4
                         }
                         {
-                            c'4. \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
+                            c'4. \stopTextSpan
                         }
                         {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -222,7 +217,7 @@
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4. \stopTextSpan \startTextSpan
+                            c'4. \startTextSpan
                         }
                         {
                             c'16
@@ -248,8 +243,9 @@
                                             {
                                                 \hspace
                                                     #1.5
-                                                \caps
-                                                    M.S.P
+                                                \parenthesize
+                                                    \caps
+                                                        M.S.P
                                                 \hspace
                                                     #1.5
                                             }
@@ -327,12 +323,7 @@
                             c'4
                         }
                         {
-                            c'4 \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
+                            c'4 \stopTextSpan
                         }
                         {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -375,7 +366,7 @@
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4. \stopTextSpan \startTextSpan
+                            c'4. \startTextSpan
                         }
                         {
                             c'16
@@ -474,8 +465,9 @@
                             c'4 ^ \markup {
                                 \vcenter
                                     \italic
-                                        \caps
-                                            Ord.
+                                        \parenthesize
+                                            \caps
+                                                Ord.
                                 }
                         }
                         {
@@ -1404,13 +1396,13 @@
                     }
                     {
                         {
-                            c'4 \glissando
-                            a4 \glissando
+                            c'4
+                            a4
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            cqs'4 \glissando
-                            a4 \glissando
+                            cqs'4
+                            a4
                         }
                         {
                             \afterGrace
@@ -1431,7 +1423,7 @@
                             }
                         }
                         {
-                            a4. \glissando
+                            a4.
                         }
                         {
                             c'8
@@ -1467,11 +1459,10 @@
                                 \revert Script #'font-size
                             }
                             ef'4
-                            \parenthesize
-                            ef'4 \glissando
+                            ef'4
                         }
                         {
-                            g8 \glissando
+                            g8
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
@@ -1491,7 +1482,7 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            c'4 \glissando
+                            c'4
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
@@ -1518,11 +1509,10 @@
                                 \revert Script #'font-size
                             }
                             ef'4
-                            \parenthesize
-                            ef'4 \glissando
+                            ef'4
                         }
                         {
-                            g4 \glissando
+                            g4
                         }
                         {
                             \afterGrace
@@ -1559,7 +1549,7 @@
                     }
                     {
                         {
-                            a'4 \glissando
+                            a'4
                             \afterGrace
                             c''4
                             {
@@ -1587,9 +1577,7 @@
                             c''8
                         }
                         {
-                            \parenthesize
                             c''2 ~
-                            \parenthesize
                             c''8
                         }
                     }
@@ -1620,7 +1608,6 @@
                         {
                             c''4
                             \afterGrace
-                            \parenthesize
                             c''4
                             {
                                 \override Flag #'stroke-style = #"grace"
@@ -1644,12 +1631,11 @@
                             }
                         }
                         {
-                            c''8 \glissando
+                            c''8
                         }
                         {
                             a'4
                             \afterGrace
-                            \parenthesize
                             a'4
                             {
                                 \override Flag #'stroke-style = #"grace"
@@ -1675,11 +1661,10 @@
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c''4
-                            \parenthesize
-                            c''4 \glissando
+                            c''4
                         }
                         {
-                            a'4. \glissando
+                            a'4.
                         }
                         {
                             c''4
@@ -1898,7 +1883,7 @@
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4. \stopTextSpan \startTextSpan
+                            c'4. \startTextSpan
                         }
                         {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -2040,12 +2025,7 @@
                             c'4
                         }
                         {
-                            c'8 \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
+                            c'8 \stopTextSpan
                         }
                         {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -2088,7 +2068,7 @@
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \stopTextSpan \startTextSpan
+                            c'4 \startTextSpan
                             c'4
                         }
                         {
@@ -2108,8 +2088,9 @@
                             c'4 ^ \markup {
                                 \vcenter
                                     \italic
-                                        \caps
-                                            Ord.
+                                        \parenthesize
+                                            \caps
+                                                Ord.
                                 }
                             c'4
                             c'4
@@ -2963,7 +2944,6 @@
                         \times 5/4 {
                             a4
                             \afterGrace
-                            \parenthesize
                             a4
                             {
                                 \override Flag #'stroke-style = #"grace"
@@ -3004,8 +2984,8 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            c'4 \glissando
-                            a4 \glissando
+                            c'4
+                            a4
                         }
                         {
                             \afterGrace
@@ -3032,7 +3012,7 @@
                             }
                         }
                         {
-                            c'8 \glissando
+                            c'8
                         }
                         {
                             a4.
@@ -3066,7 +3046,6 @@
                         }
                         {
                             \afterGrace
-                            \parenthesize
                             c'4
                             {
                                 \override Flag #'stroke-style = #"grace"
@@ -3089,11 +3068,10 @@
                                 \revert Script #'font-size
                             }
                             ef'4
-                            \parenthesize
-                            ef'4 \glissando
+                            ef'4
                         }
                         {
-                            c'8 \glissando
+                            c'8
                         }
                         {
                             \afterGrace
@@ -3115,9 +3093,7 @@
                             c'4
                         }
                         {
-                            \parenthesize
                             c'2 ~
-                            \parenthesize
                             c'8
                         }
                     }
@@ -3130,8 +3106,7 @@
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c''4
-                            \parenthesize
-                            c''4 \glissando
+                            c''4
                             \afterGrace
                             aqs'4
                             {
@@ -3150,11 +3125,11 @@
                             }
                         }
                         {
-                            a'4 \glissando
+                            a'4
                         }
                         {
-                            c''4 \glissando
-                            a'4 \glissando
+                            c''4
+                            a'4
                         }
                         {
                             cqs''8
@@ -3167,8 +3142,8 @@
                     }
                     {
                         \times 2/3 {
-                            c''4 \glissando
-                            a'4 \glissando
+                            c''4
+                            a'4
                             \afterGrace
                             aqs'4
                             {
@@ -3189,8 +3164,7 @@
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c''4
-                            \parenthesize
-                            c''4 \glissando
+                            c''4
                             \afterGrace
                             cqs''4
                             {
@@ -3210,16 +3184,25 @@
                         }
                         {
                             a'2 ~
-                            \parenthesize
                             a'8
                         }
                     }
                     {
                         {
+                            \stopStaff
+                            \once \override Staff.StaffSymbol.line-count = 1
+                            \startStaff
                             R1 * 3/8
+                            \stopStaff
+                            \startStaff
                         }
                         {
+                            \stopStaff
+                            \once \override Staff.StaffSymbol.line-count = 1
+                            \startStaff
                             R1 * 3/8
+                            \stopStaff
+                            \startStaff
                         }
                     }
                 }

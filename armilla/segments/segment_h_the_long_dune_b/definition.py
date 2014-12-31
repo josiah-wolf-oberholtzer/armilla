@@ -25,6 +25,12 @@ lh_diads = armilla.materials.left_hand_diads_music_specifier
 
 ### ATTACHMENTS ###
 
+dynamics_a = dynamic_expressions = consort.DynamicExpression(
+    dynamic_tokens='p mf p ppp f p ff',
+    )
+dynamics_b = dynamic_expressions = consort.DynamicExpression(
+    dynamic_tokens='f p f mf ff p fff f fff mf fff',
+    )
 intermittent_accents = armilla.materials.intermittent_accents
 intermittent_circular = armilla.materials.intermittent_circular
 intermittent_tremoli = armilla.materials.intermittent_tremoli
@@ -37,8 +43,14 @@ segment_maker.add_setting(
         parts=(0,),
         ratio=(2, 2, 1),
         ),
-    viola_1_rh=rh_overpressure,
-    viola_2_rh=rh_overpressure,
+    viola_1_rh=new(
+        rh_overpressure,
+        attachment_handler__dynamic_expressions=dynamics_b,
+        ),
+    viola_2_rh=new(
+        rh_overpressure,
+        attachment_handler__dynamic_expressions=dynamics_b,
+        ),
     viola_1_lh=lh_diads,
     viola_2_lh=lh_diads,
     )
@@ -52,10 +64,12 @@ segment_maker.add_setting(
     viola_1_rh=new(
         rh_overpressure,
         attachment_handler__articulations=intermittent_accents,
+        attachment_handler__dynamic_expressions=dynamics_a,
         ),
     viola_2_rh=new(
         rh_overpressure,
         attachment_handler__articulations=intermittent_accents,
+        attachment_handler__dynamic_expressions=dynamics_a,
         seed=1,
         ),
     viola_1_lh=lh_diads,
