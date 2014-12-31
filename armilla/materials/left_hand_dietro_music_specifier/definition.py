@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from abjad import *
+import consort
 
 
-left_hand_dietro_music_specifier = None
+left_hand_dietro_music_specifier = consort.MusicSpecifier()

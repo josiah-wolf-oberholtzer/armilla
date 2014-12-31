@@ -98,7 +98,7 @@ right_hand_jete_music_specifier = consort.tools.MusicSpecifier(
                 talea_denominator=16,
                 ),
             ),
-        rest=rhythmmakertools.EvenDivisionRhythmMaker(
+        default=rhythmmakertools.EvenDivisionRhythmMaker(
             denominators=(8, 8, 16, 8, 8, 8, 16),
             extra_counts_per_division=(0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1),
             duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(

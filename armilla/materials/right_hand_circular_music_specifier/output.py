@@ -157,7 +157,7 @@ right_hand_circular_music_specifier = consort.tools.MusicSpecifier(
                 talea_denominator=16,
                 ),
             ),
-        rest=rhythmmakertools.EvenDivisionRhythmMaker(
+        default=rhythmmakertools.EvenDivisionRhythmMaker(
             denominators=(4,),
             extra_counts_per_division=(0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1),
             duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(

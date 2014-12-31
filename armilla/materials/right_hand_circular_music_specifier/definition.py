@@ -30,11 +30,11 @@ right_hand_circular_music_specifier = consort.MusicSpecifier(
                 ),
             selector=selectortools.Selector().by_leaves().flatten(),
             ),
+        bow_contact_spanner=spannertools.BowContactSpanner(),
         bow_motion_techniques=consort.AttachmentExpression(
             attachments=indicatortools.BowMotionTechnique('circular'),
             selector=selectortools.Selector().by_leaves().flatten(),
             ),
-        bow_contact_spanner=spannertools.BowContactSpanner(),
         dynamic_expressions=consort.DynamicExpression(
             dynamic_tokens='p ppp p ppp p ppp',
             ),
@@ -62,7 +62,7 @@ right_hand_circular_music_specifier = consort.MusicSpecifier(
                 talea_denominator=16,
                 ),
             ),
-        rest=rhythmmakertools.EvenDivisionRhythmMaker(
+        default=rhythmmakertools.EvenDivisionRhythmMaker(
             denominators=(4,),
             extra_counts_per_division=(0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1),
             duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(

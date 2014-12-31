@@ -95,7 +95,7 @@ left_hand_glissandi_music_specifier = consort.tools.MusicSpecifier(
         ),
     rhythm_maker=consort.tools.CompositeRhythmMaker(
         last=rhythmmakertools.NoteRhythmMaker(),
-        rest=rhythmmakertools.EvenDivisionRhythmMaker(
+        default=rhythmmakertools.EvenDivisionRhythmMaker(
             denominators=(4,),
             extra_counts_per_division=(0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1),
             duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
