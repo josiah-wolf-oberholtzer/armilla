@@ -1,14 +1,12 @@
 # -*- encoding: utf-8 -*-
 from abjad.tools import datastructuretools
-from abjad.tools import durationtools
 from abjad.tools import rhythmmakertools
 import armilla
-import consort
 
 
 sustained_timespan_maker = armilla.makers.ArmillaTimespanMaker(
     initial_silence_talea=rhythmmakertools.Talea(
-        counts=(1, 0),
+        counts=(5, 0),
         denominator=8,
         ),
     playing_talea=rhythmmakertools.Talea(
@@ -25,7 +23,4 @@ sustained_timespan_maker = armilla.makers.ArmillaTimespanMaker(
     step_anchor=Right,
     synchronize_groupings=False,
     synchronize_step=False,
-    timespan_specifier=consort.tools.TimespanSpecifier(
-        minimum_duration=durationtools.Duration(1, 4),
-        ),
     )
