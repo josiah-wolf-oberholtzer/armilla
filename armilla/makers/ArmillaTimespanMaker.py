@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
 import collections
 import consort
-from abjad import new
 from abjad.tools import rhythmmakertools
 from abjad.tools import timespantools
 
@@ -308,6 +307,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         timespan_maker = consort.DependentTimespanMaker(
             include_inner_starts=self.include_viola_1_inner_starts,
             include_inner_stops=False,
+            padding=self.padding,
             rotation_indices=self.rotation_indices,
             timespan_specifier=self.timespan_specifier,
             voice_names=('Viola 1 Bowing Voice',),
@@ -319,6 +319,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         timespan_maker = consort.DependentTimespanMaker(
             include_inner_starts=self.include_viola_2_inner_starts,
             include_inner_stops=False,
+            padding=self.padding,
             rotation_indices=self.rotation_indices,
             timespan_specifier=self.timespan_specifier,
             voice_names=('Viola 2 Bowing Voice',),
