@@ -86,6 +86,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         bow_contact_voice = self.copy_voice(
             voice,
             attachment_names=(
+                'articulations',
                 'bow_contact_spanner',
                 'bow_contact_point',
                 'bow_motion_technique',
