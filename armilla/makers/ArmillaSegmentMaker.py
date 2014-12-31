@@ -1,8 +1,9 @@
 # -*- encoding: utf-8 -*-
 from abjad import attach
 from abjad import iterate
-from abjad import indicatortools
-from abjad import scoretools
+from abjad.tools import indicatortools
+from abjad.tools import markuptools
+from abjad.tools import scoretools
 import consort
 
 
@@ -166,11 +167,21 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         elif self.is_final_segment:
             score.add_final_markup(self.final_markup)
             score.add_final_bar_line(abbreviation='|.', to_each_voice=True)
-        else:
-            score.add_final_bar_line(abbreviation='||', to_each_voice=True)
+        #else:
+        #    score.add_final_bar_line(abbreviation='||', to_each_voice=True)
         return score
 
     ### PUBLIC PROPERTIES ###
+
+    @property
+    def final_markup(self):
+        city = markuptools.Markup('Portland, OR')
+        date = markuptools.Markup('September - December 2014')
+        null = markuptools.Markup.null()
+        contents = [null, null, null, city, date]
+        markup = markuptools.Markup.right_column(contents)
+        markup = markup.italic()
+        return markup
 
     @property
     def repeat(self):
