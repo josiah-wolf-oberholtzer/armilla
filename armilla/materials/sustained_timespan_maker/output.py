@@ -5,6 +5,8 @@ import armilla
 
 
 sustained_timespan_maker = armilla.makers.ArmillaTimespanMaker(
+    include_viola_1_inner_starts=True,
+    include_viola_2_inner_starts=True,
     initial_silence_talea=rhythmmakertools.Talea(
         counts=(5, 0),
         denominator=8,

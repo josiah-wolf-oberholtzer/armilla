@@ -1,5 +1,28 @@
 # -*- encoding: utf-8 -*-
 import consort
+from abjad.tools import rhythmmakertools
 
 
-left_hand_dietro_music_specifier = consort.MusicSpecifier()
+
+left_hand_dietro_music_specifier = consort.MusicSpecifier(
+    attachment_handler=consort.AttachmentHandler(
+        clef_spanner=consort.ClefSpanner(
+            clef='percussion',
+            overrides={
+                'note_head__style': 'cross',
+                },
+            ),
+        ),
+    pitch_handler=consort.AbsolutePitchHandler(
+        logical_tie_expressions=(
+            consort.ChordExpression("g b"),
+            consort.ChordExpression("b d'"),
+            consort.ChordExpression("d' f'"),
+            ),
+        ),
+    rhythm_maker=rhythmmakertools.NoteRhythmMaker(
+        tie_specifier=rhythmmakertools.TieSpecifier(
+            tie_across_divisions=False,
+            ),
+        ),
+    )
