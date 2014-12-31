@@ -63,12 +63,12 @@ segment_maker.add_setting(
     viola_1_rh=new(
         rh_overpressure,
         attachment_handler__articulations=articulations,
-        rhythm_maker__rest__denominators=(4, 4, 4, 8),
+        rhythm_maker__default__denominators=(4, 4, 4, 8),
         ),
     viola_2_rh=new(
         rh_overpressure,
         attachment_handler__articulations=articulations,
-        rhythm_maker__rest__denominators=(4, 4, 4, 8, 4, 8),
+        rhythm_maker__default__denominators=(4, 4, 4, 8, 4, 8),
         ),
     viola_1_lh=lh_diads,
     viola_2_lh=lh_diads,
@@ -83,7 +83,7 @@ segment_maker.add_setting(
     viola_1_rh=new(
         rh_overpressure,
         attachment_handler__articulations=articulations,
-        rhythm_maker__rest__denominators=(4, 4, 4, 16, 4, 16),
+        rhythm_maker__default__denominators=(4, 4, 4, 16, 4, 16),
         ),
     viola_2_rh=new(
         rh_overpressure,
