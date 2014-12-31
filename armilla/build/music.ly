@@ -30,7 +30,7 @@
                 \vspace #0.5
                 \override #'(font-name . "Didot Italic")
                     \fontsize #2 {
-                        \line { ( a nautical survey of the uninhabited southern isles ) }
+                        \line { ( a botanical survey of the uninhabited southern isles ) }
                     }
                 \vspace #1
                 \override #'(font-name . "Didot Italic")

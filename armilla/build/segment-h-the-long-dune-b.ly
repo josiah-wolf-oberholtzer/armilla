@@ -260,7 +260,13 @@
                     }
                     {
                         \times 2/3 {
-                            c'4
+                            c'4 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \parenthesize
+                                            \caps
+                                                Ord.
+                                }
                             c'4
                             c'4
                         }
@@ -283,7 +289,13 @@
                     }
                     {
                         {
-                            c'16
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \parenthesize
+                                            \caps
+                                                S.T.
+                                }
                             c'16
                             c'16
                             c'16
@@ -926,26 +938,26 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            c'4 \p \>
+                            c'4 \f \>
                             c'4
                         }
                         {
-                            c'8 \ppp \<
+                            c'8 \p \<
                         }
                         {
-                            c'4. \p \>
+                            c'4. \f \>
                         }
                         {
-                            c'4. \ppp \<
+                            c'4. \mf \<
                         }
                         {
-                            c'4 \p \>
+                            c'4 \ff \>
                             c'4
                         }
                         {
-                            c'2 \ppp \<
+                            c'2 \p \<
                             c'16
-                            c'16 \f
+                            c'16 \fff
                         }
                     }
                     {
@@ -958,11 +970,11 @@
                     }
                     {
                         {
-                            c'4 \p \>
+                            c'4 \p \<
                             c'4
                         }
                         {
-                            c'8 \ppp \<
+                            c'8 \mf \>
                         }
                         {
                             c'4 \p \>
@@ -972,8 +984,8 @@
                             c'4. \ppp \<
                         }
                         {
-                            c'4.. \p \>
-                            c'16 \ppp
+                            c'4.. \f \>
+                            c'16 \p
                         }
                     }
                     {
@@ -983,15 +995,15 @@
                     }
                     {
                         \times 2/3 {
-                            c'4 \f \>
+                            c'4 \ff \>
                             c'4
                             c'4
                         }
                         {
-                            c'8 \p \>
+                            c'8 \p \<
                         }
                         {
-                            c'4 \ppp \<
+                            c'4 \mf \>
                             c'4
                         }
                         {
@@ -1041,39 +1053,49 @@
                 \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
                     {
                         {
+                            \stopStaff
+                            \once \override Staff.StaffSymbol.line-count = 1
+                            \startStaff
                             R1 * 5/8
+                            \stopStaff
+                            \startStaff
                         }
                     }
                     {
                         {
-                            c'2 ~
-                            c'8 ~ [
+                            <c' ef'>2 ~
+                            <c' ef'>8
                         }
                         {
-                            c'8 ~ ]
+                            <aqs cqs'>8
                         }
                         {
-                            c'4. ~
+                            <c' f'>4.
                         }
                         {
-                            c'8 ~
+                            <a c'>8
                         }
                         {
-                            c'4 ~
+                            <a c'>4
                         }
                         {
-                            c'2 ~
+                            <cqs' eqf'>2
                         }
                         {
-                            c'8 ~
+                            <c' ef'>8
                         }
                         {
-                            c'2
+                            <a c'>2
                         }
                     }
                     {
                         {
+                            \stopStaff
+                            \once \override Staff.StaffSymbol.line-count = 1
+                            \startStaff
                             R1 * 3/8
+                            \stopStaff
+                            \startStaff
                         }
                         {
                             r8
@@ -1081,17 +1103,17 @@
                     }
                     {
                         {
-                            c'2 ~
+                            <g bf>2
                         }
                         {
-                            c'2 ~
-                            c'8 ~
+                            <c' ef'>2 ~
+                            <c' ef'>8
                         }
                         {
-                            c'4. ~
+                            <cqs' eqf'>4.
                         }
                         {
-                            c'2
+                            <c' ef'>2
                         }
                     }
                     {
@@ -1101,16 +1123,16 @@
                     }
                     {
                         {
-                            c'2 ~
+                            <c' ef'>2
                         }
                         {
-                            c'8 ~
+                            <a d'>8
                         }
                         {
-                            c'2 ~
+                            <c' ef'>2
                         }
                         {
-                            c'8
+                            <a c'>8
                         }
                     }
                     {
@@ -1120,20 +1142,20 @@
                     }
                     {
                         {
-                            c'16 ~
-                            c'4. ~
+                            <gqf aqs>16 ~
+                            <gqf aqs>4.
                         }
                         {
-                            c'4. ~
-                            c'16 ~ [
+                            <a d'>4. ~
+                            <a d'>16
                         }
                         {
-                            c'16 ~ ]
-                            c'4 ~
+                            <c' ef'>16 ~
+                            <c' ef'>4
                         }
                         {
-                            c'4 ~
-                            c'16
+                            <a c'>4 ~
+                            <a c'>16
                         }
                     }
                     {
@@ -1151,29 +1173,39 @@
                     }
                     {
                         {
-                            c'2
-                            c'8
+                            <c' ef'>2
+                            <
+                                \parenthesize
+                                c'
+                                \parenthesize
+                                ef'
+                            >8 \glissando
                         }
                         {
-                            c'8
+                            <aqs cqs'>8 \glissando
                         }
                         {
-                            c'4.
+                            <c' f'>4. \glissando
                         }
                         {
-                            c'8
+                            <a c'>8
                         }
                         {
-                            c'4
+                            <
+                                \parenthesize
+                                a
+                                \parenthesize
+                                c'
+                            >4 \glissando
                         }
                         {
-                            c'2
+                            <cqs' eqf'>2 \glissando
                         }
                         {
-                            c'8
+                            <c' ef'>8 \glissando
                         }
                         {
-                            c'2
+                            <a c'>2
                         }
                     }
                     {
@@ -1186,17 +1218,22 @@
                     }
                     {
                         {
-                            c'2
+                            <g bf>2 \glissando
                         }
                         {
-                            c'2
-                            c'8
+                            <c' ef'>2
+                            <
+                                \parenthesize
+                                c'
+                                \parenthesize
+                                ef'
+                            >8 \glissando
                         }
                         {
-                            c'4.
+                            <cqs' eqf'>4. \glissando
                         }
                         {
-                            c'2
+                            <c' ef'>2
                         }
                     }
                     {
@@ -1206,16 +1243,16 @@
                     }
                     {
                         {
-                            c'2
+                            <c' ef'>2 \glissando
                         }
                         {
-                            c'8
+                            <a d'>8 \glissando
                         }
                         {
-                            c'2
+                            <c' ef'>2 \glissando
                         }
                         {
-                            c'8
+                            <a c'>8
                         }
                     }
                     {
@@ -1225,20 +1262,40 @@
                     }
                     {
                         {
-                            c'16
-                            c'4.
+                            <gqf aqs>16
+                            <
+                                \parenthesize
+                                gqf
+                                \parenthesize
+                                aqs
+                            >4. \glissando
                         }
                         {
-                            c'4.
-                            c'16
+                            <a d'>4.
+                            <
+                                \parenthesize
+                                a
+                                \parenthesize
+                                d'
+                            >16 \glissando
                         }
                         {
-                            c'16
-                            c'4
+                            <c' ef'>16
+                            <
+                                \parenthesize
+                                c'
+                                \parenthesize
+                                ef'
+                            >4 \glissando
                         }
                         {
-                            c'4
-                            c'16
+                            <a c'>4
+                            <
+                                \parenthesize
+                                a
+                                \parenthesize
+                                c'
+                            >16
                         }
                     }
                     {
@@ -1405,7 +1462,12 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            c'4
+                            c'4 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.T.
+                                }
                             c'4
                         }
                         {
@@ -1488,7 +1550,12 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 9/8 {
-                            c'4
+                            c'4 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.T.
+                                }
                             c'4
                         }
                         {
@@ -2077,39 +2144,39 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
+                            c'4 \fff \>
+                            c'4
+                            c'4
+                        }
+                        {
                             c'4 \f \>
-                            c'4
-                            c'4
                         }
                         {
-                            c'4 \p \>
-                        }
-                        {
-                            c'4 \ppp \<
+                            c'4 \p \<
                             c'4
                         }
                         {
-                            c'4. \p \>
+                            c'4. \f \>
                         }
                         {
-                            c'4 \ppp \<
+                            c'4 \mf \<
                         }
                         {
-                            c'8 \p \>
+                            c'8 \ff \>
                         }
                         {
-                            c'4 \ppp \<
+                            c'4 \p \<
                             c'4
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
-                            c'4 \f \>
+                            c'4 \fff \>
                             c'4
                             c'4
                         }
                         {
-                            c'8. \p \>
-                            c'16 \ppp
+                            c'8. \f \<
+                            c'16 \fff
                         }
                     }
                     {
@@ -2120,7 +2187,7 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            c'4 \ppp \<
+                            c'4 \mf \>
                             c'4
                         }
                         {
@@ -2136,10 +2203,10 @@
                     }
                     {
                         {
-                            c'4 \p \>
+                            c'4 \p \<
                         }
                         {
-                            c'4 \ppp \<
+                            c'4 \mf \>
                             c'4
                         }
                         {
@@ -2151,9 +2218,9 @@
                             c'4
                         }
                         {
-                            c'2 \p \>
+                            c'2 \f \>
                             c'16
-                            c'16 \ppp
+                            c'16 \p
                         }
                     }
                     {
@@ -2192,51 +2259,36 @@
                 \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
                     {
                         {
-                            c'2 ~
-                            c'8 ~
+                            <a c'>2 ~
+                            <a c'>8
                         }
                         {
-                            c'4 ~
+                            <c' ef'>4
                         }
                         {
-                            c'2 ~
+                            <a c'>2
                         }
                         {
-                            c'4. ~
+                            <a c'>4.
                         }
                         {
-                            c'4. ~
+                            <g bf>4.
                         }
                         {
-                            c'8 ~ [
+                            <c' f'>8
                         }
                         {
-                            c'8 ~ ]
-                            c'4 ~
+                            <a c'>8 ~
+                            <a c'>4
                         }
                         {
-                            c'4 ~
+                            <c' ef'>4
                         }
                         {
-                            c'4. ~
+                            <aqs cqs'>4.
                         }
                         {
-                            c'4
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            c'2 ~
-                            c'8 ~
-                        }
-                        {
-                            c'2 ~
-                            c'8
+                            <c' f'>4
                         }
                     }
                     {
@@ -2246,20 +2298,35 @@
                     }
                     {
                         {
-                            c'4 ~
+                            <af b>2 ~
+                            <af b>8
                         }
                         {
-                            c'2 ~
+                            <a c'>2 ~
+                            <a c'>8
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <c' f'>4
                         }
                         {
-                            c'8 ~
+                            <af b>2
                         }
                         {
-                            c'2 ~
+                            <g bf>8
                         }
                         {
-                            c'2 ~
-                            c'8
+                            <aqs cqs'>2
+                        }
+                        {
+                            <a c'>2 ~
+                            <a c'>8
                         }
                     }
                     {
@@ -2269,17 +2336,17 @@
                     }
                     {
                         {
-                            c'8. ~
-                            c'4. ~
+                            <g bf>8. ~
+                            <g bf>4.
                         }
                         {
-                            c'16 ~ [
+                            <a c'>16
                         }
                         {
-                            c'16 ~ ]
-                            c'4 ~
-                            c'4 ~
-                            c'16
+                            <c' ef'>16 ~
+                            <c' ef'>4 ~
+                            <c' ef'>4 ~
+                            <c' ef'>16
                         }
                     }
                     {
@@ -2287,44 +2354,64 @@
                             r16
                         }
                         {
+                            \stopStaff
+                            \once \override Staff.StaffSymbol.line-count = 1
+                            \startStaff
                             R1 * 1/2
                             \bar "|."
+                            \stopStaff
+                            \startStaff
                         }
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
                     {
                         {
-                            c'2
-                            c'8
+                            <a c'>2
+                            <
+                                \parenthesize
+                                a
+                                \parenthesize
+                                c'
+                            >8 \glissando
                         }
                         {
-                            c'4
+                            <c' ef'>4 \glissando
                         }
                         {
-                            c'2
+                            <a c'>2
                         }
                         {
-                            c'4.
+                            <
+                                \parenthesize
+                                a
+                                \parenthesize
+                                c'
+                            >4. \glissando
                         }
                         {
-                            c'4.
+                            <g bf>4. \glissando
                         }
                         {
-                            c'8
+                            <c' f'>8 \glissando
                         }
                         {
-                            c'8
-                            c'4
+                            <a c'>8
+                            <
+                                \parenthesize
+                                a
+                                \parenthesize
+                                c'
+                            >4 \glissando
                         }
                         {
-                            c'4
+                            <c' ef'>4 \glissando
                         }
                         {
-                            c'4.
+                            <aqs cqs'>4. \glissando
                         }
                         {
-                            c'4
+                            <c' f'>4
                         }
                     }
                     {
@@ -2334,12 +2421,22 @@
                     }
                     {
                         {
-                            c'2
-                            c'8
+                            <af b>2
+                            <
+                                \parenthesize
+                                af
+                                \parenthesize
+                                b
+                            >8 \glissando
                         }
                         {
-                            c'2
-                            c'8
+                            <a c'>2
+                            <
+                                \parenthesize
+                                a
+                                \parenthesize
+                                c'
+                            >8
                         }
                     }
                     {
@@ -2349,20 +2446,25 @@
                     }
                     {
                         {
-                            c'4
+                            <c' f'>4 \glissando
                         }
                         {
-                            c'2
+                            <af b>2 \glissando
                         }
                         {
-                            c'8
+                            <g bf>8 \glissando
                         }
                         {
-                            c'2
+                            <aqs cqs'>2 \glissando
                         }
                         {
-                            c'2
-                            c'8
+                            <a c'>2
+                            <
+                                \parenthesize
+                                a
+                                \parenthesize
+                                c'
+                            >8
                         }
                     }
                     {
@@ -2372,17 +2474,37 @@
                     }
                     {
                         {
-                            c'8.
-                            c'4.
+                            <g bf>8.
+                            <
+                                \parenthesize
+                                g
+                                \parenthesize
+                                bf
+                            >4. \glissando
                         }
                         {
-                            c'16
+                            <a c'>16 \glissando
                         }
                         {
-                            c'16
-                            c'4
-                            c'4
-                            c'16
+                            <c' ef'>16
+                            <
+                                \parenthesize
+                                c'
+                                \parenthesize
+                                ef'
+                            >4
+                            <
+                                \parenthesize
+                                c'
+                                \parenthesize
+                                ef'
+                            >4
+                            <
+                                \parenthesize
+                                c'
+                                \parenthesize
+                                ef'
+                            >16
                         }
                     }
                     {
