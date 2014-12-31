@@ -240,10 +240,12 @@ afterGraceFraction = #(cons 1023 1024)
         \name FingeringSpannerVoice
         \type Engraver_group
         \alias Voice
+        \override Beam.direction = #down
         \override Beam.stencil = ##f
-        \override Dots.stencil = ##f
+        \override Dots.transparent = ##t
         \override Flag.stencil = ##f
         \override NoteHead.transparent = ##t
+        \override Stem.direction = #down
         \override Stem.stencil = ##f
         \override Tie.stencil = ##f
         \override TupletBracket.stencil = ##f
