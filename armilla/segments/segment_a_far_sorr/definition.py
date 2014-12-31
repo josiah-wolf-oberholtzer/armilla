@@ -3,8 +3,9 @@ import armilla
 import consort
 from abjad import new
 from abjad.tools import indicatortools
-from abjad.tools import selectortools
 
+
+### SEGMENT MAKER ###
 
 segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=90,
@@ -22,23 +23,9 @@ lh_diads = armilla.materials.left_hand_diads_music_specifier
 
 ### ATTACHMENTS ###
 
-articulations = consort.AttachmentExpression(
-    attachments=(
-        None,
-        None,
-        None,
-        indicatortools.Articulation('>', 'down'),
-        None,
-        indicatortools.Articulation('>', 'down'),
-        indicatortools.Articulation('>', 'down'),
-        None,
-        None,
-        indicatortools.Articulation('>', 'down'),
-        indicatortools.Articulation('>', 'down'),
-        indicatortools.Articulation('>', 'down'),
-        ),
-    selector=selectortools.Selector().by_leaves()[:-1].flatten(),
-    )
+intermittent_accents = armilla.materials.intermittent_accents
+intermittent_circular = armilla.materials.intermittent_circular
+intermittent_tremoli = armilla.materials.intermittent_tremoli
 
 ### OVERPRESSURE ###
 
@@ -62,12 +49,14 @@ segment_maker.add_setting(
         ),
     viola_1_rh=new(
         rh_overpressure,
-        attachment_handler__articulations=articulations,
+        attachment_handler__articulations=intermittent_accents,
+        attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
         rhythm_maker__default__denominators=(4, 4, 4, 8),
         ),
     viola_2_rh=new(
         rh_overpressure,
-        attachment_handler__articulations=articulations,
+        attachment_handler__articulations=intermittent_accents,
+        attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
         rhythm_maker__default__denominators=(4, 4, 4, 8, 4, 8),
         ),
     viola_1_lh=lh_diads,
@@ -82,11 +71,13 @@ segment_maker.add_setting(
         ),
     viola_1_rh=new(
         rh_overpressure,
-        attachment_handler__articulations=articulations,
+        attachment_handler__articulations=intermittent_accents,
         rhythm_maker__default__denominators=(4, 4, 4, 16, 4, 16),
         ),
     viola_2_rh=new(
         rh_overpressure,
+        attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
+        attachment_handler__bow_motion_technique_x=intermittent_circular,
         ),
     viola_1_lh=lh_diads,
     viola_2_lh=lh_diads,
