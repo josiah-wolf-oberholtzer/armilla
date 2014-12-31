@@ -176,6 +176,8 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
     ### CLASS VARIABLES ###
 
     __slots__ = (
+        '_include_viola_1_inner_starts',
+        '_include_viola_2_inner_starts',
         '_rotation_indices',
         '_voice_names',
         )
@@ -185,6 +187,8 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
     def __init__(
         self,
         fuse_groups=None,
+        include_viola_1_inner_starts=True,
+        include_viola_2_inner_starts=True,
         initial_silence_talea=None,
         padding=None,
         playing_talea=rhythmmakertools.Talea(
@@ -227,6 +231,8 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
                 rotation_indices = (rotation_indices,)
             rotation_indices = tuple(rotation_indices)
         self._rotation_indices = rotation_indices
+        self._include_viola_1_inner_starts = bool(include_viola_1_inner_starts)
+        self._include_viola_2_inner_starts = bool(include_viola_2_inner_starts)
 
     ### SPECIAL METHODS ###
 
@@ -298,7 +304,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
     @property
     def _viola_1_fingering_timespan_maker(self):
         timespan_maker = consort.DependentTimespanMaker(
-            include_inner_starts=True,
+            include_inner_starts=self.include_viola_1_inner_starts,
             include_inner_stops=False,
             rotation_indices=self.rotation_indices,
             timespan_specifier=self.timespan_specifier,
@@ -309,7 +315,7 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
     @property
     def _viola_2_fingering_timespan_maker(self):
         timespan_maker = consort.DependentTimespanMaker(
-            include_inner_starts=True,
+            include_inner_starts=self.include_viola_2_inner_starts,
             include_inner_stops=False,
             rotation_indices=self.rotation_indices,
             timespan_specifier=self.timespan_specifier,
@@ -318,6 +324,14 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         return timespan_maker
 
     ### PUBLIC PROPERTIES ###
+
+    @property
+    def include_viola_1_inner_starts(self):
+        return self._include_viola_1_inner_starts
+
+    @property
+    def include_viola_2_inner_starts(self):
+        return self._include_viola_1_inner_starts
 
     @property
     def rotation_indices(self):
