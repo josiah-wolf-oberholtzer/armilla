@@ -100,7 +100,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             voice,
             attachment_names=(
                 'beam',
-                'stem_tremolo_spanner',
+                'stem_tremolo',
                 ),
             new_voice_name=voice.name.replace('Bowing', 'RH Beaming'),
             new_context_name='BowBeamingVoice',
