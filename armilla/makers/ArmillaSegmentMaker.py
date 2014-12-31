@@ -72,7 +72,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     ### PUBLIC METHODS ###
 
-    def configure_beaming_voice(self, staff):
+    def postprocess_right_hand_staff(self, staff):
         voice = staff[0]
         string_contact_voice = self.copy_voice(
             voice,
@@ -126,10 +126,14 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             ]
         staff.is_simultaneous = True
 
-    def configure_glissando_voice(self, staff):
+    def postprocess_left_hand_staff(self, staff):
         voice = staff[0]
         finger_pitches_voice = self.copy_voice(
             voice,
+            attachment_names=(
+                'clef_spanner',
+                'staff_lines_spanner',
+                ),
             new_voice_name=voice.name.replace('Fingering', 'LH Pitches'),
             new_context_name='FingeringPitchesVoice',
             )
@@ -155,10 +159,10 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
     def configure_score(self, score):
         self.attach_tempo(score)
         self.attach_rehearsal_mark(score)
-        self.configure_beaming_voice(score['Viola 1 Bowing Staff'])
-        self.configure_beaming_voice(score['Viola 2 Bowing Staff'])
-        self.configure_glissando_voice(score['Viola 1 Fingering Staff'])
-        self.configure_glissando_voice(score['Viola 2 Fingering Staff'])
+        self.postprocess_right_hand_staff(score['Viola 1 Bowing Staff'])
+        self.postprocess_right_hand_staff(score['Viola 2 Bowing Staff'])
+        self.postprocess_left_hand_staff(score['Viola 1 Fingering Staff'])
+        self.postprocess_left_hand_staff(score['Viola 2 Fingering Staff'])
         if self.repeat:
             repeat = indicatortools.Repeat()
             for staff in iterate(score).by_class(scoretools.Staff):
