@@ -100,17 +100,17 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \parenthesize
                                                     \caps
                                                         Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -128,16 +128,16 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     S.P.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -165,12 +165,12 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \parenthesize
                                                     \caps
                                                         Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
@@ -185,11 +185,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     M.S.P
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
@@ -219,16 +219,16 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     M.S.P
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -249,16 +249,16 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -277,16 +277,16 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     S.P.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -312,17 +312,17 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \parenthesize
                                                     \caps
                                                         Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -342,11 +342,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     M.S.P
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
@@ -361,11 +361,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
@@ -395,11 +395,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
@@ -414,11 +414,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     M.S.P
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
@@ -1234,17 +1234,17 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \parenthesize
                                                     \caps
                                                         Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -1262,16 +1262,16 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     M.S.P
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -1292,16 +1292,16 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -1319,11 +1319,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     S.P.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
@@ -1338,11 +1338,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
@@ -1373,16 +1373,16 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     S.P.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 3.5
+                            \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
@@ -1409,12 +1409,12 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \parenthesize
                                                     \caps
                                                         Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
@@ -1429,11 +1429,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     M.S.P
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
@@ -1465,11 +1465,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     Ord.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
@@ -1484,11 +1484,11 @@
                                         \concat
                                             {
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                                 \caps
                                                     S.P.
                                                 \hspace
-                                                    #1
+                                                    #1.5
                                             }
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
