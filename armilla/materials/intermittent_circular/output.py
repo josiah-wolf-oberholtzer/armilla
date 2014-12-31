@@ -29,6 +29,7 @@ intermittent_circular = consort.tools.AttachmentExpression(
                     ),
                 cyclic=False,
                 fuse_overhang=False,
+                nonempty=False,
                 overhang=False,
                 rotate=False,
                 ),

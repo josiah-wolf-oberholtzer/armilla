@@ -49,7 +49,7 @@ right_hand_circular_music_specifier = consort.MusicSpecifier(
                 ),
             scope=scoretools.Voice,
             selector=selectortools.Selector().with_callback(
-                consort.PhrasedSelectorCallback())
+                consort.PhrasedSelectorCallback()).flatten(),
             ),
         string_contact_spanner=consort.StringContactSpanner(),
         ),

@@ -27,6 +27,7 @@ intermittent_tremoli = consort.tools.AttachmentExpression(
                     ),
                 cyclic=False,
                 fuse_overhang=False,
+                nonempty=False,
                 overhang=False,
                 rotate=False,
                 ),

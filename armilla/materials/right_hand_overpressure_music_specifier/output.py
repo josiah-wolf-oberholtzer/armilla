@@ -123,22 +123,30 @@ right_hand_overpressure_music_specifier = consort.tools.MusicSpecifier(
                     indicatortools.StringContactPoint(
                         contact_point='ordinario',
                         ),
-                    None,
-                    None,
                     indicatortools.StringContactPoint(
                         contact_point='sul tasto',
                         ),
-                    None,
-                    None,
                     indicatortools.StringContactPoint(
                         contact_point='molto sul tasto',
                         ),
-                    None,
                     ]
                 ),
             selector=selectortools.Selector(
                 callbacks=(
                     consort.tools.PhrasedSelectorCallback(),
+                    selectortools.CountsSelectorCallback(
+                        counts=datastructuretools.CyclicTuple(
+                            [1, -2, 1, -2, 1, -1]
+                            ),
+                        cyclic=True,
+                        fuse_overhang=False,
+                        nonempty=True,
+                        overhang=True,
+                        rotate=False,
+                        ),
+                    selectortools.FlattenSelectorCallback(
+                        depth=-1,
+                        ),
                     ),
                 ),
             scope=scoretools.Voice,

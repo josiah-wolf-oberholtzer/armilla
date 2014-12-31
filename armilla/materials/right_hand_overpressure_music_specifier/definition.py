@@ -45,17 +45,19 @@ right_hand_overpressure_music_specifier = consort.MusicSpecifier(
         string_contact_points=consort.AttachmentExpression(
             attachments=(
                 indicatortools.StringContactPoint('ordinario'),
-                None,
-                None,
                 indicatortools.StringContactPoint('sul tasto'),
-                None,
-                None,
                 indicatortools.StringContactPoint('molto sul tasto'),
-                None,
                 ),
             scope=scoretools.Voice,
-            selector=selectortools.Selector().with_callback(
-                consort.PhrasedSelectorCallback())
+            selector=selectortools.Selector(
+                ).with_callback(
+                    consort.PhrasedSelectorCallback()
+                ).by_counts(
+                    [1, -2, 1, -2, 1, -1],
+                    cyclic=True,
+                    nonempty=True,
+                    overhang=True,
+                    ).flatten()
             ),
         string_contact_spanner=consort.StringContactSpanner(),
         ),

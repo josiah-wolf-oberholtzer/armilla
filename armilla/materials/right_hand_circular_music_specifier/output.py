@@ -136,6 +136,9 @@ right_hand_circular_music_specifier = consort.tools.MusicSpecifier(
             selector=selectortools.Selector(
                 callbacks=(
                     consort.tools.PhrasedSelectorCallback(),
+                    selectortools.FlattenSelectorCallback(
+                        depth=-1,
+                        ),
                     ),
                 ),
             scope=scoretools.Voice,
