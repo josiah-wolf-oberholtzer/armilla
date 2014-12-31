@@ -25,6 +25,8 @@ class ArmillaTimespanMaker(consort.TaleaTimespanMaker):
         ...     )
         >>> print(format(timespan_maker))
         armilla.makers.ArmillaTimespanMaker(
+            include_viola_1_inner_starts=True,
+            include_viola_2_inner_starts=True,
             initial_silence_talea=rhythmmakertools.Talea(
                 counts=(0, 1),
                 denominator=4,
