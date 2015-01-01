@@ -20,12 +20,11 @@ right_hand_pizzicati_music_specifier = consort.MusicSpecifier(
             dynamic_tokens='mf',
             ),
         string_contact_points=consort.AttachmentExpression(
-            attachments=(
-                indicatortools.StringContactPoint('pizzicato'),
-                ),
+            attachments=indicatortools.StringContactPoint('pizzicato'),
             scope=scoretools.Voice,
-            selector=selectortools.Selector().with_callback(
-                consort.PhrasedSelectorCallback())[0],
+            selector=selectortools.Selector(
+                ).by_leaves(
+                )[0]
             ),
         string_contact_spanner=consort.StringContactSpanner(),
         ),

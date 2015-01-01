@@ -2140,9 +2140,8 @@
                             c'4 ^ \markup {
                                 \vcenter
                                     \italic
-                                        \parenthesize
-                                            \caps
-                                                Ord.
+                                        \caps
+                                            Ord.
                                 }
                             c'4
                             c'4

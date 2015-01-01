@@ -1,16 +1,19 @@
 # -*- encoding: utf-8 -*-
 import consort
 from abjad.tools import rhythmmakertools
-
+from abjad.tools import selectortools
 
 
 left_hand_dietro_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
-        clef_spanner=consort.ClefSpanner(
-            clef='percussion',
-            overrides={
-                'note_head__style': 'cross',
-                },
+        clef_spanner=consort.AttachmentExpression(
+            attachments=consort.ClefSpanner(
+                clef='percussion',
+                overrides={
+                    'note_head__style': 'cross',
+                    },
+                ),
+            selector=selectortools.Selector().by_leaves(),
             ),
         ),
     pitch_handler=consort.AbsolutePitchHandler(

@@ -200,7 +200,13 @@
                     }
                     {
                         \times 2/3 {
-                            c'4
+                            c'4 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \parenthesize
+                                            \caps
+                                                M.S.P
+                                }
                             c'4
                             c'4
                         }

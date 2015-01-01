@@ -27,6 +27,7 @@ lh_pizzicati = armilla.materials.left_hand_pizzicati_music_specifier
 
 intermittent_accents = armilla.materials.intermittent_accents
 intermittent_circular = armilla.materials.intermittent_circular
+intermittent_glissandi = armilla.materials.intermittent_glissandi
 intermittent_tremoli = armilla.materials.intermittent_tremoli
 
 ### OVERPRESSURE ###
@@ -61,7 +62,10 @@ segment_maker.add_setting(
         attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
         rhythm_maker__default__denominators=(4, 4, 4, 8, 4, 8),
         ),
-    viola_1_lh=lh_diads,
+    viola_1_lh=new(
+        lh_diads,
+        attachment_handler__glissando=intermittent_glissandi,
+        ),
     viola_2_lh=lh_diads,
     )
 
@@ -81,8 +85,14 @@ segment_maker.add_setting(
         attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
         attachment_handler__bow_motion_technique_x=intermittent_circular,
         ),
-    viola_1_lh=lh_diads,
-    viola_2_lh=lh_diads,
+    viola_1_lh=new(
+        lh_diads,
+        attachment_handler__glissando=intermittent_glissandi,
+        ),
+    viola_2_lh=new(
+        lh_diads,
+        attachment_handler__glissando=intermittent_glissandi,
+        ),
     )
 
 ### PIZZICATI ###
@@ -98,3 +108,7 @@ segment_maker.add_setting(
     viola_2_rh=rh_pizzicati,
     viola_2_lh=lh_pizzicati,
     )
+
+#if __name__ == '__main__':
+#    lilypond_file = segment_maker()
+#    formatted = format(lilypond_file)

@@ -2,12 +2,16 @@
 import consort
 from abjad.tools import indicatortools
 from abjad.tools import rhythmmakertools
+from abjad.tools import selectortools
 
 
 left_hand_pizzicati_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         arpeggio=indicatortools.Arpeggio(),
-        clef_spanner=consort.ClefSpanner('treble'),
+        clef_spanner=consort.AttachmentExpression(
+            attachments=consort.ClefSpanner('treble'),
+            selector=selectortools.Selector().by_leaves(),
+            ),
         ),
     pitch_handler=consort.AbsolutePitchHandler(
         logical_tie_expressions=(

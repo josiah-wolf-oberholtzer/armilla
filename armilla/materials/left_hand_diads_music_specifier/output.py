@@ -3,34 +3,11 @@ from abjad.tools import datastructuretools
 from abjad.tools import mathtools
 from abjad.tools import pitchtools
 from abjad.tools import rhythmmakertools
-from abjad.tools import scoretools
-from abjad.tools import selectortools
-from abjad.tools import spannertools
 import consort
 
 
 left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
-    attachment_handler=consort.tools.AttachmentHandler(
-        glissando=consort.tools.AttachmentExpression(
-            attachments=datastructuretools.TypedList(
-                [
-                    spannertools.Glissando(
-                        allow_repeated_pitches=False,
-                        allow_ties=False,
-                        parenthesize_repeated_pitches=True,
-                        ),
-                    ]
-                ),
-            selector=selectortools.Selector(
-                callbacks=(
-                    selectortools.PrototypeSelectorCallback(
-                        prototype=scoretools.Leaf,
-                        ),
-                    consort.tools.AfterGraceSelectorCallback(),
-                    ),
-                ),
-            ),
-        ),
+    attachment_handler=consort.tools.AttachmentHandler(),
     pitch_handler=consort.tools.AbsolutePitchHandler(
         deviations=datastructuretools.CyclicTuple(
             [
@@ -42,7 +19,7 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                 pitchtools.NumberedInterval(0),
                 ]
             ),
-        forbid_repetitions=False,
+        forbid_repetitions=True,
         logical_tie_expressions=datastructuretools.CyclicTuple(
             [
                 consort.tools.ChordExpression(

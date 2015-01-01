@@ -3,6 +3,8 @@ from abjad.tools import datastructuretools
 from abjad.tools import indicatortools
 from abjad.tools import pitchtools
 from abjad.tools import rhythmmakertools
+from abjad.tools import scoretools
+from abjad.tools import selectortools
 import consort
 
 
@@ -20,6 +22,13 @@ left_hand_dietro_music_specifier = consort.tools.MusicSpecifier(
                             },
                         ),
                     ]
+                ),
+            selector=selectortools.Selector(
+                callbacks=(
+                    selectortools.PrototypeSelectorCallback(
+                        prototype=scoretools.Leaf,
+                        ),
+                    ),
                 ),
             ),
         ),

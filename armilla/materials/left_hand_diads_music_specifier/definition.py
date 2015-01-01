@@ -1,25 +1,13 @@
 # -*- encoding: utf-8 -*-
 import consort
 from abjad.tools import rhythmmakertools
-from abjad.tools import selectortools
-from abjad.tools import spannertools
 
 
 left_hand_diads_music_specifier = consort.MusicSpecifier(
-    attachment_handler=consort.AttachmentHandler(
-        glissando=consort.AttachmentExpression(
-            attachments=spannertools.Glissando(
-                allow_repeated_pitches=False,
-                allow_ties=False,
-                parenthesize_repeated_pitches=True,
-                ),
-            selector=selectortools.Selector().by_leaves(
-                ).with_callback(consort.AfterGraceSelectorCallback())
-            ),
-        ),
+    attachment_handler=consort.AttachmentHandler(),
     pitch_handler=consort.AbsolutePitchHandler(
         deviations=(0, 0, 0, 0, 0.5, 0),
-        forbid_repetitions=False,
+        forbid_repetitions=True,
         logical_tie_expressions=(
             consort.ChordExpression(chord_expr=(0, 3)),
             consort.ChordExpression(chord_expr=(0, 3)),

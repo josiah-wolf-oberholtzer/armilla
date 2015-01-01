@@ -10,7 +10,7 @@ from abjad.tools import selectortools
 
 segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=60,
-    discard_final_silence=True,
+    discard_final_silence=False,
     is_final_segment=True,
     name='The Long Dune (ii)',
     rehearsal_mark='H',

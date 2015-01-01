@@ -59,7 +59,9 @@ right_hand_pizzicati_music_specifier = (
                     ),
                 selector=selectortools.Selector(
                     callbacks=(
-                        consort.tools.PhrasedSelectorCallback(),
+                        selectortools.PrototypeSelectorCallback(
+                            prototype=scoretools.Leaf,
+                            ),
                         selectortools.ItemSelectorCallback(
                             item=0,
                             apply_to_each=True,
