@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 from abjad import attach
 from abjad import iterate
+from abjad.tools import durationtools
 from abjad.tools import indicatortools
 from abjad.tools import markuptools
 from abjad.tools import scoretools
@@ -66,6 +67,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             score_template=score_template,
             settings=settings,
             tempo=tempo,
+            timespan_quantization=durationtools.Duration(1, 8),
             permitted_time_signatures=permitted_time_signatures,
             )
         self.repeat = repeat
