@@ -2429,22 +2429,6 @@
                     }
                     {
                         \times 8/9 {
-                            c'16 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                        }
-                        {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
@@ -2459,7 +2443,7 @@
                                                     #1.5
                                                 \parenthesize
                                                     \caps
-                                                        Ord.
+                                                        M.S.T.
                                                 \hspace
                                                     #1.5
                                             }
@@ -2478,22 +2462,33 @@
                                                 \hspace
                                                     #1.5
                                                 \caps
-                                                    S.T.
+                                                    Ord.
                                                 \hspace
                                                     #1.5
                                             }
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4. \startTextSpan
+                            c'16 \startTextSpan
+                            c'16
+                            c'16
+                            c'16
+                            c'16
+                            c'16
+                            c'16
+                            c'16
+                            c'16
+                        }
+                        {
+                            c'4.
                         }
                         {
                             c'4
                             c'4
                         }
                         {
-                            c'2
-                            c'16 \stopTextSpan
+                            c'2 \stopTextSpan
+                            c'16
                             c'16
                         }
                     }
@@ -2508,7 +2503,7 @@
                                 \vcenter
                                     \italic
                                         \caps
-                                            M.S.T.
+                                            S.T.
                                 }
                             c'16
                             c'16
