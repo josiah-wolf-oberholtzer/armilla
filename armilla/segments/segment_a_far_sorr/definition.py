@@ -19,7 +19,9 @@ segment_maker = armilla.ArmillaSegmentMaker(
 ### MUSIC SPECIFIERS ###
 
 rh_overpressure = armilla.materials.right_hand_overpressure_music_specifier
+rh_pizzicati = armilla.materials.right_hand_pizzicati_music_specifier
 lh_diads = armilla.materials.left_hand_diads_music_specifier
+lh_pizzicati = armilla.materials.left_hand_pizzicati_music_specifier
 
 ### ATTACHMENTS ###
 
@@ -85,14 +87,14 @@ segment_maker.add_setting(
 
 ### PIZZICATI ###
 
-#segment_maker.add_setting(
-#    timespan_maker=armilla.materials.sparse_timespan_maker,
-#    timespan_identifier=consort.RatioPartsExpression(
-#        parts=(1,),
-#        ratio=(5, 1),
-#        ),
-#    viola_1_rh=None,
-#    viola_2_rh=None,
-#    viola_1_lh=None,
-#    viola_2_lh=None,
-#    )
+segment_maker.add_setting(
+    #timespan_maker=armilla.materials.sparse_timespan_maker,
+    timespan_maker=armilla.makers.ArmillaTimespanMaker(
+        ),
+    timespan_identifier=consort.RatioPartsExpression(
+        parts=(1,),
+        ratio=(5, 1),
+        ),
+    viola_2_rh=rh_pizzicati,
+    viola_2_lh=lh_pizzicati,
+    )

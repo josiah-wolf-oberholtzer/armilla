@@ -12,7 +12,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 72),
     )
 
-
 rh_circular = armilla.materials.right_hand_circular_music_specifier
 
 lh_glissandi = armilla.materials.left_hand_glissandi_music_specifier
