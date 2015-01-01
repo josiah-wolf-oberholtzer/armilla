@@ -197,7 +197,8 @@ afterGraceFraction = #(cons 1023 1024)
         \remove Bar_engraver
         \override DynamicLineSpanner.staff-padding = 11.5
         \override DynamicText.self-alignment-X = -1
-        \override Hairpin.bound-padding = 3
+        \override Hairpin.bound-padding = 1.5
+        %\override Hairpin.minimum-length = 5
         \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
             (basic-distance . 5)
             (padding . 2.5) 
@@ -351,8 +352,7 @@ afterGraceFraction = #(cons 1023 1024)
             )
         autoBeaming = ##f
         doubleRepeatType = #":|.|:"
-        pedalSustainStyle = #'mixed
-        proportionalNotationDuration = #(ly:make-moment 1 32)
+        proportionalNotationDuration = #(ly:make-moment 1 16)
         tupletFullLength = ##t
     }
 }
