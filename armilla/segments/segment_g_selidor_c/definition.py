@@ -7,14 +7,18 @@ from abjad.tools import spannertools
 from abjad.tools import selectortools
 
 
+### SEGMENT MAKER ###
+
 segment_maker = armilla.ArmillaSegmentMaker(
-    desired_duration_in_seconds=30,
+    desired_duration_in_seconds=60 / 2,
     discard_final_silence=True,
     name='Selidor (iii)',
     rehearsal_mark='G',
     repeat=True,
     tempo=indicatortools.Tempo((1, 4), 72),
     )
+
+### MUSIC SPECIFIERS ###
 
 rh_circular = new(
     armilla.materials.right_hand_circular_music_specifier,
@@ -40,6 +44,8 @@ lh_glissandi = new(
         ratio=(1, 1, 2),
         ),
     )
+
+### SETTINGS ###
 
 segment_maker.add_setting(
     timespan_maker=armilla.materials.dense_timespan_maker,

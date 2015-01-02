@@ -9,7 +9,7 @@ from abjad.tools import indicatortools
 
 segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=90,
-    discard_final_silence=True,
+    discard_final_silence=False,
     name='Far Sorr',
     rehearsal_mark='A',
     repeat=False,
@@ -98,9 +98,8 @@ segment_maker.add_setting(
 ### PIZZICATI ###
 
 segment_maker.add_setting(
-    #timespan_maker=armilla.materials.sparse_timespan_maker,
-    timespan_maker=armilla.makers.ArmillaTimespanMaker(
-        ),
+    timespan_maker=armilla.materials.sparse_timespan_maker,
+    #timespan_maker=armilla.makers.ArmillaTimespanMaker(),
     timespan_identifier=consort.RatioPartsExpression(
         parts=(1,),
         ratio=(5, 1),

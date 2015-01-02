@@ -3,8 +3,10 @@ import armilla
 from abjad import indicatortools
 
 
+### SEGMENT MAKER ###
+
 segment_maker = armilla.ArmillaSegmentMaker(
-    desired_duration_in_seconds=10,
+    desired_duration_in_seconds=20 / 2,
     discard_final_silence=True,
     name='Selidor (i)',
     rehearsal_mark='B',
@@ -12,9 +14,12 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 72),
     )
 
-rh_circular = armilla.materials.right_hand_circular_music_specifier
+### MUSIC SPECIFIERS ###
 
+rh_circular = armilla.materials.right_hand_circular_music_specifier
 lh_glissandi = armilla.materials.left_hand_glissandi_music_specifier
+
+### SETTINGS ###
 
 segment_maker.add_setting(
     timespan_maker=armilla.materials.dense_timespan_maker,

@@ -15,58 +15,10 @@ right_hand_jete_music_specifier = consort.tools.MusicSpecifier(
             attachments=datastructuretools.TypedList(
                 [
                     indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
+                        contact_point=durationtools.Multiplier(4, 5),
                         ),
                     indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 4),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 4),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 4),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 4),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 4),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(0, 1),
-                        ),
-                    indicatortools.BowContactPoint(
-                        contact_point=durationtools.Multiplier(1, 4),
+                        contact_point=durationtools.Multiplier(3, 5),
                         ),
                     ]
                 ),
@@ -88,11 +40,115 @@ right_hand_jete_music_specifier = consort.tools.MusicSpecifier(
                     ]
                 ),
             ),
+        bow_motion_techniques=consort.tools.AttachmentExpression(
+            attachments=datastructuretools.TypedList(
+                [
+                    indicatortools.BowMotionTechnique(
+                        technique_name='jete',
+                        ),
+                    ]
+                ),
+            selector=selectortools.Selector(
+                callbacks=(
+                    selectortools.PrototypeSelectorCallback(
+                        prototype=scoretools.Leaf,
+                        ),
+                    selectortools.SliceSelectorCallback(
+                        stop=-1,
+                        apply_to_each=True,
+                        ),
+                    selectortools.CountsSelectorCallback(
+                        counts=datastructuretools.CyclicTuple(
+                            [2, 1, 2]
+                            ),
+                        cyclic=False,
+                        fuse_overhang=True,
+                        nonempty=False,
+                        overhang=True,
+                        rotate=True,
+                        ),
+                    selectortools.ItemSelectorCallback(
+                        item=0,
+                        apply_to_each=False,
+                        ),
+                    selectortools.FlattenSelectorCallback(
+                        depth=-1,
+                        ),
+                    ),
+                ),
+            ),
+        dynamic_expressions=consort.tools.AttachmentExpression(
+            attachments=datastructuretools.TypedList(
+                [
+                    indicatortools.Dynamic(
+                        name='mf',
+                        ),
+                    indicatortools.Dynamic(
+                        name='mp',
+                        ),
+                    ]
+                ),
+            selector=selectortools.Selector(
+                callbacks=(
+                    selectortools.PrototypeSelectorCallback(
+                        prototype=scoretools.Leaf,
+                        ),
+                    selectortools.ItemSelectorCallback(
+                        item=0,
+                        apply_to_each=True,
+                        ),
+                    ),
+                ),
+            ),
+        string_contact_points=consort.tools.AttachmentExpression(
+            attachments=datastructuretools.TypedList(
+                [
+                    indicatortools.StringContactPoint(
+                        contact_point='ordinario',
+                        ),
+                    indicatortools.StringContactPoint(
+                        contact_point='sul ponticello',
+                        ),
+                    indicatortools.StringContactPoint(
+                        contact_point='molto sul ponticello',
+                        ),
+                    indicatortools.StringContactPoint(
+                        contact_point='sul tasto',
+                        ),
+                    ]
+                ),
+            selector=selectortools.Selector(
+                callbacks=(
+                    consort.tools.PhrasedSelectorCallback(),
+                    selectortools.CountsSelectorCallback(
+                        counts=datastructuretools.CyclicTuple(
+                            [1, -1]
+                            ),
+                        cyclic=True,
+                        fuse_overhang=False,
+                        nonempty=True,
+                        overhang=True,
+                        rotate=False,
+                        ),
+                    selectortools.FlattenSelectorCallback(
+                        depth=-1,
+                        ),
+                    ),
+                ),
+            scope=scoretools.Voice,
+            ),
+        string_contact_spanner=consort.tools.AttachmentExpression(
+            attachments=datastructuretools.TypedList(
+                [
+                    consort.tools.StringContactSpanner(),
+                    ]
+                ),
+            ),
         ),
     rhythm_maker=consort.tools.CompositeRhythmMaker(
         default=rhythmmakertools.EvenDivisionRhythmMaker(
-            denominators=(8, 8, 16, 8, 8, 8, 16),
-            extra_counts_per_division=(0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1),
+            denominators=(8, 8, 4),
+            extra_counts_per_division=(0, 0, 1, 0, 1, 2),
             duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
                 decrease_durations_monotonically=True,
                 forbidden_written_duration=durationtools.Duration(1, 4),

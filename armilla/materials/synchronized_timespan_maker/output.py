@@ -9,16 +9,12 @@ import consort
 synchronized_timespan_maker = armilla.makers.ArmillaTimespanMaker(
     include_viola_1_inner_starts=True,
     include_viola_2_inner_starts=True,
-    initial_silence_talea=rhythmmakertools.Talea(
-        counts=(1, 0, 0),
-        denominator=8,
-        ),
     padding=durationtools.Duration(1, 8),
     playing_talea=rhythmmakertools.Talea(
         counts=(1, 1, 2, 1, 2, 2, 3),
         denominator=8,
         ),
-    playing_groupings=(1, 2, 1, 2, 2, 3),
+    playing_groupings=(1, 2),
     repeat=True,
     silence_talea=rhythmmakertools.Talea(
         counts=(3, 4, 5, 2, 7, 9),

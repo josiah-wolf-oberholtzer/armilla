@@ -6,16 +6,12 @@ from abjad.tools import rhythmmakertools
 
 
 synchronized_timespan_maker = armilla.ArmillaTimespanMaker(
-    initial_silence_talea=rhythmmakertools.Talea(
-        counts=(1, 0, 0),
-        denominator=8,
-        ),
     padding=durationtools.Duration(1, 8),
     playing_talea=rhythmmakertools.Talea(
         counts=(1, 1, 2, 1, 2, 2, 3),
         denominator=8,
         ),
-    playing_groupings=(1, 2, 1, 2, 2, 3),
+    playing_groupings=(1, 2),
     silence_talea=rhythmmakertools.Talea(
         counts=(3, 4, 5, 2, 7, 9),
         denominator=8,

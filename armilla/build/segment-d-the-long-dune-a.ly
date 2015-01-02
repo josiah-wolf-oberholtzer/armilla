@@ -1906,7 +1906,6 @@
                             <g b>2 ~
                             <g b>8
                             \revert NoteHead #'style
-                            \clef "alto"
                         }
                     }
                     {
@@ -1921,7 +1920,6 @@
                     }
                     {
                         {
-                            \clef "percussion"
                             \override NoteHead #'style = #'cross
                             <g b>2
                         }
@@ -1945,7 +1943,6 @@
                         {
                             <g b>2.
                             \revert NoteHead #'style
-                            \clef "alto"
                         }
                     }
                     {
@@ -1968,7 +1965,6 @@
                     }
                     {
                         {
-                            \clef "percussion"
                             \override NoteHead #'style = #'cross
                             <g b>2.
                         }
@@ -1981,7 +1977,6 @@
                         {
                             <g b>8
                             \revert NoteHead #'style
-                            \clef "alto"
                         }
                     }
                     {
@@ -1991,7 +1986,6 @@
                     }
                     {
                         {
-                            \clef "percussion"
                             \override NoteHead #'style = #'cross
                             <b d'>4.
                         }
@@ -2008,7 +2002,6 @@
                             <d' f'>2 ~
                             <d' f'>8
                             \revert NoteHead #'style
-                            \clef "alto"
                         }
                     }
                     {
@@ -2018,7 +2011,6 @@
                     }
                     {
                         {
-                            \clef "percussion"
                             \override NoteHead #'style = #'cross
                             <g b>4 ~
                             <g b>4.
@@ -4130,7 +4122,6 @@
                         {
                             <d' f'>8
                             \revert NoteHead #'style
-                            \clef "alto"
                         }
                     }
                     {
@@ -4140,7 +4131,6 @@
                     }
                     {
                         {
-                            \clef "percussion"
                             \override NoteHead #'style = #'cross
                             <b d'>2 ~
                             <b d'>8

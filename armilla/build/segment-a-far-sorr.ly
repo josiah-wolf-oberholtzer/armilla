@@ -88,15 +88,14 @@
                 s1 * 3/4
             }
             {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
                 \time 3/4
                 s1 * 3/4
             }
             {
                 \time 2/4
+                s1 * 1/2
+            }
+            {
                 s1 * 1/2
             }
             {
@@ -504,9 +503,12 @@
                             c'16
                         }
                         {
-                            c'8
+                            c'4
+                            c'4
                         }
                         {
+                            c'16
+                            c'16
                             c'16
                             c'16
                             c'16
@@ -554,21 +556,20 @@
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4. \stopTextSpan \startTextSpan
+                            c'8 \stopTextSpan \startTextSpan
                         }
                         {
-                            c'4
+                            c'4.
                         }
                         {
-                            c'4 \stopTextSpan
-                        }
-                        {
-                            c'4
-                            c'16
+                            c'8. \stopTextSpan
                             c'16
                         }
                     }
                     {
+                        {
+                            s8
+                        }
                         {
                             R1 * 3/8
                         }
@@ -1167,9 +1168,7 @@
                                             1
                                             8
                                 }
-                            c'8 ^\upbow _\accent \glissando
-                        }
-                        {
+                            c'4 ^\upbow _\accent \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1179,7 +1178,9 @@
                                             0
                                             1
                                 }
-                            c'16 ^\downbow _\accent \glissando
+                            c'4 ^\downbow _\accent \glissando
+                        }
+                        {
                             \once \override NoteHead.Y-offset = -1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1230,8 +1231,6 @@
                                             4
                                 }
                             c'16 ^\downbow _\accent \glissando
-                        }
-                        {
                             \once \override NoteHead.Y-offset = -0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1241,9 +1240,7 @@
                                             3
                                             8
                                 }
-                            c'4. _\accent \glissando
-                        }
-                        {
+                            c'16 _\accent \glissando
                             \once \override NoteHead.Y-offset = 0.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1253,9 +1250,7 @@
                                             1
                                             2
                                 }
-                            c'4 _\accent \glissando
-                        }
-                        {
+                            c'16 _\accent \glissando
                             \once \override NoteHead.Y-offset = 0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1265,7 +1260,7 @@
                                             5
                                             8
                                 }
-                            c'4 _\accent \glissando
+                            c'16 _\accent \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = 1.0
@@ -1277,7 +1272,9 @@
                                             3
                                             4
                                 }
-                            c'4 _\accent \glissando
+                            c'8 _\accent \glissando
+                        }
+                        {
                             \once \override NoteHead.Y-offset = 1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1287,7 +1284,9 @@
                                             7
                                             8
                                 }
-                            c'16 \glissando
+                            c'4. \glissando
+                        }
+                        {
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1297,10 +1296,23 @@
                                             1
                                             1
                                 }
+                            c'8. ^\upbow \glissando
+                            \once \override NoteHead.Y-offset = -2.0
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            0
+                                            1
+                                }
                             c'16
                         }
                     }
                     {
+                        {
+                            s8
+                        }
                         {
                             R1 * 3/8
                         }
@@ -1471,50 +1483,52 @@
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            c'16
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
-                        }
-                        {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 2
-                            c'16
                             c'16 ]
+                        }
+                        {
+                            c'4
+                            c'4
+                        }
+                        {
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            c'16
+                        }
+                        {
+                            c'8 ]
                         }
                         {
                             c'4.
                         }
                         {
-                            c'4
-                        }
-                        {
-                            c'4
-                        }
-                        {
-                            c'4
-                            c'16 [
+                            c'8. [
                             \set stemLeftBeamCount = 2
                             c'16 ]
                         }
                     }
                     {
+                        {
+                            r8
+                        }
                         {
                             R1 * 3/8
                         }
@@ -1663,7 +1677,8 @@
                             c'16
                         }
                         {
-                            c'8 \p \>
+                            c'4 \p \>
+                            c'4
                         }
                         {
                             c'16 \ppp \<
@@ -1672,23 +1687,24 @@
                             c'16
                             c'16
                             c'16
-                        }
-                        {
-                            c'4. \f \>
-                        }
-                        {
-                            c'4 \p \>
-                        }
-                        {
-                            c'4 \ppp \<
-                        }
-                        {
-                            c'4 \p \>
                             c'16
-                            c'16 \ppp
+                            c'16
+                        }
+                        {
+                            c'8 \f \>
+                        }
+                        {
+                            c'4. \p \>
+                        }
+                        {
+                            c'8. \ppp \<
+                            c'16 \p
                         }
                     }
                     {
+                        {
+                            s8
+                        }
                         {
                             R1 * 3/8
                         }
@@ -1826,25 +1842,30 @@
                             <c' ef'>4.
                         }
                         {
-                            <a d'>4.
+                            <a d'>2.
                         }
                         {
-                            <g bf>2
+                            <g bf>8
                         }
                         {
+                            <fs a>8 ~
                             <fs a>4
                         }
                         {
+                            <fs a>8
+                        }
+                        {
+                            <aqs cqs'>8 ~
                             <aqs cqs'>4
                         }
                         {
                             <c' ef'>4
                         }
-                        {
-                            <a c'>4.
-                        }
                     }
                     {
+                        {
+                            r8
+                        }
                         {
                             \stopStaff
                             \once \override Staff.StaffSymbol.line-count = 1
@@ -1979,25 +2000,45 @@
                             <c' ef'>4.
                         }
                         {
-                            <a d'>4. \glissando
+                            <a d'>2. \glissando
                         }
                         {
-                            <g bf>2 \glissando
+                            <g bf>8 \glissando
                         }
                         {
-                            <fs a>4 \glissando
+                            <fs a>8
+                            <
+                                \parenthesize
+                                fs
+                                \parenthesize
+                                a
+                            >4
                         }
                         {
-                            <aqs cqs'>4 \glissando
+                            <
+                                \parenthesize
+                                fs
+                                \parenthesize
+                                a
+                            >8 \glissando
+                        }
+                        {
+                            <aqs cqs'>8
+                            <
+                                \parenthesize
+                                aqs
+                                \parenthesize
+                                cqs'
+                            >4
                         }
                         {
                             <c' ef'>4
                         }
-                        {
-                            <a c'>4.
-                        }
                     }
                     {
+                        {
+                            s8
+                        }
                         {
                             R1 * 3/8
                         }
@@ -2400,33 +2441,7 @@
                             c'4
                         }
                         {
-                            c'16
-                            c'16 \stopTextSpan
-                        }
-                    }
-                    {
-                        {
-                            c'16 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Pizz.
-                                }
-                        }
-                    }
-                    {
-                        {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            c'16 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            M.S.T.
-                                }
+                            c'8. \stopTextSpan
                             c'16
                         }
                     }
@@ -2447,18 +2462,11 @@
                     }
                     {
                         {
-                            s8.
+                            s16
                         }
-                    }
-                    {
                         {
-                            c'8. ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            S.T.
-                                }
-                            c'16
+                            s4
+                            s8
                         }
                     }
                     {
@@ -2466,37 +2474,9 @@
                             c'16 ^ \markup {
                                 \vcenter
                                     \italic
-                                        \caps
-                                            Pizz.
-                                }
-                        }
-                    }
-                    {
-                        {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            c'8 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
-                        }
-                        {
-                            c'16
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            c'16 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Pizz.
+                                        \parenthesize
+                                            \caps
+                                                Pizz.
                                 }
                         }
                     }
@@ -2514,12 +2494,17 @@
                                             \caps
                                                 Pizz.
                                 }
-                            c'16
                         }
                     }
                     {
                         {
-                            c'8. ^ \markup {
+                            s8.
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
                                 \vcenter
                                     \italic
                                         \caps
@@ -2530,11 +2515,32 @@
                     }
                     {
                         {
+                            s8
+                        }
+                    }
+                    {
+                        {
                             c'16 ^ \markup {
                                 \vcenter
                                     \italic
                                         \caps
                                             Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            S.T.
                                 }
                             c'16
                         }
@@ -2542,7 +2548,24 @@
                     {
                         {
                             s8
-                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                        {
+                            R1 * 1/2
                         }
                     }
                 }
@@ -3169,7 +3192,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\downbow \glissando
+                            c'8. ^\downbow \glissando
                             \once \override NoteHead.Y-offset = -1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -3184,6 +3207,37 @@
                     }
                     {
                         {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            \once \override NoteHead.style = #'cross
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                        {
+                            s4
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            \once \override NoteHead.style = #'cross
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                    }
+                    {
+                        {
                             \once \override NoteHead.style = #'cross
                             c'16
                         }
@@ -3191,6 +3245,7 @@
                     {
                         {
                             s8.
+                            s8
                         }
                     }
                     {
@@ -3230,7 +3285,8 @@
                     }
                     {
                         {
-                            s8.
+                            s16
+                            s8
                         }
                     }
                     {
@@ -3244,7 +3300,7 @@
                                             7
                                             8
                                 }
-                            c'8. ^\downbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -3259,49 +3315,7 @@
                     }
                     {
                         {
-                            \once \override NoteHead.style = #'cross
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            \once \override NoteHead.Y-offset = 1.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            4
-                                }
-                            c'8 ^\downbow \glissando
-                        }
-                        {
-                            \once \override NoteHead.Y-offset = 1.5
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            7
-                                            8
-                                }
-                            c'16 \glissando
-                            \once \override NoteHead.Y-offset = 2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            1
-                                            1
-                                }
-                            c'16
+                            s8
                         }
                     }
                     {
@@ -3314,51 +3328,8 @@
                         {
                             s16
                         }
-                    }
-                    {
                         {
-                            \once \override NoteHead.style = #'cross
-                            c'16
-                            \once \override NoteHead.style = #'cross
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            \once \override NoteHead.Y-offset = 0.5
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            5
-                                            8
-                                }
-                            c'8. ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 1.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            4
-                                }
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            \once \override NoteHead.style = #'cross
-                            c'16
-                            \once \override NoteHead.style = #'cross
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            s8
-                            s4
+                            R1 * 1/2
                         }
                     }
                 }
@@ -3519,24 +3490,7 @@
                             c'4 :32
                         }
                         {
-                            c'16 [
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
-                        }
-                    }
-                    {
-                        {
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            r8.
-                        }
-                    }
-                    {
-                        {
-                            c'16 [
+                            c'8. [
                             \set stemLeftBeamCount = 2
                             c'16 ]
                         }
@@ -3553,36 +3507,11 @@
                     }
                     {
                         {
-                            r8.
-                        }
-                    }
-                    {
-                        {
-                            c'8. [
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
-                        }
-                    }
-                    {
-                        {
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            r8.
-                        }
-                    }
-                    {
-                        {
-                            c'8 [
+                            r16
                         }
                         {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            c'16
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
+                            r4
+                            r8
                         }
                     }
                     {
@@ -3597,16 +3526,13 @@
                     }
                     {
                         {
-                            c'16 [
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
+                            c'16
                         }
                     }
                     {
                         {
-                            c'8. [
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
+                            r8.
+                            r8
                         }
                     }
                     {
@@ -3619,7 +3545,42 @@
                     {
                         {
                             r8
-                            r4
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                        {
+                            R1 * 1/2
                         }
                     }
                 }
@@ -3766,24 +3727,8 @@
                             c'4 \ppp \<
                         }
                         {
-                            c'16
-                            c'16 \f
-                        }
-                    }
-                    {
-                        {
-                            c'16 \mf
-                        }
-                    }
-                    {
-                        {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            c'16 \f
-                            c'16
+                            c'8. \f \>
+                            c'16 \p
                         }
                     }
                     {
@@ -3798,32 +3743,11 @@
                     }
                     {
                         {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            c'8. \ppp \<
-                            c'16 \f
-                        }
-                    }
-                    {
-                        {
-                            c'16 \mf
-                        }
-                    }
-                    {
-                        {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            c'8 \p \>
+                            s16
                         }
                         {
-                            c'16
-                            c'16 \ppp
+                            s4
+                            s8
                         }
                     }
                     {
@@ -3839,25 +3763,58 @@
                     {
                         {
                             c'16 \mf
-                            c'16
                         }
                     }
                     {
                         {
-                            c'8. \ppp \<
-                            c'16 \p
+                            s8.
+                            s8
                         }
                     }
                     {
                         {
-                            c'16 \mf
+                            c'16 \f
                             c'16
                         }
                     }
                     {
                         {
                             s8
-                            s4
+                        }
+                    }
+                    {
+                        {
+                            c'16 \mf
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 \ppp
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'16 \mf
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                        {
+                            R1 * 1/2
                         }
                     }
                 }
@@ -3971,24 +3928,7 @@
                             <cqs' eqf'>8
                         }
                         {
-                            <c' ef'>4.
-                        }
-                    }
-                    {
-                        {
-                            \clef "treble"
-                            <cs' b' g'' ef'''>16
-                            \clef "alto"
-                        }
-                    }
-                    {
-                        {
-                            r8.
-                        }
-                    }
-                    {
-                        {
-                            <g bf>8
+                            <c' ef'>2
                         }
                     }
                     {
@@ -3999,23 +3939,30 @@
                     {
                         {
                             \clef "treble"
+                            <cs' b' g'' ef'''>16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                        {
+                            r4
+                            r8
+                        }
+                    }
+                    {
+                        {
                             <fs e' c'' gs''>16
-                            \clef "alto"
                         }
                     }
                     {
                         {
-                            r8.
+                            r16
                         }
                     }
                     {
                         {
-                            <a d'>4
-                        }
-                    }
-                    {
-                        {
-                            \clef "treble"
                             <f ef' b' g''>16
                             \clef "alto"
                         }
@@ -4023,14 +3970,17 @@
                     {
                         {
                             r8.
+                            r8
                         }
                     }
                     {
                         {
-                            <c' ef'>8
+                            <a d'>8
                         }
+                    }
+                    {
                         {
-                            <a c'>8
+                            r8
                         }
                     }
                     {
@@ -4043,33 +3993,37 @@
                     {
                         {
                             r16
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <c' ef'>8
+                        }
+                    }
+                    {
+                        {
+                            r8
                         }
                     }
                     {
                         {
                             \clef "treble"
                             <c' bf' fs'' d'''>16
-                            <cs' b' g'' ef'''>16
                             \clef "alto"
                         }
                     }
                     {
                         {
-                            <cqs' eqf'>4
+                            r16
                         }
-                    }
-                    {
                         {
-                            \clef "treble"
-                            <f ef' b' g''>16
-                            <fs e' c'' gs''>16
-                            \clef "alto"
-                        }
-                    }
-                    {
-                        {
-                            r8
-                            r4
+                            \stopStaff
+                            \once \override Staff.StaffSymbol.line-count = 1
+                            \startStaff
+                            R1 * 1/2
+                            \stopStaff
+                            \startStaff
                         }
                     }
                 }
@@ -4185,22 +4139,7 @@
                             <cqs' eqf'>8
                         }
                         {
-                            <c' ef'>4.
-                        }
-                    }
-                    {
-                        {
-                            <cs' b' g'' ef'''>16
-                        }
-                    }
-                    {
-                        {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            <g bf>8
+                            <c' ef'>2
                         }
                     }
                     {
@@ -4210,35 +4149,16 @@
                     }
                     {
                         {
-                            <fs e' c'' gs''>16
+                            <cs' b' g'' ef'''>16
                         }
                     }
                     {
                         {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            <a d'>4
-                        }
-                    }
-                    {
-                        {
-                            <f ef' b' g''>16
-                        }
-                    }
-                    {
-                        {
-                            s8.
-                        }
-                    }
-                    {
-                        {
-                            <c' ef'>8
+                            s16
                         }
                         {
-                            <a c'>8
+                            s4
+                            s8
                         }
                     }
                     {
@@ -4253,25 +4173,57 @@
                     }
                     {
                         {
-                            <c' bf' fs'' d'''>16
-                            <cs' b' g'' ef'''>16
-                        }
-                    }
-                    {
-                        {
-                            <cqs' eqf'>4
-                        }
-                    }
-                    {
-                        {
                             <f ef' b' g''>16
-                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s8.
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <a d'>8
                         }
                     }
                     {
                         {
                             s8
-                            s4
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <c' ef'>8
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            <c' bf' fs'' d'''>16
+                        }
+                    }
+                    {
+                        {
+                            s16
+                        }
+                        {
+                            R1 * 1/2
                         }
                     }
                 }
