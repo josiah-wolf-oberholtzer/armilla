@@ -75,6 +75,15 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     ### PUBLIC METHODS ###
 
+    def postprocess_breath_marks(self, score):
+        breath_mark = indicatortools.BreathMark()
+        leaves = score['Viola 1 Bowing Voice'].select_leaves()
+        if isinstance(leaves[-1], scoretools.Note):
+            attach(breath_mark, leaves[-1], name='breath_mark')
+        leaves = score['Viola 2 Bowing Voice'].select_leaves()
+        if isinstance(leaves[-1], scoretools.Note):
+            attach(breath_mark, leaves[-1], name='breath_mark')
+
     def postprocess_grace_containers(self, score):
         stop_trill_span = consort.StopTrillSpan()
         for leaf in iterate(score).by_class(scoretools.Leaf):
@@ -139,6 +148,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
                 'bow_contact_spanner',
                 'bow_contact_point',
                 'bow_motion_technique',
+                'breath_mark',
                 ),
             new_voice_name=voice.name.replace('Bowing', 'RH Bow Contact'),
             new_context_name='BowContactVoice',
@@ -178,6 +188,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         self.attach_tempo(score)
         self.attach_rehearsal_mark(score)
         self.postprocess_grace_containers(score)
+        self.postprocess_breath_marks(score)
         self.postprocess_right_hand_staff(score['Viola 1 Bowing Staff'])
         self.postprocess_right_hand_staff(score['Viola 2 Bowing Staff'])
         self.postprocess_left_hand_staff(score['Viola 1 Fingering Staff'])

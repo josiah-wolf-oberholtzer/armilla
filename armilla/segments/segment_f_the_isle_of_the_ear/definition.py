@@ -22,6 +22,7 @@ segment_maker = armilla.ArmillaSegmentMaker(
 ### MUSIC SPECIFIERS ###
 
 rh_jete = armilla.materials.right_hand_jete_music_specifier
+lh_glissandi = armilla.materials.left_hand_glissandi_music_specifier,
 rh_stasis = armilla.materials.right_hand_stasis_music_specifier
 lh_stasis = armilla.materials.left_hand_stasis_music_specifier
 
@@ -51,8 +52,8 @@ segment_maker.add_setting(
         ),
     viola_1_rh=rh_jete,
     viola_2_rh=rh_jete,
-    viola_1_lh=consort.MusicSpecifier(),
-    viola_2_lh=consort.MusicSpecifier(),
+    viola_1_lh=lh_glissandi,
+    viola_2_lh=lh_glissandi,
     )
 
 segment_maker.add_setting(
@@ -69,6 +70,6 @@ segment_maker.add_setting(
         ),
     viola_1_rh=rh_jete,
     viola_2_rh=rh_jete,
-    viola_1_lh=consort.MusicSpecifier(),
-    viola_2_lh=consort.MusicSpecifier(),
+    viola_1_lh=lh_glissandi,
+    viola_2_lh=lh_glissandi,
     )

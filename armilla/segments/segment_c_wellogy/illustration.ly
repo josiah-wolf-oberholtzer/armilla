@@ -935,7 +935,22 @@
                     }
                     {
                         {
-                            c'8 ~
+                            \afterGrace
+                            a8
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    g'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                         }
                         {
                             c'4
@@ -951,7 +966,7 @@
                     }
                     {
                         {
-                            c'8
+                            a8
                         }
                     }
                     {
@@ -964,7 +979,7 @@
                     }
                     {
                         {
-                            c'8
+                            gqs8
                         }
                     }
                     {
@@ -1002,7 +1017,7 @@
                     }
                     {
                         {
-                            c'4
+                            a4
                         }
                     }
                     {
@@ -1062,7 +1077,7 @@
                     }
                     {
                         {
-                            c'8
+                            a8
                         }
                         {
                             c'4
@@ -1078,7 +1093,7 @@
                     }
                     {
                         {
-                            c'8
+                            a8
                         }
                     }
                     {
@@ -1091,7 +1106,7 @@
                     }
                     {
                         {
-                            c'8
+                            gqs8
                         }
                     }
                     {
@@ -1118,7 +1133,7 @@
                     }
                     {
                         {
-                            c'4
+                            a4
                         }
                     }
                     {
@@ -1790,7 +1805,7 @@
                                             3
                                             5
                                 }
-                            c'16
+                            c'16 \breathe
                         }
                     }
                 }
@@ -2051,7 +2066,7 @@
                     }
                     {
                         {
-                            c'8 ~
+                            a8
                         }
                         {
                             c'4
@@ -2065,14 +2080,14 @@
                     }
                     {
                         {
-                            c'8 ~
+                            aqs8
                         }
                         {
-                            c'8 ~
-                        }
-                        {
-                            c'8 ~
                             c'8
+                        }
+                        {
+                            a8 ~
+                            a8
                         }
                     }
                     {
@@ -2129,7 +2144,7 @@
                     }
                     {
                         {
-                            c'8
+                            a8
                         }
                     }
                     {
@@ -2168,7 +2183,7 @@
                     }
                     {
                         {
-                            c'8
+                            a8 \glissando
                         }
                         {
                             c'4
@@ -2182,14 +2197,15 @@
                     }
                     {
                         {
-                            c'8
+                            aqs8 \glissando
                         }
                         {
-                            c'8
+                            c'8 \glissando
                         }
                         {
-                            c'8
-                            c'8
+                            a8
+                            \parenthesize
+                            a8
                         }
                     }
                     {
@@ -2233,7 +2249,7 @@
                     }
                     {
                         {
-                            c'8
+                            a8
                         }
                     }
                     {
