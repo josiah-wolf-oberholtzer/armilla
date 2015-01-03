@@ -6,7 +6,7 @@ from abjad.tools import selectortools
 from abjad.tools import spannertools
 
 
-harmonic_fourth_trill = spannertools.ComplexTrillSpanner(
+harmonic_fourth_trill = consort.ConsortTrillSpanner(
     interval='+P4',
     overrides={
         'trill_pitch_head__stencil': schemetools.Scheme(
@@ -19,7 +19,7 @@ harmonic_fourth_trill = spannertools.ComplexTrillSpanner(
         },
     )
 
-harmonic_third_trill = spannertools.ComplexTrillSpanner(
+harmonic_third_trill = consort.ConsortTrillSpanner(
     interval='+m3',
     overrides={
         'trill_pitch_head__stencil': schemetools.Scheme(
@@ -32,7 +32,7 @@ harmonic_third_trill = spannertools.ComplexTrillSpanner(
         },
     )
 
-stopped_third_trill = spannertools.ComplexTrillSpanner(
+stopped_third_trill = consort.ConsortTrillSpanner(
     interval='+m3',
     )
 
@@ -49,10 +49,10 @@ intermittent_trills = consort.AttachmentExpression(
         [:-1]\
         .with_callback(consort.AfterGraceSelectorCallback())\
         .by_counts(
-            [-3, 4, -2, 3, -1, 4],
+            [-3, 2, -2, 1, -1, 2, -1, 1],
             cyclic=True,
-            overhang=True,
-            fuse_overhang=True,
+            overhang=False,
+            fuse_overhang=False,
             rotate=True,
             ),
     )

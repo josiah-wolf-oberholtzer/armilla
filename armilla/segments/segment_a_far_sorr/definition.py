@@ -2,6 +2,7 @@
 import armilla
 import consort
 from abjad import new
+from abjad.tools import durationtools
 from abjad.tools import indicatortools
 
 
@@ -9,19 +10,12 @@ from abjad.tools import indicatortools
 
 segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=90,
-    discard_final_silence=False,
+    discard_final_silence=True,
     name='Far Sorr',
     rehearsal_mark='A',
     repeat=False,
     tempo=indicatortools.Tempo((1, 4), 36),
     )
-
-### MUSIC SPECIFIERS ###
-
-rh_overpressure = armilla.materials.right_hand_overpressure_music_specifier
-rh_pizzicati = armilla.materials.right_hand_pizzicati_music_specifier
-lh_diads = armilla.materials.left_hand_diads_music_specifier
-lh_pizzicati = armilla.materials.left_hand_pizzicati_music_specifier
 
 ### ATTACHMENTS ###
 
@@ -29,6 +23,21 @@ intermittent_accents = armilla.materials.intermittent_accents
 intermittent_circular = armilla.materials.intermittent_circular
 intermittent_glissandi = armilla.materials.intermittent_glissandi
 intermittent_tremoli = armilla.materials.intermittent_tremoli
+
+### MUSIC SPECIFIERS ###
+
+rh_overpressure = new(
+    armilla.materials.right_hand_overpressure_music_specifier,
+    minimum_phrase_duration=durationtools.Duration(1, 4),
+    )
+
+lh_diads = new(
+    armilla.materials.left_hand_diads_music_specifier,
+    minimum_phrase_duration=durationtools.Duration(1, 4),
+    )
+
+rh_pizzicati = armilla.materials.right_hand_pizzicati_music_specifier
+lh_pizzicati = armilla.materials.left_hand_pizzicati_music_specifier
 
 ### OVERPRESSURE ###
 

@@ -519,7 +519,16 @@
                     }
                     {
                         {
-                            c'4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            c'4 \startTrillSpan f'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                             a4
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
@@ -543,7 +552,7 @@
                             c'4
                         }
                         {
-                            c'4.
+                            af4.
                         }
                         {
                             d'2
@@ -556,10 +565,12 @@
                     }
                     {
                         \times 2/3 {
-                            c'4
-                            c'4
+                            \pitchedTrill
+                            c'4 \startTrillSpan ef'
+                            <> \stopTrillSpan
+                            a4
                             \afterGrace
-                            aqs4
+                            cqs'4
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -605,11 +616,10 @@
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             cqs'4
-                            c'4
+                            c'4 \glissando
                         }
                         {
-                            \parenthesize
-                            c'4. \glissando
+                            af4. \glissando
                         }
                         {
                             d'2
@@ -622,10 +632,9 @@
                     }
                     {
                         \times 2/3 {
-                            c'4
-                            \parenthesize
                             c'4 \glissando
-                            aqs4
+                            a4 \glissando
+                            cqs'4
                         }
                         {
                             c'8
@@ -1040,9 +1049,11 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            a4
+                            \pitchedTrill
+                            a4 \startTrillSpan c'
+                            <> \stopTrillSpan
                             \afterGrace
-                            a4
+                            c'4
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1076,7 +1087,16 @@
                     }
                     {
                         {
-                            af4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            af4 \startTrillSpan df'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                         }
                         {
                             \afterGrace
@@ -1122,7 +1142,7 @@
                             a8
                         }
                         {
-                            a2
+                            c'2
                         }
                     }
                     {
@@ -1140,9 +1160,8 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            a4
-                            \parenthesize
-                            a4
+                            a4 \glissando
+                            c'4
                         }
                         {
                             a2
@@ -1164,11 +1183,10 @@
                             g4
                         }
                         {
-                            a8
+                            a8 \glissando
                         }
                         {
-                            \parenthesize
-                            a2
+                            c'2
                         }
                     }
                     {

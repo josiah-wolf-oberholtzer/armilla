@@ -26,43 +26,7 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                     chord_expr=pitchtools.IntervalSegment(
                         (
                             pitchtools.NumberedInterval(0),
-                            pitchtools.NumberedInterval(3),
-                            ),
-                        item_class=pitchtools.NumberedInterval,
-                        ),
-                    ),
-                consort.tools.ChordExpression(
-                    chord_expr=pitchtools.IntervalSegment(
-                        (
-                            pitchtools.NumberedInterval(0),
-                            pitchtools.NumberedInterval(3),
-                            ),
-                        item_class=pitchtools.NumberedInterval,
-                        ),
-                    ),
-                consort.tools.ChordExpression(
-                    chord_expr=pitchtools.IntervalSegment(
-                        (
-                            pitchtools.NumberedInterval(0),
-                            pitchtools.NumberedInterval(3),
-                            ),
-                        item_class=pitchtools.NumberedInterval,
-                        ),
-                    ),
-                consort.tools.ChordExpression(
-                    chord_expr=pitchtools.IntervalSegment(
-                        (
-                            pitchtools.NumberedInterval(0),
-                            pitchtools.NumberedInterval(3),
-                            ),
-                        item_class=pitchtools.NumberedInterval,
-                        ),
-                    ),
-                consort.tools.ChordExpression(
-                    chord_expr=pitchtools.IntervalSegment(
-                        (
-                            pitchtools.NumberedInterval(0),
-                            pitchtools.NumberedInterval(3),
+                            pitchtools.NumberedInterval(8),
                             ),
                         item_class=pitchtools.NumberedInterval,
                         ),
@@ -72,6 +36,96 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                         (
                             pitchtools.NumberedInterval(0),
                             pitchtools.NumberedInterval(5),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(8),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(8),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(5),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(8),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(5),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(5),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(10),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(8),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(8),
+                            ),
+                        item_class=pitchtools.NumberedInterval,
+                        ),
+                    ),
+                consort.tools.ChordExpression(
+                    chord_expr=pitchtools.IntervalSegment(
+                        (
+                            pitchtools.NumberedInterval(0),
+                            pitchtools.NumberedInterval(10),
                             ),
                         item_class=pitchtools.NumberedInterval,
                         ),
@@ -103,7 +157,7 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                         pitchtools.NamedPitch("c'"),
                         pitchtools.NamedPitch("c'"),
                         pitchtools.NamedPitch("c'"),
-                        pitchtools.NamedPitch('af'),
+                        pitchtools.NamedPitch('gs'),
                         pitchtools.NamedPitch('g'),
                         pitchtools.NamedPitch("c'"),
                         ),
@@ -119,7 +173,7 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                         pitchtools.NamedPitch("c'"),
                         pitchtools.NamedPitch('a'),
                         pitchtools.NamedPitch('g'),
-                        pitchtools.NamedPitch('gf'),
+                        pitchtools.NamedPitch('fs'),
                         pitchtools.NamedPitch('a'),
                         pitchtools.NamedPitch('a'),
                         pitchtools.NamedPitch("c'"),
@@ -129,6 +183,30 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                     ),
                 ),
             ratio=mathtools.Ratio(1, 1, 1),
+            ),
+        pitch_operation_specifier=consort.tools.PitchOperationSpecifier(
+            pitch_operations=(
+                None,
+                consort.tools.PitchOperation(
+                    operators=(
+                        pitchtools.Rotation(
+                            index=1,
+                            transpose=True,
+                            ),
+                        ),
+                    ),
+                None,
+                consort.tools.PitchOperation(
+                    operators=(
+                        pitchtools.Rotation(
+                            index=1,
+                            transpose=True,
+                            ),
+                        ),
+                    ),
+                None,
+                ),
+            ratio=mathtools.Ratio(2, 1, 2, 2, 1),
             ),
         ),
     rhythm_maker=rhythmmakertools.NoteRhythmMaker(

@@ -18,6 +18,10 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 72),
     )
 
+### ATTACHMENTS ###
+
+intermittent_trills = armilla.materials.intermittent_trills
+
 ### MUSIC SPECIFIERS ###
 
 rh_circular = new(
@@ -39,10 +43,11 @@ lh_glissandi = new(
         pitch_segments=(
             "a c' a a c'",
             "c' ef' g c' c' ef'",
-            "a' c'' a' c'' c''",
+            "a' c'' a' c'' c'' a''",
             ),
         ratio=(1, 1, 2),
         ),
+    attachment_handler__trill_spanner=intermittent_trills,
     )
 
 ### SETTINGS ###

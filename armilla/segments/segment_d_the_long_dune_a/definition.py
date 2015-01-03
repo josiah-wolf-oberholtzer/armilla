@@ -18,12 +18,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 36),
     )
 
-### MUSIC SPECIFIERS ###
-
-rh_overpressure = armilla.materials.right_hand_overpressure_music_specifier
-lh_diads = armilla.materials.left_hand_diads_music_specifier
-lh_dietro = armilla.materials.left_hand_dietro_music_specifier
-
 ### ATTACHMENTS ###
 
 dietro_ponticello = consort.AttachmentExpression(
@@ -41,6 +35,11 @@ intermittent_accents = armilla.materials.intermittent_accents
 intermittent_circular = armilla.materials.intermittent_circular
 intermittent_tremoli = armilla.materials.intermittent_tremoli
 
+### MUSIC SPECIFIERS ###
+
+rh_overpressure = armilla.materials.right_hand_overpressure_music_specifier
+lh_diads = armilla.materials.left_hand_diads_music_specifier
+lh_dietro = armilla.materials.left_hand_dietro_music_specifier
 
 ### OVERPRESSURE ###
 

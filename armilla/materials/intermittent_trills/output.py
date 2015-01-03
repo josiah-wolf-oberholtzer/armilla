@@ -5,14 +5,13 @@ from abjad.tools import pitchtools
 from abjad.tools import schemetools
 from abjad.tools import scoretools
 from abjad.tools import selectortools
-from abjad.tools import spannertools
 import consort
 
 
 intermittent_trills = consort.tools.AttachmentExpression(
     attachments=datastructuretools.TypedList(
         [
-            spannertools.ComplexTrillSpanner(
+            consort.tools.ConsortTrillSpanner(
                 overrides={
                     'trill_pitch_head__stencil': schemetools.Scheme(
                         'ly:text-interface::print'
@@ -31,7 +30,7 @@ intermittent_trills = consort.tools.AttachmentExpression(
                     },
                 interval=pitchtools.NamedInterval('+P4'),
                 ),
-            spannertools.ComplexTrillSpanner(
+            consort.tools.ConsortTrillSpanner(
                 overrides={
                     'trill_pitch_head__stencil': schemetools.Scheme(
                         'ly:text-interface::print'
@@ -50,7 +49,7 @@ intermittent_trills = consort.tools.AttachmentExpression(
                     },
                 interval=pitchtools.NamedInterval('+m3'),
                 ),
-            spannertools.ComplexTrillSpanner(
+            consort.tools.ConsortTrillSpanner(
                 overrides={
                     'trill_pitch_head__stencil': schemetools.Scheme(
                         'ly:text-interface::print'
@@ -69,10 +68,10 @@ intermittent_trills = consort.tools.AttachmentExpression(
                     },
                 interval=pitchtools.NamedInterval('+P4'),
                 ),
-            spannertools.ComplexTrillSpanner(
+            consort.tools.ConsortTrillSpanner(
                 interval=pitchtools.NamedInterval('+m3'),
                 ),
-            spannertools.ComplexTrillSpanner(
+            consort.tools.ConsortTrillSpanner(
                 interval=pitchtools.NamedInterval('+m3'),
                 ),
             ]
@@ -89,12 +88,12 @@ intermittent_trills = consort.tools.AttachmentExpression(
             consort.tools.AfterGraceSelectorCallback(),
             selectortools.CountsSelectorCallback(
                 counts=datastructuretools.CyclicTuple(
-                    [-3, 4, -2, 3, -1, 4]
+                    [-3, 2, -2, 1, -1, 2, -1, 1]
                     ),
                 cyclic=True,
-                fuse_overhang=True,
+                fuse_overhang=False,
                 nonempty=False,
-                overhang=True,
+                overhang=False,
                 rotate=True,
                 ),
             ),

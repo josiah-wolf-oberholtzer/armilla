@@ -105,10 +105,6 @@
             {
                 s1 * 3/8
             }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
         }
         \tag #'viola-1
         \context StringPerformerGroup = "Viola 1 Performer Group" \with {
@@ -572,9 +568,6 @@
                         }
                         {
                             R1 * 3/8
-                        }
-                        {
-                            R1 * 1/2
                         }
                     }
                 }
@@ -1316,9 +1309,6 @@
                         {
                             R1 * 3/8
                         }
-                        {
-                            R1 * 1/2
-                        }
                     }
                 }
                 \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
@@ -1532,9 +1522,6 @@
                         {
                             R1 * 3/8
                         }
-                        {
-                            R1 * 1/2
-                        }
                     }
                 }
                 \context Dynamics = "Viola 1 RH Dynamics Voice" {
@@ -1708,9 +1695,6 @@
                         {
                             R1 * 3/8
                         }
-                        {
-                            R1 * 1/2
-                        }
                     }
                 }
             >>
@@ -1732,35 +1716,35 @@
                     }
                     {
                         {
-                            <c' ef'>2
+                            <c' af'>2
                         }
                         {
-                            <a c'>8
+                            <a f'>8
                         }
                         {
-                            <c' f'>2
+                            <c' af'>2
                         }
                         {
-                            <a c'>8
+                            <a d'>8
                         }
                         {
-                            <g bf>4 ~
-                            <g bf>4.
+                            <g f'>4 ~
+                            <g f'>4.
                         }
                         {
-                            <a c'>4
+                            <a f'>4
                         }
                         {
-                            <c' f'>4
+                            <c' bf'>4
                         }
                         {
-                            <a c'>4
+                            <a f'>4
                         }
                         {
-                            <c' ef'>4.
+                            <c' af'>4.
                         }
                         {
-                            <a c'>4
+                            <a f'>4
                         }
                     }
                     {
@@ -1778,17 +1762,17 @@
                     }
                     {
                         {
-                            <a c'>2
+                            <a f'>2
                         }
                         {
-                            <c' ef'>2 ~
-                            <c' ef'>8
+                            <c' f'>2 ~
+                            <c' f'>8
                         }
                         {
-                            <af b>4.
+                            <af e'>4.
                         }
                         {
-                            <c' ef'>2
+                            <c' af'>2
                         }
                     }
                     {
@@ -1798,23 +1782,23 @@
                     }
                     {
                         {
-                            <aqf bqs>2
+                            <aqf dqf'>2
                         }
                         {
-                            <g c'>8
+                            <g ef'>8
                         }
                         {
-                            <c' ef'>2
+                            <c' f'>2
                         }
                         {
-                            <a c'>8
+                            <a d'>8
                         }
                         {
-                            <c' ef'>8 ~
-                            <c' ef'>4
+                            <c' bf'>8 ~
+                            <c' bf'>4
                         }
                         {
-                            <af b>2
+                            <a f'>2
                         }
                     }
                     {
@@ -1832,34 +1816,34 @@
                     }
                     {
                         {
-                            <c' ef'>2
+                            <fs d'>2
                         }
                         {
-                            <a c'>8
+                            <a d'>8
                         }
                         {
-                            <c' ef'>4 ~
-                            <c' ef'>4.
+                            <fs d'>4 ~
+                            <fs d'>4.
                         }
                         {
-                            <a d'>2.
+                            <a f'>2.
                         }
                         {
-                            <g bf>8
+                            <fs b>8
                         }
                         {
-                            <fs a>8 ~
-                            <fs a>4
+                            <g f'>8 ~
+                            <g f'>4
                         }
                         {
-                            <fs a>8
+                            <fs d'>8
                         }
                         {
-                            <aqs cqs'>8 ~
-                            <aqs cqs'>4
+                            <aqs fqs'>8 ~
+                            <aqs fqs'>4
                         }
                         {
-                            <c' ef'>4
+                            <a g'>4
                         }
                     }
                     {
@@ -1871,14 +1855,6 @@
                             \once \override Staff.StaffSymbol.line-count = 1
                             \startStaff
                             R1 * 3/8
-                            \stopStaff
-                            \startStaff
-                        }
-                        {
-                            \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
-                            \startStaff
-                            R1 * 1/2
                             \stopStaff
                             \startStaff
                         }
@@ -1895,35 +1871,35 @@
                     }
                     {
                         {
-                            <c' ef'>2
+                            <c' af'>2
                         }
                         {
-                            <a c'>8
+                            <a f'>8
                         }
                         {
-                            <c' f'>2
+                            <c' af'>2
                         }
                         {
-                            <a c'>8
+                            <a d'>8
                         }
                         {
-                            <g bf>4
-                            <g bf>4.
+                            <g f'>4
+                            <g f'>4.
                         }
                         {
-                            <a c'>4
+                            <a f'>4
                         }
                         {
-                            <c' f'>4
+                            <c' bf'>4
                         }
                         {
-                            <a c'>4
+                            <a f'>4
                         }
                         {
-                            <c' ef'>4.
+                            <c' af'>4.
                         }
                         {
-                            <a c'>4
+                            <a f'>4
                         }
                     }
                     {
@@ -1936,22 +1912,22 @@
                     }
                     {
                         {
-                            <a c'>2 \glissando
+                            <a f'>2 \glissando
                         }
                         {
-                            <c' ef'>2
+                            <c' f'>2
                             <
                                 \parenthesize
                                 c'
                                 \parenthesize
-                                ef'
+                                f'
                             >8 \glissando
                         }
                         {
-                            <af b>4.
+                            <af e'>4.
                         }
                         {
-                            <c' ef'>2
+                            <c' af'>2
                         }
                     }
                     {
@@ -1961,23 +1937,23 @@
                     }
                     {
                         {
-                            <aqf bqs>2 \glissando
+                            <aqf dqf'>2 \glissando
                         }
                         {
-                            <g c'>8 \glissando
+                            <g ef'>8 \glissando
                         }
                         {
-                            <c' ef'>2
+                            <c' f'>2
                         }
                         {
-                            <a c'>8
+                            <a d'>8
                         }
                         {
-                            <c' ef'>8
-                            <c' ef'>4
+                            <c' bf'>8
+                            <c' bf'>4
                         }
                         {
-                            <af b>2
+                            <a f'>2
                         }
                     }
                     {
@@ -1990,49 +1966,44 @@
                     }
                     {
                         {
-                            <c' ef'>2 \glissando
+                            <fs d'>2 \glissando
                         }
                         {
-                            <a c'>8 \glissando
+                            <a d'>8 \glissando
                         }
                         {
-                            <c' ef'>4
-                            <c' ef'>4.
+                            <fs d'>4
+                            <fs d'>4.
                         }
                         {
-                            <a d'>2. \glissando
+                            <a f'>2. \glissando
                         }
                         {
-                            <g bf>8 \glissando
+                            <fs b>8 \glissando
                         }
                         {
-                            <fs a>8
+                            <g f'>8
                             <
                                 \parenthesize
-                                fs
+                                g
                                 \parenthesize
-                                a
-                            >4
+                                f'
+                            >4 \glissando
                         }
                         {
-                            <
-                                \parenthesize
-                                fs
-                                \parenthesize
-                                a
-                            >8 \glissando
+                            <fs d'>8 \glissando
                         }
                         {
-                            <aqs cqs'>8
+                            <aqs fqs'>8
                             <
                                 \parenthesize
                                 aqs
                                 \parenthesize
-                                cqs'
+                                fqs'
                             >4
                         }
                         {
-                            <c' ef'>4
+                            <a g'>4
                         }
                     }
                     {
@@ -2041,9 +2012,6 @@
                         }
                         {
                             R1 * 3/8
-                        }
-                        {
-                            R1 * 1/2
                         }
                     }
                 }
@@ -2499,21 +2467,8 @@
                     {
                         {
                             s8.
-                            s8
+                            s4
                         }
-                    }
-                    {
-                        {
-                            c'16 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            M.S.T.
-                                }
-                            c'16
-                        }
-                    }
-                    {
                         {
                             s8
                         }
@@ -2523,8 +2478,9 @@
                             c'16 ^ \markup {
                                 \vcenter
                                     \italic
-                                        \caps
-                                            Pizz.
+                                        \parenthesize
+                                            \caps
+                                                Pizz.
                                 }
                         }
                     }
@@ -2533,21 +2489,8 @@
                             s16
                             s8
                         }
-                    }
-                    {
                         {
-                            c'16 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            S.T.
-                                }
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            s8
+                            s4
                         }
                     }
                     {
@@ -2555,17 +2498,15 @@
                             c'16 ^ \markup {
                                 \vcenter
                                     \italic
-                                        \caps
-                                            Pizz.
+                                        \parenthesize
+                                            \caps
+                                                Pizz.
                                 }
                         }
                     }
                     {
                         {
                             s16
-                        }
-                        {
-                            R1 * 1/2
                         }
                     }
                 }
@@ -3245,34 +3186,8 @@
                     {
                         {
                             s8.
-                            s8
+                            s4
                         }
-                    }
-                    {
-                        {
-                            \once \override NoteHead.Y-offset = 2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            1
-                                            1
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = -2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            0
-                                            1
-                                }
-                            c'16
-                        }
-                    }
-                    {
                         {
                             s8
                         }
@@ -3288,34 +3203,8 @@
                             s16
                             s8
                         }
-                    }
-                    {
                         {
-                            \once \override NoteHead.Y-offset = 1.5
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            7
-                                            8
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = 2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            1
-                                            1
-                                }
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            s8
+                            s4
                         }
                     }
                     {
@@ -3327,9 +3216,6 @@
                     {
                         {
                             s16
-                        }
-                        {
-                            R1 * 1/2
                         }
                     }
                 }
@@ -3532,17 +3418,8 @@
                     {
                         {
                             r8.
-                            r8
+                            r4
                         }
-                    }
-                    {
-                        {
-                            c'16 [
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
-                        }
-                    }
-                    {
                         {
                             r8
                         }
@@ -3557,17 +3434,8 @@
                             r16
                             r8
                         }
-                    }
-                    {
                         {
-                            c'16 [
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
-                        }
-                    }
-                    {
-                        {
-                            r8
+                            r4
                         }
                     }
                     {
@@ -3578,9 +3446,6 @@
                     {
                         {
                             r16
-                        }
-                        {
-                            R1 * 1/2
                         }
                     }
                 }
@@ -3768,16 +3633,8 @@
                     {
                         {
                             s8.
-                            s8
+                            s4
                         }
-                    }
-                    {
-                        {
-                            c'16 \f
-                            c'16
-                        }
-                    }
-                    {
                         {
                             s8
                         }
@@ -3792,16 +3649,8 @@
                             s16
                             s8
                         }
-                    }
-                    {
                         {
-                            c'16 \ppp
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            s8
+                            s4
                         }
                     }
                     {
@@ -3812,9 +3661,6 @@
                     {
                         {
                             s16
-                        }
-                        {
-                            R1 * 1/2
                         }
                     }
                 }
@@ -3824,111 +3670,111 @@
                 \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
                     {
                         {
-                            <a c'>2
-                        }
-                        {
-                            <c' ef'>2 ~
-                            <c' ef'>8
-                        }
-                        {
-                            <aqs cqs'>2 ~
-                            <aqs cqs'>8
-                        }
-                        {
-                            <a c'>2.
-                        }
-                        {
-                            <cqs' eqf'>8
-                        }
-                    }
-                    {
-                        {
-                            r8
-                            r4
-                        }
-                    }
-                    {
-                        {
-                            <c' ef'>2 ~
-                            <c' ef'>8
-                        }
-                        {
-                            <aqs cqs'>2 ~
-                            <aqs cqs'>8
-                        }
-                    }
-                    {
-                        {
-                            r4
-                        }
-                    }
-                    {
-                        {
-                            <c' f'>8
-                        }
-                        {
-                            <af b>2
-                        }
-                        {
-                            <g bf>2 ~
-                            <g bf>8
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            <c' ef'>4
-                        }
-                        {
-                            <a c'>2
-                        }
-                        {
-                            <cqs' eqf'>8
-                        }
-                        {
-                            <c' f'>2
-                        }
-                        {
-                            <af b>2 ~
-                            <af b>8
-                        }
-                        {
-                            <g bf>2
-                        }
-                        {
-                            <c' ef'>8
-                        }
-                    }
-                    {
-                        {
-                            r8
-                            r4
-                        }
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            <cqs' eqf'>2
+                            <a f'>2
                         }
                         {
                             <c' f'>2 ~
                             <c' f'>8
                         }
                         {
-                            <a c'>4. ~
-                            <a c'>4
+                            <aqs dqs'>2 ~
+                            <aqs dqs'>8
                         }
                         {
-                            <cqs' eqf'>8
+                            <a d'>2.
                         }
                         {
-                            <c' ef'>2
+                            <cqs' aqf'>8
+                        }
+                    }
+                    {
+                        {
+                            r8
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            <c' f'>2 ~
+                            <c' f'>8
+                        }
+                        {
+                            <gqf bqs>2 ~
+                            <gqf bqs>8
+                        }
+                    }
+                    {
+                        {
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            <a f'>8
+                        }
+                        {
+                            <f bf>2
+                        }
+                        {
+                            <g c'>2 ~
+                            <g c'>8
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <c' bf'>4
+                        }
+                        {
+                            <a f'>2
+                        }
+                        {
+                            <cqs' aqf'>8
+                        }
+                        {
+                            <c' bf'>2
+                        }
+                        {
+                            <af e'>2 ~
+                            <af e'>8
+                        }
+                        {
+                            <af cs'>2
+                        }
+                        {
+                            <f cs'>8
+                        }
+                    }
+                    {
+                        {
+                            r8
+                            r4
+                        }
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <gqf dqs'>2
+                        }
+                        {
+                            <fs e'>2 ~
+                            <fs e'>8
+                        }
+                        {
+                            <a f'>4. ~
+                            <a f'>4
+                        }
+                        {
+                            <gqf bqs>8
+                        }
+                        {
+                            <fs b>2
                         }
                     }
                     {
@@ -3964,30 +3810,20 @@
                     {
                         {
                             <f ef' b' g''>16
-                            \clef "alto"
                         }
                     }
                     {
                         {
                             r8.
-                            r8
+                            r4
                         }
-                    }
-                    {
-                        {
-                            <a d'>8
-                        }
-                    }
-                    {
                         {
                             r8
                         }
                     }
                     {
                         {
-                            \clef "treble"
                             <fs e' c'' gs''>16
-                            \clef "alto"
                         }
                     }
                     {
@@ -3995,20 +3831,12 @@
                             r16
                             r8
                         }
-                    }
-                    {
                         {
-                            <c' ef'>8
+                            r4
                         }
                     }
                     {
                         {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            \clef "treble"
                             <c' bf' fs'' d'''>16
                             \clef "alto"
                         }
@@ -4017,67 +3845,59 @@
                         {
                             r16
                         }
-                        {
-                            \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
-                            \startStaff
-                            R1 * 1/2
-                            \stopStaff
-                            \startStaff
-                        }
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
                     {
                         {
-                            <a c'>2
+                            <a f'>2
                         }
                         {
-                            <c' ef'>2
-                            <c' ef'>8
-                        }
-                        {
-                            <aqs cqs'>2
-                            <aqs cqs'>8
-                        }
-                        {
-                            <a c'>2.
-                        }
-                        {
-                            <cqs' eqf'>8
-                        }
-                    }
-                    {
-                        {
-                            s8
-                            s4
-                        }
-                    }
-                    {
-                        {
-                            <c' ef'>2
-                            <c' ef'>8
-                        }
-                        {
-                            <aqs cqs'>2
-                            <aqs cqs'>8
-                        }
-                    }
-                    {
-                        {
-                            s4
-                        }
-                    }
-                    {
-                        {
+                            <c' f'>2
                             <c' f'>8
                         }
                         {
-                            <af b>2
+                            <aqs dqs'>2
+                            <aqs dqs'>8
                         }
                         {
-                            <g bf>2
-                            <g bf>8
+                            <a d'>2.
+                        }
+                        {
+                            <cqs' aqf'>8
+                        }
+                    }
+                    {
+                        {
+                            s8
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            <c' f'>2
+                            <c' f'>8
+                        }
+                        {
+                            <gqf bqs>2
+                            <gqf bqs>8
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            <a f'>8
+                        }
+                        {
+                            <f bf>2
+                        }
+                        {
+                            <g c'>2
+                            <g c'>8
                         }
                     }
                     {
@@ -4087,26 +3907,26 @@
                     }
                     {
                         {
-                            <c' ef'>4
+                            <c' bf'>4
                         }
                         {
-                            <a c'>2
+                            <a f'>2
                         }
                         {
-                            <cqs' eqf'>8
+                            <cqs' aqf'>8
                         }
                         {
-                            <c' f'>2
+                            <c' bf'>2
                         }
                         {
-                            <af b>2
-                            <af b>8
+                            <af e'>2
+                            <af e'>8
                         }
                         {
-                            <g bf>2
+                            <af cs'>2
                         }
                         {
-                            <c' ef'>8
+                            <f cs'>8
                         }
                     }
                     {
@@ -4120,26 +3940,26 @@
                     }
                     {
                         {
-                            <cqs' eqf'>2 \glissando
+                            <gqf dqs'>2 \glissando
                         }
                         {
-                            <c' f'>2
+                            <fs e'>2
                             <
                                 \parenthesize
-                                c'
+                                fs
                                 \parenthesize
-                                f'
+                                e'
                             >8
                         }
                         {
-                            <a c'>4.
-                            <a c'>4
+                            <a f'>4.
+                            <a f'>4
                         }
                         {
-                            <cqs' eqf'>8
+                            <gqf bqs>8
                         }
                         {
-                            <c' ef'>2
+                            <fs b>2
                         }
                     }
                     {
@@ -4179,15 +3999,8 @@
                     {
                         {
                             s8.
-                            s8
+                            s4
                         }
-                    }
-                    {
-                        {
-                            <a d'>8
-                        }
-                    }
-                    {
                         {
                             s8
                         }
@@ -4202,15 +4015,8 @@
                             s16
                             s8
                         }
-                    }
-                    {
                         {
-                            <c' ef'>8
-                        }
-                    }
-                    {
-                        {
-                            s8
+                            s4
                         }
                     }
                     {
@@ -4221,9 +4027,6 @@
                     {
                         {
                             s16
-                        }
-                        {
-                            R1 * 1/2
                         }
                     }
                 }

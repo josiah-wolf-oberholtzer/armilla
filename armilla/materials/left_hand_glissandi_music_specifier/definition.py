@@ -24,6 +24,7 @@ left_hand_glissandi_music_specifier = consort.MusicSpecifier(
         ),
     pitch_handler=consort.AbsolutePitchHandler(
         deviations=(0, 0, 0, 0, 0.5, 0),
+        forbid_repetitions=True,
         grace_expressions=(
             consort.HarmonicExpression('P4'),
             consort.HarmonicExpression('M3'),
@@ -46,7 +47,7 @@ left_hand_glissandi_music_specifier = consort.MusicSpecifier(
             duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
                 decrease_durations_monotonically=True,
                 forbidden_written_duration=durationtools.Duration(1, 4),
-                permit_meter_rewriting=False,
+                permit_meter_rewriting=True,
                 ),
             ),
         ),

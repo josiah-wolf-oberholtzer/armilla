@@ -2,6 +2,7 @@
 import armilla
 import consort
 from abjad import new
+from abjad.tools import durationtools
 from abjad.tools import indicatortools
 from abjad.tools import selectortools
 
@@ -18,11 +19,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 36),
     )
 
-### MUSIC SPECIFIERS ###
-
-rh_overpressure = armilla.materials.right_hand_overpressure_music_specifier
-lh_diads = armilla.materials.left_hand_diads_music_specifier
-
 ### ATTACHMENTS ###
 
 dynamics_a = dynamic_expressions = consort.DynamicExpression(
@@ -34,6 +30,21 @@ dynamics_b = dynamic_expressions = consort.DynamicExpression(
 intermittent_accents = armilla.materials.intermittent_accents
 intermittent_circular = armilla.materials.intermittent_circular
 intermittent_tremoli = armilla.materials.intermittent_tremoli
+
+### MUSIC SPECIFIERS ###
+
+rh_overpressure = new(
+    armilla.materials.right_hand_overpressure_music_specifier,
+    minimum_phrase_duration=durationtools.Duration(1, 4),
+    )
+
+lh_diads = new(
+    armilla.materials.left_hand_diads_music_specifier,
+    minimum_phrase_duration=durationtools.Duration(1, 4),
+    )
+
+rh_pizzicati = armilla.materials.right_hand_pizzicati_music_specifier
+lh_pizzicati = armilla.materials.left_hand_pizzicati_music_specifier
 
 ### OVERPRESSURE ###
 
@@ -108,14 +119,12 @@ segment_maker.add_setting(
 
 ### PIZZICATI ###
 
-#segment_maker.add_setting(
-#    timespan_maker=armilla.materials.sparse_timespan_maker,
-#    timespan_identifier=consort.RatioPartsExpression(
-#        parts=(1,),
-#        ratio=(5, 1),
-#        ),
-#    viola_1_rh=None,
-#    viola_2_rh=None,
-#    viola_1_lh=None,
-#    viola_2_lh=None,
-#    )
+segment_maker.add_setting(
+    timespan_maker=armilla.materials.sparse_timespan_maker,
+    timespan_identifier=consort.RatioPartsExpression(
+        parts=(1,),
+        ratio=(7, 1),
+        ),
+    viola_2_rh=rh_pizzicati,
+    viola_2_lh=lh_pizzicati,
+    )

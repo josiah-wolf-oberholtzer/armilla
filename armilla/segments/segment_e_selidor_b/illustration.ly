@@ -327,12 +327,7 @@
                             c'8 \stopTextSpan \startTextSpan
                         }
                         {
-                            c'4 \stopTextSpan ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
+                            c'4 \stopTextSpan
                         }
                         \times 2/3 {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -959,69 +954,18 @@
                     }
                     {
                         {
-                            c'4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            c'4 \startTrillSpan f'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                             \afterGrace
                             a4
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    e'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
-                            a4
-                            a4
-                        }
-                        {
-                            \afterGrace
-                            c'4.
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                s16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                        }
-                        {
-                            a4.
-                        }
-                        {
-                            d'8
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            \afterGrace
-                            gqs4.
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1043,6 +987,79 @@
                                 \revert Script #'font-size
                             }
                         }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            c'4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            a4 \startTrillSpan c'
+                            <> \stopTrillSpan
+                        }
+                        {
+                            \afterGrace
+                            \pitchedTrill
+                            c'4. \startTrillSpan ef'
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                s16 \stopTrillSpan
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    d'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
+                        }
+                        {
+                            a4.
+                        }
+                        {
+                            d'8
+                        }
+                    }
+                    {
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            \afterGrace
+                            \pitchedTrill
+                            gqs4. \startTrillSpan bqf
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    g'
+                                >16 \stopTrillSpan
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    f'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            <> \stopTrillSpan
+                        }
                         {
                             \afterGrace
                             c'4
@@ -1062,8 +1079,20 @@
                             }
                         }
                         {
-                            af4
-                            a4
+                            \once \override TrillSpanner.bound-details.left.padding = 2
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            af4 \startTrillSpan df'
+                            <> \stopTrillSpan
+                            \pitchedTrill
+                            a4 \startTrillSpan d'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                         }
                         {
                             \afterGrace
@@ -1087,9 +1116,18 @@
                             d'4
                         }
                         \times 2/3 {
-                            c'4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            c'4 \startTrillSpan ef'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                             \afterGrace
-                            c'4
+                            a4
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1110,12 +1148,19 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                            \once \override TrillSpanner.bound-details.left.padding = 2
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
                             \afterGrace
-                            c'4
+                            \pitchedTrill
+                            c'4 \startTrillSpan f'
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
+                                s16 \stopTrillSpan
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1126,12 +1171,15 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                         }
                         {
                             a8
                         }
                         {
-                            a2
+                            c'2
                         }
                     }
                     {
@@ -1141,8 +1189,10 @@
                     }
                     {
                         {
-                            c'2 ~
-                            c'8
+                            \pitchedTrill
+                            a4 ~ \startTrillSpan c'
+                            <> \stopTrillSpan
+                            a4.
                         }
                     }
                 }
@@ -1159,8 +1209,7 @@
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            a4
-                            \parenthesize
+                            c'4 \glissando
                             a4 \glissando
                         }
                         {
@@ -1196,17 +1245,15 @@
                             d'4 \glissando
                         }
                         \times 2/3 {
-                            c'4
-                            \parenthesize
-                            c'4
+                            c'4 \glissando
+                            a4
                             c'4
                         }
                         {
-                            a8
+                            a8 \glissando
                         }
                         {
-                            \parenthesize
-                            a2
+                            c'2
                         }
                     }
                     {
@@ -1216,9 +1263,9 @@
                     }
                     {
                         {
-                            c'2
+                            a4
                             \parenthesize
-                            c'8
+                            a4.
                         }
                     }
                 }
@@ -1963,10 +2010,19 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
-                            a4
-                            a4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            a4 \startTrillSpan d'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
+                            c'4
                             \afterGrace
-                            cqs'4
+                            aqs4
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1985,11 +2041,14 @@
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4
-                            a4
+                            \pitchedTrill
+                            a4 \startTrillSpan c'
+                            <> \stopTrillSpan
                         }
                         {
                             \afterGrace
-                            aqs4
+                            \pitchedTrill
+                            cqs'4 \startTrillSpan eqf'
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -1999,7 +2058,7 @@
                                     c'
                                     \tweak #'style #'harmonic
                                     g'
-                                >16
+                                >16 \stopTrillSpan
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -2010,16 +2069,22 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                            <> \stopTrillSpan
                         }
                         {
-                            c'8
+                            \once \override TrillSpanner.bound-details.left.padding = 2
+                            \pitchedTrill
+                            c'8 \startTrillSpan ef'
+                            <> \stopTrillSpan
                         }
                         {
-                            a4.
+                            \pitchedTrill
+                            a4. \startTrillSpan c'
+                            <> \stopTrillSpan
                         }
                         {
-                            a2 ~
-                            a8
+                            g2 ~
+                            g8
                         }
                     }
                     {
@@ -2029,7 +2094,16 @@
                     }
                     {
                         {
-                            d'4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            d'4 \startTrillSpan f'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                             \afterGrace
                             g4
                             {
@@ -2057,8 +2131,19 @@
                             af4.
                         }
                         {
-                            a4
-                            aqs4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            a4 \startTrillSpan d'
+                            <> \stopTrillSpan
+                            \pitchedTrill
+                            cqs'4 \startTrillSpan fqs'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                         }
                         {
                             c'2 ~
@@ -2072,8 +2157,17 @@
                     }
                     {
                         {
-                            aqs2 ~
-                            aqs8
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            aqs4 ~ \startTrillSpan dqs'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
+                            aqs4.
                         }
                     }
                 }
@@ -2081,10 +2175,9 @@
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
-                            a4
-                            \parenthesize
                             a4 \glissando
-                            cqs'4
+                            c'4 \glissando
+                            aqs4
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
@@ -2092,19 +2185,18 @@
                             a4 \glissando
                         }
                         {
-                            aqs4
+                            cqs'4
                         }
                         {
                             c'8 \glissando
                         }
                         {
-                            a4.
+                            a4. \glissando
                         }
                         {
+                            g2
                             \parenthesize
-                            a2
-                            \parenthesize
-                            a8
+                            g8
                         }
                     }
                     {
@@ -2122,7 +2214,7 @@
                         }
                         {
                             a4 \glissando
-                            aqs4 \glissando
+                            cqs'4 \glissando
                         }
                         {
                             c'2
@@ -2137,9 +2229,9 @@
                     }
                     {
                         {
-                            aqs2
+                            aqs4
                             \parenthesize
-                            aqs8
+                            aqs4.
                         }
                     }
                 }

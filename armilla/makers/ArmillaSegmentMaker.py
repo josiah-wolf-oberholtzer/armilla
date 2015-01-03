@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 from abjad import attach
+from abjad import inspect_
 from abjad import iterate
 from abjad.tools import durationtools
 from abjad.tools import indicatortools
@@ -74,6 +75,51 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     ### PUBLIC METHODS ###
 
+    def postprocess_grace_containers(self, score):
+        stop_trill_span = consort.StopTrillSpan()
+        for leaf in iterate(score).by_class(scoretools.Leaf):
+            agent = inspect_(leaf)
+            spanners = agent.get_spanners(consort.ConsortTrillSpanner)
+            if not spanners:
+                continue
+            after_graces = agent.get_grace_containers('after')
+            if not after_graces:
+                continue
+            after_grace = after_graces[0]
+            leaf = after_grace[0]
+            attach(stop_trill_span, leaf)
+
+    def postprocess_left_hand_staff(self, staff):
+        voice = staff[0]
+        finger_pitches_voice = self.copy_voice(
+            voice,
+            attachment_names=(
+                'clef_spanner',
+                'staff_lines_spanner',
+                'trill_spanner',
+                ),
+            new_voice_name=voice.name.replace('Fingering', 'LH Pitches'),
+            new_context_name='FingeringPitchesVoice',
+            )
+        finger_spanner_voice = self.copy_voice(
+            voice,
+            attachment_names=(
+                'bend_after',
+                'glissando',
+                ),
+            new_voice_name=voice.name.replace('Fingering', 'LH Spanner'),
+            new_context_name='FingeringSpannerVoice',
+            remove_grace_containers=True,
+            remove_ties=True,
+            replace_rests_with_skips=True,
+            )
+        voice_index = staff.index(voice)
+        staff[voice_index:voice_index + 1] = [
+            finger_pitches_voice,
+            finger_spanner_voice
+            ]
+        staff.is_simultaneous = True
+
     def postprocess_right_hand_staff(self, staff):
         voice = staff[0]
         string_contact_voice = self.copy_voice(
@@ -128,39 +174,10 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             ]
         staff.is_simultaneous = True
 
-    def postprocess_left_hand_staff(self, staff):
-        voice = staff[0]
-        finger_pitches_voice = self.copy_voice(
-            voice,
-            attachment_names=(
-                'clef_spanner',
-                'staff_lines_spanner',
-                ),
-            new_voice_name=voice.name.replace('Fingering', 'LH Pitches'),
-            new_context_name='FingeringPitchesVoice',
-            )
-        finger_spanner_voice = self.copy_voice(
-            voice,
-            attachment_names=(
-                'bend_after',
-                'glissando',
-                ),
-            new_voice_name=voice.name.replace('Fingering', 'LH Spanner'),
-            new_context_name='FingeringSpannerVoice',
-            remove_grace_containers=True,
-            remove_ties=True,
-            replace_rests_with_skips=True,
-            )
-        voice_index = staff.index(voice)
-        staff[voice_index:voice_index + 1] = [
-            finger_pitches_voice,
-            finger_spanner_voice
-            ]
-        staff.is_simultaneous = True
-
     def configure_score(self, score):
         self.attach_tempo(score)
         self.attach_rehearsal_mark(score)
+        self.postprocess_grace_containers(score)
         self.postprocess_right_hand_staff(score['Viola 1 Bowing Staff'])
         self.postprocess_right_hand_staff(score['Viola 2 Bowing Staff'])
         self.postprocess_left_hand_staff(score['Viola 1 Fingering Staff'])

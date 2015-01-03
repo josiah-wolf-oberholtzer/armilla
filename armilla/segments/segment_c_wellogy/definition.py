@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
 from abjad import new
-from abjad.tools import durationtools
 from abjad.tools import indicatortools
 import armilla
 import consort
@@ -17,35 +16,39 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 108),
     )
 
+### ATTACHMENTS ###
+
 ### MUSIC SPECIFIERS ###
 
 rh_jete = armilla.materials.right_hand_jete_music_specifier
-
-### ATTACHMENTS ###
+rh_stasis = armilla.materials.right_hand_stasis_music_specifier
+lh_stasis = armilla.materials.left_hand_stasis_music_specifier
 
 ### SETTINGS ###
 
-#segment_maker.add_setting(
-#    timespan_maker=new(
-#        armilla.materials.sparse_timespan_maker,
-#        playing_talea__counts=(2, 2, 2, 3, 2, 3, 4),
-#        seed=1,
-#        ),
-#    timespan_identifier=None,
-#    viola_1_rh=consort.MusicSpecifier(),
-#    viola_2_rh=consort.MusicSpecifier(),
-#    viola_1_lh=consort.MusicSpecifier(),
-#    viola_2_lh=consort.MusicSpecifier(),
-#    )
+segment_maker.add_setting(
+    timespan_maker=new(
+        armilla.materials.sustained_timespan_maker,
+        include_viola_1_inner_starts=False,
+        include_viola_2_inner_starts=False,
+        ),
+    timespan_identifier=consort.RatioPartsExpression(
+        ratio=(1, 2),
+        parts=(1,),
+        ),
+    viola_1_rh=rh_stasis,
+    viola_2_rh=rh_stasis,
+    viola_1_lh=lh_stasis,
+    viola_2_lh=lh_stasis,
+    )
 
 segment_maker.add_setting(
     timespan_maker=new(
         armilla.materials.sparse_timespan_maker,
-        padding=durationtools.Duration(1, 8),
         playing_talea__counts=(2, 1, 2, 1, 1),
         ),
     timespan_identifier=consort.RatioPartsExpression(
-        ratio=(1, 1),
+        ratio=(1, 2),
         parts=(0,),
         ),
     viola_1_rh=rh_jete,
@@ -57,13 +60,12 @@ segment_maker.add_setting(
 segment_maker.add_setting(
     timespan_maker=new(
         armilla.materials.sparse_timespan_maker,
-        padding=durationtools.Duration(1, 8),
         playing_talea__counts=(2, 1, 2, 1, 1),
         playing_groupings=(1, 1, 2),
         silence_talea__denominator=2,
         ),
     timespan_identifier=consort.RatioPartsExpression(
-        ratio=(1, 1),
+        ratio=(2, 1),
         parts=(1,),
         ),
     viola_1_rh=rh_jete,
