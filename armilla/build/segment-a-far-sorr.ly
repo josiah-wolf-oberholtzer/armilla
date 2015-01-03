@@ -132,31 +132,12 @@
                     }
                     {
                         {
-                            \once \override TextSpanner.arrow-width = 0.25
-                            \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
-                            \once \override TextSpanner.bound-details.left.text = \markup {
-                                \halign
-                                    #0
-                                    \halign
-                                        #0
-                                        \concat
-                                            {
-                                                \hspace
-                                                    #1.5
-                                                \caps
-                                                    Ord.
-                                                \hspace
-                                                    #1.5
-                                            }
+                            c'4 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \caps
+                                            D.P.
                                 }
-                            \once \override TextSpanner.bound-details.right-broken.padding = 0
-                            \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 5
-                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
-                            \once \override TextSpanner.dash-fraction = 0.25
-                            \once \override TextSpanner.dash-period = 1
-                            c'4 \startTextSpan
                             c'4
                         }
                         {
@@ -167,31 +148,7 @@
                             c'4
                         }
                         {
-                            \once \override TextSpanner.arrow-width = 0.25
-                            \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
-                            \once \override TextSpanner.bound-details.left.text = \markup {
-                                \halign
-                                    #0
-                                    \halign
-                                        #0
-                                        \concat
-                                            {
-                                                \hspace
-                                                    #1.5
-                                                \caps
-                                                    S.T.
-                                                \hspace
-                                                    #1.5
-                                            }
-                                }
-                            \once \override TextSpanner.bound-details.right-broken.padding = 0
-                            \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 5
-                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
-                            \once \override TextSpanner.dash-fraction = 0.25
-                            \once \override TextSpanner.dash-period = 1
-                            c'4. \stopTextSpan \startTextSpan
+                            c'4.
                         }
                         {
                             c'4.
@@ -200,52 +157,13 @@
                             c'8
                         }
                         {
-                            \once \override TextSpanner.arrow-width = 0.25
-                            \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
-                            \once \override TextSpanner.bound-details.left.text = \markup {
-                                \halign
-                                    #0
-                                    \halign
-                                        #0
-                                        \concat
-                                            {
-                                                \hspace
-                                                    #1.5
-                                                \caps
-                                                    M.S.T.
-                                                \hspace
-                                                    #1.5
-                                            }
-                                }
-                            \once \override TextSpanner.bound-details.right-broken.padding = 0
-                            \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 0
-                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
-                            \once \override TextSpanner.bound-details.right.text = \markup {
-                                \halign
-                                    #0
-                                    \halign
-                                        #0
-                                        \concat
-                                            {
-                                                \hspace
-                                                    #1.5
-                                                \caps
-                                                    Ord.
-                                                \hspace
-                                                    #1.5
-                                            }
-                                }
-                            \once \override TextSpanner.dash-fraction = 0.25
-                            \once \override TextSpanner.dash-period = 1
-                            c'4. \stopTextSpan \startTextSpan
+                            c'4.
                         }
                         {
                             c'4
                         }
                         {
-                            c'4. \stopTextSpan
+                            c'4.
                         }
                         {
                             c'8.
@@ -274,9 +192,8 @@
                                             {
                                                 \hspace
                                                     #1.5
-                                                \parenthesize
-                                                    \caps
-                                                        Ord.
+                                                \caps
+                                                    Ord.
                                                 \hspace
                                                     #1.5
                                             }
@@ -1716,35 +1633,39 @@
                     }
                     {
                         {
-                            <c' af'>2
+                            \clef "percussion"
+                            \override NoteHead #'style = #'cross
+                            <g b>2
                         }
                         {
-                            <a f'>8
+                            <b d'>8
                         }
                         {
-                            <c' af'>2
+                            <d' f'>2
                         }
                         {
-                            <a d'>8
+                            <g b>8
                         }
                         {
-                            <g f'>4 ~
-                            <g f'>4.
+                            <b d'>4 ~
+                            <b d'>4.
                         }
                         {
-                            <a f'>4
+                            <d' f'>4
                         }
                         {
-                            <c' bf'>4
+                            <g b>4
                         }
                         {
-                            <a f'>4
+                            <b d'>4
                         }
                         {
-                            <c' af'>4.
+                            <d' f'>4.
                         }
                         {
-                            <a f'>4
+                            <g b>4
+                            \revert NoteHead #'style
+                            \clef "alto"
                         }
                     }
                     {
@@ -1769,7 +1690,7 @@
                             <c' f'>8
                         }
                         {
-                            <af e'>4.
+                            <gs e'>4.
                         }
                         {
                             <c' af'>2
@@ -1871,35 +1792,35 @@
                     }
                     {
                         {
-                            <c' af'>2
+                            <g b>2
                         }
                         {
-                            <a f'>8
+                            <b d'>8
                         }
                         {
-                            <c' af'>2
+                            <d' f'>2
                         }
                         {
-                            <a d'>8
+                            <g b>8
                         }
                         {
-                            <g f'>4
-                            <g f'>4.
+                            <b d'>4
+                            <b d'>4.
                         }
                         {
-                            <a f'>4
+                            <d' f'>4
                         }
                         {
-                            <c' bf'>4
+                            <g b>4
                         }
                         {
-                            <a f'>4
+                            <b d'>4
                         }
                         {
-                            <c' af'>4.
+                            <d' f'>4.
                         }
                         {
-                            <a f'>4
+                            <g b>4
                         }
                     }
                     {
@@ -1924,7 +1845,7 @@
                             >8 \glissando
                         }
                         {
-                            <af e'>4.
+                            <gs e'>4.
                         }
                         {
                             <c' af'>2
@@ -2034,7 +1955,7 @@
                 \clef "percussion"
                 \context StringContactVoice = "Viola 2 RH String Contact Voice" {
                     {
-                        \times 2/3 {
+                        {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
@@ -2048,7 +1969,7 @@
                                                 \hspace
                                                     #1.5
                                                 \caps
-                                                    M.S.T.
+                                                    Ord.
                                                 \hspace
                                                     #1.5
                                             }
@@ -2060,7 +1981,6 @@
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
                             c'4 \startTextSpan
-                            c'4
                             c'4
                         }
                         {
@@ -2084,7 +2004,7 @@
                                                 \hspace
                                                     #1.5
                                                 \caps
-                                                    Ord.
+                                                    S.T.
                                                 \hspace
                                                     #1.5
                                             }
@@ -2103,7 +2023,7 @@
                                                 \hspace
                                                     #1.5
                                                 \caps
-                                                    S.T.
+                                                    M.S.T.
                                                 \hspace
                                                     #1.5
                                             }
@@ -2112,8 +2032,7 @@
                             \once \override TextSpanner.dash-period = 1
                             c'8 \stopTextSpan \startTextSpan
                         }
-                        \times 2/3 {
-                            c'4
+                        {
                             c'4
                             c'4
                         }
@@ -2136,14 +2055,15 @@
                     }
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
+                        \times 5/6 {
                             c'4 ^ \markup {
                                 \vcenter
                                     \italic
                                         \parenthesize
                                             \caps
-                                                S.T.
+                                                M.S.T.
                                 }
+                            c'4
                             c'4
                         }
                         {
@@ -2512,17 +2432,7 @@
                 }
                 \context BowContactVoice = "Viola 2 RH Bow Contact Voice" {
                     {
-                        \times 2/3 {
-                            \once \override NoteHead.Y-offset = 2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            1
-                                            1
-                                }
-                            c'4 ^\upbow \glissando
+                        {
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -2590,7 +2500,7 @@
                                 }
                             c'8 \glissando
                         }
-                        \times 2/3 {
+                        {
                             \once \override NoteHead.Y-offset = 1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -2611,6 +2521,8 @@
                                             8
                                 }
                             c'4 \glissando
+                        }
+                        {
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -2620,7 +2532,7 @@
                                             1
                                             1
                                 }
-                            c'4 ^\upbow \glissando
+                            c'4. ^\upbow \glissando
                         }
                         {
                             \once \override NoteHead.Y-offset = -2.0
@@ -2644,9 +2556,7 @@
                                             1
                                             8
                                 }
-                            c'4. ^\upbow \glissando
-                        }
-                        {
+                            c'16 ^\upbow \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -2655,16 +2565,6 @@
                                         \fraction
                                             0
                                             1
-                                }
-                            c'16 ^\downbow \glissando
-                            \once \override NoteHead.Y-offset = -1.5
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            1
-                                            8
                                 }
                             c'16
                         }
@@ -2677,17 +2577,7 @@
                     }
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
-                            \once \override NoteHead.Y-offset = 1.5
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            7
-                                            8
-                                }
-                            c'4 ^\downbow \glissando
+                        \times 5/6 {
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -2698,8 +2588,6 @@
                                             1
                                 }
                             c'4 ^\upbow \glissando
-                        }
-                        {
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -2709,7 +2597,7 @@
                                             0
                                             1
                                 }
-                            c'2 ^\downbow \glissando
+                            c'4 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = -1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -2719,7 +2607,9 @@
                                             1
                                             8
                                 }
-                            c'16 \glissando
+                            c'4 \glissando
+                        }
+                        {
                             \once \override NoteHead.Y-offset = -1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -2728,6 +2618,26 @@
                                         \fraction
                                             1
                                             4
+                                }
+                            c'2 \glissando
+                            \once \override NoteHead.Y-offset = -0.5
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            8
+                                }
+                            c'16 \glissando
+                            \once \override NoteHead.Y-offset = 0.0
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            1
+                                            2
                                 }
                             c'16
                         }
@@ -3221,14 +3131,6 @@
                 }
                 \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
                     {
-                        \times 2/3 {
-                            c'4
-                            c'4
-                            c'4
-                        }
-                        {
-                            c'8
-                        }
                         {
                             c'4
                             c'4
@@ -3236,8 +3138,14 @@
                         {
                             c'8
                         }
-                        \times 2/3 {
+                        {
                             c'4
+                            c'4
+                        }
+                        {
+                            c'8
+                        }
+                        {
                             c'4
                             c'4
                         }
@@ -3261,7 +3169,8 @@
                     }
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
+                        \times 5/6 {
+                            c'4
                             c'4
                             c'4
                         }
@@ -3451,35 +3360,33 @@
                 }
                 \context Dynamics = "Viola 2 RH Dynamics Voice" {
                     {
-                        \times 2/3 {
-                            c'4 \f \>
-                            c'4
+                        {
+                            c'4 \p \>
                             c'4
                         }
                         {
-                            c'8 \p \>
+                            c'8 \ppp \<
                         }
                         {
-                            c'4 \ppp \<
+                            c'4 \p \>
                             c'4
                         }
                         {
-                            c'8 \p \>
-                        }
-                        \times 2/3 {
-                            c'4 \ppp \<
-                            c'4
-                            c'4
+                            c'8 \ppp \<
                         }
                         {
-                            c'4. \p \>
+                            c'4 \p \>
+                            c'4
                         }
                         {
                             c'4. \ppp \<
                         }
                         {
+                            c'4. \f \>
+                        }
+                        {
                             c'16
-                            c'16 \f
+                            c'16 \p
                         }
                     }
                     {
@@ -3490,14 +3397,15 @@
                     }
                     {
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
-                            c'4 \ppp \<
+                        \times 5/6 {
+                            c'4 \f \>
+                            c'4
                             c'4
                         }
                         {
-                            c'2 \f \>
+                            c'2 \p \>
                             c'16
-                            c'16 \p
+                            c'16 \ppp
                         }
                     }
                     {
@@ -3677,47 +3585,47 @@
                             <c' f'>8
                         }
                         {
-                            <aqs dqs'>2 ~
-                            <aqs dqs'>8
-                        }
-                        {
-                            <a d'>2.
-                        }
-                        {
-                            <cqs' aqf'>8
-                        }
-                    }
-                    {
-                        {
-                            r8
-                            r4
-                        }
-                    }
-                    {
-                        {
-                            <c' f'>2 ~
-                            <c' f'>8
-                        }
-                        {
-                            <gqf bqs>2 ~
-                            <gqf bqs>8
-                        }
-                    }
-                    {
-                        {
-                            r4
-                        }
-                    }
-                    {
-                        {
+                            <a f'>2 ~
                             <a f'>8
                         }
                         {
-                            <f bf>2
+                            <c' af'>2.
                         }
                         {
-                            <g c'>2 ~
-                            <g c'>8
+                            <aqs dqs'>8
+                        }
+                    }
+                    {
+                        {
+                            r8
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            <c' af'>2 ~
+                            <c' af'>8
+                        }
+                        {
+                            <a d'>2 ~
+                            <a d'>8
+                        }
+                    }
+                    {
+                        {
+                            r4
+                        }
+                    }
+                    {
+                        {
+                            <fs b>8
+                        }
+                        {
+                            <a g'>2
+                        }
+                        {
+                            <c' af'>2 ~
+                            <c' af'>8
                         }
                     }
                     {
@@ -3727,26 +3635,26 @@
                     }
                     {
                         {
-                            <c' bf'>4
+                            <gtqs eqs'>4
                         }
                         {
-                            <a f'>2
+                            <gs fs'>2
                         }
                         {
-                            <cqs' aqf'>8
+                            <g ef'>8
                         }
                         {
-                            <c' bf'>2
+                            <c' f'>2
                         }
                         {
-                            <af e'>2 ~
-                            <af e'>8
+                            <a f'>2 ~
+                            <a f'>8
                         }
                         {
-                            <af cs'>2
+                            <c' af'>2
                         }
                         {
-                            <f cs'>8
+                            <aqs dqs'>8
                         }
                     }
                     {
@@ -3760,7 +3668,7 @@
                     }
                     {
                         {
-                            <gqf dqs'>2
+                            <ftqs dqs'>2
                         }
                         {
                             <fs e'>2 ~
@@ -3771,7 +3679,7 @@
                             <a f'>4
                         }
                         {
-                            <gqf bqs>8
+                            <ftqs bqs>8
                         }
                         {
                             <fs b>2
@@ -3857,47 +3765,47 @@
                             <c' f'>8
                         }
                         {
-                            <aqs dqs'>2
-                            <aqs dqs'>8
-                        }
-                        {
-                            <a d'>2.
-                        }
-                        {
-                            <cqs' aqf'>8
-                        }
-                    }
-                    {
-                        {
-                            s8
-                            s4
-                        }
-                    }
-                    {
-                        {
-                            <c' f'>2
-                            <c' f'>8
-                        }
-                        {
-                            <gqf bqs>2
-                            <gqf bqs>8
-                        }
-                    }
-                    {
-                        {
-                            s4
-                        }
-                    }
-                    {
-                        {
+                            <a f'>2
                             <a f'>8
                         }
                         {
-                            <f bf>2
+                            <c' af'>2.
                         }
                         {
-                            <g c'>2
-                            <g c'>8
+                            <aqs dqs'>8
+                        }
+                    }
+                    {
+                        {
+                            s8
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            <c' af'>2
+                            <c' af'>8
+                        }
+                        {
+                            <a d'>2
+                            <a d'>8
+                        }
+                    }
+                    {
+                        {
+                            s4
+                        }
+                    }
+                    {
+                        {
+                            <fs b>8
+                        }
+                        {
+                            <a g'>2
+                        }
+                        {
+                            <c' af'>2
+                            <c' af'>8
                         }
                     }
                     {
@@ -3907,26 +3815,26 @@
                     }
                     {
                         {
-                            <c' bf'>4
+                            <gtqs eqs'>4
+                        }
+                        {
+                            <gs fs'>2
+                        }
+                        {
+                            <g ef'>8
+                        }
+                        {
+                            <c' f'>2
                         }
                         {
                             <a f'>2
+                            <a f'>8
                         }
                         {
-                            <cqs' aqf'>8
+                            <c' af'>2
                         }
                         {
-                            <c' bf'>2
-                        }
-                        {
-                            <af e'>2
-                            <af e'>8
-                        }
-                        {
-                            <af cs'>2
-                        }
-                        {
-                            <f cs'>8
+                            <aqs dqs'>8
                         }
                     }
                     {
@@ -3940,7 +3848,7 @@
                     }
                     {
                         {
-                            <gqf dqs'>2 \glissando
+                            <ftqs dqs'>2 \glissando
                         }
                         {
                             <fs e'>2
@@ -3956,7 +3864,7 @@
                             <a f'>4
                         }
                         {
-                            <gqf bqs>8
+                            <ftqs bqs>8
                         }
                         {
                             <fs b>2

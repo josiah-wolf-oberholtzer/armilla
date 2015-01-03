@@ -24,7 +24,7 @@ dietro_ponticello = consort.AttachmentExpression(
     attachments=indicatortools.StringContactPoint('dietro ponticello'),
     scope=scoretools.Voice,
     selector=selectortools.Selector().by_leaves(),
-    ),
+    )
 dynamics_a = dynamic_expressions = consort.DynamicExpression(
     dynamic_tokens='p mf p ppp f p ff',
     )
@@ -37,9 +37,9 @@ intermittent_tremoli = armilla.materials.intermittent_tremoli
 
 ### MUSIC SPECIFIERS ###
 
-rh_overpressure = armilla.materials.right_hand_overpressure_music_specifier
 lh_diads = armilla.materials.left_hand_diads_music_specifier
 lh_dietro = armilla.materials.left_hand_dietro_music_specifier
+rh_overpressure = armilla.materials.right_hand_overpressure_music_specifier
 
 ### OVERPRESSURE ###
 
@@ -54,16 +54,16 @@ segment_maker.add_setting(
         parts=(0,),
         ratio=(3, 2, 1),
         ),
+    viola_1_lh=lh_dietro,
     viola_1_rh=new(
         rh_overpressure,
         attachment_handler__string_contact_points=dietro_ponticello,
         ),
+    viola_2_lh=lh_dietro,
     viola_2_rh=new(
         rh_overpressure,
         attachment_handler__string_contact_points=dietro_ponticello,
         ),
-    viola_1_lh=lh_dietro,
-    viola_2_lh=lh_dietro,
     )
 
 segment_maker.add_setting(
@@ -76,6 +76,7 @@ segment_maker.add_setting(
         parts=(1,),
         ratio=(3, 2, 1),
         ),
+    viola_1_lh=lh_dietro,
     viola_1_rh=new(
         rh_overpressure,
         attachment_handler__articulations=intermittent_accents,
@@ -83,6 +84,7 @@ segment_maker.add_setting(
         attachment_handler__string_contact_points=dietro_ponticello,
         rhythm_maker__default__denominators=(4, 4, 8, 8, 4, 8),
         ),
+    viola_2_lh=lh_diads,
     viola_2_rh=new(
         rh_overpressure,
         attachment_handler__articulations=intermittent_accents,
@@ -91,8 +93,6 @@ segment_maker.add_setting(
         attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
         rhythm_maker__default__denominators=(4, 4, 4, 8, 4, 8, 16),
         ),
-    viola_1_lh=lh_dietro,
-    viola_2_lh=lh_diads,
     )
 
 segment_maker.add_setting(
@@ -101,6 +101,7 @@ segment_maker.add_setting(
         parts=(2,),
         ratio=(3, 2, 1),
         ),
+    viola_1_lh=lh_diads,
     viola_1_rh=new(
         rh_overpressure,
         attachment_handler__articulations=intermittent_accents,
@@ -109,6 +110,7 @@ segment_maker.add_setting(
         attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
         rhythm_maker__default__denominators=(4, 4, 4, 16, 4, 16),
         ),
+    viola_2_lh=lh_diads,
     viola_2_rh=new(
         rh_overpressure,
         attachment_handler__articulations=intermittent_accents,
@@ -117,20 +119,4 @@ segment_maker.add_setting(
         attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
         rhythm_maker__default__denominators=(4, 4, 16, 4, 16, 16),
         ),
-    viola_1_lh=lh_diads,
-    viola_2_lh=lh_diads,
     )
-
-### PIZZICATI ###
-
-#segment_maker.add_setting(
-#    timespan_maker=armilla.materials.sparse_timespan_maker,
-#    timespan_identifier=consort.RatioPartsExpression(
-#        parts=(1,),
-#        ratio=(5, 1),
-#        ),
-#    viola_1_rh=None,
-#    viola_2_rh=None,
-#    viola_1_lh=None,
-#    viola_2_lh=None,
-#    )

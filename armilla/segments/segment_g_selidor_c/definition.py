@@ -43,7 +43,7 @@ lh_glissandi = new(
         pitch_segments=(
             "a c' a a c'",
             "c' ef' g c' c' ef'",
-            "a' c'' a' c'' c'' a''",
+            "a' c'' a' c'' c'' g' a'",
             ),
         ratio=(1, 1, 2),
         ),
@@ -54,8 +54,8 @@ lh_glissandi = new(
 
 segment_maker.add_setting(
     timespan_maker=armilla.materials.dense_timespan_maker,
-    viola_1_rh=rh_circular,
-    viola_2_rh=rh_circular,
     viola_1_lh=lh_glissandi,
+    viola_1_rh=rh_circular,
     viola_2_lh=lh_glissandi,
+    viola_2_rh=rh_circular,
     )

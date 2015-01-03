@@ -1,6 +1,8 @@
 # -*- encoding: utf-8 -*-
 from abjad import new
 from abjad.tools import indicatortools
+from abjad.tools import rhythmmakertools
+from abjad.tools import selectortools
 import armilla
 import consort
 
@@ -20,10 +22,22 @@ segment_maker = armilla.ArmillaSegmentMaker(
 
 ### MUSIC SPECIFIERS ###
 
-rh_jete = armilla.materials.right_hand_jete_music_specifier
-lh_glissandi = armilla.materials.left_hand_glissandi_music_specifier
-rh_stasis = armilla.materials.right_hand_stasis_music_specifier
+lh_glissandi = new(
+    armilla.materials.left_hand_glissandi_music_specifier,
+    attachment_handler__bend_after=consort.AttachmentExpression(
+        attachments=indicatortools.BendAfter(4),
+        selector=selectortools.Selector().by_leaves()[-1],
+        ),
+    pitch_handler__pitch_specifier="fs' gs' as'",
+    rhythm_maker=rhythmmakertools.NoteRhythmMaker(
+        duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
+            permit_meter_rewriting=False,
+            ),
+        ),
+    )
 lh_stasis = armilla.materials.left_hand_stasis_music_specifier
+rh_jete = armilla.materials.right_hand_jete_music_specifier
+rh_stasis = armilla.materials.right_hand_stasis_music_specifier
 
 ### SETTINGS ###
 
@@ -37,10 +51,10 @@ segment_maker.add_setting(
         ratio=(1, 2),
         parts=(1,),
         ),
-    viola_1_rh=rh_stasis,
-    viola_2_rh=rh_stasis,
     viola_1_lh=lh_stasis,
+    viola_1_rh=rh_stasis,
     viola_2_lh=lh_stasis,
+    viola_2_rh=rh_stasis,
     )
 
 segment_maker.add_setting(
@@ -52,10 +66,10 @@ segment_maker.add_setting(
         ratio=(1, 2),
         parts=(0,),
         ),
-    viola_1_rh=rh_jete,
-    viola_2_rh=rh_jete,
     viola_1_lh=lh_glissandi,
+    viola_1_rh=rh_jete,
     viola_2_lh=lh_glissandi,
+    viola_2_rh=rh_jete,
     )
 
 segment_maker.add_setting(
@@ -69,8 +83,8 @@ segment_maker.add_setting(
         ratio=(2, 1),
         parts=(1,),
         ),
-    viola_1_rh=rh_jete,
-    viola_2_rh=rh_jete,
     viola_1_lh=lh_glissandi,
+    viola_1_rh=rh_jete,
     viola_2_lh=lh_glissandi,
+    viola_2_rh=rh_jete,
     )

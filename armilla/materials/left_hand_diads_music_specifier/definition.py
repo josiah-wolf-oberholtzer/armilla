@@ -43,6 +43,9 @@ left_hand_diads_music_specifier = consort.MusicSpecifier(
             ),
         ),
     rhythm_maker=rhythmmakertools.NoteRhythmMaker(
+        duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
+            permit_meter_rewriting=True,
+            ),
         tie_specifier=rhythmmakertools.TieSpecifier(
             tie_across_divisions=False,
             ),

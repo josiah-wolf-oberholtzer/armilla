@@ -916,7 +916,7 @@
                     }
                     {
                         {
-                            c'4
+                            af'4
                         }
                     }
                     {
@@ -928,7 +928,7 @@
                     {
                         {
                             \afterGrace
-                            a8
+                            fs'8
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -936,16 +936,16 @@
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
-                                    c'
+                                    bf'
                                     \tweak #'style #'harmonic
-                                    g'
+                                    f''
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
                         }
                         {
-                            c'4
+                            bf'4
                         }
                     }
                     {
@@ -958,7 +958,7 @@
                     }
                     {
                         {
-                            a8
+                            bf'8
                         }
                     }
                     {
@@ -971,7 +971,7 @@
                     }
                     {
                         {
-                            gqs8
+                            aqf'8
                         }
                     }
                     {
@@ -1009,7 +1009,7 @@
                     }
                     {
                         {
-                            a4
+                            fs'4
                         }
                     }
                     {
@@ -1036,7 +1036,7 @@
                     }
                     {
                         {
-                            c'8
+                            af'8
                         }
                     }
                     {
@@ -1058,7 +1058,7 @@
                     }
                     {
                         {
-                            c'4
+                            af'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -1069,10 +1069,10 @@
                     }
                     {
                         {
-                            a8
+                            fs'8
                         }
                         {
-                            c'4
+                            bf'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -1085,7 +1085,7 @@
                     }
                     {
                         {
-                            a8
+                            bf'8 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -1098,7 +1098,7 @@
                     }
                     {
                         {
-                            gqs8
+                            aqf'8 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -1125,7 +1125,7 @@
                     }
                     {
                         {
-                            a4
+                            fs'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -1148,7 +1148,7 @@
                     }
                     {
                         {
-                            c'8
+                            af'8 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -2058,10 +2058,10 @@
                     }
                     {
                         {
-                            a8
+                            fs'8
                         }
                         {
-                            c'4
+                            bf'4
                         }
                     }
                     {
@@ -2072,14 +2072,13 @@
                     }
                     {
                         {
-                            aqs8
+                            aqf'8
                         }
                         {
-                            c'8
+                            fs'8
                         }
                         {
-                            a8 ~
-                            a8
+                            af'4
                         }
                     }
                     {
@@ -2092,7 +2091,7 @@
                     }
                     {
                         {
-                            c'8
+                            fs'8
                         }
                     }
                     {
@@ -2136,7 +2135,7 @@
                     }
                     {
                         {
-                            a8
+                            bf'8
                         }
                     }
                     {
@@ -2163,7 +2162,7 @@
                     }
                     {
                         {
-                            c'4
+                            bf'4
                         }
                     }
                 }
@@ -2175,10 +2174,10 @@
                     }
                     {
                         {
-                            a8 \glissando
+                            fs'8 \glissando
                         }
                         {
-                            c'4
+                            bf'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -2189,15 +2188,13 @@
                     }
                     {
                         {
-                            aqs8 \glissando
+                            aqf'8 \glissando
                         }
                         {
-                            c'8 \glissando
+                            fs'8 \glissando
                         }
                         {
-                            a8
-                            \parenthesize
-                            a8
+                            af'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -2210,7 +2207,7 @@
                     }
                     {
                         {
-                            c'8
+                            fs'8 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -2241,7 +2238,7 @@
                     }
                     {
                         {
-                            a8
+                            bf'8 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -2264,7 +2261,7 @@
                     }
                     {
                         {
-                            c'4
+                            bf'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                 }

@@ -1081,7 +1081,7 @@
                     }
                     {
                         {
-                            a8
+                            fs'8
                         }
                     }
                     {
@@ -1102,7 +1102,7 @@
                     }
                     {
                         {
-                            cqs'8
+                            aqf'8
                         }
                     }
                     {
@@ -1184,7 +1184,7 @@
                     }
                     {
                         {
-                            a4
+                            bf'4
                         }
                     }
                     {
@@ -1206,7 +1206,7 @@
                     }
                     {
                         {
-                            c'8
+                            fs'8
                         }
                     }
                     {
@@ -1228,10 +1228,10 @@
                     }
                     {
                         {
-                            a4
+                            bf'4
                         }
                         {
-                            c'8
+                            af'8
                         }
                     }
                     {
@@ -1248,7 +1248,7 @@
                     }
                     {
                         {
-                            a8
+                            fs'8 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -1264,7 +1264,7 @@
                     }
                     {
                         {
-                            cqs'8
+                            aqf'8 - \bendAfter #'-4.0 - \bendAfter #'-4.0
                         }
                     }
                     {
@@ -1314,7 +1314,7 @@
                     }
                     {
                         {
-                            a4
+                            bf'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -1334,7 +1334,7 @@
                     }
                     {
                         {
-                            c'8
+                            fs'8 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -1354,10 +1354,10 @@
                     }
                     {
                         {
-                            a4 \glissando
+                            bf'4 \glissando
                         }
                         {
-                            c'8
+                            af'8 - \bendAfter #'-4.0 - \bendAfter #'-4.0
                         }
                     }
                     {
@@ -2596,13 +2596,13 @@
                     }
                     {
                         {
-                            c'8
+                            af'8
                         }
                         {
-                            a8
+                            bf'8
                         }
                         {
-                            c'8
+                            fs'8
                         }
                     }
                     {
@@ -2615,10 +2615,10 @@
                     }
                     {
                         {
-                            a4
+                            bf'4
                         }
                         {
-                            c'4
+                            fs'4
                         }
                     }
                     {
@@ -2696,7 +2696,7 @@
                     }
                     {
                         {
-                            a8
+                            af'8
                         }
                     }
                     {
@@ -2718,7 +2718,7 @@
                     }
                     {
                         {
-                            cqs'4
+                            aqf'4
                         }
                     }
                     {
@@ -2745,10 +2745,10 @@
                     }
                     {
                         {
-                            a8
+                            fs'8
                         }
                         {
-                            c'4
+                            bf'4
                         }
                     }
                     {
@@ -2765,13 +2765,13 @@
                     }
                     {
                         {
-                            c'8 \glissando
+                            af'8 \glissando
                         }
                         {
-                            a8 \glissando
+                            bf'8 \glissando
                         }
                         {
-                            c'8
+                            fs'8 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -2784,10 +2784,10 @@
                     }
                     {
                         {
-                            a4 \glissando
+                            bf'4 \glissando
                         }
                         {
-                            c'4
+                            fs'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -2841,7 +2841,7 @@
                     }
                     {
                         {
-                            a8
+                            af'8 - \bendAfter #'-4.0 - \bendAfter #'-4.0
                         }
                     }
                     {
@@ -2861,7 +2861,7 @@
                     }
                     {
                         {
-                            cqs'4
+                            aqf'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
@@ -2884,10 +2884,10 @@
                     }
                     {
                         {
-                            a8 \glissando
+                            fs'8 \glissando
                         }
                         {
-                            c'4
+                            bf'4 - \bendAfter #'4.0 - \bendAfter #'4.0
                         }
                     }
                     {
