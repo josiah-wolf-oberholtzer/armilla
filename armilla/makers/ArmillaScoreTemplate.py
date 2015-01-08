@@ -1,7 +1,5 @@
 # -*- encoding: utf-8 -*-
-import collections
 from abjad import attach
-from abjad import abctools
 from abjad import indicatortools
 from abjad import instrumenttools
 from abjad import markuptools
@@ -9,7 +7,7 @@ from abjad import scoretools
 import consort
 
 
-class ArmillaScoreTemplate(abctools.AbjadValueObject):
+class ArmillaScoreTemplate(consort.ScoreTemplate):
     r'''A score template.
 
     ::
@@ -76,14 +74,7 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
 
     ### CLASS VARIABLES ###
 
-    __slots__ = (
-        '_context_name_abbreviations',
-        )
-
-    ### INITIALIZER ###
-
-    def __init__(self):
-        self._context_name_abbreviations = collections.OrderedDict()
+    __slots__ = ()
 
     ### SPECIAL METHODS ###
 
@@ -141,10 +132,9 @@ class ArmillaScoreTemplate(abctools.AbjadValueObject):
             scope=scoretools.Voice,
             )
 
+        self._context_name_abbreviations['viola_1'] = viola_one
+        self._context_name_abbreviations['viola_2'] = viola_two
+        self._composite_context_pairs['viola_1'] = ('viola_1_rh', 'viola_1_lh')
+        self._composite_context_pairs['viola_2'] = ('viola_2_rh', 'viola_2_lh')
+
         return score
-
-    ### PUBLIC PROPERTIES ###
-
-    @property
-    def context_name_abbreviations(self):
-        return self._context_name_abbreviations
