@@ -18,8 +18,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     tempo=indicatortools.Tempo((1, 4), 108),
     )
 
-### ATTACHMENTS ###
-
 ### MUSIC SPECIFIERS ###
 
 lh_glissandi = new(

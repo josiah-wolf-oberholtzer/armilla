@@ -74,10 +74,6 @@
                 s1 * 3/4
             }
             {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
                 \time 3/8
                 s1 * 3/8
             }
@@ -324,22 +320,20 @@
                             c'4
                         }
                         {
-                            c'4
+                            c'8
                         }
                         {
                             c'4. \stopTextSpan
                         }
                         {
-                            c'8.
+                            c'4
+                            c'16
                             c'16
                         }
                     }
                     {
                         {
                             s8
-                        }
-                        {
-                            R1 * 1/2
                             \bar "|."
                         }
                     }
@@ -758,7 +752,7 @@
                                             1
                                             1
                                 }
-                            c'4 ^\upbow _\accent \glissando
+                            c'8 ^\upbow _\accent \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -784,7 +778,7 @@
                                             1
                                             8
                                 }
-                            c'8. ^\upbow _\accent \glissando
+                            c'4 ^\upbow _\accent \glissando
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -794,15 +788,22 @@
                                             0
                                             1
                                 }
+                            c'16 ^\downbow _\accent \glissando
+                            \once \override NoteHead.Y-offset = -1.5
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            1
+                                            8
+                                }
                             c'16
                         }
                     }
                     {
                         {
                             s8
-                        }
-                        {
-                            R1 * 1/2
                             \bar "|."
                         }
                     }
@@ -915,13 +916,14 @@
                             c'4
                         }
                         {
-                            c'4 :32
+                            c'8 :64
                         }
                         {
                             c'4. :32
                         }
                         {
-                            c'8. [
+                            c'4
+                            c'16 [
                             \set stemLeftBeamCount = 2
                             c'16 ]
                         }
@@ -929,9 +931,6 @@
                     {
                         {
                             r8
-                        }
-                        {
-                            R1 * 1/2
                             \bar "|."
                         }
                     }
@@ -1034,22 +1033,20 @@
                             c'4 \p \>
                         }
                         {
-                            c'4 \ppp \<
+                            c'8 \ppp \<
                         }
                         {
                             c'4. \p \>
                         }
                         {
-                            c'8. \ppp \<
+                            c'4 \ppp \<
+                            c'16
                             c'16 \f
                         }
                     }
                     {
                         {
                             s8
-                        }
-                        {
-                            R1 * 1/2
                             \bar "|."
                         }
                     }
@@ -1120,8 +1117,8 @@
                     }
                     {
                         {
-                            <g c'>4 ~
-                            <g c'>4.
+                            <f bf>4 ~
+                            <f bf>4.
                         }
                         {
                             <dtqs bqs>2
@@ -1140,27 +1137,23 @@
                             <a f'>4.
                         }
                         {
-                            <fs b>2
+                            <fs b>4.
                         }
                         {
-                            <a f'>4.
+                            <c' af'>8
                         }
                         {
-                            <c' af'>4
+                            <a f'>4
+                        }
+                        {
+                            <cqs' fqs'>4 ~
+                            <cqs' fqs'>8
                         }
                     }
                     {
                         {
                             r8
-                        }
-                        {
-                            \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
-                            \startStaff
-                            R1 * 1/2
                             \bar "|."
-                            \stopStaff
-                            \startStaff
                         }
                     }
                 }
@@ -1217,8 +1210,8 @@
                     }
                     {
                         {
-                            <g c'>4
-                            <g c'>4.
+                            <f bf>4
+                            <f bf>4.
                         }
                         {
                             <dtqs bqs>2
@@ -1237,21 +1230,22 @@
                             <a f'>4. \glissando
                         }
                         {
-                            <fs b>2 \glissando
+                            <fs b>4. \glissando
                         }
                         {
-                            <a f'>4.
+                            <c' af'>8
                         }
                         {
-                            <c' af'>4
+                            <a f'>4
+                        }
+                        {
+                            <cqs' fqs'>4
+                            <cqs' fqs'>8
                         }
                     }
                     {
                         {
                             s8
-                        }
-                        {
-                            R1 * 1/2
                             \bar "|."
                         }
                     }
@@ -1553,9 +1547,7 @@
                     {
                         {
                             s16
-                        }
-                        {
-                            R1 * 3/8
+                            s4
                         }
                     }
                     {
@@ -1588,10 +1580,7 @@
                     {
                         {
                             s16
-                            s8
-                        }
-                        {
-                            R1 * 1/2
+                            s4
                             \bar "|."
                         }
                     }
@@ -2027,9 +2016,7 @@
                     {
                         {
                             s16
-                        }
-                        {
-                            R1 * 3/8
+                            s4
                         }
                     }
                     {
@@ -2052,10 +2039,7 @@
                     {
                         {
                             s16
-                            s8
-                        }
-                        {
-                            R1 * 1/2
+                            s4
                             \bar "|."
                         }
                     }
@@ -2180,9 +2164,7 @@
                     {
                         {
                             r16
-                        }
-                        {
-                            R1 * 3/8
+                            r4
                         }
                     }
                     {
@@ -2203,10 +2185,7 @@
                     {
                         {
                             r16
-                            r8
-                        }
-                        {
-                            R1 * 1/2
+                            r4
                             \bar "|."
                         }
                     }
@@ -2326,9 +2305,7 @@
                     {
                         {
                             s16
-                        }
-                        {
-                            R1 * 3/8
+                            s4
                         }
                     }
                     {
@@ -2349,10 +2326,7 @@
                     {
                         {
                             s16
-                            s8
-                        }
-                        {
-                            R1 * 1/2
+                            s4
                             \bar "|."
                         }
                     }
@@ -2413,14 +2387,14 @@
                             <c' af'>2
                         }
                         {
-                            <gs cs'>8
+                            <a d'>8
                         }
                         {
-                            <c' bf'>4 ~
-                            <c' bf'>4
+                            <e d'>4 ~
+                            <e d'>4
                         }
                         {
-                            <e c'>8
+                            <ds b>8
                         }
                         {
                             <fs e'>2
@@ -2461,14 +2435,7 @@
                     {
                         {
                             r16
-                        }
-                        {
-                            \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
-                            \startStaff
-                            R1 * 3/8
-                            \stopStaff
-                            \startStaff
+                            r4
                         }
                     }
                     {
@@ -2490,16 +2457,8 @@
                     {
                         {
                             r16
-                            r8
-                        }
-                        {
-                            \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
-                            \startStaff
-                            R1 * 1/2
+                            r4
                             \bar "|."
-                            \stopStaff
-                            \startStaff
                         }
                     }
                 }
@@ -2556,14 +2515,14 @@
                             <c' af'>2
                         }
                         {
-                            <gs cs'>8
+                            <a d'>8
                         }
                         {
-                            <c' bf'>4
-                            <c' bf'>4
+                            <e d'>4
+                            <e d'>4
                         }
                         {
-                            <e c'>8
+                            <ds b>8
                         }
                         {
                             <fs e'>2
@@ -2599,9 +2558,7 @@
                     {
                         {
                             s16
-                        }
-                        {
-                            R1 * 3/8
+                            s4
                         }
                     }
                     {
@@ -2622,10 +2579,7 @@
                     {
                         {
                             s16
-                            s8
-                        }
-                        {
-                            R1 * 1/2
+                            s4
                                 _ \markup {
                                     \italic
                                         \right-column
