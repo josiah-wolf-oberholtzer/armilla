@@ -70,6 +70,26 @@ class ArmillaScoreTemplate(consort.ScoreTemplate):
             >>
         >>
 
+    ::
+
+        >>> for item in template.context_name_abbreviations.items():
+        ...     item
+        ...
+        ('viola_1', 'Viola 1 Performer Group')
+        ('viola_1_rh', 'Viola 1 Bowing Voice')
+        ('viola_1_lh', 'Viola 1 Fingering Voice')
+        ('viola_2', 'Viola 2 Performer Group')
+        ('viola_2_rh', 'Viola 2 Bowing Voice')
+        ('viola_2_lh', 'Viola 2 Fingering Voice')
+
+    ::
+
+        >>> for item in template.composite_context_pairs.items():
+        ...     item
+        ...
+        ('viola_1', ('viola_1_rh', 'viola_1_lh'))
+        ('viola_2', ('viola_2_rh', 'viola_2_lh'))
+
     '''
 
     ### CLASS VARIABLES ###
@@ -116,7 +136,7 @@ class ArmillaScoreTemplate(consort.ScoreTemplate):
             [
                 time_signature_context,
                 viola_one,
-                viola_two
+                viola_two,
                 ],
             name='Armilla Score',
             )
@@ -131,10 +151,5 @@ class ArmillaScoreTemplate(consort.ScoreTemplate):
             score['Viola 2 Fingering Staff'],
             scope=scoretools.Voice,
             )
-
-        self._context_name_abbreviations['viola_1'] = viola_one
-        self._context_name_abbreviations['viola_2'] = viola_two
-        self._composite_context_pairs['viola_1'] = ('viola_1_rh', 'viola_1_lh')
-        self._composite_context_pairs['viola_2'] = ('viola_2_rh', 'viola_2_lh')
 
         return score
