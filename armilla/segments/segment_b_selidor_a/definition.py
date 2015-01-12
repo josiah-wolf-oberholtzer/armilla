@@ -45,14 +45,4 @@ segment_maker.add_setting(
             attachment_handler__trill_spanner=intermittent_trills,
             ),
         ),
-#    viola_1_lh=new(
-#        lh_glissandi,
-#        attachment_handler__trill_spanner=intermittent_trills,
-#        ),
-#    viola_1_rh=rh_circular,
-#    viola_2_lh=new(
-#        lh_glissandi,
-#        attachment_handler__trill_spanner=intermittent_trills,
-#        ),
-#    viola_2_rh=rh_circular,
-    ),
+    )

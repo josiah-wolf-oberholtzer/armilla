@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 import armilla
+import consort
 from abjad import new
 from abjad.tools import indicatortools
 
@@ -28,14 +29,20 @@ rh_circular = armilla.materials.right_hand_circular_music_specifier
 
 segment_maker.add_setting(
     timespan_maker=armilla.materials.dense_timespan_maker,
-    viola_1_lh=new(
-        lh_glissandi,
-        attachment_handler__trill_spanner=intermittent_trills,
-        ),
-    viola_1_rh=rh_circular,
-    viola_2_lh=new(
-        lh_glissandi,
-        attachment_handler__trill_spanner=intermittent_trills,
-        ),
-    viola_2_rh=rh_circular,
+    viola_1=consort.CompositeMusicSpecifier(
+        primary_music_specifier=rh_circular,
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=new(
+            lh_glissandi,
+            attachment_handler__trill_spanner=intermittent_trills,
+            ),
+    ),
+    viola_2=consort.CompositeMusicSpecifier(
+        primary_music_specifier=rh_circular,
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=new(
+            lh_glissandi,
+            attachment_handler__trill_spanner=intermittent_trills,
+            ),
+        )
     )

@@ -54,8 +54,14 @@ lh_glissandi = new(
 
 segment_maker.add_setting(
     timespan_maker=armilla.materials.dense_timespan_maker,
-    viola_1_lh=lh_glissandi,
-    viola_1_rh=rh_circular,
-    viola_2_lh=lh_glissandi,
-    viola_2_rh=rh_circular,
+    viola_1=consort.CompositeMusicSpecifier(
+        primary_music_specifier=rh_circular,
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=lh_glissandi,
+        ),
+    viola_2=consort.CompositeMusicSpecifier(
+        primary_music_specifier=rh_circular,
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=lh_glissandi,
+        ),
     )

@@ -1460,7 +1460,6 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1534,7 +1533,6 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1685,14 +1683,13 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16 \stopTrillSpan
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
                                     a'
                                     \tweak #'style #'harmonic
                                     d''
-                                >16
+                                >16 \stopTrillSpan
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
@@ -3102,7 +3099,6 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -3178,14 +3174,13 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16 \stopTrillSpan
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
                                     ef'
                                     \tweak #'style #'harmonic
                                     af'
-                                >16
+                                >16 \stopTrillSpan
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
@@ -3249,7 +3244,6 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -3286,7 +3280,6 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -3336,7 +3329,6 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -3360,14 +3352,13 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16 \stopTrillSpan
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
                                     c''
                                     \tweak #'style #'harmonic
                                     f''
-                                >16
+                                >16 \stopTrillSpan
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
