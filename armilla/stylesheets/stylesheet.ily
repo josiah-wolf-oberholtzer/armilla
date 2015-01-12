@@ -12,7 +12,7 @@ Create a box of the same height as the current font."
 
 afterGraceFraction = #(cons 1023 1024)
 #(set-default-paper-size "17x11" 'landscape)
-#(set-global-staff-size 12)
+#(set-global-staff-size 11.5)
 
 \paper {
     bottom-margin = 10\mm
