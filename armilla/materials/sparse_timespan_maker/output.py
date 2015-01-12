@@ -2,13 +2,10 @@
 from abjad.tools import datastructuretools
 from abjad.tools import durationtools
 from abjad.tools import rhythmmakertools
-import armilla
 import consort
 
 
-sparse_timespan_maker = armilla.makers.ArmillaTimespanMaker(
-    include_viola_1_inner_starts=True,
-    include_viola_2_inner_starts=True,
+sparse_timespan_maker = consort.tools.TaleaTimespanMaker(
     initial_silence_talea=rhythmmakertools.Talea(
         counts=(1, 0),
         denominator=8,

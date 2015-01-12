@@ -546,7 +546,6 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4
@@ -1134,7 +1133,6 @@
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
-                                s16
                                 <
                                     \parenthesize
                                     \tweak #'font-size #-4

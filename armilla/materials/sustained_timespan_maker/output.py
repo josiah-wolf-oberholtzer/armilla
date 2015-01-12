@@ -1,12 +1,10 @@
 # -*- encoding: utf-8 -*-
 from abjad.tools import datastructuretools
 from abjad.tools import rhythmmakertools
-import armilla
+import consort
 
 
-sustained_timespan_maker = armilla.makers.ArmillaTimespanMaker(
-    include_viola_1_inner_starts=True,
-    include_viola_2_inner_starts=True,
+sustained_timespan_maker = consort.tools.TaleaTimespanMaker(
     initial_silence_talea=rhythmmakertools.Talea(
         counts=(5, 0),
         denominator=8,
@@ -17,7 +15,6 @@ sustained_timespan_maker = armilla.makers.ArmillaTimespanMaker(
         ),
     playing_groupings=(5, 6, 4, 8, 9),
     repeat=True,
-    rotation_indices=(1, 0, 1, 0, -1),
     silence_talea=rhythmmakertools.Talea(
         counts=(3, 5, 3, 2, 5, 3),
         denominator=8,

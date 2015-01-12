@@ -1,11 +1,12 @@
 # -*- encoding: utf-8 -*-
-import armilla
+#import armilla
 import consort
 from abjad.tools import durationtools
 from abjad.tools import rhythmmakertools
 
 
-synchronized_timespan_maker = armilla.ArmillaTimespanMaker(
+synchronized_timespan_maker = consort.TaleaTimespanMaker(
+#synchronized_timespan_maker = armilla.ArmillaTimespanMaker(
     padding=durationtools.Duration(1, 8),
     playing_talea=rhythmmakertools.Talea(
         counts=(1, 1, 2, 1, 2, 2, 3),
