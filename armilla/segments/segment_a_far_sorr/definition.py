@@ -53,13 +53,17 @@ segment_maker.add_setting(
         parts=(0,),
         ratio=(1, 1, 1),
         ),
-    viola_1_lh=lh_dietro,
-    viola_1_rh=new(
-        rh_overpressure,
-        attachment_handler__string_contact_points=dietro_ponticello,
+    viola_1=consort.CompositeMusicSpecifier(
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__string_contact_points=dietro_ponticello,
+            ),
+        secondary_music_specifier=lh_dietro,
         ),
-    viola_2_lh=lh_diads,
-    viola_2_rh=rh_overpressure,
+    viola_2=consort.CompositeMusicSpecifier(
+        primary_music_specifier=rh_overpressure,
+        secondary_music_specifier=lh_diads,
+        ),
     )
 
 segment_maker.add_setting(
@@ -68,22 +72,29 @@ segment_maker.add_setting(
         parts=(1,),
         ratio=(1, 1, 1),
         ),
-    viola_1_lh=new(
-        lh_diads,
-        attachment_handler__glissando=intermittent_glissandi,
+    viola_1=consort.CompositeMusicSpecifier(
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__articulations=intermittent_accents,
+            attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
+            rhythm_maker__default__denominators=(4, 4, 4, 8),
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=new(
+            lh_diads,
+            attachment_handler__glissando=intermittent_glissandi,
+            ),
         ),
-    viola_1_rh=new(
-        rh_overpressure,
-        attachment_handler__articulations=intermittent_accents,
-        attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
-        rhythm_maker__default__denominators=(4, 4, 4, 8),
-        ),
-    viola_2_lh=lh_diads,
-    viola_2_rh=new(
-        rh_overpressure,
-        attachment_handler__articulations=intermittent_accents,
-        attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
-        rhythm_maker__default__denominators=(4, 4, 4, 8, 4, 8),
+
+    viola_2=consort.CompositeMusicSpecifier(
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__articulations=intermittent_accents,
+            attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
+            rhythm_maker__default__denominators=(4, 4, 4, 8, 4, 8),
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=lh_diads,
         ),
     )
 
@@ -93,23 +104,29 @@ segment_maker.add_setting(
         parts=(2,),
         ratio=(1, 1, 1),
         ),
-    viola_1_rh=new(
-        rh_overpressure,
-        attachment_handler__articulations=intermittent_accents,
-        rhythm_maker__default__denominators=(4, 4, 4, 16, 4, 16),
+    viola_1=consort.CompositeMusicSpecifier(
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__articulations=intermittent_accents,
+            rhythm_maker__default__denominators=(4, 4, 4, 16, 4, 16),
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=new(
+            lh_diads,
+            attachment_handler__glissando=intermittent_glissandi,
+            ),
         ),
-    viola_2_rh=new(
-        rh_overpressure,
-        attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
-        attachment_handler__bow_motion_technique_x=intermittent_circular,
-        ),
-    viola_1_lh=new(
-        lh_diads,
-        attachment_handler__glissando=intermittent_glissandi,
-        ),
-    viola_2_lh=new(
-        lh_diads,
-        attachment_handler__glissando=intermittent_glissandi,
+    viola_2=consort.CompositeMusicSpecifier(
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
+            attachment_handler__bow_motion_technique_x=intermittent_circular,
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=new(
+            lh_diads,
+            attachment_handler__glissando=intermittent_glissandi,
+            ),
         ),
     )
 
@@ -121,10 +138,8 @@ segment_maker.add_setting(
         parts=(1,),
         ratio=(5, 1),
         ),
-    viola_2_rh=rh_pizzicati,
-    viola_2_lh=lh_pizzicati,
+    viola_2=consort.CompositeMusicSpecifier(
+        primary_music_specifier=rh_pizzicati,
+        secondary_music_specifier=lh_pizzicati,
+        ),
     )
-
-#if __name__ == '__main__':
-#    lilypond_file = segment_maker()
-#    formatted = format(lilypond_file)

@@ -58,48 +58,56 @@ lh_pizzicati = armilla.materials.left_hand_pizzicati_music_specifier
 ### OVERPRESSURE ###
 
 segment_maker.add_setting(
-    timespan_maker=new(
-        armilla.materials.sustained_timespan_maker,
-        include_viola_1_inner_starts=False,
-        include_viola_2_inner_starts=False,
-        ),
+    timespan_maker=armilla.materials.sustained_timespan_maker,
     timespan_identifier=consort.RatioPartsExpression(
         parts=(0,),
         ratio=(2, 2, 1),
         ),
-    viola_1_lh=lh_diads,
-    viola_1_rh=new(
-        rh_overpressure,
-        attachment_handler__dynamic_expressions=dynamics_b,
+    viola_1=consort.CompositeMusicSpecifier(
+        discard_inner_offsets=True,
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__dynamic_expressions=dynamics_b,
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=lh_diads,
         ),
-    viola_2_lh=lh_diads,
-    viola_2_rh=new(
-        rh_overpressure,
-        attachment_handler__dynamic_expressions=dynamics_b,
+    viola_2=consort.CompositeMusicSpecifier(
+        discard_inner_offsets=True,
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__dynamic_expressions=dynamics_b,
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=lh_diads,
         ),
     )
 
 segment_maker.add_setting(
-    timespan_maker=new(
-        armilla.materials.dense_timespan_maker,
-        include_viola_2_inner_starts=False,
-        ),
+    timespan_maker=armilla.materials.dense_timespan_maker,
     timespan_identifier=consort.RatioPartsExpression(
         parts=(1,),
         ratio=(2, 2, 1),
         ),
-    viola_1_lh=lh_diads,
-    viola_1_rh=new(
-        rh_overpressure,
-        attachment_handler__articulations=intermittent_accents,
-        attachment_handler__dynamic_expressions=dynamics_a,
+    viola_1=consort.CompositeMusicSpecifier(
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__articulations=intermittent_accents,
+            attachment_handler__dynamic_expressions=dynamics_a,
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=lh_diads,
         ),
-    viola_2_lh=lh_diads,
-    viola_2_rh=new(
-        rh_overpressure,
-        attachment_handler__articulations=intermittent_accents,
-        attachment_handler__dynamic_expressions=dynamics_a,
-        seed=1,
+    viola_2=consort.CompositeMusicSpecifier(
+        discard_inner_offsets=True,
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__articulations=intermittent_accents,
+            attachment_handler__dynamic_expressions=dynamics_a,
+            seed=1,
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=lh_diads,
         ),
     )
 
@@ -109,31 +117,37 @@ segment_maker.add_setting(
         parts=(2,),
         ratio=(2, 2, 1),
         ),
-    viola_1_lh=new(
-        lh_diads,
-        attachment_handler__glissando=intermittent_glissandi,
-        ),
-    viola_1_rh=new(
-        rh_overpressure,
-        attachment_handler__articulations=consort.AttachmentExpression(
-            attachments=indicatortools.Articulation('>', 'down'),
-            selector=selectortools.Selector().by_leaves()[:-1].flatten(),
+    viola_1=consort.CompositeMusicSpecifier(
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__articulations=consort.AttachmentExpression(
+                attachments=indicatortools.Articulation('>', 'down'),
+                selector=selectortools.Selector().by_leaves()[:-1].flatten(),
+                ),
+            attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
+            attachment_handler__bow_motion_technique_x=intermittent_circular,
+            rhythm_maker__default__denominators=(4, 16, 4, 4, 4),
+            seed=1,
             ),
-        attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
-        attachment_handler__bow_motion_technique_x=intermittent_circular,
-        rhythm_maker__default__denominators=(4, 16, 4, 4, 4),
-        seed=1,
-        ),
-    viola_2_lh=lh_dietro,
-    viola_2_rh=new(
-        rh_overpressure,
-        attachment_handler__articulations=consort.AttachmentExpression(
-            attachments=indicatortools.Articulation('>', 'down'),
-            selector=selectortools.Selector().by_leaves()[:-1].flatten(),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=new(
+            lh_diads,
+            attachment_handler__glissando=intermittent_glissandi,
             ),
-        attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
-        attachment_handler__string_contact_points=dietro_ponticello,
-        seed=2,
+        ),
+    viola_2=consort.CompositeMusicSpecifier(
+        primary_music_specifier=new(
+            rh_overpressure,
+            attachment_handler__articulations=consort.AttachmentExpression(
+                attachments=indicatortools.Articulation('>', 'down'),
+                selector=selectortools.Selector().by_leaves()[:-1].flatten(),
+                ),
+            attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
+            attachment_handler__string_contact_points=dietro_ponticello,
+            seed=2,
+            ),
+        rotation_indices=(1, 0, 1, 0, -1),
+        secondary_music_specifier=lh_dietro,
         ),
     )
 
@@ -145,6 +159,8 @@ segment_maker.add_setting(
         parts=(1,),
         ratio=(7, 1),
         ),
-    viola_2_rh=rh_pizzicati,
-    viola_2_lh=lh_pizzicati,
+    viola_2=consort.CompositeMusicSpecifier(
+        primary_music_specifier=rh_pizzicati,
+        secondary_music_specifier=lh_pizzicati,
+        ),
     )
