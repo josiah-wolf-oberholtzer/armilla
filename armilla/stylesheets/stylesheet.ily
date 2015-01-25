@@ -276,12 +276,22 @@ afterGraceFraction = #(cons 1023 1024)
         \accepts FingeringStaff
     }
 
+    \context {
+        \StaffGroup
+        \name StringPerformerGroup
+        \type Engraver_group
+        \alias StaffGroup
+        \accepts BowingStaff
+        \accepts FingeringStaff
+    }
+
     %%% SCORE %%%
 
     \context {
         \Score
         \accepts TimeSignatureContext
         \accepts PerformerGroup
+        \accepts StringPerformerGroup
         \remove Bar_number_engraver
         \remove Mark_engraver
         \remove Metronome_mark_engraver

@@ -20,7 +20,7 @@
             \center-align {
                 \override #'(font-name . "Didot Italic")
                     \fontsize #4 {
-                        \line { Invisible Cities (i): }
+                        \line { Invisible Cities (ii): }
                     }
                 \vspace #0.5
                 \override #'(font-name . "Didot")
