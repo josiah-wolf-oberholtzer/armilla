@@ -232,7 +232,7 @@ afterGraceFraction = #(cons 1023 1024)
         \override Beam.direction = #down
         \override Beam.positions = #'(-9 . -9)
         \override Stem.direction = #down
-        \override Tie.stencil = ##f
+        % \override Tie.stencil = ##f
         \override Glissando.stencil = ##f
         \override TupletBracket.positions = #'(-11 . -11)
     }
