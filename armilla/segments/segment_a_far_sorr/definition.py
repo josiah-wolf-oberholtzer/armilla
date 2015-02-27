@@ -37,7 +37,10 @@ lh_diads = new(
     armilla.materials.left_hand_diads_music_specifier,
     minimum_phrase_duration=durationtools.Duration(1, 4),
     )
-lh_dietro = armilla.materials.left_hand_dietro_music_specifier
+lh_dietro = new(
+    armilla.materials.left_hand_dietro_music_specifier,
+    minimum_phrase_duration=durationtools.Duration(1, 4),
+    )
 lh_pizzicati = armilla.materials.left_hand_pizzicati_music_specifier
 rh_overpressure = new(
     armilla.materials.right_hand_overpressure_music_specifier,

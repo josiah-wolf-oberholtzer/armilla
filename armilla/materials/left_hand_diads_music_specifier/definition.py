@@ -34,9 +34,9 @@ left_hand_diads_music_specifier = consort.MusicSpecifier(
         pitch_operation_specifier=consort.PitchOperationSpecifier(
             pitch_operations=(
                 None,
-                consort.PitchOperation(pitchtools.Rotation(1)),
+                pitchtools.PitchOperation(pitchtools.Rotation(1)),
                 None,
-                consort.PitchOperation(pitchtools.Rotation(1)),
+                pitchtools.PitchOperation(pitchtools.Rotation(1)),
                 None,
                 ),
             ratio=(2, 1, 2, 2, 1),

@@ -187,7 +187,7 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
         pitch_operation_specifier=consort.tools.PitchOperationSpecifier(
             pitch_operations=(
                 None,
-                consort.tools.PitchOperation(
+                pitchtools.PitchOperation(
                     operators=(
                         pitchtools.Rotation(
                             index=1,
@@ -196,7 +196,7 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                         ),
                     ),
                 None,
-                consort.tools.PitchOperation(
+                pitchtools.PitchOperation(
                     operators=(
                         pitchtools.Rotation(
                             index=1,
