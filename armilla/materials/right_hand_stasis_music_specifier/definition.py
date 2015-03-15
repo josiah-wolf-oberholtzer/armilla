@@ -63,7 +63,7 @@ right_hand_stasis_music_specifier = consort.MusicSpecifier(
             duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
                 decrease_durations_monotonically=True,
                 forbidden_written_duration=durationtools.Duration(1, 4),
-                permit_meter_rewriting=False,
+                forbid_meter_rewriting=True,
                 ),
             ),
         ),

@@ -36,7 +36,7 @@ lh_glissandi = new(
     pitch_handler__pitch_specifier="fs' gs' as'",
     rhythm_maker=rhythmmakertools.NoteRhythmMaker(
         duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
-            permit_meter_rewriting=False,
+            forbid_meter_rewriting=True,
             ),
         ),
     )

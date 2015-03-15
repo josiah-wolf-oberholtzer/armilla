@@ -23,7 +23,7 @@ left_hand_stasis_music_specifier = consort.MusicSpecifier(
         ),
     rhythm_maker=rhythmmakertools.NoteRhythmMaker(
         duration_spelling_specifier=rhythmmakertools.DurationSpellingSpecifier(
-            permit_meter_rewriting=False,
+            forbid_meter_rewriting=True,
             ),
         ),
     )
