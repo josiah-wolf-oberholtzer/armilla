@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 from abjad.tools import datastructuretools
+from abjad.tools import durationtools
 from abjad.tools import rhythmmakertools
 import consort
 

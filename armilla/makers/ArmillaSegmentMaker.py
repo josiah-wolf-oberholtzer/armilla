@@ -184,26 +184,27 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             ]
         staff.is_simultaneous = True
 
-    def configure_score(self, score):
-        self.attach_tempo(score)
-        self.attach_rehearsal_mark(score)
-        self.postprocess_grace_containers(score)
-        self.postprocess_breath_marks(score)
-        self.postprocess_right_hand_staff(score['Viola 1 Bowing Staff'])
-        self.postprocess_right_hand_staff(score['Viola 2 Bowing Staff'])
-        self.postprocess_left_hand_staff(score['Viola 1 Fingering Staff'])
-        self.postprocess_left_hand_staff(score['Viola 2 Fingering Staff'])
+    def configure_score(self):
+        self.add_time_signature_context()
+        self.attach_tempo()
+        self.attach_rehearsal_mark()
+        self.postprocess_grace_containers(self.score)
+        self.postprocess_breath_marks(self.score)
+        self.postprocess_right_hand_staff(self.score['Viola 1 Bowing Staff'])
+        self.postprocess_right_hand_staff(self.score['Viola 2 Bowing Staff'])
+        self.postprocess_left_hand_staff(self.score['Viola 1 Fingering Staff'])
+        self.postprocess_left_hand_staff(self.score['Viola 2 Fingering Staff'])
         if self.repeat:
             repeat = indicatortools.Repeat()
-            for staff in iterate(score).by_class(scoretools.Staff):
+            for staff in iterate(self.score).by_class(scoretools.Staff):
                 attach(repeat, staff)
-            attach(repeat, score['TimeSignatureContext'])
+            attach(repeat, self.score['TimeSignatureContext'])
         elif self.is_final_segment:
-            score.add_final_markup(self.final_markup)
-            score.add_final_bar_line(abbreviation='|.', to_each_voice=True)
-        #else:
-        #    score.add_final_bar_line(abbreviation='||', to_each_voice=True)
-        return score
+            self.score.add_final_markup(self.final_markup)
+            self.score.add_final_bar_line(
+                abbreviation='|.',
+                to_each_voice=True,
+                )
 
     ### PUBLIC PROPERTIES ###
 

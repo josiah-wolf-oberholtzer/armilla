@@ -1,4 +1,4 @@
-\version "2.19.15"
+\version "2.19.16"
 \language "english"
 
 #(ly:set-option 'relative-includes #t)
@@ -11,7 +11,7 @@
         \repeat volta 2
         \context TimeSignatureContext = "TimeSignatureContext" {
             {
-                \time 5/8
+                \time 6/8
                 \tempo 4=72
                 \mark \markup {
                     \concat
@@ -27,14 +27,11 @@
                                 "Selidor (i)"
                         }
                     }
-                s1 * 5/8
+                s1 * 3/4
             }
             {
-                s1 * 5/8
-            }
-            {
-                \time 3/8
-                s1 * 3/8
+                \time 3/4
+                s1 * 3/4
             }
             {
                 \time 2/4
@@ -72,7 +69,8 @@
                         }
                     }
                     {
-                        {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
                             c'4 ^ \markup {
                                 \vcenter
                                     \italic
@@ -107,9 +105,11 @@
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'8 \startTextSpan
+                            c'4 \startTextSpan
+                            c'4
+                            c'4
                         }
-                        \times 2/3 {
+                        {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
                             \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
@@ -149,13 +149,22 @@
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4 \stopTextSpan \startTextSpan
-                            c'4
-                            c'4
+                            c'8 \stopTextSpan \startTextSpan
                         }
                         {
                             c'4. \stopTextSpan
                         }
+                        {
+                            c'16
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8
+                        }
+                    }
+                    {
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -169,9 +178,8 @@
                                             {
                                                 \hspace
                                                     #1.5
-                                                \parenthesize
-                                                    \caps
-                                                        Ord.
+                                                \caps
+                                                    M.S.P
                                                 \hspace
                                                     #1.5
                                             }
@@ -190,42 +198,23 @@
                                                 \hspace
                                                     #1.5
                                                 \caps
-                                                    M.S.P
+                                                    Ord.
                                                 \hspace
                                                     #1.5
                                             }
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'4.. \startTextSpan
+                            c'4. \startTextSpan
+                        }
+                        {
+                            c'8.
                             c'16 \stopTextSpan
                         }
                     }
                     {
                         {
                             s8
-                        }
-                    }
-                    {
-                        \times 2/3 {
-                            c'4 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \parenthesize
-                                            \caps
-                                                M.S.P
-                                }
-                            c'4
-                            c'4
-                        }
-                        {
-                            c'16
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            s4
                         }
                     }
                 }
@@ -236,7 +225,8 @@
                         }
                     }
                     {
-                        {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -271,9 +261,7 @@
                                             4
                                             5
                                 }
-                            c'8 \glissando
-                        }
-                        \times 2/3 {
+                            c'4 \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -296,6 +284,8 @@
                                             5
                                 }
                             c'4 ^\downbow \glissando
+                        }
+                        {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -306,7 +296,7 @@
                                             4
                                             5
                                 }
-                            c'4 \glissando
+                            c'8 \glissando
                         }
                         {
                             \once \override Glissando.style = #'zigzag
@@ -332,7 +322,7 @@
                                             3
                                             5
                                 }
-                            c'4.. ^\downbow \glissando
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -351,7 +341,7 @@
                         }
                     }
                     {
-                        \times 2/3 {
+                        {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -362,7 +352,9 @@
                                             4
                                             5
                                 }
-                            c'4 ^\upbow \glissando
+                            c'4. ^\upbow \glissando
+                        }
+                        {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -373,8 +365,7 @@
                                             0
                                             1
                                 }
-                            c'4 ^\downbow \glissando
-                            \once \override Glissando.style = #'zigzag
+                            c'8. ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -384,35 +375,12 @@
                                             1
                                             1
                                 }
-                            c'4 ^\upbow \glissando
-                        }
-                        {
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'16 \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
                             c'16
                         }
                     }
                     {
                         {
-                            s4
+                            s8
                         }
                     }
                 }
@@ -423,36 +391,21 @@
                         }
                     }
                     {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            c'4
+                            c'4
+                        }
                         {
+                            c'4
                             c'4
                             c'4
                         }
                         {
                             c'8
                         }
-                        \times 2/3 {
-                            c'4
-                            c'4
-                            c'4
-                        }
                         {
                             c'4.
-                        }
-                        {
-                            c'4..
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        \times 2/3 {
-                            c'4
-                            c'4
-                            c'4
                         }
                         {
                             c'16 [
@@ -462,7 +415,22 @@
                     }
                     {
                         {
-                            r4
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            c'4.
+                        }
+                        {
+                            c'8. [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
+                        }
+                    }
+                    {
+                        {
+                            r8
                         }
                     }
                 }
@@ -473,36 +441,21 @@
                         }
                     }
                     {
-                        {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
                             c'4 \p \>
                             c'4
                         }
                         {
-                            c'8 \ppp \<
-                        }
-                        \times 2/3 {
-                            c'4 \p \>
-                            c'4
-                            c'4
-                        }
-                        {
-                            c'4. \ppp \<
-                        }
-                        {
-                            c'4.. \p \>
-                            c'16 \ppp
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
-                        \times 2/3 {
                             c'4 \ppp \<
                             c'4
                             c'4
+                        }
+                        {
+                            c'8 \p \>
+                        }
+                        {
+                            c'4. \ppp \<
                         }
                         {
                             c'16
@@ -511,7 +464,21 @@
                     }
                     {
                         {
-                            s4
+                            s8
+                        }
+                    }
+                    {
+                        {
+                            c'4. \ppp \<
+                        }
+                        {
+                            c'8. \p \>
+                            c'16 \ppp
+                        }
+                    }
+                    {
+                        {
+                            s8
                         }
                     }
                 }
@@ -539,10 +506,9 @@
                             <> \stopTrillSpan
                             a4
                         }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
+                        {
                             \afterGrace
-                            cqs'4
+                            cqs'8
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -556,28 +522,63 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                        }
+                        \times 2/3 {
                             c'4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            a4 \startTrillSpan c'
+                            <> \stopTrillSpan
+                            \afterGrace
+                            \pitchedTrill
+                            gqs4 \startTrillSpan bqf
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    g
+                                    \tweak #'style #'harmonic
+                                    d'
+                                >16 \stopTrillSpan
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    g
+                                    \tweak #'style #'harmonic
+                                    c'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                         }
                         {
-                            af4.
+                            \once \override TrillSpanner.bound-details.left.padding = 2
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            g4 \startTrillSpan c'
+                            <> \stopTrillSpan
                         }
-                        {
-                            d'2
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
                         \times 2/3 {
                             \pitchedTrill
-                            c'4 \startTrillSpan ef'
+                            af4 \startTrillSpan df'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
                             <> \stopTrillSpan
-                            a4
                             \afterGrace
-                            cqs'4
+                            a4
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
@@ -598,14 +599,51 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                            c'4
                         }
                         {
-                            c'8
+                            a8
                         }
                     }
                     {
                         {
-                            r4
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            \afterGrace
+                            \pitchedTrill
+                            cqs'4. \startTrillSpan eqf'
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    g'
+                                >16 \stopTrillSpan
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    f'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            <> \stopTrillSpan
+                        }
+                        {
+                            c'4
+                        }
+                    }
+                    {
+                        {
+                            r8
                         }
                     }
                 }
@@ -620,16 +658,24 @@
                             c'4 \glissando
                             a4 \glissando
                         }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
-                            cqs'4
+                        {
+                            cqs'8
+                        }
+                        \times 2/3 {
+                            c'4 \glissando
+                            a4 \glissando
+                            gqs4
+                        }
+                        {
+                            g4 \glissando
+                        }
+                        \times 2/3 {
+                            af4 \glissando
+                            a4
                             c'4 \glissando
                         }
                         {
-                            af4. \glissando
-                        }
-                        {
-                            d'2
+                            a8
                         }
                     }
                     {
@@ -638,18 +684,16 @@
                         }
                     }
                     {
-                        \times 2/3 {
-                            c'4 \glissando
-                            a4 \glissando
-                            cqs'4
+                        {
+                            cqs'4.
                         }
                         {
-                            c'8
+                            c'4
                         }
                     }
                     {
                         {
-                            s4
+                            s8
                         }
                     }
                 }
@@ -695,70 +739,6 @@
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
-                            \once \override TextSpanner.bound-details.right.padding = 0
-                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
-                            \once \override TextSpanner.bound-details.right.text = \markup {
-                                \halign
-                                    #0
-                                    \halign
-                                        #0
-                                        \concat
-                                            {
-                                                \hspace
-                                                    #1.5
-                                                \caps
-                                                    M.S.P
-                                                \hspace
-                                                    #1.5
-                                            }
-                                }
-                            \once \override TextSpanner.dash-fraction = 0.25
-                            \once \override TextSpanner.dash-period = 1
-                            c'4 \startTextSpan
-                            c'4
-                        }
-                        {
-                            c'2 \stopTextSpan
-                            c'16
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
-                        {
-                            c'4 ^ \markup {
-                                \vcenter
-                                    \italic
-                                        \caps
-                                            Ord.
-                                }
-                        }
-                        {
-                            \once \override TextSpanner.arrow-width = 0.25
-                            \once \override TextSpanner.bound-details.left-broken.text = ##f
-                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
-                            \once \override TextSpanner.bound-details.left.text = \markup {
-                                \halign
-                                    #0
-                                    \halign
-                                        #0
-                                        \concat
-                                            {
-                                                \hspace
-                                                    #1.5
-                                                \parenthesize
-                                                    \caps
-                                                        Ord.
-                                                \hspace
-                                                    #1.5
-                                            }
-                                }
-                            \once \override TextSpanner.bound-details.right-broken.padding = 0
-                            \once \override TextSpanner.bound-details.right.arrow = ##t
                             \once \override TextSpanner.bound-details.right.padding = 5
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.dash-fraction = 0.25
@@ -787,6 +767,66 @@
                                 }
                             \once \override TextSpanner.bound-details.right-broken.padding = 0
                             \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 5
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'8 \stopTextSpan \startTextSpan
+                        }
+                        {
+                            c'4
+                            c'4
+                            c'4
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1.5
+                                                \caps
+                                                    Ord.
+                                                \hspace
+                                                    #1.5
+                                            }
+                                }
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
+                            \once \override TextSpanner.bound-details.right.padding = 5
+                            \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
+                            \once \override TextSpanner.dash-fraction = 0.25
+                            \once \override TextSpanner.dash-period = 1
+                            c'4 \stopTextSpan \startTextSpan
+                            c'4
+                        }
+                        {
+                            \once \override TextSpanner.arrow-width = 0.25
+                            \once \override TextSpanner.bound-details.left-broken.text = ##f
+                            \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #center
+                            \once \override TextSpanner.bound-details.left.text = \markup {
+                                \halign
+                                    #0
+                                    \halign
+                                        #0
+                                        \concat
+                                            {
+                                                \hspace
+                                                    #1.5
+                                                \caps
+                                                    S.P.
+                                                \hspace
+                                                    #1.5
+                                            }
+                                }
+                            \once \override TextSpanner.bound-details.right-broken.padding = 0
+                            \once \override TextSpanner.bound-details.right.arrow = ##t
                             \once \override TextSpanner.bound-details.right.padding = 0
                             \once \override TextSpanner.bound-details.right.stencil-align-dir-y = #center
                             \once \override TextSpanner.bound-details.right.text = \markup {
@@ -806,11 +846,9 @@
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'8 \stopTextSpan \startTextSpan
-                        }
-                        {
-                            c'4..
+                            c'2 \stopTextSpan \startTextSpan
                             c'16 \stopTextSpan
+                            c'16
                         }
                     }
                     {
@@ -857,84 +895,6 @@
                                             0
                                             1
                                 }
-                            c'2 ^\downbow \glissando
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            1
-                                            1
-                                }
-                            c'16 ^\upbow \glissando
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
-                        {
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'4 \glissando
-                        }
-                        {
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 0.4
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            3
-                                            5
-                                }
-                            c'4 ^ \parenthesize \downbow \glissando
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = 1.2
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            4
-                                            5
-                                }
-                            c'4 ^\upbow \glissando
-                        }
-                        {
-                            \once \override Glissando.style = #'zigzag
-                            \once \override NoteHead.Y-offset = -2.0
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            0
-                                            1
-                                }
                             c'8 ^\downbow \glissando
                         }
                         {
@@ -948,7 +908,77 @@
                                             1
                                             1
                                 }
-                            c'4.. ^\upbow \glissando
+                            c'4 ^\upbow \glissando
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4 \glissando
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4 ^ \parenthesize \upbow \glissando
+                        }
+                        {
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'4 ^\downbow \glissando
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'4 \glissando
+                        }
+                        {
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 1.2
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            4
+                                            5
+                                }
+                            c'2 ^ \parenthesize \upbow \glissando
+                            \once \override Glissando.style = #'zigzag
+                            \once \override NoteHead.Y-offset = 0.4
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup {
+                                \center-align
+                                    \vcenter
+                                        \fraction
+                                            3
+                                            5
+                                }
+                            c'16 ^\downbow \glissando
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -975,31 +1005,22 @@
                             c'4
                         }
                         {
+                            c'8
+                        }
+                        {
+                            c'4
+                            c'4
+                            c'4
+                        }
+                        {
+                            c'4
+                            c'4
+                        }
+                        {
                             c'2
                             c'16 [
                             \set stemLeftBeamCount = 2
                             c'16 ]
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        {
-                            c'4
-                        }
-                        {
-                            c'4
-                            c'4
-                        }
-                        {
-                            c'8
-                        }
-                        {
-                            c'4..
-                            c'16
                         }
                     }
                     {
@@ -1016,29 +1037,20 @@
                             c'4
                         }
                         {
-                            c'2 \ppp \<
-                            c'16
-                            c'16 \p
-                        }
-                    }
-                    {
-                        {
-                            s8
-                        }
-                    }
-                    {
-                        {
-                            c'4 \ppp \<
+                            c'8 \ppp \<
                         }
                         {
                             c'4 \p \>
                             c'4
+                            c'4
                         }
                         {
-                            c'8 \ppp \<
+                            c'4 \ppp \<
+                            c'4
                         }
                         {
-                            c'4.. \p \>
+                            c'2 \p \>
+                            c'16
                             c'16 \ppp
                         }
                     }
@@ -1083,16 +1095,64 @@
                             }
                         }
                         {
-                            a2 ~
                             a8
                         }
-                    }
-                    {
                         {
-                            r8
+                            \pitchedTrill
+                            c'4 \startTrillSpan ef'
+                            <> \stopTrillSpan
+                            \afterGrace
+                            \pitchedTrill
+                            d'4 \startTrillSpan f'
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    f'
+                                >16 \stopTrillSpan
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            <> \stopTrillSpan
                         }
-                    }
-                    {
+                        {
+                            \once \override TrillSpanner.bound-details.left.padding = 2
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            c'4 \startTrillSpan f'
+                            <> \stopTrillSpan
+                        }
+                        \times 2/3 {
+                            \pitchedTrill
+                            d'4 \startTrillSpan g'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
+                            \afterGrace
+                            gqs4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    \parenthesize
+                                    \tweak #'font-size #-4
+                                    af
+                                    \tweak #'style #'harmonic
+                                    df'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            af4
+                        }
                         {
                             \override TrillPitchHead #'stencil = #ly:text-interface::print
                             \override TrillPitchHead #'text = \markup {
@@ -1100,52 +1160,10 @@
                                     #"noteheads.s0harmonic"
                                 }
                             \pitchedTrill
-                            af4 \startTrillSpan df'
+                            a8 \startTrillSpan c'
                             \revert TrillPitchHead #'stencil
                             \revert TrillPitchHead #'text
                             <> \stopTrillSpan
-                        }
-                        {
-                            \afterGrace
-                            aqs4
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    g
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    g
-                                    \tweak #'style #'harmonic
-                                    c'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \afterGrace
-                            g4
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                        }
-                        {
-                            a8
                         }
                         {
                             c'2
@@ -1170,23 +1188,19 @@
                             c'4
                         }
                         {
-                            a2
-                            \parenthesize
-                            a8
+                            a8 \glissando
                         }
-                    }
-                    {
                         {
-                            s8
+                            c'4 \glissando
+                            d'4
                         }
-                    }
-                    {
                         {
+                            c'4 \glissando
+                        }
+                        \times 2/3 {
+                            d'4 \glissando
+                            gqs4
                             af4 \glissando
-                        }
-                        {
-                            aqs4
-                            g4
                         }
                         {
                             a8 \glissando
