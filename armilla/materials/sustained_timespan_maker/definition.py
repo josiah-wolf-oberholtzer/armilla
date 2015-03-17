@@ -1,11 +1,9 @@
 # -*- encoding: utf-8 -*-
-#import armilla
 import consort
 from abjad.tools import rhythmmakertools
 
 
 sustained_timespan_maker = consort.TaleaTimespanMaker(
-#sustained_timespan_maker = armilla.ArmillaTimespanMaker(
     initial_silence_talea=rhythmmakertools.Talea(
         counts=(5, 0),
         denominator=8,
@@ -19,5 +17,4 @@ sustained_timespan_maker = consort.TaleaTimespanMaker(
         counts=(3, 5, 3, 2, 5, 3),
         denominator=8,
         ),
-    #rotation_indices=(1, 0, 1, 0, -1),
     )

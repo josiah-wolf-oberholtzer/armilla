@@ -1,12 +1,10 @@
 # -*- encoding: utf-8 -*-
-#import armilla
 import consort
 from abjad.tools import durationtools
 from abjad.tools import rhythmmakertools
 
 
 sparse_timespan_maker = consort.TaleaTimespanMaker(
-#sparse_timespan_maker = armilla.ArmillaTimespanMaker(
     initial_silence_talea=rhythmmakertools.Talea(
         counts=(1, 0),
         denominator=8,
