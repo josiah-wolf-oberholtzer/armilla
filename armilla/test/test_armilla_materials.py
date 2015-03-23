@@ -32,7 +32,7 @@ def test_armilla_materials_01(material_path):
     if os.path.exists(local_boilerplate_path):
         os.remove(local_boilerplate_path)
     with systemtools.FilesystemState(
-        #keep=[local_output_path],
+        keep=[local_output_path],
         remove=[local_boilerplate_path],
         ):
         shutil.copyfile(boilerplate_path, local_boilerplate_path)
