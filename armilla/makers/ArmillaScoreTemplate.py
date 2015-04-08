@@ -18,7 +18,7 @@ class ArmillaScoreTemplate(consort.ScoreTemplate):
         >>> print(format(score))
         \context Score = "Armilla Score" <<
             \tag #'time
-            \context TimeSignatureContext = "TimeSignatureContext" {
+            \context TimeSignatureContext = "Time Signature Context" {
             }
             \tag #'viola-1
             \context StringPerformerGroup = "Viola 1 Performer Group" \with {
@@ -72,19 +72,19 @@ class ArmillaScoreTemplate(consort.ScoreTemplate):
 
     ::
 
-        >>> for item in template.context_name_abbreviations.items():
+        >>> for item in sorted(template.context_name_abbreviations.items()):
         ...     item
         ...
         ('viola_1', 'Viola 1 Performer Group')
-        ('viola_1_rh', 'Viola 1 Bowing Voice')
         ('viola_1_lh', 'Viola 1 Fingering Voice')
+        ('viola_1_rh', 'Viola 1 Bowing Voice')
         ('viola_2', 'Viola 2 Performer Group')
-        ('viola_2_rh', 'Viola 2 Bowing Voice')
         ('viola_2_lh', 'Viola 2 Fingering Voice')
+        ('viola_2_rh', 'Viola 2 Bowing Voice')
 
     ::
 
-        >>> for item in template.composite_context_pairs.items():
+        >>> for item in sorted(template.composite_context_pairs.items()):
         ...     item
         ...
         ('viola_1', ('viola_1_rh', 'viola_1_lh'))

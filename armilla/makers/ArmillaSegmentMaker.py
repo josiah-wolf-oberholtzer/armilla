@@ -45,9 +45,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         self,
         discard_final_silence=None,
         desired_duration_in_seconds=None,
-        is_final_segment=None,
         name=None,
-        rehearsal_mark=None,
         score_template=None,
         settings=None,
         tempo=None,
@@ -62,9 +60,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             self,
             discard_final_silence=discard_final_silence,
             desired_duration_in_seconds=desired_duration_in_seconds,
-            is_final_segment=is_final_segment,
             name=name,
-            rehearsal_mark=rehearsal_mark,
             score_template=score_template,
             settings=settings,
             tempo=tempo,
@@ -185,26 +181,12 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         staff.is_simultaneous = True
 
     def configure_score(self):
-        self.add_time_signature_context()
-        self.attach_tempo()
-        self.attach_rehearsal_mark()
-        self.postprocess_grace_containers(self.score)
         self.postprocess_breath_marks(self.score)
         self.postprocess_right_hand_staff(self.score['Viola 1 Bowing Staff'])
         self.postprocess_right_hand_staff(self.score['Viola 2 Bowing Staff'])
         self.postprocess_left_hand_staff(self.score['Viola 1 Fingering Staff'])
         self.postprocess_left_hand_staff(self.score['Viola 2 Fingering Staff'])
-        if self.repeat:
-            repeat = indicatortools.Repeat()
-            for staff in iterate(self.score).by_class(scoretools.Staff):
-                attach(repeat, staff)
-            attach(repeat, self.score['TimeSignatureContext'])
-        elif self.is_final_segment:
-            self.score.add_final_markup(self.final_markup)
-            self.score.add_final_bar_line(
-                abbreviation='|.',
-                to_each_voice=True,
-                )
+        SegmentMaker.configure_score(self)
 
     ### PUBLIC PROPERTIES ###
 
