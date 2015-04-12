@@ -15,7 +15,7 @@ left_hand_glissandi_music_specifier = consort.MusicSpecifier(
                 parenthesize_repeated_pitches=True,
                 ),
             selector=selectortools.Selector().by_leaves(
-                ).with_callback(consort.AfterGraceSelectorCallback())
+                ).append_callback(consort.AfterGraceSelectorCallback())
             ),
         ),
     grace_handler=consort.GraceHandler(

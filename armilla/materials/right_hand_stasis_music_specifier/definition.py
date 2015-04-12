@@ -36,7 +36,7 @@ right_hand_stasis_music_specifier = consort.MusicSpecifier(
                 ),
             scope=scoretools.Voice,
             selector=selectortools.Selector(
-                ).with_callback(
+                ).append_callback(
                     consort.PhrasedSelectorCallback()
                 ).by_counts(
                     [1, -2, 1, -2, 1, -1],

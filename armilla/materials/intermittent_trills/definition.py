@@ -47,7 +47,7 @@ intermittent_trills = consort.AttachmentExpression(
     selector=selectortools.Selector()\
         .by_leaves()\
         [:-1]\
-        .with_callback(consort.AfterGraceSelectorCallback())\
+        .append_callback(consort.AfterGraceSelectorCallback())\
         .by_counts(
             [-3, 2, -2, 1, -1, 2, -1, 1],
             cyclic=True,

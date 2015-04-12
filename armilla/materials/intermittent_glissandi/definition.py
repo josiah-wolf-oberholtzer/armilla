@@ -13,7 +13,7 @@ intermittent_glissandi = consort.AttachmentExpression(
     selector=selectortools.Selector()\
         .by_leaves()\
         [:-1]\
-        .with_callback(consort.AfterGraceSelectorCallback())\
+        .append_callback(consort.AfterGraceSelectorCallback())\
         .by_counts(
             [-3, 4, -2, 3, -1, 4],
             cyclic=True,
