@@ -3,14 +3,16 @@ import ide
 import os
 import pytest
 import shutil
-import armilla
 from abjad.tools import systemtools
 
+
+test_directory, _ = os.path.split(os.path.abspath(__file__))
+score_directory = os.path.abspath(os.path.join(test_directory, '..'))
 
 boilerplate_path = ide.idetools.Configuration().boilerplate_directory
 boilerplate_path = os.path.join(boilerplate_path, '__output_material__.py')
 
-materials_path = os.path.join(armilla.__path__[0], 'materials')
+materials_path = os.path.join(score_directory, 'materials')
 
 directory_names = os.listdir(materials_path)
 directory_names = [_ for _ in directory_names if not _.startswith(('.', '_'))]
@@ -20,7 +22,7 @@ material_paths = [_ for _ in material_paths if os.path.isdir(_)]
 
 
 @pytest.mark.parametrize('material_path', material_paths)
-def test_armilla_materials_01(material_path):
+def test_materials_01(material_path):
     local_boilerplate_path = os.path.join(
         material_path,
         '__output_material__.py',
@@ -32,7 +34,7 @@ def test_armilla_materials_01(material_path):
     if os.path.exists(local_boilerplate_path):
         os.remove(local_boilerplate_path)
     with systemtools.FilesystemState(
-        keep=[local_output_path],
+        #keep=[local_output_path],
         remove=[local_boilerplate_path],
         ):
         shutil.copyfile(boilerplate_path, local_boilerplate_path)
