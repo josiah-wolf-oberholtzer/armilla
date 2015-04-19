@@ -52,7 +52,7 @@ left_hand_stasis_music_specifier = consort.tools.MusicSpecifier(
                     item_class=pitchtools.NamedPitch,
                     ),
                 ),
-            ratio=mathtools.Ratio([1]),
+            ratio=mathtools.Ratio((1,)),
             ),
         ),
     rhythm_maker=rhythmmakertools.NoteRhythmMaker(

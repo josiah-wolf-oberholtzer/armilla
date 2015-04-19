@@ -160,6 +160,7 @@ right_hand_circular_music_specifier = consort.tools.MusicSpecifier(
                 forbid_meter_rewriting=True,
                 forbidden_written_duration=durationtools.Duration(1, 4),
                 ),
+            preferred_denominator='from_counts',
             ),
         last=rhythmmakertools.IncisedRhythmMaker(
             incise_specifier=rhythmmakertools.InciseSpecifier(

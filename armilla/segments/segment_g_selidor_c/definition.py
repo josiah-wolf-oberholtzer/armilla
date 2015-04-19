@@ -13,7 +13,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=60 / 2,
     discard_final_silence=True,
     name='Selidor (iii)',
-    rehearsal_mark='G',
     repeat=True,
     tempo=indicatortools.Tempo((1, 4), 72),
     )

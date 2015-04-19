@@ -13,7 +13,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=30 / 2,
     discard_final_silence=True,
     name='Wellogy',
-    rehearsal_mark='C',
     repeat=True,
     tempo=indicatortools.Tempo((1, 4), 108),
     )

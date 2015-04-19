@@ -33,7 +33,9 @@ left_hand_glissandi_music_specifier = consort.tools.MusicSpecifier(
             ),
         ),
     grace_handler=consort.tools.GraceHandler(
-        counts=(0, 1, 2, 0, 0, 0),
+        counts=datastructuretools.CyclicTuple(
+            [0, 1, 2, 0, 0, 0]
+            ),
         only_if_preceded_by_nonsilence=True,
         ),
     pitch_handler=consort.tools.AbsolutePitchHandler(
@@ -91,7 +93,7 @@ left_hand_glissandi_music_specifier = consort.tools.MusicSpecifier(
                     item_class=pitchtools.NamedPitch,
                     ),
                 ),
-            ratio=mathtools.Ratio([1, 1, 1]),
+            ratio=mathtools.Ratio((1, 1, 1)),
             ),
         ),
     rhythm_maker=consort.tools.CompositeRhythmMaker(
@@ -102,6 +104,7 @@ left_hand_glissandi_music_specifier = consort.tools.MusicSpecifier(
                 decrease_durations_monotonically=True,
                 forbidden_written_duration=durationtools.Duration(1, 4),
                 ),
+            preferred_denominator='from_counts',
             ),
         last=rhythmmakertools.NoteRhythmMaker(),
         ),

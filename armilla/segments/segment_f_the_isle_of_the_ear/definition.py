@@ -14,7 +14,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=40 / 2,
     discard_final_silence=True,
     name='The Isle of the Ear',
-    rehearsal_mark='F',
     repeat=True,
     tempo=indicatortools.Tempo((1, 4), 108),
     )

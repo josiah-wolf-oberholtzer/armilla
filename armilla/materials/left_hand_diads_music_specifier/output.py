@@ -182,7 +182,7 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                     item_class=pitchtools.NamedPitch,
                     ),
                 ),
-            ratio=mathtools.Ratio([1, 1, 1]),
+            ratio=mathtools.Ratio((1, 1, 1)),
             ),
         pitch_operation_specifier=consort.tools.PitchOperationSpecifier(
             pitch_operations=(
@@ -206,7 +206,7 @@ left_hand_diads_music_specifier = consort.tools.MusicSpecifier(
                     ),
                 None,
                 ),
-            ratio=mathtools.Ratio([2, 1, 2, 2, 1]),
+            ratio=mathtools.Ratio((2, 1, 2, 2, 1)),
             ),
         ),
     rhythm_maker=rhythmmakertools.NoteRhythmMaker(

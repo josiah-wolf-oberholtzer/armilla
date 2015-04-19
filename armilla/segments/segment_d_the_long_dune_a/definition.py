@@ -13,7 +13,6 @@ segment_maker = armilla.ArmillaSegmentMaker(
     desired_duration_in_seconds=120,
     discard_final_silence=True,
     name='The Long Dune (i)',
-    rehearsal_mark='D',
     repeat=False,
     tempo=indicatortools.Tempo((1, 4), 36),
     )
