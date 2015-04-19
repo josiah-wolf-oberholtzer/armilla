@@ -80,20 +80,6 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         if isinstance(leaves[-1], scoretools.Note):
             attach(breath_mark, leaves[-1], name='breath_mark')
 
-    def postprocess_grace_containers(self, score):
-        stop_trill_span = consort.StopTrillSpan()
-        for leaf in iterate(score).by_class(scoretools.Leaf):
-            agent = inspect_(leaf)
-            spanners = agent.get_spanners(consort.ConsortTrillSpanner)
-            if not spanners:
-                continue
-            after_graces = agent.get_grace_containers('after')
-            if not after_graces:
-                continue
-            after_grace = after_graces[0]
-            leaf = after_grace[0]
-            attach(stop_trill_span, leaf)
-
     def postprocess_left_hand_staff(self, staff):
         voice = staff[0]
         finger_pitches_voice = self.copy_voice(
@@ -186,7 +172,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         self.postprocess_right_hand_staff(self.score['Viola 2 Bowing Staff'])
         self.postprocess_left_hand_staff(self.score['Viola 1 Fingering Staff'])
         self.postprocess_left_hand_staff(self.score['Viola 2 Fingering Staff'])
-        SegmentMaker.configure_score(self)
+        consort.SegmentMaker.configure_score(self)
 
     ### PUBLIC PROPERTIES ###
 
