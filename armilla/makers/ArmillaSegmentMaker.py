@@ -1,7 +1,5 @@
 # -*- encoding: utf-8 -*-
 from abjad import attach
-from abjad import inspect_
-from abjad import iterate
 from abjad.tools import durationtools
 from abjad.tools import indicatortools
 from abjad.tools import markuptools
@@ -18,7 +16,6 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         >>> segment_maker = armilla.ArmillaSegmentMaker()
         >>> print(format(segment_maker))
         armilla.makers.ArmillaSegmentMaker(
-            score_template=armilla.makers.ArmillaScoreTemplate(),
             permitted_time_signatures=indicatortools.TimeSignatureInventory(
                 [
                     indicatortools.TimeSignature((2, 4)),
@@ -29,6 +26,8 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
                     indicatortools.TimeSignature((6, 8)),
                     ]
                 ),
+            score_template=armilla.makers.ArmillaScoreTemplate(),
+            timespan_quantization=durationtools.Duration(1, 8),
             )
 
     '''
@@ -43,29 +42,50 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     def __init__(
         self,
-        discard_final_silence=None,
+        annotate_colors=None,
+        annotate_phrasing=None,
+        annotate_timespans=None,
         desired_duration_in_seconds=None,
+        discard_final_silence=None,
+        maximum_meter_run_length=None,
         name=None,
+        omit_stylesheets=None,
+        permitted_time_signatures=None,
+        repeat=None,
         score_template=None,
         settings=None,
         tempo=None,
-        permitted_time_signatures=None,
-        repeat=None,
+        timespan_quantization=None,
         ):
         import armilla
-        permitted_time_signatures = permitted_time_signatures or \
+        permitted_time_signatures = (
+            permitted_time_signatures or
             armilla.materials.time_signatures
-        score_template = score_template or armilla.makers.ArmillaScoreTemplate()
+            )
+        score_template = (
+            score_template or
+            armilla.makers.ArmillaScoreTemplate()
+            )
+        timespan_quantization = (
+            timespan_quantization or
+            durationtools.Duration(1, 8),
+            )
         consort.SegmentMaker.__init__(
             self,
-            discard_final_silence=discard_final_silence,
+            annotate_colors=annotate_colors,
+            annotate_phrasing=annotate_phrasing,
+            annotate_timespans=annotate_timespans,
             desired_duration_in_seconds=desired_duration_in_seconds,
+            discard_final_silence=discard_final_silence,
+            maximum_meter_run_length=maximum_meter_run_length,
             name=name,
+            omit_stylesheets=omit_stylesheets,
+            permitted_time_signatures=permitted_time_signatures,
+            repeat=repeat,
             score_template=score_template,
             settings=settings,
             tempo=tempo,
-            timespan_quantization=durationtools.Duration(1, 8),
-            permitted_time_signatures=permitted_time_signatures,
+            timespan_quantization=timespan_quantization,
             )
         self.repeat = repeat
 
