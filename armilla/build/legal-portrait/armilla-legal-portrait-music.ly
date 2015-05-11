@@ -4,7 +4,9 @@
 \language "english"
 
 #(ly:set-option 'relative-includes #t)
-\include "../stylesheets/stylesheet.ily"
+\include "../../stylesheets/stylesheet.ily"
+#(set-default-paper-size "legal" 'portrait)
+#(set-global-staff-size 11)
 
 \header {
     composer = \markup {
@@ -44,15 +46,18 @@
     }
 }
 
+\paper {
+    indent = 18\mm
+    short-indent = 12\mm
+    last-bottom-spacing = #'(
+        (basic-distance . 10)
+        (minimum-distance . 10)
+        (padding . 5)
+        (stretchability . 0)
+        )
+    ragged-last-bottom = ##t
+}
+
 \score {
-    {
-        \include "segment-a-far-sorr.ly"
-        \include "segment-b-selidor-a.ly"
-        \include "segment-c-wellogy.ly"
-        \include "segment-d-the-long-dune-a.ly"
-        \include "segment-e-selidor-b.ly"
-        \include "segment-f-the-isle-of-the-ear.ly"
-        \include "segment-g-selidor-c.ly"
-        \include "segment-h-the-long-dune-b.ly"
-    }
+    \include "../segments.ily"
 }

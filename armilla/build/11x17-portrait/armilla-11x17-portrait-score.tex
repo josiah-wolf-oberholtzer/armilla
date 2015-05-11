@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage[papersize={11in, 17in}]{geometry}
+\usepackage{pdfpages}
+\begin{document}
+
+\includepdf[pages=-]{armilla-11x17-portrait-front-cover.pdf}
+\includepdf[pages=-]{armilla-11x17-portrait-preface.pdf}
+\includepdf[
+    angle=-90,
+    pages=-,
+]{armilla-11x17-portrait-music.pdf}
+\includepdf[pages=-]{armilla-11x17-portrait-back-cover.pdf}
+
+\end{document}

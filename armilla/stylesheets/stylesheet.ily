@@ -16,16 +16,16 @@ afterGraceFraction = #(cons 1023 1024)
 
 \paper {
     bottom-margin = 10\mm
-    left-margin = 30\mm
+    left-margin = 10\mm
     right-margin = 10\mm
     top-margin = 10\mm
     evenFooterMarkup = \markup \fill-line {
-        " "
         \concat {
             \bold \fontsize #3
             \on-the-fly #print-page-number-check-first
             \fromproperty #'page:page-number-string
         }
+        " "
     }
     evenHeaderMarkup = \markup \fill-line { " " }
     oddFooterMarkup = \markup \fill-line {
@@ -52,7 +52,7 @@ afterGraceFraction = #(cons 1023 1024)
         (basic-distance . 12)
         (minimum-distance . 18)
         (padding . 12)
-        (stretchability . 0)
+        (stretchability . 100)
     )
     top-markup-spacing = #'(
         (basic-distance . 0)
@@ -87,7 +87,9 @@ afterGraceFraction = #(cons 1023 1024)
         \consists Text_engraver
         \consists Text_spanner_engraver
         \consists Time_signature_engraver
-        \override BarNumber.extra-offset = #'(-6 . -4)
+        \override BarNumber.Y-extent = #'(0 . 0)
+        \override BarNumber.Y-offset = 0
+        \override BarNumber.extra-offset = #'(-6 . 0)
         \override BarNumber.font-name = "Didot Italic"
         \override BarNumber.font-size = 1
         \override BarNumber.padding = 4

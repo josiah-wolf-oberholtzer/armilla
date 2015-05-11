@@ -202,7 +202,14 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         queens = markuptools.Markup('Fresh Meadows, NY')
         date = markuptools.Markup('September 2014 - January 2015')
         null = markuptools.Markup.null()
-        contents = [null, null, null, portland, queens, date]
+        contents = [
+            null,
+            null,
+            null,
+            portland,
+            queens,
+            date,
+            ]
         markup = markuptools.Markup.right_column(contents)
         markup = markup.italic()
         return markup

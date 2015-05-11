@@ -16,7 +16,12 @@
                             " "
                             \fontsize
                                 #-3
-                                "The Isle of the Ear"
+                                \raise #4
+                                    \left-column {
+                                        "The Isle"
+                                        \null
+                                        "Of the Ear"
+                                    }
                         }
                     }
                 s1 * 3/8

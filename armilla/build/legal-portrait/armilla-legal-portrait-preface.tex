@@ -1,0 +1,36 @@
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{import}
+\usepackage{xltxtra,fontspec,xunicode}
+\usepackage[absolute]{textpos}
+\usepackage[papersize={8.5in, 14in}]{geometry}
+\usepackage{nopageno}
+
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\defaultfontfeatures{Scale=MatchLowercase}
+\setromanfont[Numbers=Uppercase]{Didot}
+
+\begin{document}
+
+\begin{textblock}{23}(0,0.5)
+\center\huge PREFACE
+\end{textblock}
+
+\begin{textblock}{11}(0, 2)
+    \subimport*{../preface/calvino}{}
+    \subimport*{../preface/leguin}{}
+\end{textblock}
+
+\begin{textblock}{11}(12,2)
+    \subimport*{../preface/bow-contact-points}{}
+    \subimport*{../preface/dynamics}{}
+    \subimport*{../preface/string-contact-points}{}
+    \subimport*{../preface/other-techniques}{}
+\end{textblock}
+
+\end{document}
