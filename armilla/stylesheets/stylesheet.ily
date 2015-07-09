@@ -70,9 +70,7 @@ afterGraceFraction = #(cons 1023 1024)
 
 \layout {
     \accidentalStyle forget
-    ragged-bottom = ##t
     ragged-right = ##t
-    ragged-last = ##t
 
     %%% TIME SIGNATURE CONTEXT %%%
 

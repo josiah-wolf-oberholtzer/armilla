@@ -11,7 +11,7 @@ from abjad.tools import selectortools
 ### SEGMENT MAKER ###
 
 segment_maker = armilla.ArmillaSegmentMaker(
-    desired_duration_in_seconds=90,
+    desired_duration_in_seconds=30,
     discard_final_silence=True,
     name='Far Sorr',
     repeat=False,

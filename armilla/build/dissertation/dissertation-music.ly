@@ -10,13 +10,15 @@
 #(set-global-staff-size 7)
 
 \paper {
-    indent = 15\mm
-    short-indent = 15\mm
+    %annotate-spacing = ##t
 
-    bottom-margin = 10\mm
-    left-margin = 10\mm
-    right-margin = 0.5\in
-    top-margin = 10\mm
+    %indent = 15\mm
+    %short-indent = 15\mm
+
+    bottom-margin = 1\in
+    left-margin = 1\in
+    right-margin = 1\in
+    top-margin = 1\in
 
     oddHeaderMarkup = \markup {}
     evenHeaderMarkup = \markup {}
@@ -40,7 +42,7 @@
         (basic-distance . 0)
         (minimum-distance . 0)
         (padding . 8)
-        (stretchability . 20)
+        (stretchability . 100)
     )
     top-markup-spacing = #'(
         (basic-distance . 0)
