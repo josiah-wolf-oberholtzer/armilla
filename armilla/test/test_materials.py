@@ -1,32 +1,60 @@
 # -*- encoding: utf-8 -*-
+from __future__ import print_function
 import os
 import pytest
+import sys
+import traceback
 import ide
-import armilla
 from abjad.tools import systemtools
+abjad_ide = ide.tools.idetools.AbjadIDE()
 
 
-configuration = ide.tools.idetools.AbjadIDEConfiguration()
-boilerplate_path = configuration.abjad_ide_boilerplate_directory
-boilerplate_path = os.path.join(
-    boilerplate_path,
-    '__illustrate_material__.py',
-    )
+this_file = os.path.abspath(__file__)
+test_directory = os.path.dirname(this_file)
+inner_score_directory = os.path.dirname(test_directory)
+outer_score_directory = os.path.dirname(inner_score_directory)
+composer_scores_directory = os.path.dirname(outer_score_directory)
+# Travis monkey patch
+abjad_ide._configuration._composer_scores_directory_override = \
+    composer_scores_directory
+materials_directory = abjad_ide._to_score_directory(this_file, 'materials')
+material_directories = abjad_ide._list_visible_paths(materials_directory)
 
-materials_path = os.path.join(armilla.__path__[0], 'materials')
-directory_names = os.listdir(materials_path)
-directory_names = [_ for _ in directory_names if not _.startswith(('.', '_'))]
-
-material_paths = [os.path.join(materials_path, _) for _ in directory_names]
-material_paths = [_ for _ in material_paths if os.path.isdir(_)]
+print(material_directories)
+#raise Exception
 
 
-@pytest.mark.parametrize('material_path', material_paths)
-def test_materials_03(material_path):
-    r'''Interprets material packages.
+#def test_materials_01():
+#    r'''Interprets abbreviations file.
+#    '''
+#    abbreviations_file_path = os.path.join(
+#        materials_directory,
+#        '__abbreviations__.py',
+#        )
+#    if not os.path.exists(abbreviations_file_path):
+#        return
+#    command = 'python {}'.format(abbreviations_file_path)
+#    exit_status = systemtools.IOManager.spawn_subprocess(command)
+#    assert exit_status == 0
+
+
+@pytest.mark.parametrize('material_directory', material_directories)
+def test_materials_02(material_directory):
+    r'''Checks material definition files.
     '''
-    definition_file_path = os.path.join(material_path, 'definition.py')
-    command = 'python {}'.format(definition_file_path)
-    with systemtools.Timer(print_continuously_from_background=True):
-        exit_status = systemtools.IOManager.spawn_subprocess(command)
-    assert exit_status == 0
+    try:
+        abjad_ide.check_definition_file(material_directory)
+    except:
+        traceback.print_exc()
+        sys.exit(1)
+
+
+@pytest.mark.parametrize('material_directory', material_directories)
+def test_materials_03(material_directory):
+    r'''Makes material PDFs.
+    '''
+    try:
+        abjad_ide.make_pdf(material_directory)
+    except:
+        traceback.print_exc()
+        sys.exit(1)
