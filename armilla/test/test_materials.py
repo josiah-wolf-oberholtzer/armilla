@@ -1,19 +1,19 @@
 # -*- encoding: utf-8 -*-
-import ide
 import os
 import pytest
-import shutil
+import ide
+import armilla
 from abjad.tools import systemtools
 
 
-test_directory, _ = os.path.split(os.path.abspath(__file__))
-score_directory = os.path.abspath(os.path.join(test_directory, '..'))
+configuration = ide.tools.idetools.AbjadIDEConfiguration()
+boilerplate_path = configuration.abjad_ide_boilerplate_directory
+boilerplate_path = os.path.join(
+    boilerplate_path,
+    '__illustrate_material__.py',
+    )
 
-boilerplate_path = ide.idetools.Configuration().boilerplate_directory
-boilerplate_path = os.path.join(boilerplate_path, '__output_material__.py')
-
-materials_path = os.path.join(score_directory, 'materials')
-
+materials_path = os.path.join(armilla.__path__[0], 'materials')
 directory_names = os.listdir(materials_path)
 directory_names = [_ for _ in directory_names if not _.startswith(('.', '_'))]
 
@@ -22,27 +22,11 @@ material_paths = [_ for _ in material_paths if os.path.isdir(_)]
 
 
 @pytest.mark.parametrize('material_path', material_paths)
-def test_materials_01(material_path):
-    local_boilerplate_path = os.path.join(
-        material_path,
-        '__output_material__.py',
-        )
-    local_output_path = os.path.join(
-        material_path,
-        'output.py',
-        )
-    if os.path.exists(local_boilerplate_path):
-        os.remove(local_boilerplate_path)
-    with systemtools.FilesystemState(
-        #keep=[local_output_path],
-        remove=[local_boilerplate_path],
-        ):
-        shutil.copyfile(boilerplate_path, local_boilerplate_path)
-        if os.path.exists(local_output_path):
-            os.remove(local_output_path)
-        assert os.path.exists(local_boilerplate_path)
-        assert not os.path.exists(local_output_path)
-        command = 'python {}'.format(local_boilerplate_path)
+def test_materials_03(material_path):
+    r'''Interprets material packages.
+    '''
+    definition_file_path = os.path.join(material_path, 'definition.py')
+    command = 'python {}'.format(definition_file_path)
+    with systemtools.Timer(print_continuously_from_background=True):
         exit_status = systemtools.IOManager.spawn_subprocess(command)
-        assert exit_status == 0
-        assert os.path.exists(local_output_path)
+    assert exit_status == 0

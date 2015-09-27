@@ -1,18 +1,18 @@
 # -*- encoding: utf-8 -*-
-import ide
 import os
 import pytest
 import shutil
+import armilla
+import ide
 from abjad.tools import systemtools
+#pytest.skip('possibly deprecated in favor of test/illustrate_segments.py')
 
 
-test_directory, _ = os.path.split(os.path.abspath(__file__))
-score_directory = os.path.abspath(os.path.join(test_directory, '..'))
-
-boilerplate_path = ide.idetools.Configuration().boilerplate_directory
+configuration = ide.tools.idetools.AbjadIDEConfiguration()
+boilerplate_path = configuration.abjad_ide_boilerplate_directory
 boilerplate_path = os.path.join(boilerplate_path, '__illustrate_segment__.py')
 
-segments_path = os.path.join(score_directory, 'segments')
+segments_path = os.path.join(armilla.__path__[0], 'segments')
 
 directory_names = os.listdir(segments_path)
 directory_names = [_ for _ in directory_names if not _.startswith(('.', '_'))]
@@ -23,6 +23,9 @@ segment_paths = [_ for _ in segment_paths if os.path.isdir(_)]
 
 @pytest.mark.parametrize('segment_path', segment_paths)
 def test_segments_01(segment_path):
+    r'''Illustrates segments.
+    '''
+
     local_boilerplate_path = os.path.join(
         segment_path,
         '__illustrate_segment__.py',
@@ -35,10 +38,6 @@ def test_segments_01(segment_path):
         segment_path,
         'illustration.pdf',
         )
-    metadata_path = os.path.join(
-        segment_path,
-        '__metadata__.py',
-        )
     illustration_candidate_ly_path = os.path.join(
         segment_path,
         'illustration.candidate.ly',
@@ -47,22 +46,16 @@ def test_segments_01(segment_path):
         segment_path,
         'illustration.candidate.pdf',
         )
+
     if os.path.exists(local_boilerplate_path):
         os.remove(local_boilerplate_path)
-    if os.path.exists(illustration_candidate_ly_path):
-        os.remove(illustration_candidate_ly_path)
-    if os.path.exists(illustration_candidate_pdf_path):
-        os.remove(illustration_candidate_pdf_path)
+
     with systemtools.FilesystemState(
-        keep=[
-            illustration_ly_path,
-            illustration_pdf_path,
-            metadata_path,
-            ],
+        keep=[illustration_ly_path, illustration_pdf_path],
         remove=[local_boilerplate_path],
         ):
         shutil.copyfile(boilerplate_path, local_boilerplate_path)
-        ide.idetools.AbjadIDE._replace_in_file(
+        ide.tools.idetools.AbjadIDE._replace_in_file(
             local_boilerplate_path,
             'PREVIOUS_SEGMENT_METADATA_IMPORT_STATEMENT',
             'previous_segment_metadata = None',
