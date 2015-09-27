@@ -1,36 +1,37 @@
-\version "2.19.16"
+\version "2.19.26"
 \language "english"
 
 #(ly:set-option 'relative-includes #t)
 
-\include "/Users/josiah/Documents/Scores/armilla/armilla/stylesheets/stylesheet.ily"
+\include "../../stylesheets/stylesheet.ily"
+\include "../../stylesheets/nonfirst-segment.ily"
 
 \score {
-    \context Score = "Armilla Score" <<
+    \context Score = "Armilla Score" \with {
+        currentBarNumber = #62
+    } <<
         \tag #'time
         \repeat volta 2
-        \context TimeSignatureContext = "TimeSignatureContext" {
+        \context TimeSignatureContext = "Time Signature Context" {
+            \break
             {
-                \time 5/8
                 \tempo 4=72
+                \time 5/8
                 \mark \markup {
                     \concat
                         {
-                            \override
-                                #'(box-padding . 0.5)
-                                \box
+                            \box
+                                \pad-around
+                                    #0.5
                                     \caps
-                                        E
+                                        D
                             " "
                             \fontsize
                                 #-3
                                 "Selidor (ii)"
                         }
                     }
-                s1 * 5/8
-            }
-            {
-                s1 * 5/8
+                s1 * 5/4
             }
             {
                 \time 3/8
@@ -42,10 +43,7 @@
             }
             {
                 \time 5/8
-                s1 * 5/8
-            }
-            {
-                s1 * 5/8
+                s1 * 5/4
             }
             {
                 \time 6/8
@@ -53,10 +51,7 @@
             }
             {
                 \time 3/8
-                s1 * 3/8
-            }
-            {
-                s1 * 3/8
+                s1 * 3/4
             }
             {
                 \time 3/4
@@ -81,6 +76,7 @@
                 \clef "percussion"
                 \context StringContactVoice = "Viola 1 RH String Contact Voice" {
                     {
+                        % [Viola 1 RH String Contact Voice] Measure 62
                         {
                             s8
                         }
@@ -95,6 +91,7 @@
                                 }
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 63
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -167,9 +164,11 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 64
                         {
                             c'4. \stopTextSpan
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 65
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -216,6 +215,7 @@
                         }
                     }
                     {
+                        % [Viola 1 RH String Contact Voice] Measure 66
                         {
                             s8
                         }
@@ -251,6 +251,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 67
                         {
                             c'8
                         }
@@ -282,6 +283,7 @@
                             c'4 \stopTextSpan \startTextSpan
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 68
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -329,6 +331,7 @@
                             c'4 \stopTextSpan
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 69
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -399,13 +402,16 @@
                             \once \override TextSpanner.dash-period = 1
                             c'8 \stopTextSpan \startTextSpan
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 70
                         {
                             c'4
-                            c'16 \stopTextSpan
-                            c'16
+                            c'16 \stopTextSpan [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
+                        % [Viola 1 RH String Contact Voice] Measure 71
                         {
                             s8
                         }
@@ -453,13 +459,15 @@
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
                             c'2 \startTextSpan
-                            c'16 \stopTextSpan
-                            c'16
+                            c'16 \stopTextSpan [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                 }
                 \context BowContactVoice = "Viola 1 RH Bow Contact Voice" {
                     {
+                        % [Viola 1 RH Bow Contact Voice] Measure 62
                         {
                             s8
                         }
@@ -489,6 +497,7 @@
                                 }
                             c'4 ^\upbow \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 63
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
@@ -537,6 +546,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 64
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
@@ -550,6 +560,7 @@
                                 }
                             c'4. ^ \parenthesize \upbow \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 65
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
@@ -575,6 +586,7 @@
                         }
                     }
                     {
+                        % [Viola 1 RH Bow Contact Voice] Measure 66
                         {
                             s8
                         }
@@ -615,6 +627,7 @@
                                 }
                             c'4 ^\upbow \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 67
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
@@ -652,6 +665,7 @@
                                 }
                             c'4 ^\downbow \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 68
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
@@ -690,6 +704,7 @@
                                 }
                             c'4 ^\downbow \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 69
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
@@ -716,6 +731,7 @@
                                 }
                             c'8 \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 70
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
@@ -738,7 +754,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\upbow \glissando [
                             \once \override NoteHead.Y-offset = 0.4
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -748,10 +764,12 @@
                                             3
                                             5
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
+                        % [Viola 1 RH Bow Contact Voice] Measure 71
                         {
                             s8
                         }
@@ -779,7 +797,7 @@
                                             4
                                             5
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\upbow \glissando [
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -789,12 +807,15 @@
                                             0
                                             1
                                 }
-                            c'16 \breathe
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
+                            \breathe
                         }
                     }
                 }
                 \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
                     {
+                        % [Viola 1 RH Beaming Voice] Measure 62
                         {
                             r8
                         }
@@ -804,6 +825,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 63
                         {
                             c'8
                         }
@@ -812,15 +834,18 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 64
                         {
                             c'4.
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 65
                         {
                             c'4..
                             c'16
                         }
                     }
                     {
+                        % [Viola 1 RH Beaming Voice] Measure 66
                         {
                             r8
                         }
@@ -831,6 +856,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 67
                         {
                             c'8
                         }
@@ -838,6 +864,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 68
                         {
                             c'8
                         }
@@ -846,12 +873,14 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 69
                         {
                             c'4
                         }
                         {
                             c'8
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 70
                         {
                             c'4
                             c'16 [
@@ -860,6 +889,7 @@
                         }
                     }
                     {
+                        % [Viola 1 RH Beaming Voice] Measure 71
                         {
                             r8
                         }
@@ -875,6 +905,7 @@
                 }
                 \context Dynamics = "Viola 1 RH Dynamics Voice" {
                     {
+                        % [Viola 1 RH Dynamics Voice] Measure 62
                         {
                             s8
                         }
@@ -884,6 +915,7 @@
                             c'4 \p \>
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 63
                         {
                             c'8 \ppp \<
                         }
@@ -892,15 +924,18 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 64
                         {
                             c'4. \ppp \<
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 65
                         {
                             c'4.. \p \>
                             c'16 \ppp
                         }
                     }
                     {
+                        % [Viola 1 RH Dynamics Voice] Measure 66
                         {
                             s8
                         }
@@ -911,6 +946,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 67
                         {
                             c'8 \p \>
                         }
@@ -918,6 +954,7 @@
                             c'4 \ppp \<
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 68
                         {
                             c'8 \p \>
                         }
@@ -926,19 +963,23 @@
                             c'4 \ppp \<
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 69
                         {
                             c'4 \p \>
                         }
                         {
                             c'8 \ppp \<
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 70
                         {
                             c'4 \p \>
-                            c'16
-                            c'16 \ppp
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \ppp ]
                         }
                     }
                     {
+                        % [Viola 1 RH Dynamics Voice] Measure 71
                         {
                             s8
                         }
@@ -946,8 +987,9 @@
                     {
                         {
                             c'2 \p \>
-                            c'16
-                            c'16 \ppp
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \ppp ]
                         }
                     }
                 }
@@ -957,149 +999,27 @@
                 \clef "alto"
                 \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
                     {
+                        % [Viola 1 LH Pitches Voice] Measure 62
                         {
                             r8
                         }
                     }
                     {
                         {
-                            \override TrillPitchHead #'stencil = #ly:text-interface::print
-                            \override TrillPitchHead #'text = \markup {
-                                \musicglyph
-                                    #"noteheads.s0harmonic"
-                                }
-                            \pitchedTrill
-                            c'4 \startTrillSpan f'
-                            \revert TrillPitchHead #'stencil
-                            \revert TrillPitchHead #'text
-                            <> \stopTrillSpan
                             \afterGrace
-                            a4
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    g'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    f'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
                             c'4
-                            \override TrillPitchHead #'stencil = #ly:text-interface::print
-                            \override TrillPitchHead #'text = \markup {
-                                \musicglyph
-                                    #"noteheads.s0harmonic"
-                                }
-                            \pitchedTrill
-                            a4 \startTrillSpan c'
-                            <> \stopTrillSpan
-                        }
-                        {
-                            \afterGrace
-                            \pitchedTrill
-                            c'4. \startTrillSpan ef'
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
                                 <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    cs'
+                                >16
+                                <
                                     a
                                     \tweak #'style #'harmonic
                                     e'
-                                >16 \stopTrillSpan
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    a
-                                    \tweak #'style #'harmonic
-                                    d'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \revert TrillPitchHead #'stencil
-                            \revert TrillPitchHead #'text
-                            <> \stopTrillSpan
-                        }
-                        {
-                            a2
-                        }
-                    }
-                    {
-                        {
-                            r8
-                        }
-                    }
-                    {
-                        \times 2/3 {
-                            \afterGrace
-                            \pitchedTrill
-                            g4 \startTrillSpan bf
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    g'
-                                >16 \stopTrillSpan
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    f'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            <> \stopTrillSpan
-                            c'4
-                            \override TrillPitchHead #'stencil = #ly:text-interface::print
-                            \override TrillPitchHead #'text = \markup {
-                                \musicglyph
-                                    #"noteheads.s0harmonic"
-                                }
-                            \pitchedTrill
-                            d'4 \startTrillSpan g'
-                            <> \stopTrillSpan
-                        }
-                        {
-                            \pitchedTrill
-                            a8 \startTrillSpan d'
-                            \revert TrillPitchHead #'stencil
-                            \revert TrillPitchHead #'text
-                            <> \stopTrillSpan
-                        }
-                        {
-                            \afterGrace
-                            cqs'4
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    d'
-                                    \tweak #'style #'harmonic
-                                    g'
                                 >16
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
@@ -1111,26 +1031,85 @@
                                     #"noteheads.s0harmonic"
                                 }
                             \pitchedTrill
-                            d'4 \startTrillSpan f'
+                            a4 \startTrillSpan d'
                             <> \stopTrillSpan
                         }
-                        {
-                            \pitchedTrill
-                            a8 \startTrillSpan c'
-                            \revert TrillPitchHead #'stencil
-                            \revert TrillPitchHead #'text
-                            <> \stopTrillSpan
-                        }
+                        % [Viola 1 LH Pitches Voice] Measure 63
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             \afterGrace
-                            c'4
+                            \pitchedTrill
+                            c'4 \startTrillSpan f'
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
                                 <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
+                                    a
+                                    \tweak #'style #'harmonic
+                                    d'
+                                >16 \stopTrillSpan
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
+                            \afterGrace
+                            a4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    cqs'
+                                    \tweak #'style #'harmonic
+                                    eqs'
+                                >16
+                                <
+                                    cqs'
+                                    \tweak #'style #'harmonic
+                                    gqs'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                        }
+                        % [Viola 1 LH Pitches Voice] Measure 64
+                        {
+                            \once \override TrillSpanner.bound-details.left.padding = 2
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \pitchedTrill
+                            cqs'4. \startTrillSpan eqf'
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
+                        }
+                        % [Viola 1 LH Pitches Voice] Measure 65
+                        {
+                            c'2
+                        }
+                    }
+                    {
+                        % [Viola 1 LH Pitches Voice] Measure 66
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        \times 2/3 {
+                            \pitchedTrill
+                            a4 \startTrillSpan c'
+                            <> \stopTrillSpan
+                            c'4
+                            \afterGrace
+                            d'4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
                                     a
                                     \tweak #'style #'harmonic
                                     d'
@@ -1138,9 +1117,39 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            a4
+                        }
+                        % [Viola 1 LH Pitches Voice] Measure 67
+                        {
+                            a8
                         }
                         {
+                            cqs'4
+                            d'4
+                        }
+                        % [Viola 1 LH Pitches Voice] Measure 68
+                        {
+                            \afterGrace
+                            a8
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
+                                <
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    g'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            \once \override TrillSpanner.bound-details.left.padding = 2
                             \override TrillPitchHead #'stencil = #ly:text-interface::print
                             \override TrillPitchHead #'text = \markup {
                                 \musicglyph
@@ -1148,112 +1157,120 @@
                                 }
                             \pitchedTrill
                             c'4 \startTrillSpan f'
-                            \revert TrillPitchHead #'stencil
-                            \revert TrillPitchHead #'text
                             <> \stopTrillSpan
-                        }
-                        {
                             \afterGrace
-                            aqs8
+                            \pitchedTrill
+                            a4 \startTrillSpan d'
                             {
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
                                 <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    g'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
                                     c'
                                     \tweak #'style #'harmonic
                                     f'
-                                >16
+                                >16 \stopTrillSpan
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 69
+                        {
+                            c'4
+                        }
+                        {
+                            aqs8
+                        }
+                        % [Viola 1 LH Pitches Voice] Measure 70
                         {
                             c'4.
                         }
                     }
                     {
+                        % [Viola 1 LH Pitches Voice] Measure 71
                         {
                             r8
                         }
                     }
                     {
                         {
-                            \pitchedTrill
-                            a8 ~ \startTrillSpan c'
-                            <> \stopTrillSpan
-                            a2
+                            a8
+                            a2 \repeatTie
                         }
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 1 LH Spanner Voice" {
                     {
+                        % [Viola 1 LH Spanner Voice] Measure 62
                         {
                             s8
                         }
                     }
                     {
                         {
-                            c'4 \glissando
-                            a4
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
-                            c'4 \glissando
+                            c'4
                             a4 \glissando
                         }
-                        {
-                            c'4.
+                        % [Viola 1 LH Spanner Voice] Measure 63
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            c'4
+                            a4
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 64
                         {
-                            a2
+                            cqs'4. \glissando
+                        }
+                        % [Viola 1 LH Spanner Voice] Measure 65
+                        {
+                            c'2
                         }
                     }
                     {
+                        % [Viola 1 LH Spanner Voice] Measure 66
                         {
                             s8
                         }
                     }
                     {
                         \times 2/3 {
-                            g4
+                            a4 \glissando
                             c'4 \glissando
-                            d'4 \glissando
+                            d'4
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 67
                         {
                             a8 \glissando
                         }
                         {
-                            cqs'4
+                            cqs'4 \glissando
                             d'4 \glissando
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 68
                         {
-                            a8 \glissando
+                            a8
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            c'4
-                            a4 \glissando
+                            c'4 \glissando
+                            a4
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 69
                         {
                             c'4 \glissando
                         }
                         {
-                            aqs8
+                            aqs8 \glissando
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 70
                         {
                             c'4.
                         }
                     }
                     {
+                        % [Viola 1 LH Spanner Voice] Measure 71
                         {
                             s8
                         }
@@ -1286,6 +1303,7 @@
                 \clef "percussion"
                 \context StringContactVoice = "Viola 2 RH String Contact Voice" {
                     {
+                        % [Viola 2 RH String Contact Voice] Measure 62
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4 ^ \markup {
@@ -1297,6 +1315,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 63
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -1342,9 +1361,11 @@
                             c'4 \startTextSpan
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 64
                         {
-                            c'8. \stopTextSpan
-                            c'16
+                            c'8. \stopTextSpan [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -1353,6 +1374,7 @@
                         }
                     }
                     {
+                        % [Viola 2 RH String Contact Voice] Measure 65
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -1396,12 +1418,14 @@
                             c'4 \startTextSpan
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 66
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4 \stopTextSpan
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 67
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -1447,6 +1471,7 @@
                             c'4 \startTextSpan
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 68
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/4 {
                             c'4 \stopTextSpan
@@ -1454,9 +1479,11 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 69
                         {
-                            c'16
-                            c'16
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -1465,6 +1492,7 @@
                         }
                     }
                     {
+                        % [Viola 2 RH String Contact Voice] Measure 70
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -1492,6 +1520,7 @@
                             \once \override TextSpanner.dash-period = 1
                             c'4. \startTextSpan
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 71
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -1536,13 +1565,15 @@
                         }
                         {
                             c'2 \stopTextSpan
-                            c'16
-                            c'16
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                 }
                 \context BowContactVoice = "Viola 2 RH Bow Contact Voice" {
                     {
+                        % [Viola 2 RH Bow Contact Voice] Measure 62
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             \once \override Glissando.style = #'zigzag
@@ -1579,6 +1610,7 @@
                                 }
                             c'4 ^\upbow \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 63
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             \once \override Glissando.style = #'zigzag
@@ -1604,6 +1636,7 @@
                                 }
                             c'4 ^\upbow \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 64
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
@@ -1615,7 +1648,7 @@
                                             4
                                             5
                                 }
-                            c'8. \glissando
+                            c'8. \glissando [
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1625,7 +1658,8 @@
                                             4
                                             5
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -1634,6 +1668,7 @@
                         }
                     }
                     {
+                        % [Viola 2 RH Bow Contact Voice] Measure 65
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
@@ -1658,6 +1693,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 66
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             \once \override Glissando.style = #'zigzag
@@ -1694,6 +1730,7 @@
                                 }
                             c'4 ^\downbow \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 67
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             \once \override Glissando.style = #'zigzag
@@ -1719,6 +1756,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 68
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/4 {
                             \once \override Glissando.style = #'zigzag
@@ -1766,6 +1804,7 @@
                                 }
                             c'4 ^ \parenthesize \upbow \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 69
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
@@ -1777,7 +1816,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\downbow \glissando [
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1787,7 +1826,8 @@
                                             4
                                             5
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -1796,6 +1836,7 @@
                         }
                     }
                     {
+                        % [Viola 2 RH Bow Contact Voice] Measure 70
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.4
@@ -1809,6 +1850,7 @@
                                 }
                             c'4. ^\downbow \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 71
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 1.2
@@ -1844,7 +1886,7 @@
                                             3
                                             5
                                 }
-                            c'16 ^ \parenthesize \downbow \glissando
+                            c'16 ^ \parenthesize \downbow \glissando [
                             \once \override NoteHead.Y-offset = 1.2
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1854,23 +1896,28 @@
                                             4
                                             5
                                 }
-                            c'16 \breathe
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
+                            \breathe
                         }
                     }
                 }
                 \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
                     {
+                        % [Viola 2 RH Beaming Voice] Measure 62
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 63
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 64
                         {
                             c'8. [
                             \set stemLeftBeamCount = 2
@@ -1883,21 +1930,25 @@
                         }
                     }
                     {
+                        % [Viola 2 RH Beaming Voice] Measure 65
                         {
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 66
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 67
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 68
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/4 {
                             c'4
@@ -1905,6 +1956,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 69
                         {
                             c'16 [
                             \set stemLeftBeamCount = 2
@@ -1917,9 +1969,11 @@
                         }
                     }
                     {
+                        % [Viola 2 RH Beaming Voice] Measure 70
                         {
                             c'4.
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 71
                         {
                             c'8
                         }
@@ -1933,20 +1987,24 @@
                 }
                 \context Dynamics = "Viola 2 RH Dynamics Voice" {
                     {
+                        % [Viola 2 RH Dynamics Voice] Measure 62
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4 \ppp \<
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 63
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4 \p \>
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 64
                         {
-                            c'8. \ppp \<
-                            c'16 \p
+                            c'8. \ppp \< [
+                            \set stemLeftBeamCount = 2
+                            c'16 \p ]
                         }
                     }
                     {
@@ -1955,21 +2013,25 @@
                         }
                     }
                     {
+                        % [Viola 2 RH Dynamics Voice] Measure 65
                         {
                             c'4 \p \>
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 66
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4 \ppp \<
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 67
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4 \p \>
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 68
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/4 {
                             c'4 \ppp \<
@@ -1977,9 +2039,11 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 69
                         {
-                            c'16
-                            c'16 \p
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \p ]
                         }
                     }
                     {
@@ -1988,16 +2052,19 @@
                         }
                     }
                     {
+                        % [Viola 2 RH Dynamics Voice] Measure 70
                         {
                             c'4. \ppp \<
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 71
                         {
                             c'8 \p \>
                         }
                         {
                             c'2 \ppp \<
-                            c'16
-                            c'16 \p
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \p ]
                         }
                     }
                 }
@@ -2007,8 +2074,23 @@
                 \clef "alto"
                 \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
                     {
+                        % [Viola 2 LH Pitches Voice] Measure 62
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
+                            \afterGrace
+                            a4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    c'
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            c'4
                             \override TrillPitchHead #'stencil = #ly:text-interface::print
                             \override TrillPitchHead #'text = \markup {
                                 \musicglyph
@@ -2019,31 +2101,18 @@
                             \revert TrillPitchHead #'stencil
                             \revert TrillPitchHead #'text
                             <> \stopTrillSpan
-                            c'4
-                            \afterGrace
-                            aqs4
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    c'
-                                    \tweak #'style #'harmonic
-                                    f'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 63
                         {
                             c'4
                         }
                         {
-                            a4.
+                            aqs8
+                            aqs4 \repeatTie
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 64
                         {
-                            cqs'4
+                            a4
                         }
                     }
                     {
@@ -2052,83 +2121,39 @@
                         }
                     }
                     {
+                        % [Viola 2 LH Pitches Voice] Measure 65
                         {
-                            \override TrillPitchHead #'stencil = #ly:text-interface::print
-                            \override TrillPitchHead #'text = \markup {
-                                \musicglyph
-                                    #"noteheads.s0harmonic"
-                                }
-                            \pitchedTrill
-                            a4 \startTrillSpan c'
-                            \revert TrillPitchHead #'stencil
-                            \revert TrillPitchHead #'text
-                            <> \stopTrillSpan
+                            c'4
+                            \afterGrace
                             af4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    d'
+                                    \tweak #'style #'harmonic
+                                    a'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 66
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
+                            \once \override TrillSpanner.bound-details.left.padding = 2
                             \override TrillPitchHead #'stencil = #ly:text-interface::print
                             \override TrillPitchHead #'text = \markup {
                                 \musicglyph
                                     #"noteheads.s0harmonic"
                                 }
                             \pitchedTrill
-                            d'4 \startTrillSpan g'
+                            d'4 \startTrillSpan f'
                             <> \stopTrillSpan
-                            \afterGrace
-                            \pitchedTrill
-                            gqs4 \startTrillSpan cqs'
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    af
-                                    \tweak #'style #'harmonic
-                                    df'
-                                >16 \stopTrillSpan
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \revert TrillPitchHead #'stencil
-                            \revert TrillPitchHead #'text
-                            <> \stopTrillSpan
-                            af4
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
-                            \afterGrace
-                            g4
-                            {
-                                \override Flag #'stroke-style = #"grace"
-                                \override Script #'font-size = #0.5
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    af
-                                    \tweak #'style #'harmonic
-                                    ef'
-                                >16
-                                <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
-                                    af
-                                    \tweak #'style #'harmonic
-                                    df'
-                                >16
-                                \revert Flag #'stroke-style
-                                \revert Script #'font-size
-                            }
-                            \once \override TrillSpanner.bound-details.left.padding = 2
-                            \pitchedTrill
-                            af4 \startTrillSpan cf'
-                            <> \stopTrillSpan
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 3/4 {
                             \pitchedTrill
                             g4 \startTrillSpan bf
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
                             <> \stopTrillSpan
                             \afterGrace
                             aqf4
@@ -2136,15 +2161,66 @@
                                 \override Flag #'stroke-style = #"grace"
                                 \override Script #'font-size = #0.5
                                 <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
+                                    g
+                                    \tweak #'style #'harmonic
+                                    d'
+                                >16
+                                <
+                                    g
+                                    \tweak #'style #'harmonic
+                                    c'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                        }
+                        % [Viola 2 LH Pitches Voice] Measure 67
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            g4
+                            \override TrillPitchHead #'stencil = #ly:text-interface::print
+                            \override TrillPitchHead #'text = \markup {
+                                \musicglyph
+                                    #"noteheads.s0harmonic"
+                                }
+                            \afterGrace
+                            \pitchedTrill
+                            af4 \startTrillSpan df'
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    g
+                                    \tweak #'style #'harmonic
+                                    b
+                                >16 \stopTrillSpan
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
+                            \revert TrillPitchHead #'stencil
+                            \revert TrillPitchHead #'text
+                            <> \stopTrillSpan
+                        }
+                        % [Viola 2 LH Pitches Voice] Measure 68
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override TrillSpanner.bound-details.left.padding = 2
+                            \pitchedTrill
+                            g4 \startTrillSpan bf
+                            <> \stopTrillSpan
+                            af4
+                            c'4
+                            \afterGrace
+                            aqs4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
                                     c'
                                     \tweak #'style #'harmonic
                                     g'
                                 >16
                                 <
-                                    \parenthesize
-                                    \tweak #'font-size #-4
                                     c'
                                     \tweak #'style #'harmonic
                                     f'
@@ -2152,11 +2228,8 @@
                                 \revert Flag #'stroke-style
                                 \revert Script #'font-size
                             }
-                            c'4
-                            \pitchedTrill
-                            a4 \startTrillSpan c'
-                            <> \stopTrillSpan
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 69
                         {
                             c'8
                         }
@@ -2167,6 +2240,7 @@
                         }
                     }
                     {
+                        % [Viola 2 LH Pitches Voice] Measure 70
                         {
                             \override TrillPitchHead #'stencil = #ly:text-interface::print
                             \override TrillPitchHead #'text = \markup {
@@ -2179,8 +2253,26 @@
                             \revert TrillPitchHead #'text
                             <> \stopTrillSpan
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 71
                         {
+                            \afterGrace
                             c'4
+                            {
+                                \override Flag #'stroke-style = #"grace"
+                                \override Script #'font-size = #0.5
+                                <
+                                    a
+                                    \tweak #'style #'harmonic
+                                    e'
+                                >16
+                                <
+                                    a
+                                    \tweak #'style #'harmonic
+                                    d'
+                                >16
+                                \revert Flag #'stroke-style
+                                \revert Script #'font-size
+                            }
                         }
                         {
                             a2
@@ -2189,20 +2281,25 @@
                 }
                 \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
                     {
+                        % [Viola 2 LH Spanner Voice] Measure 62
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
+                            a4
+                            c'4 \glissando
                             a4 \glissando
-                            c'4 \glissando
-                            aqs4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 63
                         {
                             c'4 \glissando
                         }
                         {
-                            a4. \glissando
+                            aqs8
+                            \parenthesize
+                            aqs4 \glissando
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 64
                         {
-                            cqs'4
+                            a4
                         }
                     }
                     {
@@ -2211,28 +2308,33 @@
                         }
                     }
                     {
+                        % [Viola 2 LH Spanner Voice] Measure 65
                         {
-                            a4 \glissando
-                            af4 \glissando
+                            c'4 \glissando
+                            af4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 66
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             d'4 \glissando
-                            gqs4
-                            af4 \glissando
+                            g4 \glissando
+                            aqf4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 67
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
-                            g4
-                            af4 \glissando
+                            g4 \glissando
+                            af4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 68
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/4 {
                             g4 \glissando
-                            aqf4
+                            af4 \glissando
                             c'4 \glissando
-                            a4 \glissando
+                            aqs4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 69
                         {
                             c'8
                         }
@@ -2243,11 +2345,13 @@
                         }
                     }
                     {
+                        % [Viola 2 LH Spanner Voice] Measure 70
                         {
                             a4. \glissando
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 71
                         {
-                            c'4 \glissando
+                            c'4
                         }
                         {
                             a2

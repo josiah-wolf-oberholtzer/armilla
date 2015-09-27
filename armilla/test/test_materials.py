@@ -1,14 +1,12 @@
 # -*- encoding: utf-8 -*-
-from __future__ import print_function
 import os
 import pytest
 import sys
 import traceback
 import ide
-from abjad.tools import systemtools
+
+
 abjad_ide = ide.tools.idetools.AbjadIDE()
-
-
 this_file = os.path.abspath(__file__)
 test_directory = os.path.dirname(this_file)
 inner_score_directory = os.path.dirname(test_directory)
@@ -20,26 +18,9 @@ abjad_ide._configuration._composer_scores_directory_override = \
 materials_directory = abjad_ide._to_score_directory(this_file, 'materials')
 material_directories = abjad_ide._list_visible_paths(materials_directory)
 
-print(material_directories)
-#raise Exception
-
-
-#def test_materials_01():
-#    r'''Interprets abbreviations file.
-#    '''
-#    abbreviations_file_path = os.path.join(
-#        materials_directory,
-#        '__abbreviations__.py',
-#        )
-#    if not os.path.exists(abbreviations_file_path):
-#        return
-#    command = 'python {}'.format(abbreviations_file_path)
-#    exit_status = systemtools.IOManager.spawn_subprocess(command)
-#    assert exit_status == 0
-
 
 @pytest.mark.parametrize('material_directory', material_directories)
-def test_materials_02(material_directory):
+def test_materials_01(material_directory):
     r'''Checks material definition files.
     '''
     try:
@@ -50,7 +31,7 @@ def test_materials_02(material_directory):
 
 
 @pytest.mark.parametrize('material_directory', material_directories)
-def test_materials_03(material_directory):
+def test_materials_02(material_directory):
     r'''Makes material PDFs.
     '''
     try:

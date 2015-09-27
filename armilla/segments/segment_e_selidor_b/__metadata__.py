@@ -26,6 +26,7 @@ metadata = datastructuretools.TypedOrderedDict(
             'end_time_signature',
             (3, 4),
             ),
+        ('first_bar_number', 62),
         ('is_repeated', True),
         ('measure_count', 10),
         ('segment_count', 8),

@@ -1,35 +1,35 @@
-\version "2.19.16"
+\version "2.19.26"
 \language "english"
 
 #(ly:set-option 'relative-includes #t)
 
-\include "/Users/josiah/Documents/Scores/armilla/armilla/stylesheets/stylesheet.ily"
+\include "../../stylesheets/stylesheet.ily"
+\include "../../stylesheets/nonfirst-segment.ily"
 
 \score {
-    \context Score = "Armilla Score" <<
+    \context Score = "Armilla Score" \with {
+        currentBarNumber = #103
+    } <<
         \tag #'time
-        \context TimeSignatureContext = "TimeSignatureContext" {
+        \context TimeSignatureContext = "Time Signature Context" {
             {
-                \time 5/8
                 \tempo 4=36
+                \time 5/8
                 \mark \markup {
                     \concat
                         {
-                            \override
-                                #'(box-padding . 0.5)
-                                \box
+                            \box
+                                \pad-around
+                                    #0.5
                                     \caps
-                                        H
+                                        G
                             " "
                             \fontsize
                                 #-3
                                 "The Long Dune (ii)"
                         }
                     }
-                s1 * 5/8
-            }
-            {
-                s1 * 5/8
+                s1 * 5/4
             }
             {
                 \time 3/4
@@ -37,50 +37,39 @@
             }
             {
                 \time 5/8
+                s1 * 5/4
+            }
+            {
+                \time 2/4
+                s1 * 1
+            }
+            {
+                \time 5/8
                 s1 * 5/8
             }
             {
+                \time 6/8
+                s1 * 3/4
+            }
+            {
+                \time 5/8
                 s1 * 5/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 6/8
+                s1 * 3/4
             }
             {
                 \time 2/4
                 s1 * 1/2
             }
             {
-                s1 * 1/2
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 6/8
-                s1 * 3/4
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 3/4
-                s1 * 3/4
-            }
-            {
-                \time 6/8
-                s1 * 3/4
-            }
-            {
                 \time 3/8
-                s1 * 3/8
-            }
-            {
-                s1 * 3/8
-            }
-            {
-                s1 * 3/8
-            }
-            {
-                s1 * 3/8
+                s1 * 3/4
             }
         }
         \tag #'viola-1
@@ -100,11 +89,13 @@
                 \clef "percussion"
                 \context StringContactVoice = "Viola 1 RH String Contact Voice" {
                     {
+                        % [Viola 1 RH String Contact Voice] Measure 103
                         {
                             R1 * 5/8
                         }
                     }
                     {
+                        % [Viola 1 RH String Contact Voice] Measure 104
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -149,11 +140,13 @@
                             c'4 \startTextSpan
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 105
                         {
                             c'4
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 106
                         {
                             c'8
                         }
@@ -162,18 +155,22 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 107
                         {
                             c'2
-                            c'16
-                            c'16
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
+                        % [Viola 1 RH String Contact Voice] Measure 108
                         {
                             R1 * 1/2
                         }
                     }
                     {
+                        % [Viola 1 RH String Contact Voice] Measure 109
                         {
                             \once \override TextSpanner.arrow-width = 0.25
                             \once \override TextSpanner.bound-details.left-broken.text = ##f
@@ -217,6 +214,7 @@
                             c'4 \startTextSpan
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 110
                         {
                             c'8
                         }
@@ -224,15 +222,18 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 111
                         {
                             c'4. \stopTextSpan
                         }
                         {
                             c'4.
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 112
                         {
-                            c'16
-                            c'16
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -283,6 +284,7 @@
                             \once \override TextSpanner.dash-period = 1
                             c'4. \startTextSpan
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 113
                         {
                             c'4
                         }
@@ -290,9 +292,11 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 114
                         {
-                            c'16
-                            c'16 \stopTextSpan
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ] \stopTextSpan
                         }
                     }
                     {
@@ -341,42 +345,56 @@
                                 }
                             \once \override TextSpanner.dash-fraction = 0.25
                             \once \override TextSpanner.dash-period = 1
-                            c'16 \startTextSpan
+                            c'16 [ \startTextSpan
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 115
                         {
                             c'4
                         }
                         {
-                            c'8
+                            c'4
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 116
                         {
                             c'4. \stopTextSpan
                         }
+                        % [Viola 1 RH String Contact Voice] Measure 117
                         {
-                            c'4
-                            c'16
-                            c'16
+                            c'8. [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
                         {
-                            R1 * 3/8
+                            s8
                             \bar "|."
                         }
                     }
                 }
                 \context BowContactVoice = "Viola 1 RH Bow Contact Voice" {
                     {
+                        % [Viola 1 RH Bow Contact Voice] Measure 103
                         {
                             R1 * 5/8
                         }
                     }
                     {
+                        % [Viola 1 RH Bow Contact Voice] Measure 104
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             \once \override NoteHead.Y-offset = -2.0
@@ -400,6 +418,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 105
                         {
                             \once \override NoteHead.Y-offset = -1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -432,6 +451,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 106
                         {
                             \once \override NoteHead.Y-offset = 0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -476,6 +496,7 @@
                                 }
                             c'4 ^\upbow \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 107
                         {
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -496,7 +517,7 @@
                                             1
                                             8
                                 }
-                            c'16 ^\upbow \glissando
+                            c'16 ^\upbow \glissando [
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -506,15 +527,18 @@
                                             0
                                             1
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
+                        % [Viola 1 RH Bow Contact Voice] Measure 108
                         {
                             R1 * 1/2
                         }
                     }
                     {
+                        % [Viola 1 RH Bow Contact Voice] Measure 109
                         {
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -537,6 +561,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 110
                         {
                             \once \override NoteHead.Y-offset = -1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -571,6 +596,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 111
                         {
                             \once \override NoteHead.Y-offset = 0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -595,6 +621,7 @@
                                 }
                             c'4. _\accent \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 112
                         {
                             \once \override NoteHead.Y-offset = 1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -605,7 +632,7 @@
                                             7
                                             8
                                 }
-                            c'16 _\accent \glissando
+                            c'16 _\accent \glissando [
                             \once \override NoteHead.Y-offset = 2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -615,7 +642,8 @@
                                             1
                                             1
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -636,6 +664,7 @@
                                 }
                             c'4. ^\upbow \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 113
                         {
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -670,6 +699,7 @@
                                 }
                             c'4 _\accent \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 114
                         {
                             \once \override NoteHead.Y-offset = -0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -680,7 +710,7 @@
                                             3
                                             8
                                 }
-                            c'16 \glissando
+                            c'16 \glissando [
                             \once \override NoteHead.Y-offset = 0.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -690,7 +720,8 @@
                                             1
                                             2
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -709,7 +740,7 @@
                                             1
                                             8
                                 }
-                            c'16 ^\downbow _\accent \glissando
+                            c'16 ^\downbow _\accent \glissando [
                             \once \override NoteHead.Y-offset = -1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -719,6 +750,8 @@
                                             1
                                             4
                                 }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16 _\accent \glissando
                             \once \override NoteHead.Y-offset = -0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -729,6 +762,8 @@
                                             3
                                             8
                                 }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16 _\accent \glissando
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = 0.0
@@ -740,6 +775,8 @@
                                             1
                                             2
                                 }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16 _\accent \glissando
                             \once \override NoteHead.Y-offset = 0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -750,6 +787,8 @@
                                             5
                                             8
                                 }
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16 _\accent \glissando
                             \once \override NoteHead.Y-offset = 1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -760,8 +799,10 @@
                                             3
                                             4
                                 }
-                            c'16 _\accent \glissando
+                            \set stemLeftBeamCount = 2
+                            c'16 _\accent ] \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 115
                         {
                             \once \override NoteHead.Y-offset = 1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -784,8 +825,9 @@
                                             1
                                             1
                                 }
-                            c'8 ^\upbow _\accent \glissando
+                            c'4 ^\upbow _\accent \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 116
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = -2.0
@@ -799,6 +841,7 @@
                                 }
                             c'4. ^\downbow _\accent \glissando
                         }
+                        % [Viola 1 RH Bow Contact Voice] Measure 117
                         {
                             \once \override Glissando.style = #'zigzag
                             \once \override NoteHead.Y-offset = -1.5
@@ -810,7 +853,7 @@
                                             1
                                             8
                                 }
-                            c'4 ^\upbow _\accent \glissando
+                            c'8. ^\upbow _\accent \glissando [
                             \once \override NoteHead.Y-offset = -2.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -820,43 +863,38 @@
                                             0
                                             1
                                 }
-                            c'16 ^\downbow _\accent \glissando
-                            \once \override NoteHead.Y-offset = -1.5
-                            \once \override NoteHead.stencil = #ly:text-interface::print
-                            \once \override NoteHead.text = \markup {
-                                \center-align
-                                    \vcenter
-                                        \fraction
-                                            1
-                                            8
-                                }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
                         {
-                            R1 * 3/8
+                            s8
                             \bar "|."
                         }
                     }
                 }
                 \context BowBeamingVoice = "Viola 1 RH Beaming Voice" {
                     {
+                        % [Viola 1 RH Beaming Voice] Measure 103
                         {
                             R1 * 5/8
                         }
                     }
                     {
+                        % [Viola 1 RH Beaming Voice] Measure 104
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 105
                         {
                             c'4
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 106
                         {
                             c'8
                         }
@@ -865,6 +903,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 107
                         {
                             c'2
                             c'16 [
@@ -873,15 +912,18 @@
                         }
                     }
                     {
+                        % [Viola 1 RH Beaming Voice] Measure 108
                         {
                             R1 * 1/2
                         }
                     }
                     {
+                        % [Viola 1 RH Beaming Voice] Measure 109
                         {
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 110
                         {
                             c'8
                         }
@@ -889,12 +931,14 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 111
                         {
                             c'4.
                         }
                         {
                             c'4.
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 112
                         {
                             c'16 [
                             \set stemLeftBeamCount = 2
@@ -910,6 +954,7 @@
                         {
                             c'4.
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 113
                         {
                             c'4
                         }
@@ -917,6 +962,7 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 114
                         {
                             c'16 [
                             \set stemLeftBeamCount = 2
@@ -943,48 +989,55 @@
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 2
                             c'16
+                            \set stemLeftBeamCount = 2
                             c'16 ]
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 115
                         {
                             c'4
                         }
                         {
-                            c'8 :64
+                            c'4 :32
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 116
                         {
                             c'4. :32
                         }
+                        % [Viola 1 RH Beaming Voice] Measure 117
                         {
-                            c'4
-                            c'16 [
+                            c'8. [
                             \set stemLeftBeamCount = 2
                             c'16 ]
                         }
                     }
                     {
                         {
-                            R1 * 3/8
+                            r8
                             \bar "|."
                         }
                     }
                 }
                 \context Dynamics = "Viola 1 RH Dynamics Voice" {
                     {
+                        % [Viola 1 RH Dynamics Voice] Measure 103
                         {
                             R1 * 5/8
                         }
                     }
                     {
+                        % [Viola 1 RH Dynamics Voice] Measure 104
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4 \f \>
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 105
                         {
                             c'4 \p \<
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 106
                         {
                             c'8 \f \>
                         }
@@ -993,22 +1046,27 @@
                             c'4
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 107
                         {
                             c'2 \ff \>
-                            c'16
-                            c'16 \p
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \p ]
                         }
                     }
                     {
+                        % [Viola 1 RH Dynamics Voice] Measure 108
                         {
                             R1 * 1/2
                         }
                     }
                     {
+                        % [Viola 1 RH Dynamics Voice] Measure 109
                         {
                             c'4 \p \<
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 110
                         {
                             c'8 \mf \>
                         }
@@ -1016,15 +1074,18 @@
                             c'4 \p \>
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 111
                         {
                             c'4. \ppp \<
                         }
                         {
                             c'4. \f \>
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 112
                         {
-                            c'16
-                            c'16 \p
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \p ]
                         }
                     }
                     {
@@ -1036,6 +1097,7 @@
                         {
                             c'4. \ff \>
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 113
                         {
                             c'4 \p \<
                         }
@@ -1043,9 +1105,11 @@
                             c'4 \mf \>
                             c'4
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 114
                         {
-                            c'16
-                            c'16 \p
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \p ]
                         }
                     }
                     {
@@ -1055,31 +1119,43 @@
                     }
                     {
                         {
-                            c'16 \ppp \<
+                            c'16 \ppp \< [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 2
                             c'16
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 115
                         {
                             c'4 \p \>
                         }
                         {
-                            c'8 \ppp \<
+                            c'4 \ppp \<
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 116
                         {
                             c'4. \p \>
                         }
+                        % [Viola 1 RH Dynamics Voice] Measure 117
                         {
-                            c'4 \ppp \<
-                            c'16
-                            c'16 \f
+                            c'8. \ppp \< [
+                            \set stemLeftBeamCount = 2
+                            c'16 \f ]
                         }
                     }
                     {
                         {
-                            R1 * 3/8
+                            s8
                             \bar "|."
                         }
                     }
@@ -1089,9 +1165,10 @@
                 \clef "alto"
                 \context FingeringPitchesVoice = "Viola 1 LH Pitches Voice" {
                     {
+                        % [Viola 1 LH Pitches Voice] Measure 103
                         {
                             \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
+                            \once \override Staff.StaffSymbol.line-positions = #'(0)
                             \startStaff
                             R1 * 5/8
                             \stopStaff
@@ -1099,26 +1176,31 @@
                         }
                     }
                     {
+                        % [Viola 1 LH Pitches Voice] Measure 104
                         {
-                            <c' f'>2 ~
-                            <c' f'>8
+                            <c' af'>4.
+                            <c' af'>4 \repeatTie
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 105
                         {
-                            <a f'>2.
+                            <a d'>2.
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 106
                         {
-                            <c' af'>2 ~
-                            <c' af'>8
+                            <c' af'>4.
+                            <c' af'>4 \repeatTie
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 107
                         {
-                            <fs b>2 ~
-                            <fs b>8
+                            <fs d'>4.
+                            <fs d'>4 \repeatTie
                         }
                     }
                     {
+                        % [Viola 1 LH Pitches Voice] Measure 108
                         {
                             \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
+                            \once \override Staff.StaffSymbol.line-positions = #'(0)
                             \startStaff
                             R1 * 1/2
                             \stopStaff
@@ -1126,18 +1208,22 @@
                         }
                     }
                     {
+                        % [Viola 1 LH Pitches Voice] Measure 109
                         {
-                            <cqs' aqf'>2
+                            <cqs' fqs'>2
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 110
                         {
-                            <g ef'>2 ~
-                            <g ef'>8
+                            <g ef'>4.
+                            <g ef'>4 \repeatTie
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 111
                         {
-                            <a f'>2.
+                            <a d'>2.
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 112
                         {
-                            <cqs' fqs'>8
+                            <f bf>8
                         }
                     }
                     {
@@ -1147,16 +1233,19 @@
                     }
                     {
                         {
-                            <a d'>4.
+                            <a g'>8
+                            <a g'>4 \repeatTie
+                        }
+                        % [Viola 1 LH Pitches Voice] Measure 113
+                        {
+                            <fs d'>4
                         }
                         {
-                            <fs b>4
+                            <eqs cqs'>2
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 114
                         {
-                            <e c'>2
-                        }
-                        {
-                            <dtqs bqs>8
+                            <ds cs'>8
                         }
                     }
                     {
@@ -1168,72 +1257,77 @@
                         {
                             <a f'>4.
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 115
                         {
-                            <fs b>4.
+                            <fs b>2
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 116
                         {
-                            <c' af'>8
+                            <c' af'>4.
                         }
+                        % [Viola 1 LH Pitches Voice] Measure 117
                         {
                             <a f'>4
-                        }
-                        {
-                            <cqs' fqs'>4.
                         }
                     }
                     {
                         {
-                            \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
-                            \startStaff
-                            R1 * 3/8
+                            r8
                             \bar "|."
-                            \stopStaff
-                            \startStaff
                         }
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 1 LH Spanner Voice" {
                     {
+                        % [Viola 1 LH Spanner Voice] Measure 103
                         {
                             R1 * 5/8
                         }
                     }
                     {
+                        % [Viola 1 LH Spanner Voice] Measure 104
                         {
-                            <c' f'>2
-                            <c' f'>8
+                            <c' af'>4.
+                            <c' af'>4
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 105
                         {
-                            <a f'>2.
+                            <a d'>2.
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 106
                         {
-                            <c' af'>2
-                            <c' af'>8
+                            <c' af'>4.
+                            <c' af'>4
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 107
                         {
-                            <fs b>2
-                            <fs b>8
+                            <fs d'>4.
+                            <fs d'>4
                         }
                     }
                     {
+                        % [Viola 1 LH Spanner Voice] Measure 108
                         {
                             R1 * 1/2
                         }
                     }
                     {
+                        % [Viola 1 LH Spanner Voice] Measure 109
                         {
-                            <cqs' aqf'>2
+                            <cqs' fqs'>2
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 110
                         {
-                            <g ef'>2
-                            <g ef'>8
+                            <g ef'>4.
+                            <g ef'>4
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 111
                         {
-                            <a f'>2.
+                            <a d'>2.
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 112
                         {
-                            <cqs' fqs'>8
+                            <f bf>8
                         }
                     }
                     {
@@ -1243,16 +1337,19 @@
                     }
                     {
                         {
-                            <a d'>4.
+                            <a g'>8
+                            <a g'>4
+                        }
+                        % [Viola 1 LH Spanner Voice] Measure 113
+                        {
+                            <fs d'>4
                         }
                         {
-                            <fs b>4
+                            <eqs cqs'>2
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 114
                         {
-                            <e c'>2
-                        }
-                        {
-                            <dtqs bqs>8
+                            <ds cs'>8
                         }
                     }
                     {
@@ -1262,24 +1359,24 @@
                     }
                     {
                         {
-                            <a f'>4. \glissando
+                            <a f'>4.
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 115
                         {
-                            <fs b>4. \glissando
+                            <fs b>2
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 116
                         {
-                            <c' af'>8 \glissando
+                            <c' af'>4.
                         }
+                        % [Viola 1 LH Spanner Voice] Measure 117
                         {
                             <a f'>4
-                        }
-                        {
-                            <cqs' fqs'>4.
                         }
                     }
                     {
                         {
-                            R1 * 3/8
+                            s8
                             \bar "|."
                         }
                     }
@@ -1303,6 +1400,7 @@
                 \clef "percussion"
                 \context StringContactVoice = "Viola 2 RH String Contact Voice" {
                     {
+                        % [Viola 2 RH String Contact Voice] Measure 103
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             \once \override TextSpanner.arrow-width = 0.25
@@ -1333,11 +1431,13 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 104
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 105
                         {
                             c'4
                         }
@@ -1384,19 +1484,23 @@
                             c'4 \stopTextSpan \startTextSpan
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 106
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 107
                         {
                             c'2
-                            c'16 \stopTextSpan
-                            c'16
+                            c'16 \stopTextSpan [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
+                        % [Viola 2 RH String Contact Voice] Measure 108
                         {
                             s4
                             s8
@@ -1431,10 +1535,12 @@
                             \once \override TextSpanner.dash-period = 1
                             c'8 \startTextSpan
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 109
                         {
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 110
                         {
                             c'4
                         }
@@ -1480,6 +1586,7 @@
                             \once \override TextSpanner.dash-period = 1
                             c'4. \stopTextSpan \startTextSpan
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 111
                         {
                             c'8
                         }
@@ -1489,13 +1596,16 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 112
                         {
                             c'2 \stopTextSpan
-                            c'16
-                            c'16
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
+                        % [Viola 2 RH String Contact Voice] Measure 113
                         {
                             s8
                         }
@@ -1512,9 +1622,11 @@
                                 }
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 114
                         {
-                            c'8.
-                            c'16
+                            c'8. [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -1527,9 +1639,11 @@
                                 }
                             c'4
                         }
+                        % [Viola 2 RH String Contact Voice] Measure 115
                         {
-                            c'8.
-                            c'16
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -1549,11 +1663,11 @@
                     }
                     {
                         {
-                            s16
-                            s4
+                            s8.
                         }
                     }
                     {
+                        % [Viola 2 RH String Contact Voice] Measure 116
                         {
                             c'16 ^ \markup {
                                 \vcenter
@@ -1582,17 +1696,34 @@
                     }
                     {
                         {
-                            s16
+                            s8.
+                        }
+                        % [Viola 2 RH String Contact Voice] Measure 117
+                        {
                             s8
                         }
+                    }
+                    {
                         {
-                            R1 * 3/8
+                            c'16 ^ \markup {
+                                \vcenter
+                                    \italic
+                                        \parenthesize
+                                            \caps
+                                                Pizz.
+                                }
+                        }
+                    }
+                    {
+                        {
+                            s8.
                             \bar "|."
                         }
                     }
                 }
                 \context BowContactVoice = "Viola 2 RH Bow Contact Voice" {
                     {
+                        % [Viola 2 RH Bow Contact Voice] Measure 103
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             \once \override NoteHead.Y-offset = 2.0
@@ -1626,6 +1757,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 104
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             \once \override NoteHead.Y-offset = -1.0
@@ -1649,6 +1781,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 105
                         {
                             \once \override NoteHead.Y-offset = 0.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1683,6 +1816,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 106
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             \once \override NoteHead.Y-offset = 1.5
@@ -1716,6 +1850,7 @@
                                 }
                             c'4 ^\downbow \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 107
                         {
                             \once \override NoteHead.Y-offset = -1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1736,7 +1871,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\downbow \glissando
+                            c'16 ^\downbow \glissando [
                             \once \override NoteHead.Y-offset = -1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1746,10 +1881,12 @@
                                             1
                                             8
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
+                        % [Viola 2 RH Bow Contact Voice] Measure 108
                         {
                             s4
                             s8
@@ -1768,6 +1905,7 @@
                                 }
                             c'8 ^\downbow \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 109
                         {
                             \once \override NoteHead.Y-offset = -1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1790,6 +1928,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 110
                         {
                             \once \override NoteHead.Y-offset = 0.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1814,6 +1953,7 @@
                                 }
                             c'4. \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 111
                         {
                             \once \override NoteHead.Y-offset = 1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1859,6 +1999,7 @@
                                 }
                             c'4 ^\downbow \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 112
                         {
                             \once \override NoteHead.Y-offset = -1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1879,7 +2020,7 @@
                                             0
                                             1
                                 }
-                            c'16 ^\downbow _\accent \glissando
+                            c'16 ^\downbow _\accent \glissando [
                             \once \override NoteHead.Y-offset = -1.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1889,10 +2030,12 @@
                                             1
                                             8
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
+                        % [Viola 2 RH Bow Contact Voice] Measure 113
                         {
                             s8
                         }
@@ -1921,6 +2064,7 @@
                                 }
                             c'4 \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 114
                         {
                             \once \override NoteHead.Y-offset = -1.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1931,7 +2075,7 @@
                                             1
                                             4
                                 }
-                            c'8. \glissando
+                            c'8. \glissando [
                             \once \override NoteHead.Y-offset = -0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1941,7 +2085,8 @@
                                             3
                                             8
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -1967,6 +2112,7 @@
                                 }
                             c'4 _\accent \glissando
                         }
+                        % [Viola 2 RH Bow Contact Voice] Measure 115
                         {
                             \once \override NoteHead.Y-offset = 0.0
                             \once \override NoteHead.stencil = #ly:text-interface::print
@@ -1977,7 +2123,7 @@
                                             1
                                             2
                                 }
-                            c'8. _\accent \glissando
+                            c'16 _\accent \glissando [
                             \once \override NoteHead.Y-offset = 0.5
                             \once \override NoteHead.stencil = #ly:text-interface::print
                             \once \override NoteHead.text = \markup {
@@ -1987,7 +2133,8 @@
                                             5
                                             8
                                 }
-                            c'16
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -2003,11 +2150,11 @@
                     }
                     {
                         {
-                            s16
-                            s4
+                            s8.
                         }
                     }
                     {
+                        % [Viola 2 RH Bow Contact Voice] Measure 116
                         {
                             \once \override NoteHead.style = #'cross
                             c'16
@@ -2026,28 +2173,42 @@
                     }
                     {
                         {
-                            s16
+                            s8.
+                        }
+                        % [Viola 2 RH Bow Contact Voice] Measure 117
+                        {
                             s8
                         }
+                    }
+                    {
                         {
-                            R1 * 3/8
+                            \once \override NoteHead.style = #'cross
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            s8.
                             \bar "|."
                         }
                     }
                 }
                 \context BowBeamingVoice = "Viola 2 RH Beaming Voice" {
                     {
+                        % [Viola 2 RH Beaming Voice] Measure 103
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 104
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 105
                         {
                             c'4
                         }
@@ -2055,12 +2216,14 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 106
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 107
                         {
                             c'2
                             c'16 [
@@ -2069,6 +2232,7 @@
                         }
                     }
                     {
+                        % [Viola 2 RH Beaming Voice] Measure 108
                         {
                             r4
                             r8
@@ -2078,16 +2242,19 @@
                         {
                             c'8
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 109
                         {
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 110
                         {
                             c'4
                         }
                         {
                             c'4.
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 111
                         {
                             c'8
                         }
@@ -2097,8 +2264,40 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Beaming Voice] Measure 112
                         {
                             c'2
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
+                        }
+                    }
+                    {
+                        % [Viola 2 RH Beaming Voice] Measure 113
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            c'4
+                            c'4
+                        }
+                        % [Viola 2 RH Beaming Voice] Measure 114
+                        {
+                            c'8. [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
+                        }
+                    }
+                    {
+                        {
+                            c'4
+                            c'4
+                        }
+                        % [Viola 2 RH Beaming Voice] Measure 115
+                        {
                             c'16 [
                             \set stemLeftBeamCount = 2
                             c'16 ]
@@ -2110,29 +2309,36 @@
                         }
                     }
                     {
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
-                            c'4
-                            c'4
-                        }
                         {
-                            c'8. [
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
+                            c'16
                         }
                     }
                     {
                         {
-                            c'4
-                            c'4
-                        }
-                        {
-                            c'8. [
-                            \set stemLeftBeamCount = 2
-                            c'16 ]
+                            r8.
                         }
                     }
                     {
+                        % [Viola 2 RH Beaming Voice] Measure 116
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r16
+                        }
+                    }
+                    {
+                        {
+                            c'16
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                        }
+                        % [Viola 2 RH Beaming Voice] Measure 117
                         {
                             r8
                         }
@@ -2144,49 +2350,27 @@
                     }
                     {
                         {
-                            r16
-                            r4
-                        }
-                    }
-                    {
-                        {
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            r16
-                        }
-                    }
-                    {
-                        {
-                            c'16
-                        }
-                    }
-                    {
-                        {
-                            r16
-                            r8
-                        }
-                        {
-                            R1 * 3/8
+                            r8.
                             \bar "|."
                         }
                     }
                 }
                 \context Dynamics = "Viola 2 RH Dynamics Voice" {
                     {
+                        % [Viola 2 RH Dynamics Voice] Measure 103
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4 \fff \>
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 104
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/4 {
                             c'4 \f \>
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 105
                         {
                             c'4 \p \<
                         }
@@ -2194,19 +2378,23 @@
                             c'4 \f \>
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 106
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 5/6 {
                             c'4 \mf \<
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 107
                         {
                             c'2 \ff \>
-                            c'16
-                            c'16 \p
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \p ]
                         }
                     }
                     {
+                        % [Viola 2 RH Dynamics Voice] Measure 108
                         {
                             s4
                             s8
@@ -2216,16 +2404,19 @@
                         {
                             c'8 \mf \>
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 109
                         {
                             c'4 \p \>
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 110
                         {
                             c'4 \ppp \<
                         }
                         {
                             c'4. \f \>
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 111
                         {
                             c'8 \p \<
                         }
@@ -2235,13 +2426,16 @@
                             c'4
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 112
                         {
                             c'2 \p \<
-                            c'16
-                            c'16 \mf
+                            c'16 [
+                            \set stemLeftBeamCount = 2
+                            c'16 \mf ]
                         }
                     }
                     {
+                        % [Viola 2 RH Dynamics Voice] Measure 113
                         {
                             s8
                         }
@@ -2252,9 +2446,11 @@
                             c'4 \p \<
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 114
                         {
-                            c'8. \mf \>
-                            c'16 \p
+                            c'8. \mf \> [
+                            \set stemLeftBeamCount = 2
+                            c'16 \p ]
                         }
                     }
                     {
@@ -2262,9 +2458,11 @@
                             c'4 \p \>
                             c'4
                         }
+                        % [Viola 2 RH Dynamics Voice] Measure 115
                         {
-                            c'8. \ppp \<
-                            c'16 \p
+                            c'16 \ppp [
+                            \set stemLeftBeamCount = 2
+                            c'16 ]
                         }
                     }
                     {
@@ -2279,11 +2477,11 @@
                     }
                     {
                         {
-                            s16
-                            s4
+                            s8.
                         }
                     }
                     {
+                        % [Viola 2 RH Dynamics Voice] Measure 116
                         {
                             c'16 \mf
                         }
@@ -2300,11 +2498,21 @@
                     }
                     {
                         {
-                            s16
+                            s8.
+                        }
+                        % [Viola 2 RH Dynamics Voice] Measure 117
+                        {
                             s8
                         }
+                    }
+                    {
                         {
-                            R1 * 3/8
+                            c'16 \mf
+                        }
+                    }
+                    {
+                        {
+                            s8.
                             \bar "|."
                         }
                     }
@@ -2314,27 +2522,33 @@
                 \clef "alto"
                 \context FingeringPitchesVoice = "Viola 2 LH Pitches Voice" {
                     {
+                        % [Viola 2 LH Pitches Voice] Measure 103
                         {
-                            <a f'>2 ~
-                            <a f'>8
+                            <a f'>4.
+                            <a f'>4 \repeatTie
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 104
                         {
-                            <c' af'>2 ~
-                            <c' af'>8
+                            <c' f'>4.
+                            <c' f'>4 \repeatTie
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 105
                         {
-                            <aqs dqs'>2.
+                            <a f'>2.
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 106
                         {
-                            <a d'>2 ~
-                            <a d'>8
+                            <g ef'>4.
+                            <g ef'>4 \repeatTie
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 107
                         {
-                            <fs e'>2 ~
-                            <fs e'>8
+                            <ftqs bqs>4.
+                            <ftqs bqs>4 \repeatTie
                         }
                     }
                     {
+                        % [Viola 2 LH Pitches Voice] Measure 108
                         {
                             r4
                             r8
@@ -2344,47 +2558,51 @@
                         {
                             <c' af'>8
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 109
                         {
-                            <gs fs'>2
+                            <gs cs'>2
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 110
                         {
-                            <c' f'>2 ~
-                            <c' f'>8
+                            <c' f'>4.
+                            <c' f'>4 \repeatTie
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 111
                         {
-                            <gs e'>2.
+                            <gs fs'>2.
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 112
                         {
-                            <c' af'>2 ~
-                            <c' af'>8
+                            <a f'>4.
+                            <a f'>4 \repeatTie
                         }
                     }
                     {
+                        % [Viola 2 LH Pitches Voice] Measure 113
                         {
                             r8
                         }
                     }
                     {
                         {
-                            <fs e'>8 ~
-                            <fs e'>2
+                            <ftqs dqs'>8
+                            <ftqs dqs'>2 \repeatTie
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 114
                         {
-                            <a g'>4
+                            <fs e'>4
                         }
                     }
                     {
                         {
                             \clef "percussion"
                             \override NoteHead #'style = #'cross
-                            <g b>8 ~
-                            <g b>4.
+                            <g b>8
+                            <g b>4. \repeatTie
                         }
+                        % [Viola 2 LH Pitches Voice] Measure 115
                         {
                             <b d'>8
-                        }
-                        {
-                            <d' f'>8
                             \revert NoteHead #'style
                             \clef "alto"
                         }
@@ -2397,16 +2615,22 @@
                     {
                         {
                             \clef "treble"
-                            <cs' b' g'' ef'''>16
+                            <
+                                cs'
+                                b'
+                                g''
+                                \tweak #'color #red
+                                ef'''
+                            >16
                         }
                     }
                     {
                         {
-                            r16
-                            r4
+                            r8.
                         }
                     }
                     {
+                        % [Viola 2 LH Pitches Voice] Measure 116
                         {
                             <fs e' c'' gs''>16
                         }
@@ -2419,48 +2643,59 @@
                     {
                         {
                             <f ef' b' g''>16
+                        }
+                    }
+                    {
+                        {
+                            r8.
+                        }
+                        % [Viola 2 LH Pitches Voice] Measure 117
+                        {
+                            r8
+                        }
+                    }
+                    {
+                        {
+                            <fs e' c'' gs''>16
                             \clef "alto"
                         }
                     }
                     {
                         {
-                            r16
-                            r8
-                        }
-                        {
-                            \stopStaff
-                            \once \override Staff.StaffSymbol.line-count = 1
-                            \startStaff
-                            R1 * 3/8
+                            r8.
                             \bar "|."
-                            \stopStaff
-                            \startStaff
                         }
                     }
                 }
                 \context FingeringSpannerVoice = "Viola 2 LH Spanner Voice" {
                     {
+                        % [Viola 2 LH Spanner Voice] Measure 103
                         {
-                            <a f'>2
-                            <a f'>8
+                            <a f'>4.
+                            <a f'>4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 104
                         {
-                            <c' af'>2
-                            <c' af'>8
+                            <c' f'>4.
+                            <c' f'>4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 105
                         {
-                            <aqs dqs'>2.
+                            <a f'>2.
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 106
                         {
-                            <a d'>2
-                            <a d'>8
+                            <g ef'>4.
+                            <g ef'>4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 107
                         {
-                            <fs e'>2
-                            <fs e'>8
+                            <ftqs bqs>4.
+                            <ftqs bqs>4
                         }
                     }
                     {
+                        % [Viola 2 LH Spanner Voice] Measure 108
                         {
                             s4
                             s8
@@ -2470,33 +2705,39 @@
                         {
                             <c' af'>8
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 109
                         {
-                            <gs fs'>2
+                            <gs cs'>2
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 110
                         {
-                            <c' f'>2
-                            <c' f'>8
+                            <c' f'>4.
+                            <c' f'>4
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 111
                         {
-                            <gs e'>2.
+                            <gs fs'>2.
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 112
                         {
-                            <c' af'>2
-                            <c' af'>8
+                            <a f'>4.
+                            <a f'>4
                         }
                     }
                     {
+                        % [Viola 2 LH Spanner Voice] Measure 113
                         {
                             s8
                         }
                     }
                     {
                         {
-                            <fs e'>8
-                            <fs e'>2
+                            <ftqs dqs'>8
+                            <ftqs dqs'>2
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 114
                         {
-                            <a g'>4
+                            <fs e'>4
                         }
                     }
                     {
@@ -2504,11 +2745,9 @@
                             <g b>8
                             <g b>4.
                         }
+                        % [Viola 2 LH Spanner Voice] Measure 115
                         {
                             <b d'>8
-                        }
-                        {
-                            <d' f'>8
                         }
                     }
                     {
@@ -2518,16 +2757,22 @@
                     }
                     {
                         {
-                            <cs' b' g'' ef'''>16
+                            <
+                                cs'
+                                b'
+                                g''
+                                \tweak #'color #red
+                                ef'''
+                            >16
                         }
                     }
                     {
                         {
-                            s16
-                            s4
+                            s8.
                         }
                     }
                     {
+                        % [Viola 2 LH Spanner Voice] Measure 116
                         {
                             <fs e' c'' gs''>16
                         }
@@ -2544,11 +2789,21 @@
                     }
                     {
                         {
-                            s16
+                            s8.
+                        }
+                        % [Viola 2 LH Spanner Voice] Measure 117
+                        {
                             s8
                         }
+                    }
+                    {
                         {
-                            R1 * 3/8
+                            <fs e' c'' gs''>16
+                        }
+                    }
+                    {
+                        {
+                            s8.
                                 _ \markup {
                                     \italic
                                         \right-column
