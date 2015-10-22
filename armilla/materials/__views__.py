@@ -12,7 +12,7 @@ view_inventory=idetools.ViewInventory(
                 ),
             ),
         (
-            'timespan makers',
+            'timespan tools',
             idetools.View(
                 ["'timespan maker' in :ds:"]
                 ),

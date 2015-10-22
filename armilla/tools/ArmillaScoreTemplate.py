@@ -13,7 +13,7 @@ class ArmillaScoreTemplate(consort.ScoreTemplate):
     ::
 
         >>> import armilla
-        >>> template = armilla.makers.ArmillaScoreTemplate()
+        >>> template = armilla.tools.ArmillaScoreTemplate()
         >>> score = template()
         >>> print(format(score))
         \context Score = "Armilla Score" <<

@@ -15,7 +15,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         >>> import armilla
         >>> segment_maker = armilla.ArmillaSegmentMaker()
         >>> print(format(segment_maker))
-        armilla.makers.ArmillaSegmentMaker(
+        armilla.tools.ArmillaSegmentMaker(
             permitted_time_signatures=indicatortools.TimeSignatureInventory(
                 [
                     indicatortools.TimeSignature((2, 4)),
@@ -26,7 +26,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
                     indicatortools.TimeSignature((6, 8)),
                     ]
                 ),
-            score_template=armilla.makers.ArmillaScoreTemplate(),
+            score_template=armilla.tools.ArmillaScoreTemplate(),
             timespan_quantization=durationtools.Duration(1, 8),
             )
 
@@ -64,7 +64,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
             )
         score_template = (
             score_template or
-            armilla.makers.ArmillaScoreTemplate()
+            armilla.tools.ArmillaScoreTemplate()
             )
         timespan_quantization = (
             timespan_quantization or
