@@ -1,22 +1,24 @@
 language: python
 
+sudo: false
+
 python:
     - 2.7
+    - 3.4
 
 before_install:
     - wget -q http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.19.16-1.linux-64.sh
-    - sudo sh lilypond-2.19.16-1.linux-64.sh --batch
+    - sh lilypond-2.19.16-1.linux-64.sh --batch
 
 install:
-
     - pip install --allow-external abjad --allow-unverified abjad -e git://github.com/Abjad/abjad.git#egg=abjad
     - pip install --allow-external ide --allow-unverified ide -e git://github.com/Abjad/ide.git#egg=ide
     - pip install --allow-external consort --allow-unverified consort -e git://github.com/josiah-wolf-oberholtzer/consort.git#egg=consort
     - pip install -e .
 
 script:
-    - ajv doctest ./armilla -x
-    - py.test -rf ./armilla -x
+    - ajv doctest -x ./armilla
+    - py.test -rf -x ./armilla
 
 notifications:
     email: false
