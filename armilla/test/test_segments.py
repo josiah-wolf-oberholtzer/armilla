@@ -22,18 +22,10 @@ segment_directories = abjad_ide._list_visible_paths(segments_directory)
 @pytest.mark.parametrize('segment_directory', segment_directories)
 def test_segments_01(segment_directory):
     r'''Checks segment definition files.'''
-    try:
-        abjad_ide.check_definition_file(segment_directory)
-    except:
-        traceback.print_exc()
-        sys.exit(1)
+    abjad_ide.check_definition_file(segment_directory)
 
 
 @pytest.mark.parametrize('segment_directory', segment_directories)
 def test_segments_02(segment_directory):
     r'''Makes segments PDFs.'''
-    try:
-        abjad_ide.make_pdf(segment_directory)
-    except:
-        traceback.print_exc()
-        sys.exit(1)
+    abjad_ide.make_pdf(segment_directory)
