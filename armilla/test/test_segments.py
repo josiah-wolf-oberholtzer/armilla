@@ -2,8 +2,6 @@
 import os
 import pytest
 import ide
-import sys
-import traceback
 
 
 abjad_ide = ide.tools.idetools.AbjadIDE()
@@ -28,4 +26,5 @@ def test_segments_01(segment_directory):
 @pytest.mark.parametrize('segment_directory', segment_directories)
 def test_segments_02(segment_directory):
     r'''Makes segments PDFs.'''
-    abjad_ide.make_pdf(segment_directory)
+    success = abjad_ide.make_pdf(segment_directory)
+    assert success
