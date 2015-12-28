@@ -1,9 +1,10 @@
-\version "2.19.16"
+\version "2.19.32"
 \language "english"
 
 #(ly:set-option 'relative-includes #t)
 
-\include "/Users/josiah/Documents/Scores/armilla/armilla/stylesheets/stylesheet.ily"
+\include "../../stylesheets/stylesheet.ily"
+\include "../../stylesheets/nonfirst-segment.ily"
 
 \score {
     \context Score = "Armilla Score" <<
