@@ -30,7 +30,7 @@ right_hand_jete_music_specifier = consort.MusicSpecifier(
                     rotate=True,
                     )
                 .get_item(0, apply_to_each=False)
-                .flatten(),
+                #.flatten(),
             ),
         dynamic_expressions=consort.AttachmentExpression(
             attachments=(
