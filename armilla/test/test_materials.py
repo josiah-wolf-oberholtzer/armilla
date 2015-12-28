@@ -28,5 +28,5 @@ def test_materials_01(material_directory):
 def test_materials_02(material_directory):
     r'''Makes material PDFs.
     '''
-    success = abjad_ide.make_pdf(material_directory)
+    success = abjad_ide.make_pdf(material_directory, subroutine=True)
     assert success
