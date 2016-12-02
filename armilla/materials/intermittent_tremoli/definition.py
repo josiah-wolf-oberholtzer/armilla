@@ -6,7 +6,7 @@ from abjad.tools import spannertools
 
 intermittent_tremoli = consort.AttachmentExpression(
     attachments=spannertools.StemTremoloSpanner(),
-    selector=selectortools.Selector().by_leaves()[:-1].by_counts(
+    selector=selectortools.Selector().by_leaf()[:-1].by_counts(
         [-7, 2, -3, 1],
         ),
     )

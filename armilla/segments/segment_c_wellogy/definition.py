@@ -23,7 +23,7 @@ lh_glissandi = new(
     armilla.materials.left_hand_glissandi_music_specifier,
     attachment_handler__bend_after=consort.AttachmentExpression(
         attachments=indicatortools.BendAfter(4),
-        selector=selectortools.Selector().by_leaves()[-1],
+        selector=selectortools.Selector().by_leaf()[-1],
         ),
     pitch_handler__pitch_specifier="fs' gs' as'",
     rhythm_maker=rhythmmakertools.NoteRhythmMaker(

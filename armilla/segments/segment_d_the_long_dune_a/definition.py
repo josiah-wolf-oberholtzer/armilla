@@ -22,7 +22,7 @@ segment_maker = armilla.ArmillaSegmentMaker(
 dietro_ponticello = consort.AttachmentExpression(
     attachments=indicatortools.StringContactPoint('dietro ponticello'),
     scope=scoretools.Voice,
-    selector=selectortools.Selector().by_leaves(),
+    selector=selectortools.Selector().by_leaf(),
     )
 dynamics_a = dynamic_expressions = consort.DynamicExpression(
     dynamic_tokens='p mf p ppp f p ff',

@@ -23,7 +23,7 @@ segment_maker = armilla.ArmillaSegmentMaker(
 dietro_ponticello = consort.AttachmentExpression(
     attachments=indicatortools.StringContactPoint('dietro ponticello'),
     scope=scoretools.Voice,
-    selector=selectortools.Selector().by_leaves(),
+    selector=selectortools.Selector().by_leaf(),
     )
 dynamics_a = dynamic_expressions = consort.DynamicExpression(
     dynamic_tokens='p mf p ppp f p ff',
@@ -120,7 +120,7 @@ segment_maker.add_setting(
             rh_overpressure,
             attachment_handler__articulations=consort.AttachmentExpression(
                 attachments=indicatortools.Articulation('>', 'down'),
-                selector=selectortools.Selector().by_leaves()[:-1].flatten(),
+                selector=selectortools.Selector().by_leaf()[:-1].flatten(),
                 ),
             attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
             attachment_handler__bow_motion_technique_x=intermittent_circular,
@@ -138,7 +138,7 @@ segment_maker.add_setting(
             rh_overpressure,
             attachment_handler__articulations=consort.AttachmentExpression(
                 attachments=indicatortools.Articulation('>', 'down'),
-                selector=selectortools.Selector().by_leaves()[:-1].flatten(),
+                selector=selectortools.Selector().by_leaf()[:-1].flatten(),
                 ),
             attachment_handler__stem_tremolo_spanner=intermittent_tremoli,
             attachment_handler__string_contact_points=dietro_ponticello,

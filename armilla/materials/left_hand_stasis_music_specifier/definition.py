@@ -13,7 +13,7 @@ left_hand_stasis_music_specifier = consort.MusicSpecifier(
                 consort.ConsortTrillSpanner(interval='+P4'),
                 consort.ConsortTrillSpanner(interval='+m3'),
                 ),
-            selector=selectortools.Selector().by_leaves(),
+            selector=selectortools.Selector().by_leaf(),
             ),
         ),
     minimum_phrase_duration=durationtools.Duration(1, 4),

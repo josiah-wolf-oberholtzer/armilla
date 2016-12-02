@@ -21,7 +21,7 @@ right_hand_stasis_music_specifier = consort.MusicSpecifier(
                 indicatortools.BowContactPoint(1),
                 indicatortools.BowContactPoint((2, 5)),
                 ),
-            selector=selectortools.Selector().by_leaves().flatten(),
+            selector=selectortools.Selector().by_leaf().flatten(),
             ),
         bow_contact_spanner=spannertools.BowContactSpanner(),
         dynamic_expressions=consort.DynamicExpression(

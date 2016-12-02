@@ -28,12 +28,12 @@ right_hand_circular_music_specifier = consort.MusicSpecifier(
                 indicatortools.BowContactPoint((3, 5)),
                 indicatortools.BowContactPoint((4, 5)),
                 ),
-            selector=selectortools.Selector().by_leaves().flatten(),
+            selector=selectortools.Selector().by_leaf().flatten(),
             ),
         bow_contact_spanner=spannertools.BowContactSpanner(),
         bow_motion_techniques=consort.AttachmentExpression(
             attachments=indicatortools.BowMotionTechnique('circular'),
-            selector=selectortools.Selector().by_leaves().flatten(),
+            selector=selectortools.Selector().by_leaf().flatten(),
             ),
         dynamic_expressions=consort.DynamicExpression(
             dynamic_tokens='p ppp p ppp p ppp',

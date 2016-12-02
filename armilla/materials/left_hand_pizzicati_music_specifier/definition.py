@@ -10,7 +10,7 @@ left_hand_pizzicati_music_specifier = consort.MusicSpecifier(
         arpeggio=indicatortools.Arpeggio(),
         clef_spanner=consort.AttachmentExpression(
             attachments=consort.ClefSpanner('treble'),
-            selector=selectortools.Selector().by_leaves(),
+            selector=selectortools.Selector().by_leaf(),
             ),
         ),
     pitch_handler=consort.AbsolutePitchHandler(

@@ -13,7 +13,7 @@ left_hand_dietro_music_specifier = consort.MusicSpecifier(
                     'note_head__style': 'cross',
                     },
                 ),
-            selector=selectortools.Selector().by_leaves(),
+            selector=selectortools.Selector().by_leaf(),
             ),
         ),
     pitch_handler=consort.AbsolutePitchHandler(

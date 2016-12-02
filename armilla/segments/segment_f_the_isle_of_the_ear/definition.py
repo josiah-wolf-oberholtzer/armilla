@@ -30,7 +30,7 @@ lh_glissandi = new(
             indicatortools.BendAfter(4),
             indicatortools.BendAfter(-4),
             ),
-        selector=selectortools.Selector().by_leaves()[-1],
+        selector=selectortools.Selector().by_leaf()[-1],
         ),
     pitch_handler__pitch_specifier="fs' gs' as'",
     rhythm_maker=rhythmmakertools.NoteRhythmMaker(

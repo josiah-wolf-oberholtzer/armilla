@@ -36,7 +36,7 @@ right_hand_overpressure_music_specifier = consort.MusicSpecifier(
                 indicatortools.BowContactPoint((7, 8)),
                 indicatortools.BowContactPoint(1),
                 ),
-            selector=selectortools.Selector().by_leaves().flatten(),
+            selector=selectortools.Selector().by_leaf().flatten(),
             ),
         bow_contact_spanner=spannertools.BowContactSpanner(),
         dynamic_expressions=consort.DynamicExpression(

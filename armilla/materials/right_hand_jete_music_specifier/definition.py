@@ -15,13 +15,13 @@ right_hand_jete_music_specifier = consort.MusicSpecifier(
                 indicatortools.BowContactPoint((4, 5)),
                 indicatortools.BowContactPoint((3, 5)),
                 ),
-            selector=selectortools.Selector().by_leaves().flatten(),
+            selector=selectortools.Selector().by_leaf().flatten(),
             ),
         bow_contact_spanner=spannertools.BowContactSpanner(),
         bow_motion_techniques=consort.AttachmentExpression(
             attachments=indicatortools.BowMotionTechnique('jete'),
             selector=selectortools.Selector()
-                .by_leaves()
+                .by_leaf()
                 .get_slice(stop=-1)
                 .by_counts(
                     [2, 1, 2],
@@ -37,7 +37,7 @@ right_hand_jete_music_specifier = consort.MusicSpecifier(
                 indicatortools.Dynamic('mf'),
                 indicatortools.Dynamic('mp'),
                 ),
-            selector=selectortools.Selector().by_leaves()[0]
+            selector=selectortools.Selector().by_leaf()[0]
             ),
         string_contact_points=consort.AttachmentExpression(
             attachments=(

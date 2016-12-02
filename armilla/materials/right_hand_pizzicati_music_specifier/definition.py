@@ -13,7 +13,7 @@ right_hand_pizzicati_music_specifier = consort.MusicSpecifier(
             attachments=(
                 indicatortools.BowContactPoint(None),
                 ),
-            selector=selectortools.Selector().by_leaves().flatten(),
+            selector=selectortools.Selector().by_leaf().flatten(),
             ),
         bow_contact_spanner=spannertools.BowContactSpanner(),
         dynamic_expressions=consort.DynamicExpression(
@@ -23,7 +23,7 @@ right_hand_pizzicati_music_specifier = consort.MusicSpecifier(
             attachments=indicatortools.StringContactPoint('pizzicato'),
             scope=scoretools.Voice,
             selector=selectortools.Selector(
-                ).by_leaves(
+                ).by_leaf(
                 )[0]
             ),
         string_contact_spanner=consort.StringContactSpanner(),

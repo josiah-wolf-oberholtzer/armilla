@@ -30,7 +30,7 @@ rh_circular = new(
             None,
             spannertools.StemTremoloSpanner(),
             ),
-        selector=selectortools.Selector().by_leaves().by_counts(
+        selector=selectortools.Selector().by_leaf().by_counts(
             [5, 1, 4, 2, 6, 3], cyclic=True,
             )
         ),

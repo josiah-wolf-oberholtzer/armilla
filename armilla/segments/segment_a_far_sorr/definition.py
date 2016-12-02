@@ -23,7 +23,7 @@ segment_maker = armilla.ArmillaSegmentMaker(
 dietro_ponticello = consort.AttachmentExpression(
     attachments=indicatortools.StringContactPoint('dietro ponticello'),
     scope=scoretools.Voice,
-    selector=selectortools.Selector().by_leaves(),
+    selector=selectortools.Selector().by_leaf(),
     )
 intermittent_accents = armilla.materials.intermittent_accents
 intermittent_circular = armilla.materials.intermittent_circular
