@@ -1,12 +1,7 @@
-\version "2.19.32"
+\version "2.19.44"
 \language "english"
 
 \include "/Users/joberholtzer/Development/consort/consort/stylesheets/stylesheet.ily"
-
-\header {
-    tagline = \markup {}
-    title = #"Left Hand Dietro Music Specifier"
-}
 
 \score {
     \context Score = "String Quartet Score" <<
@@ -46,13 +41,13 @@
                         % [Violin 1 Voice] Measure 1
                         {
                             \clef "percussion"
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <g b>4.
                         }
                         % [Violin 1 Voice] Measure 2
                         {
                             <b d'>4
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -63,9 +58,9 @@
                     {
                         % [Violin 1 Voice] Measure 3
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <d' f'>8
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -76,7 +71,7 @@
                     {
                         % [Violin 1 Voice] Measure 4
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <g b>4.
                             <g b>8 \repeatTie
                         }
@@ -87,7 +82,7 @@
                         % [Violin 1 Voice] Measure 5
                         {
                             <d' f'>4
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -101,13 +96,13 @@
                     }
                     {
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <g b>8
                         }
                         % [Violin 1 Voice] Measure 7
                         {
                             <b d'>4
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                             \clef "treble"
                         }
                     }
@@ -145,7 +140,7 @@
                     {
                         {
                             \clef "percussion"
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <g b>8
                         }
                         % [Violin 2 Voice] Measure 2
@@ -158,7 +153,7 @@
                         % [Violin 2 Voice] Measure 3
                         {
                             <g b>4
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -169,9 +164,9 @@
                     {
                         % [Violin 2 Voice] Measure 4
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <b d'>4
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -182,7 +177,7 @@
                     }
                     {
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <d' f'>8
                         }
                         {
@@ -202,7 +197,7 @@
                         % [Violin 2 Voice] Measure 7
                         {
                             <b d'>8
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                             \clef "treble"
                         }
                     }
@@ -240,7 +235,7 @@
                     {
                         {
                             \clef "percussion"
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <g b>4
                         }
                         % [Viola Voice] Measure 2
@@ -256,7 +251,7 @@
                         % [Viola Voice] Measure 3
                         {
                             <b d'>8
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -270,7 +265,7 @@
                     }
                     {
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <d' f'>8
                             <d' f'>4 \repeatTie
                         }
@@ -287,7 +282,7 @@
                         % [Viola Voice] Measure 6
                         {
                             <g b>4
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                             \clef "alto"
                         }
                     }
@@ -327,13 +322,13 @@
                         % [Cello Voice] Measure 1
                         {
                             \clef "percussion"
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <g b>4.
                         }
                         % [Cello Voice] Measure 2
                         {
                             <b d'>4
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -344,13 +339,13 @@
                     {
                         % [Cello Voice] Measure 3
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <d' f'>4.
                         }
                         % [Cello Voice] Measure 4
                         {
                             <g b>8
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -360,7 +355,7 @@
                     }
                     {
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <b d'>4
                         }
                         {
@@ -372,7 +367,7 @@
                         }
                         {
                             <b d'>4
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                         }
                     }
                     {
@@ -389,9 +384,9 @@
                     {
                         % [Cello Voice] Measure 7
                         {
-                            \override NoteHead #'style = #'cross
+                            \override NoteHead.style = #'cross
                             <d' f'>8
-                            \revert NoteHead #'style
+                            \revert NoteHead.style
                             \clef "bass"
                         }
                     }

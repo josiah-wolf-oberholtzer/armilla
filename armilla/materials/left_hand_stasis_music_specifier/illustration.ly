@@ -1,12 +1,7 @@
-\version "2.19.32"
+\version "2.19.44"
 \language "english"
 
 \include "/Users/joberholtzer/Development/consort/consort/stylesheets/stylesheet.ily"
-
-\header {
-    tagline = \markup {}
-    title = #"Left Hand Stasis Music Specifier"
-}
 
 \score {
     \context Score = "String Quartet Score" <<
@@ -418,6 +413,7 @@
                             \once \override Staff.StaffSymbol.line-positions = #'(0)
                             \startStaff
                             R1 * 3/4
+                            \bar "|."
                         }
                     }
                 }

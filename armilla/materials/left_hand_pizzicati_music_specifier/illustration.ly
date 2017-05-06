@@ -1,12 +1,7 @@
-\version "2.19.32"
+\version "2.19.44"
 \language "english"
 
 \include "/Users/joberholtzer/Development/consort/consort/stylesheets/stylesheet.ily"
-
-\header {
-    tagline = \markup {}
-    title = #"Left Hand Pizzicati Music Specifier"
-}
 
 \score {
     \context Score = "String Quartet Score" <<
@@ -57,7 +52,13 @@
                     {
                         % [Violin 1 Voice] Measure 2
                         {
-                            <fs e' c'' gs''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                fs
+                                e'
+                                c''
+                                gs''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -69,7 +70,13 @@
                     {
                         % [Violin 1 Voice] Measure 3
                         {
-                            <f ef' b' g''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                f
+                                ef'
+                                b'
+                                g''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -81,7 +88,13 @@
                     {
                         % [Violin 1 Voice] Measure 4
                         {
-                            <fs e' c'' gs''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                fs
+                                e'
+                                c''
+                                gs''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -107,7 +120,13 @@
                         {
                             <cs' b' g'' ef'''>16 \arpeggio [
                             \set stemLeftBeamCount = 2
-                            <f ef' b' g''>16 \arpeggio ]
+                            <
+                                \tweak color #red
+                                f
+                                ef'
+                                b'
+                                g''
+                            >16 \arpeggio ]
                         }
                     }
                     {
@@ -121,7 +140,13 @@
                     }
                     {
                         {
-                            <fs e' c'' gs''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                fs
+                                e'
+                                c''
+                                gs''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -172,11 +197,23 @@
                         {
                             <cs' b' g'' ef'''>16 \arpeggio [
                             \set stemLeftBeamCount = 2
-                            <fs e' c'' gs''>16 \arpeggio ]
+                            <
+                                \tweak color #red
+                                fs
+                                e'
+                                c''
+                                gs''
+                            >16 \arpeggio ]
                         }
                         % [Violin 2 Voice] Measure 2
                         {
-                            <f ef' b' g''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                f
+                                ef'
+                                b'
+                                g''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -186,7 +223,13 @@
                     }
                     {
                         {
-                            <fs e' c'' gs''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                fs
+                                e'
+                                c''
+                                gs''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -221,7 +264,13 @@
                     }
                     {
                         {
-                            <f ef' b' g''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                f
+                                ef'
+                                b'
+                                g''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -231,7 +280,13 @@
                     }
                     {
                         {
-                            <fs e' c'' gs''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                fs
+                                e'
+                                c''
+                                gs''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -263,9 +318,21 @@
                     {
                         % [Violin 2 Voice] Measure 6
                         {
-                            <fs e' c'' gs''>16 \arpeggio [
+                            <
+                                \tweak color #red
+                                fs
+                                e'
+                                c''
+                                gs''
+                            >16 \arpeggio [
                             \set stemLeftBeamCount = 2
-                            <f ef' b' g''>16 \arpeggio ]
+                            <
+                                \tweak color #red
+                                f
+                                ef'
+                                b'
+                                g''
+                            >16 \arpeggio ]
                         }
                     }
                     {
@@ -276,7 +343,13 @@
                     {
                         % [Violin 2 Voice] Measure 7
                         {
-                            <fs e' c'' gs''>16 \arpeggio
+                            <
+                                \tweak color #red
+                                fs
+                                e'
+                                c''
+                                gs''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -314,7 +387,13 @@
                     {
                         {
                             \clef "treble"
-                            <cs' b' g'' ef'''>16 \arpeggio
+                            <
+                                cs'
+                                b'
+                                g''
+                                \tweak color #red
+                                ef'''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -351,7 +430,13 @@
                         }
                         % [Viola Voice] Measure 3
                         {
-                            <cs' b' g'' ef'''>16 \arpeggio
+                            <
+                                cs'
+                                b'
+                                g''
+                                \tweak color #red
+                                ef'''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -388,9 +473,21 @@
                     {
                         % [Viola Voice] Measure 5
                         {
-                            <d' c'' gs'' e'''>16 \arpeggio [
+                            <
+                                d'
+                                c''
+                                gs''
+                                \tweak color #red
+                                e'''
+                            >16 \arpeggio [
                             \set stemLeftBeamCount = 2
-                            <cs' b' g'' ef'''>16 \arpeggio ]
+                            <
+                                cs'
+                                b'
+                                g''
+                                \tweak color #red
+                                ef'''
+                            >16 \arpeggio ]
                         }
                         {
                             <fs e' c'' gs''>16 \arpeggio
@@ -445,7 +542,13 @@
                         % [Cello Voice] Measure 1
                         {
                             \clef "treble"
-                            <cs' b' g'' ef'''>16 \arpeggio
+                            <
+                                cs'
+                                b'
+                                g''
+                                \tweak color #red
+                                ef'''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -457,7 +560,13 @@
                     {
                         % [Cello Voice] Measure 2
                         {
-                            <fs e' c'' gs''>16 \arpeggio [
+                            <
+                                fs
+                                e'
+                                c''
+                                \tweak color #red
+                                gs''
+                            >16 \arpeggio [
                             \set stemLeftBeamCount = 2
                             <f ef' b' g''>16 \arpeggio ]
                         }
@@ -470,9 +579,21 @@
                     {
                         % [Cello Voice] Measure 3
                         {
-                            <fs e' c'' gs''>16 \arpeggio [
+                            <
+                                fs
+                                e'
+                                c''
+                                \tweak color #red
+                                gs''
+                            >16 \arpeggio [
                             \set stemLeftBeamCount = 2
-                            <c' bf' fs'' d'''>16 \arpeggio ]
+                            <
+                                c'
+                                bf'
+                                fs''
+                                \tweak color #red
+                                d'''
+                            >16 \arpeggio ]
                         }
                     }
                     {
@@ -483,7 +604,13 @@
                     {
                         % [Cello Voice] Measure 4
                         {
-                            <cs' b' g'' ef'''>16 \arpeggio
+                            <
+                                cs'
+                                b'
+                                g''
+                                \tweak color #red
+                                ef'''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -504,7 +631,13 @@
                     }
                     {
                         {
-                            <fs e' c'' gs''>16 \arpeggio
+                            <
+                                fs
+                                e'
+                                c''
+                                \tweak color #red
+                                gs''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -515,7 +648,14 @@
                     {
                         % [Cello Voice] Measure 5
                         {
-                            <d' c'' gs'' e'''>16 \arpeggio
+                            <
+                                d'
+                                c''
+                                \tweak color #red
+                                gs''
+                                \tweak color #red
+                                e'''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -525,7 +665,13 @@
                     }
                     {
                         {
-                            <cs' b' g'' ef'''>16 \arpeggio
+                            <
+                                cs'
+                                b'
+                                g''
+                                \tweak color #red
+                                ef'''
+                            >16 \arpeggio
                         }
                     }
                     {
@@ -545,7 +691,13 @@
                     {
                         % [Cello Voice] Measure 7
                         {
-                            <fs e' c'' gs''>16 \arpeggio
+                            <
+                                fs
+                                e'
+                                c''
+                                \tweak color #red
+                                gs''
+                            >16 \arpeggio
                             \clef "bass"
                         }
                     }

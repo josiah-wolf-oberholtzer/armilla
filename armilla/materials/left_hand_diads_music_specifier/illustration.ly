@@ -1,12 +1,7 @@
-\version "2.19.32"
+\version "2.19.44"
 \language "english"
 
 \include "/Users/joberholtzer/Development/consort/consort/stylesheets/stylesheet.ily"
-
-\header {
-    tagline = \markup {}
-    title = #"Left Hand Diads Music Specifier"
-}
 
 \score {
     \context Score = "String Quartet Score" <<
@@ -71,8 +66,8 @@
                     {
                         % [Violin 1 Voice] Measure 4
                         {
-                            <fs d'>4.
-                            <fs d'>8 \repeatTie
+                            <fs' d''>4.
+                            <fs' d''>8 \repeatTie
                         }
                         {
                             <cqs' fqs'>8
@@ -94,7 +89,7 @@
                     }
                     {
                         {
-                            <e a>8
+                            <e' a'>8
                         }
                         % [Violin 1 Voice] Measure 7
                         {
@@ -174,10 +169,10 @@
                         }
                         % [Violin 2 Voice] Measure 5
                         {
-                            <f bf>4
+                            <f' bf'>4
                         }
                         {
-                            <fs e'>8
+                            <fs' e''>8
                         }
                         % [Violin 2 Voice] Measure 6
                         {
