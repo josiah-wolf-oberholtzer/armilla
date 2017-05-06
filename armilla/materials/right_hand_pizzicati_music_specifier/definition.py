@@ -38,4 +38,4 @@ right_hand_pizzicati_music_specifier = consort.MusicSpecifier(
             talea_denominator=16,
             ),
         ),
-    ),
+    )
