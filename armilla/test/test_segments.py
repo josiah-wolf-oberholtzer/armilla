@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 import pytest
 import pathlib
+from unittest import mock
 from abjad.tools import commandlinetools
 from abjad.tools import systemtools
 
@@ -20,4 +21,5 @@ def test_segments(segment_name):
     with systemtools.TemporaryDirectoryChange(str(test_path)):
         script = commandlinetools.ManageSegmentScript()
         command = ['--illustrate', segment_name]
-        script(command)
+        with mock.patch('abjad.systemtools.IOManager.open_file'):
+            script(command)
