@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from abjad import attach
+from abjad import attach, select
 from abjad.tools import durationtools
 from abjad.tools import indicatortools
 from abjad.tools import markuptools
@@ -93,10 +93,10 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
 
     def postprocess_breath_marks(self, score):
         breath_mark = indicatortools.BreathMark()
-        leaves = score['Viola 1 Bowing Voice'].select_leaves()
+        leaves = select(score['Viola 1 Bowing Voice']).by_leaf()
         if isinstance(leaves[-1], scoretools.Note):
             attach(breath_mark, leaves[-1], name='breath_mark')
-        leaves = score['Viola 2 Bowing Voice'].select_leaves()
+        leaves = select(score['Viola 2 Bowing Voice']).by_leaf()
         if isinstance(leaves[-1], scoretools.Note):
             attach(breath_mark, leaves[-1], name='breath_mark')
 
