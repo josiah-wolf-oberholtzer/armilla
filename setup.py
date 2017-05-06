@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 from distutils.core import setup
 
 
@@ -8,7 +8,7 @@ if __name__ == '__main__':
         author_email='josiah.oberholtzer@gmail.com',
         install_requires=['consort'],
         name='armilla',
-        packages=('armilla',),
+        packages=['armilla'],
         url='https://github.com/josiah-wolf-oberholtzer/armilla',
         version='0.1',
         zip_safe=False,
