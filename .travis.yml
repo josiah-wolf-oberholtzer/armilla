@@ -21,8 +21,8 @@ install:
     - pip install -e .
 
 script:
-    - ajv doctest ./armilla
-    - py.test -rf -vv ./armilla
+    - ajv doctest ./armilla --diff
+    - py.test -vv ./armilla
 
 notifications:
     email: false
