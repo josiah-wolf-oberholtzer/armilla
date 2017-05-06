@@ -3,13 +3,12 @@ import consort
 from abjad.tools import durationtools
 from abjad.tools import rhythmmakertools
 from abjad.tools import selectortools
-from abjad.tools import spannertools
 
 
 left_hand_glissandi_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         glissando=consort.AttachmentExpression(
-            attachments=spannertools.Glissando(
+            attachments=consort.Glissando(
                 allow_repeat_pitches=False,
                 allow_ties=False,
                 parenthesize_repeated_pitches=True,

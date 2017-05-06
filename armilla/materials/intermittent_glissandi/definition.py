@@ -1,11 +1,10 @@
 # -*- encoding: utf-8 -*-
 import consort
 from abjad.tools import selectortools
-from abjad.tools import spannertools
 
 
 intermittent_glissandi = consort.AttachmentExpression(
-    attachments=spannertools.Glissando(
+    attachments=consort.Glissando(
         allow_repeat_pitches=False,
         allow_ties=False,
         parenthesize_repeated_pitches=True,
