@@ -10,7 +10,7 @@ left_hand_glissandi_music_specifier = consort.MusicSpecifier(
     attachment_handler=consort.AttachmentHandler(
         glissando=consort.AttachmentExpression(
             attachments=spannertools.Glissando(
-                allow_repeated_pitches=False,
+                allow_repeat_pitches=False,
                 allow_ties=False,
                 parenthesize_repeated_pitches=True,
                 ),
