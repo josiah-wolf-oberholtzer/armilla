@@ -16,7 +16,7 @@ class ArmillaSegmentMaker(consort.SegmentMaker):
         >>> segment_maker = armilla.ArmillaSegmentMaker()
         >>> print(format(segment_maker))
         armilla.tools.ArmillaSegmentMaker(
-            permitted_time_signatures=indicatortools.TimeSignatureInventory(
+            permitted_time_signatures=indicatortools.TimeSignatureList(
                 [
                     indicatortools.TimeSignature((2, 4)),
                     indicatortools.TimeSignature((3, 4)),
