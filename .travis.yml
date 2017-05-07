@@ -4,7 +4,7 @@ sudo: false
 
 env:
     global:
-        - LILYPOND_VERSION=2.19.41
+        - LILYPOND_VERSION=2.19.15
 
 python:
     - 3.5
