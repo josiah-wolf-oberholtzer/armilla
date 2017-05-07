@@ -2,7 +2,7 @@ language: python
 
 sudo: false
 
-# LilyPond versions >= 2.19.20 cause assertion errors
+# LilyPond versions >= 2.19.20 cause assertion errors.
 env:
     global:
         - LILYPOND_VERSION=2.19.19
