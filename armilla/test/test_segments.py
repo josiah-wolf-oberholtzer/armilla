@@ -1,19 +1,18 @@
 # -*- encoding: utf-8 -*-
-import pytest
+import json
+import mock
 import pathlib
-from unittest import mock
+import pytest
 from abjad.tools import commandlinetools
 from abjad.tools import systemtools
 
 
 test_path = pathlib.Path(__file__).parent
 segments_path = (test_path / '..' / 'segments').resolve()
-segment_names = [
-    path.name for path in segments_path.iterdir()
-    if path.is_dir() and
-    (path / '__init__.py').exists() and
-    (path / 'definition.py').exists()
-    ]
+metadata_path = segments_path / 'metadata.json'
+with metadata_path.open('r') as file_pointer:
+    metadata = json.loads(file_pointer.read())
+segment_names = metadata.get('segments', [])
 
 
 @pytest.mark.parametrize('segment_name', segment_names)
